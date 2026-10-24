@@ -1,0 +1,1153 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Digo & Jackie | Ideias, histórias e tecnologia</title>
+  <meta name="description" content="Entre no universo de Digo & Jackie: tecnologia, inteligência artificial, curiosidades, conversas e muito entretenimento.">
+
+  <!-- Bootstrap 5.3.8 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome: ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==================================================
+       1. IDENTIDADE VISUAL E VARIÁVEIS GLOBAIS
+       Edite as cores principais neste bloco.
+    ================================================== */
+    :root {
+      --bg: #090b16;
+      --bg-soft: #111529;
+      --card: #151a30;
+      --text: #f5f6ff;
+      --muted: #a4abc5;
+      --purple: #a855f7;
+      --pink: #ff3d9a;
+      --cyan: #21e6d2;
+      --yellow: #ffe66d;
+      --gradient: linear-gradient(120deg, #a855f7, #ff3d9a, #ff8b5e);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .text-muted-custom {
+      color: var(--muted);
+    }
+
+    .font-display {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .section-space {
+      padding: 95px 0;
+    }
+
+    .section-label {
+      color: var(--cyan);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+    }
+
+    /* ==================================================
+       2. BOTÕES
+    ================================================== */
+    .btn-neon {
+      background: var(--gradient);
+      color: white;
+      border: 0;
+      border-radius: 50px;
+      padding: 13px 25px;
+      font-weight: 800;
+      transition: .25s ease;
+    }
+
+    .btn-neon:hover {
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px #a855f744;
+    }
+
+    .btn-outline-neon {
+      border: 1px solid #ffffff50;
+      color: white;
+      border-radius: 50px;
+      padding: 12px 24px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .btn-outline-neon:hover {
+      color: var(--cyan);
+      border-color: var(--cyan);
+      background: #21e6d20d;
+    }
+
+    /* ==================================================
+       3. MENU DE NAVEGAÇÃO
+    ================================================== */
+    .navbar {
+      background: #090b16eF;
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid #ffffff12;
+    }
+
+    .navbar-brand {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: white;
+    }
+
+    .brand-symbol {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      margin-right: 8px;
+      background: var(--gradient);
+    }
+
+    .navbar .nav-link {
+      color: #c5c9dc;
+      font-weight: 600;
+      font-size: .9rem;
+      margin: 0 5px;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus {
+      color: var(--cyan);
+    }
+
+    .navbar-toggler {
+      border-color: #ffffff55;
+    }
+
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+
+    /* ==================================================
+       4. HERO / APRESENTAÇÃO PRINCIPAL
+    ================================================== */
+    .hero {
+      min-height: 720px;
+      padding: 150px 0 95px;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 85% 35%, #a855f72b, transparent 38%),
+        radial-gradient(ellipse at 5% 75%, #21e6d21a, transparent 35%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .16;
+      background-image:
+        linear-gradient(#ffffff12 1px, transparent 1px),
+        linear-gradient(90deg, #ffffff12 1px, transparent 1px);
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -4px;
+    }
+
+    .hero-description {
+      max-width: 550px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.9;
+    }
+
+    .hero-art {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 360px;
+    }
+
+    .hero-orbit {
+      width: min(330px, 75vw);
+      aspect-ratio: 1;
+      border: 1px solid #a855f75c;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      position: relative;
+      box-shadow: 0 0 80px #a855f71b, inset 0 0 70px #a855f713;
+    }
+
+    .hero-orbit::before,
+    .hero-orbit::after {
+      content: "";
+      position: absolute;
+      border: 1px solid #21e6d244;
+      border-radius: 50%;
+      inset: 20px;
+    }
+
+    .hero-orbit::after {
+      inset: 45px;
+      border-color: #ff3d9a4a;
+    }
+
+    .hero-logo {
+      z-index: 1;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .hero-logo span {
+      display: block;
+      font-size: 1rem;
+      color: var(--cyan);
+      letter-spacing: 7px;
+      margin-top: 15px;
+    }
+
+    .floating-icon {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      border: 1px solid #ffffff25;
+      border-radius: 18px;
+      font-size: 1.5rem;
+      background: #151a30dd;
+      box-shadow: 0 10px 35px #0005;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .float-one {
+      top: 8%;
+      right: 4%;
+      color: var(--pink);
+    }
+
+    .float-two {
+      bottom: 9%;
+      left: 0;
+      color: var(--cyan);
+      animation-delay: -2s;
+    }
+
+    .float-three {
+      top: 25%;
+      left: 1%;
+      color: var(--yellow);
+      animation-delay: -1s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-14px) rotate(5deg); }
+    }
+
+    /* ==================================================
+       5. FAIXA DE TEMAS
+    ================================================== */
+    .topic-strip {
+      overflow: hidden;
+      border-top: 1px solid #ffffff12;
+      border-bottom: 1px solid #ffffff12;
+      background: #111529;
+    }
+
+    .topic-inner {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px 35px;
+      padding: 23px 15px;
+      color: #d5d9ed;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .topic-inner i {
+      color: var(--cyan);
+      margin-right: 8px;
+    }
+
+    /* ==================================================
+       6. CARTÕES DE CONTEÚDO
+    ================================================== */
+    .content-card {
+      height: 100%;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid #ffffff12;
+      border-radius: 22px;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+    }
+
+    .content-card:hover {
+      transform: translateY(-7px);
+      border-color: #a855f770;
+      box-shadow: 0 18px 45px #0003;
+    }
+
+    .card-art {
+      min-height: 190px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-art i {
+      font-size: 4rem;
+      filter: drop-shadow(0 8px 20px #0004);
+      transition: transform .3s;
+    }
+
+    .content-card:hover .card-art i {
+      transform: scale(1.12) rotate(-5deg);
+    }
+
+    .art-purple {
+      background: linear-gradient(135deg, #5520a5, #b15cff);
+    }
+
+    .art-cyan {
+      background: linear-gradient(135deg, #087d92, #21e6d2);
+    }
+
+    .art-pink {
+      background: linear-gradient(135deg, #941c68, #ff3d9a);
+    }
+
+    .art-orange {
+      background: linear-gradient(135deg, #a94322, #ffb347);
+    }
+
+    .card-body-custom {
+      padding: 25px;
+    }
+
+    .category-tag {
+      display: inline-block;
+      padding: 6px 11px;
+      border-radius: 50px;
+      background: #a855f71c;
+      color: #d4a7ff;
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card-link {
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    .card-link:hover {
+      color: white;
+    }
+
+    /* ==================================================
+       7. VÍDEO EM DESTAQUE
+       Troque o ID de exemplo pelo ID real do YouTube.
+    ================================================== */
+    .featured-video {
+      overflow: hidden;
+      background: var(--bg-soft);
+      border: 1px solid #ffffff15;
+      border-radius: 26px;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #151a30;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .featured-copy {
+      padding: clamp(25px, 4vw, 45px);
+    }
+
+    /* ==================================================
+       8. SOBRE A DUPLA
+    ================================================== */
+    .about-panel {
+      padding: clamp(25px, 5vw, 55px);
+      background:
+        radial-gradient(circle at 100% 0%, #a855f727, transparent 45%),
+        var(--card);
+      border: 1px solid #ffffff12;
+      border-radius: 28px;
+    }
+
+    .about-icon {
+      width: 65px;
+      height: 65px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      background: var(--gradient);
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+    }
+
+    .about-stat {
+      padding: 20px 0;
+      border-top: 1px solid #ffffff15;
+    }
+
+    .about-stat strong {
+      color: var(--cyan);
+      font-size: 1.8rem;
+    }
+
+    /* ==================================================
+       9. PLAYLISTS E CATEGORIAS
+    ================================================== */
+    .playlist-card {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 20px;
+      height: 100%;
+      background: var(--card);
+      border: 1px solid #ffffff12;
+      border-radius: 18px;
+      transition: .25s;
+    }
+
+    .playlist-card:hover {
+      transform: translateX(5px);
+      border-color: #21e6d255;
+    }
+
+    .playlist-icon {
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      width: 55px;
+      height: 55px;
+      border-radius: 16px;
+      background: #21e6d21a;
+      color: var(--cyan);
+      font-size: 1.4rem;
+    }
+
+    /* ==================================================
+       10. CHAMADA PARA O YOUTUBE
+    ================================================== */
+    .youtube-cta {
+      position: relative;
+      overflow: hidden;
+      padding: 65px 30px;
+      text-align: center;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 15% 20%, #ff3d9a44, transparent 35%),
+        radial-gradient(circle at 85% 80%, #a855f744, transparent 40%),
+        #151a30;
+      border: 1px solid #ffffff17;
+    }
+
+    .youtube-cta .youtube-icon {
+      font-size: 3.5rem;
+      color: #ff4c65;
+    }
+
+    /* ==================================================
+       11. RODAPÉ
+    ================================================== */
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid #ffffff12;
+      background: #070811;
+    }
+
+    .social-link {
+      width: 43px;
+      height: 43px;
+      display: inline-grid;
+      place-items: center;
+      color: white;
+      background: #ffffff0c;
+      border: 1px solid #ffffff18;
+      border-radius: 14px;
+      transition: .25s;
+    }
+
+    .social-link:hover {
+      color: var(--cyan);
+      border-color: var(--cyan);
+      transform: translateY(-3px);
+    }
+
+    /* ==================================================
+       12. RESPONSIVIDADE
+    ================================================== */
+    @media (max-width: 991.98px) {
+      .hero {
+        min-height: auto;
+        padding-top: 130px;
+      }
+
+      .hero-art {
+        min-height: 330px;
+      }
+
+      .navbar-collapse {
+        padding: 15px 0;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .section-space {
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .topic-inner {
+        justify-content: flex-start;
+        gap: 18px;
+      }
+
+      .hero-art {
+        min-height: 300px;
+      }
+    }
+
+    /* Respeita usuários que preferem menos animações. */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================================================
+       MENU PRINCIPAL
+       Altere os links das redes sociais no rodapé.
+  ================================================== -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#inicio">
+        <span class="brand-symbol">D<span style="color:#21e6d2">&</span>J</span>
+        <span>DIGO<span class="gradient-text"> & JACKIE</span></span>
+      </a>
+
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+        aria-controls="menuPrincipal" aria-expanded="false"
+        aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#conteudos">Conteúdos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destaque">Em destaque</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">A dupla</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <!-- SUBSTITUA PELO LINK REAL DO CANAL -->
+            <a class="btn btn-neon btn-sm" href="https://www.youtube.com/"
+              target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-youtube me-2"></i>Nosso YouTube
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ==================================================
+       HERO: PRIMEIRA IMPRESSÃO DO PORTAL
+  ================================================== -->
+  <header class="hero" id="inicio">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-7">
+          <span class="section-label">
+            <i class="fa-solid fa-bolt me-2"></i>Dois universos. Uma conexão.
+          </span>
+
+          <h1 class="mt-4 mb-4">
+            O papo é nosso.<br>
+            <span class="gradient-text">A diversão é sua.</span>
+          </h1>
+
+          <p class="hero-description mb-4">
+            Tecnologia, inteligência artificial, ideias inesperadas
+            e conversas que rendem. Chega mais para conhecer o universo
+            de Digo & Jackie!
+          </p>
+
+          <div class="d-flex flex-wrap gap-3">
+            <!-- SUBSTITUA PELA URL DO SEU CANAL -->
+            <a href="https://www.youtube.com/" target="_blank"
+              rel="noopener noreferrer" class="btn btn-neon">
+              <i class="fa-brands fa-youtube me-2"></i>
+              Explorar o canal
+            </a>
+
+            <a href="#conteudos" class="btn btn-outline-neon">
+              Descobrir conteúdos <i class="fa-solid fa-arrow-down ms-2"></i>
+            </a>
+          </div>
+
+          <div class="mt-5 text-muted-custom small">
+            <i class="fa-solid fa-wand-magic-sparkles me-2"
+              style="color:var(--yellow)"></i>
+            Ideias, experiências e uma dupla fora do comum.
+          </div>
+        </div>
+
+        <!-- ARTE VISUAL: PODE SER SUBSTITUÍDA POR UMA IMAGEM DA DUPLA -->
+        <div class="col-lg-5">
+          <div class="hero-art">
+            <div class="hero-orbit">
+              <div class="hero-logo">
+                DIGO
+                <span>&</span>
+                JACKIE
+                <span>PLAY THE FUTURE</span>
+              </div>
+            </div>
+
+            <div class="floating-icon float-one">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="floating-icon float-two">
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <div class="floating-icon float-three">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==================================================
+       FAIXA DE ASSUNTOS
+       Personalize os temas conforme os vídeos publicados.
+  ================================================== -->
+  <div class="topic-strip">
+    <div class="container">
+      <div class="topic-inner">
+        <span><i class="fa-solid fa-microchip"></i>Tecnologia</span>
+        <span><i class="fa-solid fa-brain"></i>Inteligência artificial</span>
+        <span><i class="fa-solid fa-comments"></i>Conversas</span>
+        <span><i class="fa-solid fa-wand-magic-sparkles"></i>Criatividade</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================================================
+       SEÇÃO DE CONTEÚDOS
+       Edite títulos, descrições, ícones e links dos cartões.
+  ================================================== -->
+  <section class="section-space" id="conteudos">
+    <div class="container">
+
+      <div class="row align-items-end mb-5 g-3">
+        <div class="col-lg-8">
+          <span class="section-label">Explore o universo</span>
+          <h2 class="section-title mt-3 mb-3">
+            Conteúdo que <span class="gradient-text">dá assunto.</span>
+          </h2>
+          <p class="text-muted-custom mb-0">
+            Diferentes ideias, novas descobertas e aquele toque de
+            personalidade que faz toda a diferença.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="https://www.youtube.com/" target="_blank"
+            rel="noopener noreferrer" class="btn btn-outline-neon">
+            Ver canal completo <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- CARTÃO 1: TECNOLOGIA -->
+        <div class="col-sm-6 col-lg-3">
+          <article class="content-card">
+            <div class="card-art art-purple">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="card-body-custom">
+              <span class="category-tag">Tecnologia</span>
+              <h3 class="h5 fw-bold mt-3">O futuro já começou?</h3>
+              <p class="text-muted-custom small">
+                Novidades tecnológicas, tendências e ideias que
+                merecem uma boa conversa.
+              </p>
+              <a href="https://www.youtube.com/" class="card-link"
+                target="_blank" rel="noopener noreferrer">
+                Explorar <i class="fa-solid fa-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- CARTÃO 2: INTELIGÊNCIA ARTIFICIAL -->
+        <div class="col-sm-6 col-lg-3">
+          <article class="content-card">
+            <div class="card-art art-cyan">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="card-body-custom">
+              <span class="category-tag">Inteligência artificial</span>
+              <h3 class="h5 fw-bold mt-3">IA sem complicação</h3>
+              <p class="text-muted-custom small">
+                Experiências, ferramentas e discussões sobre
+                o que as inteligências artificiais podem fazer.
+              </p>
+              <a href="https://www.youtube.com/" class="card-link"
+                target="_blank" rel="noopener noreferrer">
+                Explorar <i class="fa-solid fa-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- CARTÃO 3: PODCAST E CONVERSAS -->
+        <div class="col-sm-6 col-lg-3">
+          <article class="content-card">
+            <div class="card-art art-pink">
+              <i class="fa-solid fa-headphones"></i>
+            </div>
+            <div class="card-body-custom">
+              <span class="category-tag">Conversas</span>
+              <h3 class="h5 fw-bold mt-3">Papo de outro nível</h3>
+              <p class="text-muted-custom small">
+                Histórias, reflexões e conversas para ouvir,
+                pensar e compartilhar.
+              </p>
+              <a href="https://www.youtube.com/" class="card-link"
+                target="_blank" rel="noopener noreferrer">
+                Explorar <i class="fa-solid fa-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- CARTÃO 4: CURIOSIDADES -->
+        <div class="col-sm-6 col-lg-3">
+          <article class="content-card">
+            <div class="card-art art-orange">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div class="card-body-custom">
+              <span class="category-tag">Curiosidades</span>
+              <h3 class="h5 fw-bold mt-3">E essa você sabia?</h3>
+              <p class="text-muted-custom small">
+                Ideias surpreendentes, descobertas e assuntos
+                que despertam a curiosidade.
+              </p>
+              <a href="https://www.youtube.com/" class="card-link"
+                target="_blank" rel="noopener noreferrer">
+                Explorar <i class="fa-solid fa-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================================================
+       VÍDEO EM DESTAQUE
+       Troque VIDEO_ID pelo identificador de um vídeo real.
+       Exemplo: https://www.youtube.com/watch?v=ABC123
+       O ID seria ABC123.
+  ================================================== -->
+  <section class="section-space pt-0" id="destaque">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-label">Dê o play</span>
+        <h2 class="section-title mt-3">
+          Na tela, <span class="gradient-text">Digo & Jackie.</span>
+        </h2>
+        <p class="text-muted-custom">
+          Uma amostra do que espera por você no nosso canal.
+        </p>
+      </div>
+
+      <div class="featured-video">
+        <div class="row g-0 align-items-center">
+
+          <div class="col-lg-7">
+            <div class="video-frame">
+              <!-- SUBSTITUA VIDEO_ID PELO ID DO VÍDEO -->
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+                title="Vídeo em destaque de Digo e Jackie"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="featured-copy">
+              <span class="category-tag">Vídeo em destaque</span>
+              <h3 class="display-6 fw-bold mt-4 mb-3">
+                Conversas que vão além do óbvio.
+              </h3>
+              <p class="text-muted-custom mb-4">
+                Tecnologia, criatividade e novas perspectivas:
+                acompanhe nossas experiências e descubra o que
+                estamos preparando.
+              </p>
+              <a href="https://www.youtube.com/" target="_blank"
+                rel="noopener noreferrer" class="btn btn-neon">
+                <i class="fa-brands fa-youtube me-2"></i>
+                Assistir no YouTube
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================================================
+       SOBRE O PROJETO E A DUPLA
+  ================================================== -->
+  <section class="section-space" id="sobre">
+    <div class="container">
+      <div class="about-panel">
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-7">
+            <span class="section-label">Prazer, somos nós!</span>
+            <h2 class="section-title mt-3 mb-4">
+              Uma dupla.<br>
+              <span class="gradient-text">Mil possibilidades.</span>
+            </h2>
+
+            <p class="text-muted-custom" style="line-height:1.9">
+              Digo & Jackie é um espaço para explorar ideias, conversar
+              sobre tecnologia, experimentar novidades e transformar
+              assuntos interessantes em conteúdo.
+            </p>
+
+            <p class="text-muted-custom" style="line-height:1.9">
+              Aqui, a curiosidade tem lugar garantido. O próximo assunto
+              pode ser uma descoberta tecnológica, uma experiência com
+              inteligência artificial ou uma conversa que começa de um
+              jeito e termina em outro completamente inesperado.
+            </p>
+
+            <a href="https://www.youtube.com/" target="_blank"
+              rel="noopener noreferrer" class="btn btn-outline-neon mt-2">
+              Conheça o canal <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="row g-3">
+
+              <div class="col-12">
+                <div class="p-4 rounded-4"
+                  style="background:#a855f71c;border:1px solid #a855f733">
+                  <div class="about-icon">
+                    <i class="fa-solid fa-user-astronaut"></i>
+                  </div>
+                  <h3 class="h5 fw-bold">Digo</h3>
+                  <p class="text-muted-custom mb-0">
+                    Ideias, criatividade e o comando da conversa.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="p-4 rounded-4"
+                  style="background:#21e6d210;border:1px solid #21e6d233">
+                  <div class="about-icon"
+                    style="background:linear-gradient(135deg,#21e6d2,#1686ff)">
+                    <i class="fa-solid fa-robot"></i>
+                  </div>
+                  <h3 class="h5 fw-bold">Jackie</h3>
+                  <p class="text-muted-custom mb-0">
+                    Uma parceira de conversas, descobertas e experiências.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================================================
+       PLAYLISTS
+       Substitua cada URL pelo link da playlist correspondente.
+  ================================================== -->
+  <section class="section-space pt-0" id="playlists">
+    <div class="container">
+
+      <div class="mb-5">
+        <span class="section-label">Escolha sua próxima aventura</span>
+        <h2 class="section-title mt-3">
+          Explore por <span class="gradient-text">assunto.</span>
+        </h2>
+      </div>
+
+      <div class="row g-3">
+
+        <div class="col-md-6 col-lg-4">
+          <a href="https://www.youtube.com/" target="_blank"
+            rel="noopener noreferrer" class="playlist-card">
+            <div class="playlist-icon">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <div>
+              <h3 class="h6 fw-bold mb-1">Universo da IA</h3>
+              <p class="text-muted-custom small mb-0">
+                Ferramentas e experiências
+              </p>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square ms-auto"
+              style="color:var(--cyan)"></i>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <a href="https://www.youtube.com/" target="_blank"
+            rel="noopener noreferrer" class="playlist-card">
+            <div class="playlist-icon"
+              style="background:#ff3d9a1c;color:var(--pink)">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <div>
+              <h3 class="h6 fw-bold mb-1">Digo & Jackie em papo</h3>
+              <p class="text-muted-custom small mb-0">
+                Conversas e reflexões
+              </p>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square ms-auto"
+              style="color:var(--cyan)"></i>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <a href="https://www.youtube.com/" target="_blank"
+            rel="noopener noreferrer" class="playlist-card">
+            <div class="playlist-icon"
+              style="background:#ffe66d1c;color:var(--yellow)">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div>
+              <h3 class="h6 fw-bold mb-1">Experimentos digitais</h3>
+              <p class="text-muted-custom small mb-0">
+                Criatividade em ação
+              </p>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square ms-auto"
+              style="color:var(--cyan)"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================================================
+       CHAMADA FINAL PARA INSCRIÇÃO
+  ================================================== -->
+  <section class="section-space pt-0">
+    <div class="container">
+      <div class="youtube-cta">
+
+        <i class="fa-brands fa-youtube youtube-icon mb-4"></i>
+
+        <h2 class="section-title mb-3">
+          Não fique só na <span class="gradient-text">espiadinha.</span>
+        </h2>
+
+        <p class="text-muted-custom mx-auto mb-4"
+          style="max-width:600px;line-height:1.9">
+          Inscreva-se no canal, acompanhe os próximos vídeos e venha
+          fazer parte das conversas. O botão de play está esperando!
+        </p>
+
+        <!-- SUBSTITUA PELO LINK REAL DO CANAL -->
+        <a href="https://www.youtube.com/" target="_blank"
+          rel="noopener noreferrer" class="btn btn-neon btn-lg">
+          <i class="fa-brands fa-youtube me-2"></i>
+          Inscrever-se no canal
+          <i class="fa-solid fa-arrow-right ms-2"></i>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================================================
+       RODAPÉ E REDES SOCIAIS
+       Atualize os links conforme seus perfis oficiais.
+  ================================================== -->
+  <footer>
+    <div class="container">
+      <div class="row align-items-center g-4">
+
+        <div class="col-md-6">
+          <a class="navbar-brand d-inline-flex align-items-center"
+            href="#inicio">
+            <span class="brand-symbol">D<span style="color:#21e6d2">&</span>J</span>
+            <span>DIGO<span class="gradient-text"> & JACKIE</span></span>
+          </a>
+
+          <p class="text-muted-custom small mt-3 mb-0">
+            Ideias, tecnologia e boas conversas. O universo é nosso.
+          </p>
+        </div>
+
+        <div class="col-md-6 text-md-end">
+          <div class="d-flex gap-2 justify-content-md-end">
+
+            <!-- YOUTUBE -->
+            <a href="https://www.youtube.com/" target="_blank"
+              rel="noopener noreferrer" class="social-link"
+              aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <!-- INSTAGRAM: substitua pelo perfil oficial -->
+            <a href="https://www.instagram.com/" target="_blank"
+              rel="noopener noreferrer" class="social-link"
+              aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <!-- TIKTOK: substitua pelo perfil oficial -->
+            <a href="https://www.tiktok.com/" target="_blank"
+              rel="noopener noreferrer" class="social-link"
+              aria-label="TikTok">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+      <hr style="border-color:#ffffff15" class="my-4">
+
+      <div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
+        <small class="text-muted-custom">
+          © <span id="anoAtual"></span> Digo & Jackie. Todos os direitos reservados.
+        </small>
+        <a href="#inicio" class="small" style="color:var(--cyan)">
+          Voltar ao topo ↑
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================================================
+       SCRIPTS
+       Bootstrap cuida do menu responsivo.
+       O JavaScript abaixo atualiza o ano automaticamente.
+  ================================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Atualiza o ano do rodapé sem precisar editar manualmente.
+    document.getElementById('anoAtual').textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
