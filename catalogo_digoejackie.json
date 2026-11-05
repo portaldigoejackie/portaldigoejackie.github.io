@@ -1,0 +1,755 @@
+{
+  "total_categorias": 5,
+  "total_videos": 102,
+  "categorias": [
+    {
+      "nome": "corrida-espacial",
+      "playlist_id": "corrida-espacial",
+      "total_videos": 7,
+      "videos": [
+        {
+          "position": 1,
+          "title": "A Nova Era Espacial: Como a SpaceX e Empresas Privadas Mudaram Tudo (2010-2017)",
+          "id": "r7rmdBDX3Yo",
+          "url": "https://www.youtube.com/watch?v=r7rmdBDX3Yo",
+          "thumbnail": "https://i.ytimg.com/vi/r7rmdBDX3Yo/hqdefault.jpg"
+        },
+        {
+          "position": 2,
+          "title": "A Nova Corrida Espacial: O que mudou nos anos 2000?",
+          "id": "PPsAMHXXuKk",
+          "url": "https://www.youtube.com/watch?v=PPsAMHXXuKk",
+          "thumbnail": "https://i.ytimg.com/vi/PPsAMHXXuKk/hqdefault.jpg"
+        },
+        {
+          "position": 3,
+          "title": "Corrida Espacial Anos 90: O Legado do Hubble e a Estação Mir",
+          "id": "F8OoFuU76Mc",
+          "url": "https://www.youtube.com/watch?v=F8OoFuU76Mc",
+          "thumbnail": "https://i.ytimg.com/vi/F8OoFuU76Mc/hqdefault.jpg"
+        },
+        {
+          "position": 4,
+          "title": "Corrida Espacial Anos 80: De Estações Soviéticas ao Desastre da Challenger",
+          "id": "ShvAxPIguJI",
+          "url": "https://www.youtube.com/watch?v=ShvAxPIguJI",
+          "thumbnail": "https://i.ytimg.com/vi/ShvAxPIguJI/hqdefault.jpg"
+        },
+        {
+          "position": 5,
+          "title": "A Corrida Espacial nos Anos 70: Além da Lua e o Início das Estações Espaciais",
+          "id": "WA_7mPEuM68",
+          "url": "https://www.youtube.com/watch?v=WA_7mPEuM68",
+          "thumbnail": "https://i.ytimg.com/vi/WA_7mPEuM68/hqdefault.jpg"
+        },
+        {
+          "position": 6,
+          "title": "O Início de Tudo: De Moscas Espaciais ao Impacto do Sputnik | ep.2",
+          "id": "m-A41bEGv0U",
+          "url": "https://www.youtube.com/watch?v=m-A41bEGv0U",
+          "thumbnail": "https://i.ytimg.com/vi/m-A41bEGv0U/hqdefault.jpg"
+        },
+        {
+          "position": 7,
+          "title": "Corrida Espacial: Como a Guerra Fria Criou a Exploração do Cosmo| ep.1",
+          "id": "h0RPyGJmN3M",
+          "url": "https://www.youtube.com/watch?v=h0RPyGJmN3M",
+          "thumbnail": "https://i.ytimg.com/vi/h0RPyGJmN3M/hqdefault.jpg"
+        }
+      ]
+    },
+    {
+      "nome": "desastres espaciais",
+      "playlist_id": "desastres_espaciais",
+      "total_videos": 17,
+      "videos": [
+        {
+          "position": 1,
+          "title": "Desastres Espaciais | John Glenn e o Primeiro Voo Orbital Americano | Ep17",
+          "id": "pCfwV_BK_DM",
+          "url": "https://www.youtube.com/watch?v=pCfwV_BK_DM",
+          "thumbnail": "https://i.ytimg.com/vi/pCfwV_BK_DM/hqdefault.jpg"
+        },
+        {
+          "position": 2,
+          "title": "Desastres Espaciais | Soyuz 15 – Missão Abortada da Salyut 3 | Ep16",
+          "id": "BRzX1XHXfM0",
+          "url": "https://www.youtube.com/watch?v=BRzX1XHXfM0",
+          "thumbnail": "https://i.ytimg.com/vi/BRzX1XHXfM0/hqdefault.jpg"
+        },
+        {
+          "position": 3,
+          "title": "Desastres Espaciais | Soyuz T-13 e o Resgate da Salyut 7 – Missão Improvável | Ep15",
+          "id": "t7I1HsqxmXM",
+          "url": "https://www.youtube.com/watch?v=t7I1HsqxmXM",
+          "thumbnail": "https://i.ytimg.com/vi/t7I1HsqxmXM/hqdefault.jpg"
+        },
+        {
+          "position": 4,
+          "title": "Desastres Espaciais | Soyuz 21 e a Estação Militar Salyut 5 – Missão de Resgate | Ep14",
+          "id": "nugXDyi9Uro",
+          "url": "https://www.youtube.com/watch?v=nugXDyi9Uro",
+          "thumbnail": "https://i.ytimg.com/vi/nugXDyi9Uro/hqdefault.jpg"
+        },
+        {
+          "position": 5,
+          "title": "Desastres Espaciais | Primeiro Cancelamento em Órbita do Space Shuttle – STS-51F | Ep13",
+          "id": "yrj6wQmUz2w",
+          "url": "https://www.youtube.com/watch?v=yrj6wQmUz2w",
+          "thumbnail": "https://i.ytimg.com/vi/yrj6wQmUz2w/hqdefault.jpg"
+        },
+        {
+          "position": 6,
+          "title": "Desastres Espaciais | Choque entre Progress e Mir – Colisão em Órbita | Ep12",
+          "id": "PyfWH8zQIBc",
+          "url": "https://www.youtube.com/watch?v=PyfWH8zQIBc",
+          "thumbnail": "https://i.ytimg.com/vi/PyfWH8zQIBc/hqdefault.jpg"
+        },
+        {
+          "position": 7,
+          "title": "Desastres Espaciais | Incêndio na Mir – Fogo em Órbita | Ep11",
+          "id": "r72E8KMNM1g",
+          "url": "https://www.youtube.com/watch?v=r72E8KMNM1g",
+          "thumbnail": "https://i.ytimg.com/vi/r72E8KMNM1g/hqdefault.jpg"
+        },
+        {
+          "position": 8,
+          "title": "Desastres Espaciais | Soyuz 33 – A Reentrada a 10G que Quase Terminou em Tragédia | Ep10",
+          "id": "KVtJn3S-KD0",
+          "url": "https://www.youtube.com/watch?v=KVtJn3S-KD0",
+          "thumbnail": "https://i.ytimg.com/vi/KVtJn3S-KD0/hqdefault.jpg"
+        },
+        {
+          "position": 9,
+          "title": "Desastres Espaciais | Apollo 13 – O Fracasso Mais Bem-Sucedido da NASA | Ep09",
+          "id": "pUjCPlF4Yhc",
+          "url": "https://www.youtube.com/watch?v=pUjCPlF4Yhc",
+          "thumbnail": "https://i.ytimg.com/vi/pUjCPlF4Yhc/hqdefault.jpg"
+        },
+        {
+          "position": 10,
+          "title": "Desastres Espaciais | Soyuz TM-5 – O Quase Desastre da Reentrada | Ep08",
+          "id": "EGDcqQ8_V2w",
+          "url": "https://www.youtube.com/watch?v=EGDcqQ8_V2w",
+          "thumbnail": "https://i.ytimg.com/vi/EGDcqQ8_V2w/hqdefault.jpg"
+        },
+        {
+          "position": 11,
+          "title": "Desastres Espaciais | Soyuz 11 – A Primeira Tragédia no Espaço | Ep07",
+          "id": "P8meZWeIjFM",
+          "url": "https://www.youtube.com/watch?v=P8meZWeIjFM",
+          "thumbnail": "https://i.ytimg.com/vi/P8meZWeIjFM/hqdefault.jpg"
+        },
+        {
+          "position": 12,
+          "title": "Desastres Espaciais | Gemini 9 – O “Jacaré Zangado” e a EVA Quase Fora de Controle | Ep06",
+          "id": "RmQ0ljaX0LU",
+          "url": "https://www.youtube.com/watch?v=RmQ0ljaX0LU",
+          "thumbnail": "https://i.ytimg.com/vi/RmQ0ljaX0LU/hqdefault.jpg"
+        },
+        {
+          "position": 13,
+          "title": "Desastres Espaciais | Soyuz 23 – A Missão que Quase Afundou no Gelo | Ep05",
+          "id": "Jlyl-39snzA",
+          "url": "https://www.youtube.com/watch?v=Jlyl-39snzA",
+          "thumbnail": "https://i.ytimg.com/vi/Jlyl-39snzA/hqdefault.jpg"
+        },
+        {
+          "position": 14,
+          "title": "Série Desastres Espaciais | Gemini 8 – O Giro Descontrolado de Neil Armstrong | Ep04",
+          "id": "rPJF11ByBak",
+          "url": "https://www.youtube.com/watch?v=rPJF11ByBak",
+          "thumbnail": "https://i.ytimg.com/vi/rPJF11ByBak/hqdefault.jpg"
+        },
+        {
+          "position": 15,
+          "title": "Desastres Espaciais: Challenger, O-Ring e o Erro que Abalou a NASA | Ep03",
+          "id": "jOswbhnpFAw",
+          "url": "https://www.youtube.com/watch?v=jOswbhnpFAw",
+          "thumbnail": "https://i.ytimg.com/vi/jOswbhnpFAw/hqdefault.jpg"
+        },
+        {
+          "position": 16,
+          "title": "Desastres Espaciais: Soyuz 18A, a Reentrada Balística que Quase Terminou em Tragédia | Ep02",
+          "id": "9XTSyItSdIs",
+          "url": "https://www.youtube.com/watch?v=9XTSyItSdIs",
+          "thumbnail": "https://i.ytimg.com/vi/9XTSyItSdIs/hqdefault.jpg"
+        },
+        {
+          "position": 17,
+          "title": "Desastres Espaciais: Soyuz 7 e o Dia em que a Torre de Escape Salvou Dois Cosmonautas | Ep01",
+          "id": "pt2LxqXJEkg",
+          "url": "https://www.youtube.com/watch?v=pt2LxqXJEkg",
+          "thumbnail": "https://i.ytimg.com/vi/pt2LxqXJEkg/hqdefault.jpg"
+        }
+      ]
+    },
+    {
+      "nome": "papo-de-cinema",
+      "playlist_id": "papo-de-cinema",
+      "total_videos": 20,
+      "videos": [
+        {
+          "position": 1,
+          "title": "Papo de Cinema #02 – De Volta para o Futuro: Por Que Esse Filme Nunca Envelhece",
+          "id": "mjnpyWDTM2c",
+          "url": "https://www.youtube.com/watch?v=mjnpyWDTM2c",
+          "thumbnail": "https://i.ytimg.com/vi/mjnpyWDTM2c/hqdefault.jpg"
+        },
+        {
+          "position": 2,
+          "title": "Papo de Cinema #03 – 2001: Uma Odisseia no Espaço e o Futuro da Humanidade",
+          "id": "c6KA4fVuvvw",
+          "url": "https://www.youtube.com/watch?v=c6KA4fVuvvw",
+          "thumbnail": "https://i.ytimg.com/vi/c6KA4fVuvvw/hqdefault.jpg"
+        },
+        {
+          "position": 3,
+          "title": "Papo de Cinema #04 – 2010: O Ano em que Faremos Contato e o Medo do Desconhecido",
+          "id": "w4nU10wrvnk",
+          "url": "https://www.youtube.com/watch?v=w4nU10wrvnk",
+          "thumbnail": "https://i.ytimg.com/vi/w4nU10wrvnk/hqdefault.jpg"
+        },
+        {
+          "position": 4,
+          "title": "Papo de Cinema #05 – Interestelar (Parte 2): Tempo, Amor e Destino",
+          "id": "xc5ESsvtQew",
+          "url": "https://www.youtube.com/watch?v=xc5ESsvtQew",
+          "thumbnail": "https://i.ytimg.com/vi/xc5ESsvtQew/hqdefault.jpg"
+        },
+        {
+          "position": 5,
+          "title": "Papo de Cinema #06 – Armageddon: O Medo do Fim do Mundo nos Anos 90",
+          "id": "snE7XOjpZlU",
+          "url": "https://www.youtube.com/watch?v=snE7XOjpZlU",
+          "thumbnail": "https://i.ytimg.com/vi/snE7XOjpZlU/hqdefault.jpg"
+        },
+        {
+          "position": 6,
+          "title": "Papo de Cinema #07 – Independence Day: Alienígenas, Caos e Patriotismo",
+          "id": "Q3NlQOauVUE",
+          "url": "https://www.youtube.com/watch?v=Q3NlQOauVUE",
+          "thumbnail": "https://i.ytimg.com/vi/Q3NlQOauVUE/hqdefault.jpg"
+        },
+        {
+          "position": 7,
+          "title": "NA",
+          "id": "5kEK062pJ20",
+          "url": "https://www.youtube.com/watch?v=5kEK062pJ20",
+          "thumbnail": "https://i.ytimg.com/vi/5kEK062pJ20/hqdefault.jpg"
+        },
+        {
+          "position": 8,
+          "title": "Papo de Cinema #09 – The Batman: Um Herói Quebrado para Tempos Sombrios",
+          "id": "NfvKl-LZAiQ",
+          "url": "https://www.youtube.com/watch?v=NfvKl-LZAiQ",
+          "thumbnail": "https://i.ytimg.com/vi/NfvKl-LZAiQ/hqdefault.jpg"
+        },
+        {
+          "position": 9,
+          "title": "Papo de Cinema #10 – Contato de 4º Grau: Fé, Medo e Mistério",
+          "id": "1BEet36t2IE",
+          "url": "https://www.youtube.com/watch?v=1BEet36t2IE",
+          "thumbnail": "https://i.ytimg.com/vi/1BEet36t2IE/hqdefault.jpg"
+        },
+        {
+          "position": 10,
+          "title": "Papo de Cinema #11 – Predador: Sobrevivência, Caça e Masculinidade",
+          "id": "CFJiT_oC5Y0",
+          "url": "https://www.youtube.com/watch?v=CFJiT_oC5Y0",
+          "thumbnail": "https://i.ytimg.com/vi/CFJiT_oC5Y0/hqdefault.jpg"
+        },
+        {
+          "position": 11,
+          "title": "Papo de Cinema #12 – Contatos Imediatos de Terceiro Grau: O Fascínio Pelo Além",
+          "id": "B-wYOfwn-BI",
+          "url": "https://www.youtube.com/watch?v=B-wYOfwn-BI",
+          "thumbnail": "https://i.ytimg.com/vi/B-wYOfwn-BI/hqdefault.jpg"
+        },
+        {
+          "position": 12,
+          "title": "Papo de Cinema #13 – E.T.: O Extraterrestre e a Inocência Perdida",
+          "id": "B3yfbropGOE",
+          "url": "https://www.youtube.com/watch?v=B3yfbropGOE",
+          "thumbnail": "https://i.ytimg.com/vi/B3yfbropGOE/hqdefault.jpg"
+        },
+        {
+          "position": 13,
+          "title": "Papo de Cinema #14 – Aliens: O Resgate e o Horror da Guerra",
+          "id": "C38sQaKmi_8",
+          "url": "https://www.youtube.com/watch?v=C38sQaKmi_8",
+          "thumbnail": "https://i.ytimg.com/vi/C38sQaKmi_8/hqdefault.jpg"
+        },
+        {
+          "position": 14,
+          "title": "Movie Talk #15 – Pearl: Narcissism, Psychopathy, and Loneliness",
+          "id": "Zzoeu-kO4nc",
+          "url": "https://www.youtube.com/watch?v=Zzoeu-kO4nc",
+          "thumbnail": "https://i.ytimg.com/vi/Zzoeu-kO4nc/hqdefault.jpg"
+        },
+        {
+          "position": 15,
+          "title": "Movie Talk #16 – Mission to Mars and the Dream of Space Exploration",
+          "id": "rqWbEvjeybw",
+          "url": "https://www.youtube.com/watch?v=rqWbEvjeybw",
+          "thumbnail": "https://i.ytimg.com/vi/rqWbEvjeybw/hqdefault.jpg"
+        },
+        {
+          "position": 16,
+          "title": "Papo de Cinema #17 – O Som da Liberdade: Cinema, Debate e Polêmica",
+          "id": "fDbMHA9X86Q",
+          "url": "https://www.youtube.com/watch?v=fDbMHA9X86Q",
+          "thumbnail": "https://i.ytimg.com/vi/fDbMHA9X86Q/hqdefault.jpg"
+        },
+        {
+          "position": 17,
+          "title": "Papo de Cinema #18 – Halloween: O Nascimento do Terror Moderno",
+          "id": "0Gvx-4ds0aM",
+          "url": "https://www.youtube.com/watch?v=0Gvx-4ds0aM",
+          "thumbnail": "https://i.ytimg.com/vi/0Gvx-4ds0aM/hqdefault.jpg"
+        },
+        {
+          "position": 18,
+          "title": "NA",
+          "id": "wffaXt0k73k",
+          "url": "https://www.youtube.com/watch?v=wffaXt0k73k",
+          "thumbnail": "https://i.ytimg.com/vi/wffaXt0k73k/hqdefault.jpg"
+        },
+        {
+          "position": 19,
+          "title": "Papo de Cinema #20 – Cowboys do Espaço: Heróis, Envelhecimento e Guerra Fria",
+          "id": "xFNNcER-1VU",
+          "url": "https://www.youtube.com/watch?v=xFNNcER-1VU",
+          "thumbnail": "https://i.ytimg.com/vi/xFNNcER-1VU/hqdefault.jpg"
+        },
+        {
+          "position": 20,
+          "title": "Papo de Cinema #21 – A Ponte do Rio Kwai (Parte 2): Conflitos, Consequências e Legado",
+          "id": "tWKVI3Io5DU",
+          "url": "https://www.youtube.com/watch?v=tWKVI3Io5DU",
+          "thumbnail": "https://i.ytimg.com/vi/tWKVI3Io5DU/hqdefault.jpg"
+        }
+      ]
+    },
+    {
+      "nome": "shorts",
+      "playlist_id": "shorts",
+      "total_videos": 12,
+      "videos": [
+        {
+          "position": 1,
+          "title": "Disco voador em pintura Rupestre???",
+          "id": "GucTXN9dlas",
+          "url": "https://www.youtube.com/watch?v=GucTXN9dlas",
+          "thumbnail": "https://i.ytimg.com/vi/GucTXN9dlas/hqdefault.jpg"
+        },
+        {
+          "position": 2,
+          "title": "The Origin of the Philistines",
+          "id": "Gldi4CHBHUo",
+          "url": "https://www.youtube.com/watch?v=Gldi4CHBHUo",
+          "thumbnail": "https://i.ytimg.com/vi/Gldi4CHBHUo/hqdefault.jpg"
+        },
+        {
+          "position": 3,
+          "title": "Descubra o Segredo dos Sonhos Lúcidos : Controle Seus Sonhos e Crie o Impossível",
+          "id": "OUlPb9aSg8Q",
+          "url": "https://www.youtube.com/watch?v=OUlPb9aSg8Q",
+          "thumbnail": "https://i.ytimg.com/vi/OUlPb9aSg8Q/hqdefault.jpg"
+        },
+        {
+          "position": 4,
+          "title": "Pedras Ben Ben | O Fascinante Mistério do Egito Antigo #curiosidades #history #digotvclube",
+          "id": "v5IHD2oanUM",
+          "url": "https://www.youtube.com/watch?v=v5IHD2oanUM",
+          "thumbnail": "https://i.ytimg.com/vi/v5IHD2oanUM/hqdefault.jpg"
+        },
+        {
+          "position": 5,
+          "title": "A Sombria Profecia dos Quatro Cavaleiros do Apocalipse e o Fim dos Tempos",
+          "id": "MIR0MCU8reQ",
+          "url": "https://www.youtube.com/watch?v=MIR0MCU8reQ",
+          "thumbnail": "https://i.ytimg.com/vi/MIR0MCU8reQ/hqdefault.jpg"
+        },
+        {
+          "position": 6,
+          "title": "O Enigma da Arca da Aliança: Onde Está o Artefato Sagrado Desaparecido?",
+          "id": "B0QQwm1cCcE",
+          "url": "https://www.youtube.com/watch?v=B0QQwm1cCcE",
+          "thumbnail": "https://i.ytimg.com/vi/B0QQwm1cCcE/hqdefault.jpg"
+        },
+        {
+          "position": 7,
+          "title": "O Festival dos Macacos: Uma Festa Inusitada em Lopburi, Tailândia!",
+          "id": "m5xQzXZxBWQ",
+          "url": "https://www.youtube.com/watch?v=m5xQzXZxBWQ",
+          "thumbnail": "https://i.ytimg.com/vi/m5xQzXZxBWQ/hqdefault.jpg"
+        },
+        {
+          "position": 8,
+          "title": "A Polêmica da Bruxa de Endor: Saul, Samuel e o Mistério da Necromancia",
+          "id": "v_meWg9q8CE",
+          "url": "https://www.youtube.com/watch?v=v_meWg9q8CE",
+          "thumbnail": "https://i.ytimg.com/vi/v_meWg9q8CE/hqdefault.jpg"
+        },
+        {
+          "position": 9,
+          "title": "O dia em que o diabo apareceu em um baile funk",
+          "id": "qLOxbjToBSw",
+          "url": "https://www.youtube.com/watch?v=qLOxbjToBSw",
+          "thumbnail": "https://i.ytimg.com/vi/qLOxbjToBSw/hqdefault.jpg"
+        },
+        {
+          "position": 10,
+          "title": "Lights Sky Maceió/Israel: Mystery or Science?",
+          "id": "xWszAMjhxV8",
+          "url": "https://www.youtube.com/watch?v=xWszAMjhxV8",
+          "thumbnail": "https://i.ytimg.com/vi/xWszAMjhxV8/hqdefault.jpg"
+        },
+        {
+          "position": 11,
+          "title": "The Ultimate Contradiction of Flat-Earthers",
+          "id": "pbzxkJqOO_8",
+          "url": "https://www.youtube.com/watch?v=pbzxkJqOO_8",
+          "thumbnail": "https://i.ytimg.com/vi/pbzxkJqOO_8/hqdefault.jpg"
+        },
+        {
+          "position": 12,
+          "title": "If Hercolubus were real, Earth would already be in chaos.",
+          "id": "3mNzourBS40",
+          "url": "https://www.youtube.com/watch?v=3mNzourBS40",
+          "thumbnail": "https://i.ytimg.com/vi/3mNzourBS40/hqdefault.jpg"
+        }
+      ]
+    },
+    {
+      "nome": "teorias conspiracao",
+      "playlist_id": "teorias_conspiracao",
+      "total_videos": 46,
+      "videos": [
+        {
+          "position": 1,
+          "title": "The Policeman Who Touched the Varginha ET: What Happened Next?",
+          "id": "Vy2c1xV8k2o",
+          "url": "https://www.youtube.com/watch?v=Vy2c1xV8k2o",
+          "thumbnail": "https://i.ytimg.com/vi/Vy2c1xV8k2o/hqdefault.jpg"
+        },
+        {
+          "position": 2,
+          "title": "Sábado Ufológico: “Não Estamos Sós!? Ou Apenas Ignorando o Óbvio?”",
+          "id": "MWmuLey98bI",
+          "url": "https://www.youtube.com/watch?v=MWmuLey98bI",
+          "thumbnail": "https://i.ytimg.com/vi/MWmuLey98bI/hqdefault.jpg"
+        },
+        {
+          "position": 3,
+          "title": "Invasão Alienígena em 2024? Veja o Que Está Por Vir",
+          "id": "UwYoh0FWmco",
+          "url": "https://www.youtube.com/watch?v=UwYoh0FWmco",
+          "thumbnail": "https://i.ytimg.com/vi/UwYoh0FWmco/hqdefault.jpg"
+        },
+        {
+          "position": 4,
+          "title": "Hercólubus: The Controversies of Carlos Muñoz Ferrada",
+          "id": "7XUnCkPFbAs",
+          "url": "https://www.youtube.com/watch?v=7XUnCkPFbAs",
+          "thumbnail": "https://i.ytimg.com/vi/7XUnCkPFbAs/hqdefault.jpg"
+        },
+        {
+          "position": 5,
+          "title": "Evidências de ETs nas Construções da Antiguidade?",
+          "id": "WUkVqHMKQTI",
+          "url": "https://www.youtube.com/watch?v=WUkVqHMKQTI",
+          "thumbnail": "https://i.ytimg.com/vi/WUkVqHMKQTI/hqdefault.jpg"
+        },
+        {
+          "position": 6,
+          "title": "Ele Veio do Futuro? O Mistério do Viajante do Tempo John Titor",
+          "id": "5Vpx44Ou4yc",
+          "url": "https://www.youtube.com/watch?v=5Vpx44Ou4yc",
+          "thumbnail": "https://i.ytimg.com/vi/5Vpx44Ou4yc/hqdefault.jpg"
+        },
+        {
+          "position": 7,
+          "title": "Será que os Egípcios Realmente Precisaram de Ajuda Alienígena?",
+          "id": "XXhtex8SYjg",
+          "url": "https://www.youtube.com/watch?v=XXhtex8SYjg",
+          "thumbnail": "https://i.ytimg.com/vi/XXhtex8SYjg/hqdefault.jpg"
+        },
+        {
+          "position": 8,
+          "title": "Novo Drone Chinês em Forma de Disco Voador: Aumenta os Falsos Positivos na Ufologia?",
+          "id": "M_fJ-nSwAns",
+          "url": "https://www.youtube.com/watch?v=M_fJ-nSwAns",
+          "thumbnail": "https://i.ytimg.com/vi/M_fJ-nSwAns/hqdefault.jpg"
+        },
+        {
+          "position": 9,
+          "title": "Ex-agente revela material biológico não humano",
+          "id": "Kcang-I7UJI",
+          "url": "https://www.youtube.com/watch?v=Kcang-I7UJI",
+          "thumbnail": "https://i.ytimg.com/vi/Kcang-I7UJI/hqdefault.jpg"
+        },
+        {
+          "position": 10,
+          "title": "Viagem no tempo: paradoxos, possibilidades e perigos",
+          "id": "W21cp9rmoNE",
+          "url": "https://www.youtube.com/watch?v=W21cp9rmoNE",
+          "thumbnail": "https://i.ytimg.com/vi/W21cp9rmoNE/hqdefault.jpg"
+        },
+        {
+          "position": 11,
+          "title": "Filmagem Impactante: Ser Alienígena Capturado em Festa Infantil em Passo Fundo, RS!",
+          "id": "JImpP5qOe3A",
+          "url": "https://www.youtube.com/watch?v=JImpP5qOe3A",
+          "thumbnail": "https://i.ytimg.com/vi/JImpP5qOe3A/hqdefault.jpg"
+        },
+        {
+          "position": 12,
+          "title": "Chupa-cabras: O Fenômeno que Apavorou o Brasil nos Anos 90",
+          "id": "n83_IPbf1rk",
+          "url": "https://www.youtube.com/watch?v=n83_IPbf1rk",
+          "thumbnail": "https://i.ytimg.com/vi/n83_IPbf1rk/hqdefault.jpg"
+        },
+        {
+          "position": 13,
+          "title": "HAARP: Revelando os Segredos e Mitos",
+          "id": "KIqtYCtclhU",
+          "url": "https://www.youtube.com/watch?v=KIqtYCtclhU",
+          "thumbnail": "https://i.ytimg.com/vi/KIqtYCtclhU/hqdefault.jpg"
+        },
+        {
+          "position": 14,
+          "title": "Ashtar Sheran: A Verdade Oculta por trás do Comando Estelar",
+          "id": "Sa3qYJ2v_u8",
+          "url": "https://www.youtube.com/watch?v=Sa3qYJ2v_u8",
+          "thumbnail": "https://i.ytimg.com/vi/Sa3qYJ2v_u8/hqdefault.jpg"
+        },
+        {
+          "position": 15,
+          "title": "OVNIS em Porto Alegre agita a WEB...",
+          "id": "UqTY3ieagb8",
+          "url": "https://www.youtube.com/watch?v=UqTY3ieagb8",
+          "thumbnail": "https://i.ytimg.com/vi/UqTY3ieagb8/hqdefault.jpg"
+        },
+        {
+          "position": 16,
+          "title": "Triângulo das Bermudas - Noite dos Mistérios",
+          "id": "jEucoRIaGes",
+          "url": "https://www.youtube.com/watch?v=jEucoRIaGes",
+          "thumbnail": "https://i.ytimg.com/vi/jEucoRIaGes/hqdefault.jpg"
+        },
+        {
+          "position": 17,
+          "title": "O Cheiro, a Queda e a Captura: Novos Detalhes do Caso Varginha",
+          "id": "Sn4qZ2agDzI",
+          "url": "https://www.youtube.com/watch?v=Sn4qZ2agDzI",
+          "thumbnail": "https://i.ytimg.com/vi/Sn4qZ2agDzI/hqdefault.jpg"
+        },
+        {
+          "position": 18,
+          "title": "Anjos ou Alienígenas? O que a Bíblia realmente descreve",
+          "id": "mJQZtv8o9Xg",
+          "url": "https://www.youtube.com/watch?v=mJQZtv8o9Xg",
+          "thumbnail": "https://i.ytimg.com/vi/mJQZtv8o9Xg/hqdefault.jpg"
+        },
+        {
+          "position": 19,
+          "title": "Paradoxo de Fermi e mais... | Bate Papo",
+          "id": "ZtOXnpsCptU",
+          "url": "https://www.youtube.com/watch?v=ZtOXnpsCptU",
+          "thumbnail": "https://i.ytimg.com/vi/ZtOXnpsCptU/hqdefault.jpg"
+        },
+        {
+          "position": 20,
+          "title": "A VERDADE SOBRE BABA VANGA: AS 5 PREVISÕES MAIS IMPRESSIONANTES DA VIDENTE CEGA",
+          "id": "U4akiEDsOuA",
+          "url": "https://www.youtube.com/watch?v=U4akiEDsOuA",
+          "thumbnail": "https://i.ytimg.com/vi/U4akiEDsOuA/hqdefault.jpg"
+        },
+        {
+          "position": 21,
+          "title": "A Verdade Sobre Nibiru: Ciência ou Conspiração?",
+          "id": "PT8zq0xJRQE",
+          "url": "https://www.youtube.com/watch?v=PT8zq0xJRQE",
+          "thumbnail": "https://i.ytimg.com/vi/PT8zq0xJRQE/hqdefault.jpg"
+        },
+        {
+          "position": 22,
+          "title": "RELATOS OFICIAIS: O que a Aeronáutica observa nos céus com Ten Cel Felipe Nohra",
+          "id": "9-0HQhkgvRI",
+          "url": "https://www.youtube.com/watch?v=9-0HQhkgvRI",
+          "thumbnail": "https://i.ytimg.com/vi/9-0HQhkgvRI/hqdefault.jpg"
+        },
+        {
+          "position": 23,
+          "title": "A Maldição das Crianças que Choram: Mistério ou Marketing Bizarro?",
+          "id": "Tn0CHV8vXrs",
+          "url": "https://www.youtube.com/watch?v=Tn0CHV8vXrs",
+          "thumbnail": "https://i.ytimg.com/vi/Tn0CHV8vXrs/hqdefault.jpg"
+        },
+        {
+          "position": 24,
+          "title": "OVNI ou Fraude? A verdade por trás dos Falsos Positivos",
+          "id": "uk9TacvGs8Q",
+          "url": "https://www.youtube.com/watch?v=uk9TacvGs8Q",
+          "thumbnail": "https://i.ytimg.com/vi/uk9TacvGs8Q/hqdefault.jpg"
+        },
+        {
+          "position": 25,
+          "title": "Eram os deuses astronautas?",
+          "id": "_e2-Rp2I7N4",
+          "url": "https://www.youtube.com/watch?v=_e2-Rp2I7N4",
+          "thumbnail": "https://i.ytimg.com/vi/_e2-Rp2I7N4/hqdefault.jpg"
+        },
+        {
+          "position": 26,
+          "title": "Não fomos a Lua???  Parte 1",
+          "id": "aCxF_ztpYxk",
+          "url": "https://www.youtube.com/watch?v=aCxF_ztpYxk",
+          "thumbnail": "https://i.ytimg.com/vi/aCxF_ztpYxk/hqdefault.jpg"
+        },
+        {
+          "position": 27,
+          "title": "Viagem à Lua Explicada",
+          "id": "xIEIZOxZk44",
+          "url": "https://www.youtube.com/watch?v=xIEIZOxZk44",
+          "thumbnail": "https://i.ytimg.com/vi/xIEIZOxZk44/hqdefault.jpg"
+        },
+        {
+          "position": 28,
+          "title": "Exclusivo: Tenente-Coronel da FAB Esclarece Dúvidas sobre OVNIs",
+          "id": "U61zvHh_deo",
+          "url": "https://www.youtube.com/watch?v=U61zvHh_deo",
+          "thumbnail": "https://i.ytimg.com/vi/U61zvHh_deo/hqdefault.jpg"
+        },
+        {
+          "position": 29,
+          "title": "Ufologia: Por que Quase Tudo é Falso Positivo?",
+          "id": "RzgB5BH8-Bo",
+          "url": "https://www.youtube.com/watch?v=RzgB5BH8-Bo",
+          "thumbnail": "https://i.ytimg.com/vi/RzgB5BH8-Bo/hqdefault.jpg"
+        },
+        {
+          "position": 30,
+          "title": "Do Japão ao Brasil em Segundos? O Fenômeno que Bugou a Internet!",
+          "id": "8Pjg_iLsMFQ",
+          "url": "https://www.youtube.com/watch?v=8Pjg_iLsMFQ",
+          "thumbnail": "https://i.ytimg.com/vi/8Pjg_iLsMFQ/hqdefault.jpg"
+        },
+        {
+          "position": 31,
+          "title": "Real dimensional portal? Man reports chilling experience!",
+          "id": "w7iUVVDedU0",
+          "url": "https://www.youtube.com/watch?v=w7iUVVDedU0",
+          "thumbnail": "https://i.ytimg.com/vi/w7iUVVDedU0/hqdefault.jpg"
+        },
+        {
+          "position": 32,
+          "title": "Sábados Ilimitados - 01 : Teorias do Absurdo",
+          "id": "W1m4E-LOFWU",
+          "url": "https://www.youtube.com/watch?v=W1m4E-LOFWU",
+          "thumbnail": "https://i.ytimg.com/vi/W1m4E-LOFWU/hqdefault.jpg"
+        },
+        {
+          "position": 33,
+          "title": "IMPOSSÍVEL ATRAVESSAR? O que os teóricos da conspiração escondem sobre a Orion",
+          "id": "BNmpooLNidE",
+          "url": "https://www.youtube.com/watch?v=BNmpooLNidE",
+          "thumbnail": "https://i.ytimg.com/vi/BNmpooLNidE/hqdefault.jpg"
+        },
+        {
+          "position": 34,
+          "title": "O mistério das Múmias de Nazca: Fraude ou descoberta do século?",
+          "id": "xBywlPJ4PDQ",
+          "url": "https://www.youtube.com/watch?v=xBywlPJ4PDQ",
+          "thumbnail": "https://i.ytimg.com/vi/xBywlPJ4PDQ/hqdefault.jpg"
+        },
+        {
+          "position": 35,
+          "title": "Black Knight: Satélite Alienígena ou Mito Espacial? | Sábado Ufológico",
+          "id": "Lq6m809tr4k",
+          "url": "https://www.youtube.com/watch?v=Lq6m809tr4k",
+          "thumbnail": "https://i.ytimg.com/vi/Lq6m809tr4k/hqdefault.jpg"
+        },
+        {
+          "position": 36,
+          "title": "Ufologia e Ciência: Desvendando os Mistérios dos OVNIs e Abduções",
+          "id": "S4ODm4rmZGg",
+          "url": "https://www.youtube.com/watch?v=S4ODm4rmZGg",
+          "thumbnail": "https://i.ytimg.com/vi/S4ODm4rmZGg/hqdefault.jpg"
+        },
+        {
+          "position": 37,
+          "title": "A NASA Confirmou 6 Dias de Escuridão? O Que Realmente Vai Acontecer!",
+          "id": "S9IksNnRXg8",
+          "url": "https://www.youtube.com/watch?v=S9IksNnRXg8",
+          "thumbnail": "https://i.ytimg.com/vi/S9IksNnRXg8/hqdefault.jpg"
+        },
+        {
+          "position": 38,
+          "title": "Por que Nibiru Não Pode Ser Visto da Terra? A Farsa Explicada | Ep. 02",
+          "id": "hQtbPlyEPj4",
+          "url": "https://www.youtube.com/watch?v=hQtbPlyEPj4",
+          "thumbnail": "https://i.ytimg.com/vi/hQtbPlyEPj4/hqdefault.jpg"
+        },
+        {
+          "position": 39,
+          "title": "Nibiru: o boato que enganou milhões de pessoas",
+          "id": "eX456VmLu9M",
+          "url": "https://www.youtube.com/watch?v=eX456VmLu9M",
+          "thumbnail": "https://i.ytimg.com/vi/eX456VmLu9M/hqdefault.jpg"
+        },
+        {
+          "position": 40,
+          "title": "O que os Símbolos Ocultam? Desvendando a Simbologia com Rapina",
+          "id": "jW7Pq544nwM",
+          "url": "https://www.youtube.com/watch?v=jW7Pq544nwM",
+          "thumbnail": "https://i.ytimg.com/vi/jW7Pq544nwM/hqdefault.jpg"
+        },
+        {
+          "position": 41,
+          "title": "A VERDADE SOBRE OS ILLUMINATI: Do Plano de Cartas ao Símbolo no Dólar",
+          "id": "qlU81GfRMs0",
+          "url": "https://www.youtube.com/watch?v=qlU81GfRMs0",
+          "thumbnail": "https://i.ytimg.com/vi/qlU81GfRMs0/hqdefault.jpg"
+        },
+        {
+          "position": 42,
+          "title": "ILLUMINATI: A HISTÓRIA REAL POR TRÁS DA CONSPIRAÇÃO",
+          "id": "zDT0XGOUjRM",
+          "url": "https://www.youtube.com/watch?v=zDT0XGOUjRM",
+          "thumbnail": "https://i.ytimg.com/vi/zDT0XGOUjRM/hqdefault.jpg"
+        },
+        {
+          "position": 43,
+          "title": "Caso Varginha: Captura, Acobertamento Militar e os Depoimentos que Abalaram o Brasil",
+          "id": "iW036DDTr6c",
+          "url": "https://www.youtube.com/watch?v=iW036DDTr6c",
+          "thumbnail": "https://i.ytimg.com/vi/iW036DDTr6c/hqdefault.jpg"
+        },
+        {
+          "position": 44,
+          "title": "O DISCO VOADOR REAL QUE OS EUA TENTARAM ESCONDER!  (PROJETO AVROCAR)",
+          "id": "SA0U9s-4pGc",
+          "url": "https://www.youtube.com/watch?v=SA0U9s-4pGc",
+          "thumbnail": "https://i.ytimg.com/vi/SA0U9s-4pGc/hqdefault.jpg"
+        },
+        {
+          "position": 45,
+          "title": "A PROVA IRREFUTÁVEL: Como o ECLIPSE LUNAR DESMONTA a Terra Plana!",
+          "id": "bf3AXprEkp0",
+          "url": "https://www.youtube.com/watch?v=bf3AXprEkp0",
+          "thumbnail": "https://i.ytimg.com/vi/bf3AXprEkp0/hqdefault.jpg"
+        },
+        {
+          "position": 46,
+          "title": "[Private video]",
+          "id": "MaIUMmf8hIM",
+          "url": "https://www.youtube.com/watch?v=MaIUMmf8hIM",
+          "thumbnail": "https://i.ytimg.com/vi/MaIUMmf8hIM/hqdefault.jpg"
+        }
+      ]
+    }
+  ]
+}
