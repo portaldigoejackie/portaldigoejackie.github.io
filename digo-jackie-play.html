@@ -1,0 +1,3180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Digo&Jackie Play | Seu universo de entretenimento</title>
+
+    <meta name="description" content="Explore o Digo&Jackie Play: filmes, curiosidades, ciência, história, mistérios e entretenimento. Escolha seu conteúdo e assista gratuitamente!">
+    <meta name="author" content="Digo & Jackie">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#090b12">
+
+    <link rel="canonical" href="https://portaldigoejackie.github.io/digo-jackie-play.html">
+
+    <link rel="icon" type="image/png"
+          href="https://portaldigoejackie.github.io/logo-digoejackie.png">
+
+    <link rel="apple-touch-icon"
+          href="https://portaldigoejackie.github.io/logo-digoejackie.png">
+
+    <!-- OPEN GRAPH -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Digo & Jackie">
+    <meta property="og:title" content="Digo&Jackie Play | Seu universo de entretenimento">
+    <meta property="og:description" content="Histórias, cinema, ciência, mistérios e curiosidades para assistir gratuitamente.">
+    <meta property="og:url" content="https://portaldigoejackie.github.io/digo-jackie-play.html">
+    <meta property="og:image" content="https://portaldigoejackie.github.io/logo-digoejackie.png">
+    <meta property="og:image:alt" content="Digo & Jackie">
+
+    <!-- TWITTER -->
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Digo&Jackie Play">
+    <meta name="twitter:description" content="Seu universo de entretenimento para assistir gratuitamente.">
+    <meta name="twitter:image" content="https://portaldigoejackie.github.io/logo-digoejackie.png">
+
+    <!-- SCHEMA.ORG -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Digo&Jackie Play",
+        "url": "https://portaldigoejackie.github.io/digo-jackie-play.html",
+        "inLanguage": "pt-BR",
+        "description": "Plataforma gratuita de vídeos e entretenimento do portal Digo & Jackie.",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Digo & Jackie",
+            "url": "https://portaldigoejackie.github.io/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Digo & Jackie",
+            "url": "https://portaldigoejackie.github.io/"
+        }
+    }
+    </script>
+
+    <!-- BOOTSTRAP -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous">
+
+    <!-- BOOTSTRAP ICONS -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+
+    <style>
+
+        /* =====================================================
+           1. IDENTIDADE VISUAL
+        ====================================================== */
+
+        :root {
+            --black: #080a10;
+            --header: #0f0f0f;
+            --footer: #202020;
+
+            --background: #0b0e17;
+            --surface: #151a27;
+            --surface-light: #20283a;
+
+            --text: #f6f7fb;
+            --muted: #9ba5b7;
+
+            --red: #e62117;
+            --red-light: #ff6259;
+
+            --purple: #8b5cf6;
+            --blue: #3b82f6;
+
+            --max-width: 1440px;
+            --header-height: 68px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+            background:
+                radial-gradient(
+                    ellipse at 15% 5%,
+                    rgba(139,92,246,.10),
+                    transparent 30rem
+                ),
+                radial-gradient(
+                    ellipse at 90% 20%,
+                    rgba(230,33,23,.09),
+                    transparent 32rem
+                ),
+                var(--background);
+
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           2. CABEÇALHO ORIGINAL
+        ====================================================== */
+
+        .main-header {
+            width: 100%;
+            min-height: var(--header-height);
+            background: var(--header);
+            color: #fff;
+
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+
+            box-shadow: 0 2px 12px rgba(0,0,0,.3);
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            min-height: var(--header-height);
+            margin: auto;
+            padding: 8px 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            min-width: 0;
+        }
+
+        .brand-logo {
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .brand-name {
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: -.5px;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .brand-name span {
+            color: #ff453a;
+        }
+
+        .main-navigation {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .main-navigation .nav-link {
+            color: #eee;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 14px;
+            border-radius: 8px;
+            transition: background .2s ease;
+        }
+
+        .main-navigation .nav-link:hover,
+        .main-navigation .nav-link.active {
+            background: #303030;
+            color: #fff;
+        }
+
+        .mobile-menu-button {
+            color: #fff;
+            border: 1px solid #444;
+            background: transparent;
+            border-radius: 8px;
+            padding: 7px 11px;
+            font-size: 23px;
+        }
+
+        .mobile-menu-button:hover {
+            background: #303030;
+        }
+
+        .mobile-navigation {
+            background: #171717;
+            border-top: 1px solid #303030;
+            padding: 8px 20px 14px;
+        }
+
+        .mobile-navigation .nav-link {
+            color: #eee;
+            padding: 12px 8px;
+            border-bottom: 1px solid #303030;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           3. ÁREA PRINCIPAL
+        ====================================================== */
+
+        main {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 65px;
+            flex: 1;
+        }
+
+
+        /* =====================================================
+           4. HERO CINEMATOGRÁFICO
+        ====================================================== */
+
+        .hero {
+            min-height: 420px;
+            position: relative;
+            overflow: hidden;
+
+            margin: 25px 0 48px;
+            border-radius: 24px;
+
+            display: flex;
+            align-items: center;
+
+            padding: clamp(30px, 5vw, 70px);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(7,9,16,.98) 0%,
+                    rgba(7,9,16,.91) 42%,
+                    rgba(7,9,16,.35) 100%
+                ),
+                radial-gradient(
+                    circle at 75% 50%,
+                    rgba(230,33,23,.35),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    130deg,
+                    #20243c,
+                    #37151d,
+                    #101827
+                );
+
+            border: 1px solid rgba(255,255,255,.12);
+
+            box-shadow:
+                0 25px 65px rgba(0,0,0,.4),
+                inset 0 0 80px rgba(255,255,255,.025);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+
+            width: 470px;
+            height: 470px;
+
+            right: 5%;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(230,33,23,.24),
+                    rgba(230,33,23,.06) 48%,
+                    transparent 70%
+                );
+
+            filter: blur(4px);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: "PLAY";
+
+            position: absolute;
+            right: 7%;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: rgba(255,255,255,.045);
+
+            font-size: clamp(100px, 18vw, 240px);
+            font-weight: 1000;
+            letter-spacing: -.09em;
+
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 680px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 14px;
+
+            border-radius: 999px;
+
+            color: #ffaaa5;
+            background: rgba(230,33,23,.13);
+            border: 1px solid rgba(255,98,89,.28);
+
+            font-size: .72rem;
+            font-weight: 850;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+
+            margin-bottom: 22px;
+        }
+
+        .hero-badge i {
+            font-size: .9rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.8rem, 6vw, 5.6rem);
+            line-height: .94;
+            letter-spacing: -.07em;
+            font-weight: 950;
+            margin: 0 0 20px;
+        }
+
+        .hero-title span {
+            color: var(--red-light);
+            text-shadow: 0 8px 35px rgba(230,33,23,.3);
+        }
+
+        .hero-description {
+            color: #c6ccda;
+            font-size: clamp(.98rem, 1.5vw, 1.13rem);
+            line-height: 1.7;
+            max-width: 550px;
+            margin-bottom: 27px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-hero {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            border-radius: 999px;
+            padding: 13px 23px;
+
+            font-weight: 850;
+            font-size: .9rem;
+
+            transition: .25s ease;
+        }
+
+        .btn-hero-primary {
+            color: #fff;
+            background: var(--red);
+            border: 1px solid var(--red);
+
+            box-shadow: 0 8px 28px rgba(230,33,23,.25);
+        }
+
+        .btn-hero-primary:hover {
+            color: #fff;
+            background: #c91d15;
+            transform: translateY(-3px);
+        }
+
+        .btn-hero-secondary {
+            color: #fff;
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.2);
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-hero-secondary:hover {
+            color: #fff;
+            background: rgba(255,255,255,.15);
+        }
+
+
+        /* =====================================================
+           5. PAINEL DE CATÁLOGO
+        ====================================================== */
+
+        .catalog-top {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .catalog-label {
+            color: var(--red-light);
+            text-transform: uppercase;
+            font-size: .69rem;
+            letter-spacing: .16em;
+            font-weight: 900;
+            margin-bottom: 7px;
+        }
+
+        .catalog-title {
+            color: #fff;
+            font-size: clamp(1.6rem, 3vw, 2.25rem);
+            letter-spacing: -.05em;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        .catalog-description {
+            color: var(--muted);
+            font-size: .85rem;
+            margin: 7px 0 0;
+        }
+
+        .catalog-stats {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            color: #aeb7c7;
+            font-size: .8rem;
+        }
+
+        .stat-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .stat-item i {
+            color: var(--red-light);
+        }
+
+
+        /* =====================================================
+           6. BARRA DE PESQUISA
+        ====================================================== */
+
+        .search-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 17px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #8994a7;
+            pointer-events: none;
+        }
+
+        .search-input {
+            width: 100%;
+            height: 49px;
+
+            border: 1px solid #30394b;
+            background: rgba(21,26,39,.88);
+
+            color: #fff;
+            border-radius: 13px;
+
+            padding: 10px 45px 10px 45px;
+            outline: none;
+
+            transition: .2s ease;
+        }
+
+        .search-input::placeholder {
+            color: #818da0;
+        }
+
+        .search-input:focus {
+            border-color: rgba(255,98,89,.8);
+            box-shadow: 0 0 0 4px rgba(230,33,23,.12);
+        }
+
+        .clear-search {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            color: #9ba5b7;
+            background: transparent;
+            border: 0;
+
+            display: none;
+            font-size: 1.1rem;
+        }
+
+        .clear-search.visible {
+            display: block;
+        }
+
+        .search-hint {
+            color: #7e899c;
+            font-size: .75rem;
+            white-space: nowrap;
+        }
+
+
+        /* =====================================================
+           7. FILTROS
+        ====================================================== */
+
+        .filter-area {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            overflow-x: auto;
+            padding: 2px 1px 13px;
+            margin-bottom: 32px;
+
+            scrollbar-width: thin;
+            scrollbar-color: #3b4557 transparent;
+        }
+
+        .filter-chip {
+            flex: 0 0 auto;
+
+            border: 1px solid #30394b;
+            color: #bfc7d5;
+
+            background: #151a27;
+
+            border-radius: 999px;
+            padding: 9px 16px;
+
+            font-size: .81rem;
+            font-weight: 800;
+
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        .filter-chip:hover {
+            color: #fff;
+            border-color: #777f91;
+        }
+
+        .filter-chip.active {
+            color: #fff;
+            background: linear-gradient(135deg, #e62117, #a91a22);
+            border-color: #ed3c34;
+            box-shadow: 0 5px 18px rgba(230,33,23,.18);
+        }
+
+
+        /* =====================================================
+           8. FILEIRAS DE VÍDEOS
+        ====================================================== */
+
+        .category-section {
+            margin-bottom: 48px;
+            position: relative;
+            scroll-margin-top: 100px;
+        }
+
+        .category-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 17px;
+        }
+
+        .category-heading-main {
+            min-width: 0;
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #fff;
+            font-size: clamp(1.15rem, 2vw, 1.55rem);
+            font-weight: 900;
+            letter-spacing: -.04em;
+
+            margin: 0;
+        }
+
+        .category-title::before {
+            content: "";
+            display: block;
+
+            width: 4px;
+            height: 25px;
+
+            border-radius: 10px;
+
+            background: linear-gradient(
+                to bottom,
+                #ff6259,
+                #a91a22
+            );
+
+            box-shadow: 0 0 15px rgba(230,33,23,.45);
+        }
+
+        .category-description {
+            color: #818da0;
+            font-size: .78rem;
+            margin: 6px 0 0 14px;
+        }
+
+        .category-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .rail-button {
+            width: 34px;
+            height: 34px;
+
+            display: grid;
+            place-items: center;
+
+            border: 1px solid #394253;
+            border-radius: 50%;
+
+            color: #fff;
+            background: #171d2a;
+
+            transition: .2s ease;
+        }
+
+        .rail-button:hover {
+            color: #fff;
+            background: #30394b;
+            border-color: #737f94;
+        }
+
+        .view-all-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            border: 0;
+            background: transparent;
+
+            color: #ff8b84;
+            font-size: .79rem;
+            font-weight: 850;
+
+            padding: 8px 5px;
+            transition: .2s ease;
+        }
+
+        .view-all-button:hover {
+            color: #fff;
+        }
+
+
+        /* =====================================================
+           9. TRILHO HORIZONTAL
+        ====================================================== */
+
+        .video-rail {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% - 4 * 15px) / 5);
+
+            gap: 15px;
+
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+
+            padding: 4px 2px 16px;
+
+            scrollbar-width: thin;
+            scrollbar-color: #3a4354 transparent;
+        }
+
+        .video-rail::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        .video-rail::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .video-rail::-webkit-scrollbar-thumb {
+            background: #3a4354;
+            border-radius: 10px;
+        }
+
+        .video-card {
+            min-width: 0;
+            padding: 0;
+            border: 0;
+
+            text-align: left;
+            color: inherit;
+            background: transparent;
+
+            cursor: pointer;
+            scroll-snap-align: start;
+
+            transition: transform .25s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .thumb-wrap {
+            position: relative;
+            overflow: hidden;
+
+            aspect-ratio: 16 / 9;
+
+            border-radius: 12px;
+            background: #1c2433;
+
+            border: 1px solid rgba(255,255,255,.1);
+
+            box-shadow: 0 7px 22px rgba(0,0,0,.2);
+        }
+
+        .video-thumb {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform .4s ease, filter .3s ease;
+        }
+
+        .video-card:hover .video-thumb {
+            transform: scale(1.08);
+            filter: brightness(.63);
+        }
+
+        .thumb-overlay {
+            position: absolute;
+            inset: 0;
+
+            display: grid;
+            place-items: center;
+
+            opacity: 0;
+            transition: opacity .25s ease;
+
+            background: linear-gradient(
+                0deg,
+                rgba(0,0,0,.25),
+                transparent 60%
+            );
+        }
+
+        .video-card:hover .thumb-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 48px;
+            height: 48px;
+
+            display: grid;
+            place-items: center;
+
+            padding-left: 3px;
+
+            color: #fff;
+            background: var(--red);
+
+            border-radius: 50%;
+
+            font-size: 1.35rem;
+
+            box-shadow: 0 5px 25px rgba(0,0,0,.5);
+        }
+
+        .video-position {
+            position: absolute;
+            left: 9px;
+            top: 9px;
+
+            color: #fff;
+            background: rgba(0,0,0,.72);
+
+            padding: 4px 8px;
+            border-radius: 6px;
+
+            font-size: .65rem;
+            font-weight: 900;
+
+            backdrop-filter: blur(5px);
+        }
+
+        .video-info {
+            padding: 10px 2px 0;
+        }
+
+        .video-title {
+            color: #e8ebf2;
+
+            font-size: .86rem;
+            font-weight: 800;
+            line-height: 1.42;
+
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+
+            overflow: hidden;
+            min-height: 2.45em;
+
+            margin: 0;
+
+            transition: color .2s ease;
+        }
+
+        .video-card:hover .video-title {
+            color: #ff8b84;
+        }
+
+        .video-subtitle {
+            color: #7f8a9d;
+            font-size: .7rem;
+            margin-top: 5px;
+        }
+
+
+        /* =====================================================
+           10. VISUALIZAÇÃO COMPLETA DA CATEGORIA
+        ====================================================== */
+
+        .category-section.expanded .video-rail {
+            display: grid;
+
+            grid-auto-flow: row;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+
+            overflow: visible;
+            scroll-snap-type: none;
+
+            padding-bottom: 4px;
+        }
+
+        .category-section.expanded .category-controls .rail-button {
+            display: none;
+        }
+
+        .category-section.expanded .video-card {
+            animation: cardAppear .35s ease both;
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(9px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .load-more-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 23px 0 0;
+        }
+
+        .load-more-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            color: #fff;
+            background: #1b2231;
+
+            border: 1px solid #394253;
+            border-radius: 999px;
+
+            padding: 11px 21px;
+
+            font-size: .84rem;
+            font-weight: 800;
+
+            transition: .2s ease;
+        }
+
+        .load-more-button:hover {
+            color: #fff;
+            background: #30394b;
+            border-color: #78849a;
+        }
+
+
+        /* =====================================================
+           11. RESULTADOS DA PESQUISA
+        ====================================================== */
+
+        .search-results-heading {
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 850;
+            margin-bottom: 20px;
+        }
+
+        .search-results-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 23px 15px;
+        }
+
+        .empty-state {
+            padding: 65px 20px;
+            text-align: center;
+
+            border: 1px dashed #3a4558;
+            border-radius: 18px;
+
+            background: rgba(255,255,255,.025);
+            color: #aeb8c8;
+        }
+
+        .empty-state i {
+            display: block;
+            color: #ff7770;
+            font-size: 2.6rem;
+            margin-bottom: 14px;
+        }
+
+        .empty-state h3 {
+            color: #fff;
+            font-weight: 850;
+        }
+
+
+        /* =====================================================
+           12. CARREGAMENTO
+        ====================================================== */
+
+        .loading-state {
+            padding: 70px 20px;
+            text-align: center;
+            color: #aeb8c8;
+        }
+
+        .loading-spinner {
+            width: 37px;
+            height: 37px;
+
+            display: inline-block;
+
+            border: 3px solid rgba(255,255,255,.15);
+            border-top-color: var(--red-light);
+
+            border-radius: 50%;
+
+            animation: spin .8s linear infinite;
+
+            margin-bottom: 15px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* =====================================================
+           13. MODAL DO PLAYER
+        ====================================================== */
+
+        .play-modal .modal-dialog {
+            max-width: 1160px;
+            margin: 1.2rem auto;
+        }
+
+        .play-modal .modal-content {
+            color: #fff;
+            background: #10141e;
+
+            border: 1px solid #343d4e;
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow: 0 30px 100px rgba(0,0,0,.65);
+        }
+
+        .play-modal .modal-header {
+            background: #151b28;
+            border-bottom: 1px solid #30394a;
+            padding: 15px 20px;
+        }
+
+        .modal-brand {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            color: #c4ccda;
+
+            font-size: .8rem;
+            font-weight: 900;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .modal-brand i {
+            color: #ff5148;
+            font-size: 1.1rem;
+        }
+
+        .play-modal .btn-close {
+            filter: invert(1);
+            opacity: .8;
+        }
+
+        .play-modal .modal-body {
+            padding: 0;
+        }
+
+        .player-stage {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .player-stage iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .player-info {
+            padding: 25px clamp(18px, 3vw, 36px) 30px;
+
+            background:
+                radial-gradient(
+                    ellipse at 0% 0%,
+                    rgba(230,33,23,.09),
+                    transparent 50%
+                ),
+                #10141e;
+        }
+
+        .player-category {
+            color: #ff7770;
+
+            font-size: .7rem;
+            font-weight: 900;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+
+            margin-bottom: 9px;
+        }
+
+        .player-title {
+            color: #fff;
+
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-weight: 900;
+            letter-spacing: -.04em;
+            line-height: 1.2;
+
+            margin: 0 0 19px;
+        }
+
+        .player-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .youtube-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            color: #fff;
+            background: #e62117;
+
+            border-radius: 999px;
+            padding: 11px 18px;
+
+            font-size: .84rem;
+            font-weight: 850;
+
+            transition: .2s ease;
+        }
+
+        .youtube-button:hover {
+            color: #fff;
+            background: #c51b14;
+            transform: translateY(-2px);
+        }
+
+        .player-note {
+            color: #8792a5;
+            font-size: .78rem;
+            margin: 16px 0 0;
+        }
+
+        .play-modal .modal-footer {
+            display: flex;
+            justify-content: space-between;
+
+            color: #8792a5;
+            font-size: .75rem;
+
+            border-top: 1px solid #30394a;
+            padding: 12px 20px;
+        }
+
+
+        /* =====================================================
+           14. RODAPÉ ORIGINAL
+        ====================================================== */
+
+        .main-footer {
+            width: 100%;
+            background: var(--footer);
+            color: #eee;
+
+            margin-top: auto;
+            border-top: 1px solid rgba(255,255,255,.06);
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 28px 24px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #3b3b3b;
+            padding-top: 18px;
+            margin-top: 18px;
+
+            color: #aaa;
+            font-size: 13px;
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           15. TABLETS
+        ====================================================== */
+
+        @media (max-width: 1100px) {
+
+            .video-rail {
+                grid-auto-columns: calc((100% - 3 * 13px) / 4);
+                gap: 13px;
+            }
+
+            .category-section.expanded .video-rail,
+            .search-results-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+        }
+
+
+        /* =====================================================
+           16. CELULARES
+        ====================================================== */
+
+        @media (max-width: 768px) {
+
+            :root {
+                --header-height: 60px;
+            }
+
+            .header-container {
+                padding: 7px 15px;
+            }
+
+            .brand-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .brand-name {
+                font-size: 17px;
+            }
+
+            main {
+                padding: 0 16px 45px;
+            }
+
+            .footer-container {
+                padding: 24px 18px;
+            }
+
+            .hero {
+                min-height: 340px;
+                margin: 17px 0 35px;
+                border-radius: 18px;
+                padding: 29px 23px;
+            }
+
+            .hero::after {
+                right: -12%;
+                opacity: .7;
+            }
+
+            .hero::before {
+                right: -25%;
+            }
+
+            .hero-description {
+                font-size: .92rem;
+            }
+
+            .catalog-top {
+                margin-bottom: 21px;
+            }
+
+            .catalog-stats {
+                width: 100%;
+            }
+
+            .search-area {
+                gap: 8px;
+            }
+
+            .search-box {
+                min-width: 100%;
+            }
+
+            .search-hint {
+                display: none;
+            }
+
+            .video-rail {
+                grid-auto-columns: calc((100% - 12px) / 2);
+                gap: 12px;
+            }
+
+            .category-section.expanded .video-rail,
+            .search-results-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .category-heading {
+                align-items: center;
+            }
+
+            .category-controls {
+                gap: 5px;
+            }
+
+            .rail-button {
+                width: 30px;
+                height: 30px;
+            }
+
+            .view-all-button {
+                font-size: .72rem;
+            }
+
+            .video-title {
+                font-size: .8rem;
+            }
+
+            .play-modal .modal-dialog {
+                margin: 0;
+                min-height: 100%;
+            }
+
+            .play-modal .modal-content {
+                min-height: 100vh;
+                border: 0;
+                border-radius: 0;
+            }
+
+            .play-modal .modal-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .player-info {
+                padding: 20px 17px 25px;
+            }
+
+            .play-modal .modal-footer {
+                margin-top: auto;
+            }
+
+        }
+
+
+        /* =====================================================
+           17. CELULARES PEQUENOS
+        ====================================================== */
+
+        @media (max-width: 390px) {
+
+            .brand-logo {
+                width: 35px;
+                height: 35px;
+            }
+
+            .brand-name {
+                font-size: 15px;
+            }
+
+            .hero {
+                padding: 24px 19px;
+            }
+
+            .btn-hero {
+                padding: 11px 16px;
+                font-size: .8rem;
+            }
+
+            .video-rail {
+                grid-auto-columns: calc((100% - 10px) / 2);
+                gap: 10px;
+            }
+
+            .thumb-wrap {
+                border-radius: 9px;
+            }
+
+            .video-title {
+                font-size: .77rem;
+            }
+
+            .category-title {
+                font-size: 1.05rem;
+            }
+
+        }
+
+
+        /* =====================================================
+           18. ACESSIBILIDADE
+        ====================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="main-header">
+
+        <div class="header-container">
+
+            <a href="https://portaldigoejackie.github.io/"
+               class="brand-area"
+               aria-label="Digo & Jackie - Página inicial">
+
+                <img
+                    src="https://portaldigoejackie.github.io/logo-digoejackie.png"
+                    class="brand-logo"
+                    alt="Logo Digo & Jackie"
+                    width="46"
+                    height="46">
+
+                <h1 class="brand-name">
+                    Digo <span>&</span> Jackie
+                </h1>
+
+            </a>
+
+
+            <nav class="main-navigation d-none d-md-flex"
+                 aria-label="Navegação principal">
+
+                <a href="https://portaldigoejackie.github.io/"
+                   class="nav-link">
+
+                    <i class="bi bi-house-door me-1"></i>
+                    Início
+
+                </a>
+
+                <a href="https://portaldigoejackie.github.io/digo-jackie-play.html"
+                   class="nav-link active"
+                   aria-current="page">
+
+                    <i class="bi bi-play-circle me-1"></i>
+                    Play
+
+                </a>
+
+            </nav>
+
+
+            <button
+                class="mobile-menu-button d-md-none"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mobileMenu"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
+                aria-label="Abrir menu de navegação">
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="collapse mobile-navigation d-md-none"
+             id="mobileMenu">
+
+            <nav aria-label="Navegação mobile">
+
+                <a href="https://portaldigoejackie.github.io/"
+                   class="nav-link">
+
+                    <i class="bi bi-house-door me-2"></i>
+                    Início
+
+                </a>
+
+                <a href="https://portaldigoejackie.github.io/digo-jackie-play.html"
+                   class="nav-link">
+
+                    <i class="bi bi-play-circle me-2"></i>
+                    Digo&Jackie Play
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main id="conteudo-principal">
+
+
+        <!-- DESTAQUE -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+
+                    <i class="bi bi-stars"></i>
+
+                    Seu universo de entretenimento
+
+                </div>
+
+
+                <h2 class="hero-title">
+                    Digo&Jackie <span>Play.</span>
+                </h2>
+
+
+                <p class="hero-description">
+
+                    Histórias que surpreendem, descobertas que
+                    despertam a curiosidade e conteúdos para
+                    todos os gostos. Seu próximo vídeo está aqui.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a href="#catalogo"
+                       class="btn-hero btn-hero-primary">
+
+                        <i class="bi bi-play-fill"></i>
+                        Explorar catálogo
+
+                    </a>
+
+
+                    <a href="https://portaldigoejackie.github.io/"
+                       class="btn-hero btn-hero-secondary">
+
+                        <i class="bi bi-house-door"></i>
+                        Voltar ao portal
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CATÁLOGO -->
+
+        <section id="catalogo">
+
+
+            <div class="catalog-top">
+
+                <div>
+
+                    <div class="catalog-label">
+                        Digo&Jackie Play
+                    </div>
+
+                    <h2 class="catalog-title">
+                        Descubra algo novo.
+                    </h2>
+
+                    <p class="catalog-description">
+                        Escolha uma categoria e encontre seu próximo conteúdo.
+                    </p>
+
+                </div>
+
+
+                <div class="catalog-stats">
+
+                    <span class="stat-item">
+                        <i class="bi bi-collection-play"></i>
+                        <span id="totalVideos">Carregando...</span>
+                    </span>
+
+                    <span class="stat-item">
+                        <i class="bi bi-grid"></i>
+                        <span id="totalCategories">-- playlists</span>
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PESQUISA -->
+
+            <div class="search-area">
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        class="search-input"
+                        placeholder="O que você quer assistir?"
+                        aria-label="Pesquisar vídeos e categorias"
+                        autocomplete="off">
+
+                    <button
+                        class="clear-search"
+                        id="clearSearch"
+                        type="button"
+                        aria-label="Limpar pesquisa">
+
+                        <i class="bi bi-x-circle-fill"></i>
+
+                    </button>
+
+                </div>
+
+                <span class="search-hint">
+                    Pesquise por título ou categoria
+                </span>
+
+            </div>
+
+
+
+            <!-- FILTROS -->
+
+            <nav class="filter-area"
+                 id="categoryFilters"
+                 aria-label="Categorias">
+
+                <button
+                    class="filter-chip active"
+                    type="button"
+                    data-category="all">
+
+                    <i class="bi bi-grid-fill me-1"></i>
+                    Tudo
+
+                </button>
+
+            </nav>
+
+
+
+            <!-- RESULTADOS -->
+
+            <div id="catalogContent" aria-live="polite">
+
+                <div class="loading-state">
+
+                    <span class="loading-spinner"></span>
+
+                    <div class="fw-bold">
+                        Preparando sua sessão...
+                    </div>
+
+                    <div class="small mt-2">
+                        Estamos organizando os conteúdos para você.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         PLAYER MODAL
+    ====================================================== -->
+
+    <div class="modal fade play-modal"
+         id="videoModal"
+         tabindex="-1"
+         aria-labelledby="playerTitle"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+
+                    <div class="modal-brand">
+
+                        <i class="bi bi-play-circle-fill"></i>
+
+                        Digo&Jackie Play
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="modal-body">
+
+
+                    <div class="player-stage" id="playerStage">
+
+                    </div>
+
+
+                    <div class="player-info">
+
+                        <div class="player-category"
+                             id="playerCategory">
+
+                            Digo&Jackie Play
+
+                        </div>
+
+
+                        <h2 class="player-title"
+                            id="playerTitle">
+
+                            Título do vídeo
+
+                        </h2>
+
+
+                        <div class="player-actions">
+
+                            <a href="#"
+                               id="youtubeLink"
+                               class="youtube-button"
+                               target="_blank"
+                               rel="noopener noreferrer">
+
+                                <i class="bi bi-youtube"></i>
+                                Assistir diretamente no YouTube
+
+                            </a>
+
+                        </div>
+
+
+                        <p class="player-note">
+
+                            Aproveite o conteúdo! A reprodução é
+                            incorporada diretamente do YouTube.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="modal-footer">
+
+                    <span>
+                        <i class="bi bi-camera-video me-1"></i>
+                        Reprodução incorporada
+                    </span>
+
+                    <span>
+                        Conteúdo gratuito
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer class="main-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-bottom">
+
+                &copy; <span id="currentYear"></span>
+                Digo & Jackie. Todos os direitos reservados.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- BOOTSTRAP -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous">
+    </script>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT DA PLATAFORMA
+    ====================================================== -->
+
+    <script>
+
+        "use strict";
+
+
+        /* =====================================================
+           CONFIGURAÇÕES
+        ====================================================== */
+
+        const CATALOG_URL =
+            "https://portaldigoejackie.github.io/catalogo_digoejackie.json";
+
+
+        const INITIAL_LIMIT = 5;
+
+        const LOAD_MORE_STEP = 5;
+
+
+        /* =====================================================
+           ELEMENTOS
+        ====================================================== */
+
+        const catalogContent =
+            document.getElementById("catalogContent");
+
+        const categoryFilters =
+            document.getElementById("categoryFilters");
+
+        const searchInput =
+            document.getElementById("searchInput");
+
+        const clearSearch =
+            document.getElementById("clearSearch");
+
+        const totalVideosElement =
+            document.getElementById("totalVideos");
+
+        const totalCategoriesElement =
+            document.getElementById("totalCategories");
+
+        const videoModalElement =
+            document.getElementById("videoModal");
+
+        const videoModal =
+            new bootstrap.Modal(videoModalElement);
+
+        const playerStage =
+            document.getElementById("playerStage");
+
+
+        /* =====================================================
+           ESTADO
+        ====================================================== */
+
+        let categories = [];
+
+        let allVideos = [];
+
+        let selectedCategory = "all";
+
+        let searchTerm = "";
+
+        let expandedCategories = new Set();
+
+        let visibleLimits = new Map();
+
+        let unavailableVideos = new Set();
+
+        let imageValidationStarted = false;
+
+
+        /* =====================================================
+           ANO
+        ====================================================== */
+
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+
+        /* =====================================================
+           FUNÇÕES AUXILIARES
+        ====================================================== */
+
+        function escapeHTML(value) {
+
+            return String(value ?? "").replace(
+                /[&<>"']/g,
+                character => ({
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': "&quot;",
+                    "'": "&#39;"
+                })[character]
+            );
+
+        }
+
+
+        function normalizeText(value) {
+
+            return String(value ?? "")
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .toLocaleLowerCase("pt-BR");
+
+        }
+
+
+        function categoryName(category) {
+
+            return String(
+                category.nome ||
+                category.name ||
+                category.playlist_id ||
+                "Playlist"
+            )
+                .replace(/[-_]+/g, " ")
+                .replace(/\s+/g, " ")
+                .trim();
+
+        }
+
+
+        function formatCategoryName(name) {
+
+            return String(name).replace(
+                /\b\w/g,
+                letter => letter.toLocaleUpperCase("pt-BR")
+            );
+
+        }
+
+
+        function getVideoId(video) {
+
+            if (video?.id) {
+                return String(video.id).trim();
+            }
+
+            const url = String(video?.url || "");
+
+            const match = url.match(/[?&]v=([^&]+)/);
+
+            return match ? match[1] : "";
+
+        }
+
+
+        function getVideoUrl(video) {
+
+            const id = getVideoId(video);
+
+            return video.url || (
+                id
+                    ? `https://www.youtube.com/watch?v=${encodeURIComponent(id)}`
+                    : "https://www.youtube.com/"
+            );
+
+        }
+
+
+        function getThumbnail(video) {
+
+            const id = getVideoId(video);
+
+            return video.thumbnail || (
+                id
+                    ? `https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg`
+                    : ""
+            );
+
+        }
+
+
+        function getVideoKey(categoryIndex, videoIndex) {
+
+            return `${categoryIndex}:${videoIndex}`;
+
+        }
+
+
+        function getAllVideoCount() {
+
+            return categories.reduce(
+                (total, category) => {
+
+                    return total + (
+                        Array.isArray(category.videos)
+                            ? category.videos.length
+                            : 0
+                    );
+
+                },
+                0
+            );
+
+        }
+
+
+        function isVideoPublic(video) {
+
+            /*
+               Se o JSON possuir um campo de visibilidade,
+               ele será respeitado.
+
+               Exemplos aceitos:
+               publico: false
+               public: false
+               status: "private"
+               visibility: "private"
+            */
+
+            if (video.publico === false || video.public === false) {
+                return false;
+            }
+
+            const status = normalizeText(
+                video.status || video.visibility || ""
+            );
+
+            const privateStatuses = [
+                "private",
+                "privado",
+                "deleted",
+                "deleted video",
+                "removido",
+                "indisponivel"
+            ];
+
+            return !privateStatuses.includes(status);
+
+        }
+
+
+        /* =====================================================
+           TESTE DAS MINIATURAS
+        ====================================================== */
+
+        function validateThumbnail(video, key) {
+
+            return new Promise(resolve => {
+
+                const url = getThumbnail(video);
+
+                if (!url) {
+                    resolve(false);
+                    return;
+                }
+
+                const image = new Image();
+
+                let completed = false;
+
+                const finish = result => {
+
+                    if (completed) {
+                        return;
+                    }
+
+                    completed = true;
+
+                    resolve(result);
+
+                };
+
+                image.onload = () => {
+
+                    /*
+                       Miniaturas genéricas de vídeos
+                       indisponíveis podem retornar dimensões
+                       muito pequenas.
+
+                       Miniaturas normais do YouTube costumam
+                       ter 480 x 360 ou dimensões maiores.
+                    */
+
+                    const validDimensions =
+                        image.naturalWidth > 120 &&
+                        image.naturalHeight > 90;
+
+                    finish(validDimensions);
+
+                };
+
+                image.onerror = () => finish(false);
+
+                image.src = url;
+
+                setTimeout(() => finish(false), 8000);
+
+            });
+
+        }
+
+
+        async function validateAllThumbnails() {
+
+            if (imageValidationStarted) {
+                return;
+            }
+
+            imageValidationStarted = true;
+
+            const checks = [];
+
+            categories.forEach((category, categoryIndex) => {
+
+                (category.videos || []).forEach(
+                    (video, videoIndex) => {
+
+                        const key = getVideoKey(
+                            categoryIndex,
+                            videoIndex
+                        );
+
+                        if (!isVideoPublic(video)) {
+
+                            unavailableVideos.add(key);
+                            return;
+
+                        }
+
+                        checks.push(async () => {
+
+                            const valid = await validateThumbnail(
+                                video,
+                                key
+                            );
+
+                            if (!valid) {
+
+                                unavailableVideos.add(key);
+
+                                renderCurrentView();
+
+                            }
+
+                        });
+
+                    }
+                );
+
+            });
+
+
+            /*
+               Executa em pequenos grupos para evitar
+               abrir centenas de conexões simultâneas.
+            */
+
+            const batchSize = 8;
+
+            for (
+                let index = 0;
+                index < checks.length;
+                index += batchSize
+            ) {
+
+                const batch = checks.slice(
+                    index,
+                    index + batchSize
+                );
+
+                await Promise.all(
+                    batch.map(check => check())
+                );
+
+            }
+
+
+            renderCurrentView();
+
+        }
+
+
+        /* =====================================================
+           ESTADO DOS FILTROS
+        ====================================================== */
+
+        function renderFilters() {
+
+            const buttons = [
+
+                `
+                    <button
+                        class="filter-chip ${selectedCategory === "all" ? "active" : ""}"
+                        type="button"
+                        data-category="all">
+
+                        <i class="bi bi-grid-fill me-1"></i>
+                        Tudo
+
+                    </button>
+                `,
+
+                ...categories.map((category, index) => {
+
+                    const name = formatCategoryName(
+                        categoryName(category)
+                    );
+
+                    return `
+
+                        <button
+                            class="filter-chip ${selectedCategory === String(index) ? "active" : ""}"
+                            type="button"
+                            data-category="${index}">
+
+                            ${escapeHTML(name)}
+
+                        </button>
+
+                    `;
+
+                })
+
+            ];
+
+            categoryFilters.innerHTML = buttons.join("");
+
+        }
+
+
+        /* =====================================================
+           CONTADORES
+        ====================================================== */
+
+        function updateStats() {
+
+            const total = getAllVideoCount();
+
+            const unavailable = unavailableVideos.size;
+
+            totalVideosElement.textContent =
+                `${total - unavailable} vídeos`;
+
+            totalCategoriesElement.textContent =
+                `${categories.length} playlists`;
+
+        }
+
+
+        /* =====================================================
+           CARD DE VÍDEO
+        ====================================================== */
+
+        function createVideoCard(video, categoryIndex, videoIndex) {
+
+            const title = escapeHTML(
+                video.title || "Vídeo sem título"
+            );
+
+            const thumbnail = escapeHTML(
+                getThumbnail(video)
+            );
+
+            const position = Number(video.position) || videoIndex + 1;
+
+            const key = getVideoKey(
+                categoryIndex,
+                videoIndex
+            );
+
+            return `
+
+                <button
+                    class="video-card"
+                    type="button"
+                    data-category-index="${categoryIndex}"
+                    data-video-index="${videoIndex}"
+                    aria-label="Assistir ${title}">
+
+                    <div class="thumb-wrap">
+
+                        <img
+                            class="video-thumb"
+                            src="${thumbnail}"
+                            alt="Miniatura: ${title}"
+                            loading="lazy"
+                            decoding="async">
+
+                        <span class="video-position">
+                            ${String(position).padStart(2, "0")}
+                        </span>
+
+                        <span class="thumb-overlay"
+                              aria-hidden="true">
+
+                            <span class="play-icon">
+                                <i class="bi bi-play-fill"></i>
+                            </span>
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="video-info">
+
+                        <h4 class="video-title">
+                            ${title}
+                        </h4>
+
+                        <div class="video-subtitle">
+                            Digo&Jackie Play
+                        </div>
+
+                    </div>
+
+                </button>
+
+            `;
+
+        }
+
+
+        /* =====================================================
+           OBTER VÍDEOS VÁLIDOS
+        ====================================================== */
+
+        function getAvailableVideos(category, categoryIndex) {
+
+            return (category.videos || [])
+                .map((video, videoIndex) => ({
+                    video,
+                    videoIndex
+                }))
+                .filter(item => {
+
+                    const key = getVideoKey(
+                        categoryIndex,
+                        item.videoIndex
+                    );
+
+                    return !unavailableVideos.has(key);
+
+                });
+
+        }
+
+
+        /* =====================================================
+           FILEIRA DE CATEGORIA
+        ====================================================== */
+
+        function renderCategory(category, categoryIndex) {
+
+            const name = formatCategoryName(
+                categoryName(category)
+            );
+
+            const availableVideos = getAvailableVideos(
+                category,
+                categoryIndex
+            );
+
+
+            if (!availableVideos.length) {
+                return "";
+            }
+
+
+            const expanded = expandedCategories.has(
+                String(categoryIndex)
+            );
+
+
+            const visibleLimit = visibleLimits.get(
+                String(categoryIndex)
+            ) || INITIAL_LIMIT;
+
+
+            const displayedVideos = expanded
+                ? availableVideos.slice(0, visibleLimit)
+                : availableVideos;
+
+
+            const cards = displayedVideos.map(item => {
+
+                return createVideoCard(
+                    item.video,
+                    categoryIndex,
+                    item.videoIndex
+                );
+
+            }).join("");
+
+
+            const hasMore = visibleLimit < availableVideos.length;
+
+            const hasMoreThanInitial =
+                availableVideos.length > INITIAL_LIMIT;
+
+
+            const controls = `
+
+                <div class="category-controls">
+
+                    <button
+                        class="rail-button"
+                        type="button"
+                        data-action="scroll-left"
+                        data-category="${categoryIndex}"
+                        aria-label="Rolar para a esquerda">
+
+                        <i class="bi bi-chevron-left"></i>
+
+                    </button>
+
+
+                    <button
+                        class="rail-button"
+                        type="button"
+                        data-action="scroll-right"
+                        data-category="${categoryIndex}"
+                        aria-label="Rolar para a direita">
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </button>
+
+
+                    ${hasMoreThanInitial ? `
+
+                        <button
+                            class="view-all-button"
+                            type="button"
+                            data-action="toggle-view"
+                            data-category="${categoryIndex}">
+
+                            ${expanded
+                                ? "Ver menos"
+                                : "Ver todos"}
+
+                            <i class="bi ${expanded ? "bi-chevron-up" : "bi-chevron-right"}"></i>
+
+                        </button>
+
+                    ` : ""}
+
+                </div>
+
+            `;
+
+
+            return `
+
+                <section
+                    class="category-section ${expanded ? "expanded" : ""}"
+                    id="category-${categoryIndex}">
+
+                    <div class="category-heading">
+
+                        <div class="category-heading-main">
+
+                            <h3 class="category-title">
+                                ${escapeHTML(name)}
+                            </h3>
+
+                            <p class="category-description">
+
+                                ${availableVideos.length}
+
+                                ${availableVideos.length === 1
+                                    ? "conteúdo disponível"
+                                    : "conteúdos disponíveis"}
+
+                            </p>
+
+                        </div>
+
+
+                        ${controls}
+
+                    </div>
+
+
+                    <div class="video-rail"
+                         id="rail-${categoryIndex}">
+
+                        ${cards}
+
+                    </div>
+
+
+                    ${expanded && hasMore ? `
+
+                        <div class="load-more-wrap">
+
+                            <button
+                                class="load-more-button"
+                                type="button"
+                                data-action="load-more"
+                                data-category="${categoryIndex}">
+
+                                <i class="bi bi-plus-circle"></i>
+
+                                Mostrar mais vídeos
+
+                            </button>
+
+                        </div>
+
+                    ` : ""}
+
+                </section>
+
+            `;
+
+        }
+
+
+        /* =====================================================
+           PESQUISA
+        ====================================================== */
+
+        function renderSearchResults() {
+
+            const query = normalizeText(searchTerm);
+
+            const results = [];
+
+
+            categories.forEach((category, categoryIndex) => {
+
+                const name = categoryName(category);
+
+                const categoryMatches =
+                    normalizeText(name).includes(query);
+
+
+                (category.videos || []).forEach(
+                    (video, videoIndex) => {
+
+                        const key = getVideoKey(
+                            categoryIndex,
+                            videoIndex
+                        );
+
+                        if (unavailableVideos.has(key)) {
+                            return;
+                        }
+
+                        const titleMatches =
+                            normalizeText(video.title).includes(query);
+
+                        if (titleMatches || categoryMatches) {
+
+                            results.push({
+                                video,
+                                categoryIndex,
+                                videoIndex
+                            });
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+            if (!results.length) {
+
+                catalogContent.innerHTML = `
+
+                    <div class="empty-state">
+
+                        <i class="bi bi-search"></i>
+
+                        <h3 class="h5">
+                            Não encontramos esse conteúdo.
+                        </h3>
+
+                        <p class="mb-0">
+                            Experimente pesquisar por outro título ou categoria.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            const cards = results.map(item => {
+
+                return createVideoCard(
+                    item.video,
+                    item.categoryIndex,
+                    item.videoIndex
+                );
+
+            }).join("");
+
+
+            catalogContent.innerHTML = `
+
+                <h3 class="search-results-heading">
+
+                    <i class="bi bi-search me-2"></i>
+
+                    ${results.length}
+                    ${results.length === 1 ? "resultado encontrado" : "resultados encontrados"}
+
+                </h3>
+
+
+                <div class="search-results-grid">
+
+                    ${cards}
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* =====================================================
+           RENDERIZAÇÃO PRINCIPAL
+        ====================================================== */
+
+        function renderCurrentView() {
+
+            updateStats();
+
+
+            if (searchTerm.trim()) {
+
+                renderSearchResults();
+
+                return;
+
+            }
+
+
+            const sections = [];
+
+
+            categories.forEach((category, categoryIndex) => {
+
+                if (
+                    selectedCategory !== "all" &&
+                    selectedCategory !== String(categoryIndex)
+                ) {
+                    return;
+                }
+
+                const html = renderCategory(
+                    category,
+                    categoryIndex
+                );
+
+                if (html) {
+                    sections.push(html);
+                }
+
+            });
+
+
+            if (!sections.length) {
+
+                catalogContent.innerHTML = `
+
+                    <div class="empty-state">
+
+                        <i class="bi bi-collection-play"></i>
+
+                        <h3 class="h5">
+                            Nenhum vídeo disponível nesta categoria.
+                        </h3>
+
+                        <p class="mb-0">
+                            Experimente outra categoria.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            catalogContent.innerHTML = sections.join("");
+
+        }
+
+
+        /* =====================================================
+           PLAYER
+        ====================================================== */
+
+        function openVideo(video, category) {
+
+            const id = getVideoId(video);
+
+            if (!id) {
+                return;
+            }
+
+
+            document.getElementById("playerTitle").textContent =
+                video.title || "Digo&Jackie Play";
+
+
+            document.getElementById("playerCategory").textContent =
+                formatCategoryName(category);
+
+
+            document.getElementById("youtubeLink").href =
+                getVideoUrl(video);
+
+
+            const iframe = document.createElement("iframe");
+
+            iframe.src =
+                `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&rel=0&modestbranding=1`;
+
+            iframe.title = video.title || "Vídeo Digo & Jackie";
+
+            iframe.allow =
+                "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+
+            iframe.allowFullscreen = true;
+
+            iframe.referrerPolicy =
+                "strict-origin-when-cross-origin";
+
+
+            playerStage.replaceChildren(iframe);
+
+            videoModal.show();
+
+        }
+
+
+        /* =====================================================
+           CARREGAR MAIS
+        ====================================================== */
+
+        function loadMore(categoryIndex) {
+
+            const key = String(categoryIndex);
+
+            const currentLimit =
+                visibleLimits.get(key) || INITIAL_LIMIT;
+
+            visibleLimits.set(
+                key,
+                currentLimit + LOAD_MORE_STEP
+            );
+
+            renderCurrentView();
+
+        }
+
+
+        /* =====================================================
+           EXPANDIR / RECOLHER CATEGORIA
+        ====================================================== */
+
+        function toggleCategoryView(categoryIndex) {
+
+            const key = String(categoryIndex);
+
+            if (expandedCategories.has(key)) {
+
+                expandedCategories.delete(key);
+
+                visibleLimits.set(
+                    key,
+                    INITIAL_LIMIT
+                );
+
+            } else {
+
+                expandedCategories.add(key);
+
+                visibleLimits.set(
+                    key,
+                    INITIAL_LIMIT * 2
+                );
+
+            }
+
+            renderCurrentView();
+
+        }
+
+
+        /* =====================================================
+           ROLAR FILEIRAS
+        ====================================================== */
+
+        function scrollRail(categoryIndex, direction) {
+
+            const rail = document.getElementById(
+                `rail-${categoryIndex}`
+            );
+
+            if (!rail) {
+                return;
+            }
+
+            const amount = rail.clientWidth * .8;
+
+            rail.scrollBy({
+
+                left: direction * amount,
+                behavior: "smooth"
+
+            });
+
+        }
+
+
+        /* =====================================================
+           CARREGAMENTO DO JSON
+        ====================================================== */
+
+        async function loadCatalog() {
+
+            try {
+
+                const response = await fetch(
+                    CATALOG_URL,
+                    { cache: "no-cache" }
+                );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        `Erro HTTP ${response.status}`
+                    );
+
+                }
+
+
+                const data = await response.json();
+
+
+                if (
+                    !data ||
+                    !Array.isArray(data.categorias)
+                ) {
+
+                    throw new Error(
+                        "Estrutura de catálogo inválida."
+                    );
+
+                }
+
+
+                categories = data.categorias;
+
+
+                renderFilters();
+
+                renderCurrentView();
+
+
+                /*
+                   A validação acontece depois da primeira
+                   renderização, para que o catálogo não
+                   fique parado esperando todas as imagens.
+                */
+
+                validateAllThumbnails();
+
+
+            } catch (error) {
+
+                console.error(
+                    "Erro ao carregar catálogo:",
+                    error
+                );
+
+
+                catalogContent.innerHTML = `
+
+                    <div class="empty-state">
+
+                        <i class="bi bi-exclamation-triangle"></i>
+
+                        <h3 class="h5">
+                            Não foi possível carregar o catálogo.
+                        </h3>
+
+                        <p>
+                            Verifique a disponibilidade do arquivo JSON.
+                        </p>
+
+                        <button
+                            class="load-more-button"
+                            type="button"
+                            id="retryCatalog">
+
+                            <i class="bi bi-arrow-clockwise"></i>
+                            Tentar novamente
+
+                        </button>
+
+                    </div>
+
+                `;
+
+
+                document
+                    .getElementById("retryCatalog")
+                    ?.addEventListener("click", loadCatalog);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           EVENTOS DOS FILTROS
+        ====================================================== */
+
+        categoryFilters.addEventListener("click", event => {
+
+            const button = event.target.closest("[data-category]");
+
+            if (!button) {
+                return;
+            }
+
+            selectedCategory = button.dataset.category;
+
+            renderFilters();
+
+            renderCurrentView();
+
+        });
+
+
+        /* =====================================================
+           PESQUISA EM TEMPO REAL
+        ====================================================== */
+
+        searchInput.addEventListener("input", event => {
+
+            searchTerm = event.target.value.trim();
+
+            clearSearch.classList.toggle(
+                "visible",
+                searchTerm.length > 0
+            );
+
+            renderCurrentView();
+
+        });
+
+
+        clearSearch.addEventListener("click", () => {
+
+            searchInput.value = "";
+
+            searchTerm = "";
+
+            clearSearch.classList.remove("visible");
+
+            renderCurrentView();
+
+            searchInput.focus();
+
+        });
+
+
+        /* =====================================================
+           EVENTOS DAS FILEIRAS E CARDS
+        ====================================================== */
+
+        catalogContent.addEventListener("click", event => {
+
+
+            /* CARD DE VÍDEO */
+
+            const card = event.target.closest(".video-card");
+
+            if (card) {
+
+                const categoryIndex =
+                    Number(card.dataset.categoryIndex);
+
+                const videoIndex =
+                    Number(card.dataset.videoIndex);
+
+
+                const category = categories[categoryIndex];
+
+                const video = category?.videos?.[videoIndex];
+
+
+                if (!video) {
+                    return;
+                }
+
+
+                openVideo(
+                    video,
+                    categoryName(category)
+                );
+
+                return;
+
+            }
+
+
+            /* AÇÕES DE CATEGORIA */
+
+            const actionButton = event.target.closest("[data-action]");
+
+            if (!actionButton) {
+                return;
+            }
+
+
+            const categoryIndex =
+                Number(actionButton.dataset.category);
+
+
+            const action =
+                actionButton.dataset.action;
+
+
+            switch (action) {
+
+                case "scroll-left":
+
+                    scrollRail(categoryIndex, -1);
+
+                    break;
+
+
+                case "scroll-right":
+
+                    scrollRail(categoryIndex, 1);
+
+                    break;
+
+
+                case "toggle-view":
+
+                    toggleCategoryView(categoryIndex);
+
+                    break;
+
+
+                case "load-more":
+
+                    loadMore(categoryIndex);
+
+                    break;
+
+            }
+
+        });
+
+
+        /* =====================================================
+           ENCERRAR PLAYER AO FECHAR
+        ====================================================== */
+
+        videoModalElement.addEventListener(
+            "hidden.bs.modal",
+            () => {
+
+                playerStage.replaceChildren();
+
+            }
+        );
+
+
+        /* =====================================================
+           INICIALIZAÇÃO
+        ====================================================== */
+
+        loadCatalog();
+
+    </script>
+
+</body>
+</html>
