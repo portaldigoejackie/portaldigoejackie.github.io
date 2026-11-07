@@ -1,3186 +1,2460 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Digo&Jackie Play | Seu universo de entretenimento</title>
-
-    <meta name="description" content="Explore o Digo&Jackie Play: filmes, curiosidades, ciência, história, mistérios e entretenimento. Escolha seu conteúdo e assista gratuitamente!">
-    <meta name="author" content="Digo & Jackie">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#090b12">
-
-    <link rel="canonical" href="https://portaldigoejackie.github.io/digo-jackie-play.html">
-
-    <link rel="icon" type="image/png"
-          href="https://portaldigoejackie.github.io/logo-digoejackie.png">
-
-    <link rel="apple-touch-icon"
-          href="https://portaldigoejackie.github.io/logo-digoejackie.png">
-
-    
-    <!-- OPEN GRAPH -->
-
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="Digo & Jackie">
-    <meta property="og:title" content="Digo&Jackie Play | Seu universo de entretenimento">
-    <meta property="og:description" content="Histórias, cinema, ciência, mistérios e curiosidades para assistir gratuitamente.">
-    <meta property="og:url" content="https://portaldigoejackie.github.io/digo-jackie-play.html">
-    <meta property="og:image" content="https://portaldigoejackie.github.io/digo-jackie-play-review.jpg">
-    <meta property="og:image:secure_url" content="https://portaldigoejackie.github.io/digo-jackie-play-review.jpg">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Digo & Jackie Play — Seu universo de entretenimento">
-
-    <!-- TWITTER -->
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Digo&Jackie Play">
-    <meta name="twitter:description" content="Seu universo de entretenimento para assistir gratuitamente.">
-    <meta name="twitter:image" content="https://portaldigoejackie.github.io/digo-jackie-play-review.jpg">
-
-
-    <!-- SCHEMA.ORG -->
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "Digo&Jackie Play",
-        "url": "https://portaldigoejackie.github.io/digo-jackie-play.html",
-        "inLanguage": "pt-BR",
-        "description": "Plataforma gratuita de vídeos e entretenimento do portal Digo & Jackie.",
-        "isPartOf": {
-            "@type": "WebSite",
-            "name": "Digo & Jackie",
-            "url": "https://portaldigoejackie.github.io/"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Digo & Jackie",
-            "url": "https://portaldigoejackie.github.io/"
-        }
-    }
-    </script>
-
-    <!-- BOOTSTRAP -->
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-          crossorigin="anonymous">
-
-    <!-- BOOTSTRAP ICONS -->
-
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
-
-    <style>
-
-        /* =====================================================
-           1. IDENTIDADE VISUAL
-        ====================================================== */
-
-        :root {
-            --black: #080a10;
-            --header: #0f0f0f;
-            --footer: #202020;
-
-            --background: #0b0e17;
-            --surface: #151a27;
-            --surface-light: #20283a;
-
-            --text: #f6f7fb;
-            --muted: #9ba5b7;
-
-            --red: #e62117;
-            --red-light: #ff6259;
-
-            --purple: #8b5cf6;
-            --blue: #3b82f6;
-
-            --max-width: 1440px;
-            --header-height: 68px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 100px;
-        }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-
-            background:
-                radial-gradient(
-                    ellipse at 15% 5%,
-                    rgba(139,92,246,.10),
-                    transparent 30rem
-                ),
-                radial-gradient(
-                    ellipse at 90% 20%,
-                    rgba(230,33,23,.09),
-                    transparent 32rem
-                ),
-                var(--background);
-
-            color: var(--text);
-            font-family: Arial, Helvetica, sans-serif;
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-
-        /* =====================================================
-           2. CABEÇALHO ORIGINAL
-        ====================================================== */
-
-        .main-header {
-            width: 100%;
-            min-height: var(--header-height);
-            background: var(--header);
-            color: #fff;
-
-            position: sticky;
-            top: 0;
-            z-index: 1030;
-
-            box-shadow: 0 2px 12px rgba(0,0,0,.3);
-            border-bottom: 1px solid rgba(255,255,255,.07);
-        }
-
-        .header-container {
-            max-width: var(--max-width);
-            min-height: var(--header-height);
-            margin: auto;
-            padding: 8px 24px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .brand-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #fff;
-            min-width: 0;
-        }
-
-        .brand-logo {
-            width: 46px;
-            height: 46px;
-            object-fit: contain;
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
-
-        .brand-name {
-            font-size: 19px;
-            font-weight: 800;
-            letter-spacing: -.5px;
-            margin: 0;
-            white-space: nowrap;
-        }
-
-        .brand-name span {
-            color: #ff453a;
-        }
-
-        .main-navigation {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .main-navigation .nav-link {
-            color: #eee;
-            font-size: 14px;
-            font-weight: 600;
-            padding: 10px 14px;
-            border-radius: 8px;
-            transition: background .2s ease;
-        }
-
-        .main-navigation .nav-link:hover,
-        .main-navigation .nav-link.active {
-            background: #303030;
-            color: #fff;
-        }
-
-        .mobile-menu-button {
-            color: #fff;
-            border: 1px solid #444;
-            background: transparent;
-            border-radius: 8px;
-            padding: 7px 11px;
-            font-size: 23px;
-        }
-
-        .mobile-menu-button:hover {
-            background: #303030;
-        }
-
-        .mobile-navigation {
-            background: #171717;
-            border-top: 1px solid #303030;
-            padding: 8px 20px 14px;
-        }
-
-        .mobile-navigation .nav-link {
-            color: #eee;
-            padding: 12px 8px;
-            border-bottom: 1px solid #303030;
-            font-size: 14px;
-        }
-
-
-        /* =====================================================
-           3. ÁREA PRINCIPAL
-        ====================================================== */
-
-        main {
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px 65px;
-            flex: 1;
-        }
-
-
-        /* =====================================================
-           4. HERO CINEMATOGRÁFICO
-        ====================================================== */
-
-        .hero {
-            min-height: 420px;
-            position: relative;
-            overflow: hidden;
-
-            margin: 25px 0 48px;
-            border-radius: 24px;
-
-            display: flex;
-            align-items: center;
-
-            padding: clamp(30px, 5vw, 70px);
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(7,9,16,.98) 0%,
-                    rgba(7,9,16,.91) 42%,
-                    rgba(7,9,16,.35) 100%
-                ),
-                radial-gradient(
-                    circle at 75% 50%,
-                    rgba(230,33,23,.35),
-                    transparent 30%
-                ),
-                linear-gradient(
-                    130deg,
-                    #20243c,
-                    #37151d,
-                    #101827
-                );
-
-            border: 1px solid rgba(255,255,255,.12);
-
-            box-shadow:
-                0 25px 65px rgba(0,0,0,.4),
-                inset 0 0 80px rgba(255,255,255,.025);
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-
-            width: 470px;
-            height: 470px;
-
-            right: 5%;
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            border-radius: 50%;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(230,33,23,.24),
-                    rgba(230,33,23,.06) 48%,
-                    transparent 70%
-                );
-
-            filter: blur(4px);
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: "PLAY";
-
-            position: absolute;
-            right: 7%;
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            color: rgba(255,255,255,.045);
-
-            font-size: clamp(100px, 18vw, 240px);
-            font-weight: 1000;
-            letter-spacing: -.09em;
-
-            pointer-events: none;
-            user-select: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 680px;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-
-            padding: 8px 14px;
-
-            border-radius: 999px;
-
-            color: #ffaaa5;
-            background: rgba(230,33,23,.13);
-            border: 1px solid rgba(255,98,89,.28);
-
-            font-size: .72rem;
-            font-weight: 850;
-            letter-spacing: .13em;
-            text-transform: uppercase;
-
-            margin-bottom: 22px;
-        }
-
-        .hero-badge i {
-            font-size: .9rem;
-        }
-
-        .hero-title {
-            font-size: clamp(2.8rem, 6vw, 5.6rem);
-            line-height: .94;
-            letter-spacing: -.07em;
-            font-weight: 950;
-            margin: 0 0 20px;
-        }
-
-        .hero-title span {
-            color: var(--red-light);
-            text-shadow: 0 8px 35px rgba(230,33,23,.3);
-        }
-
-        .hero-description {
-            color: #c6ccda;
-            font-size: clamp(.98rem, 1.5vw, 1.13rem);
-            line-height: 1.7;
-            max-width: 550px;
-            margin-bottom: 27px;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .btn-hero {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-
-            border-radius: 999px;
-            padding: 13px 23px;
-
-            font-weight: 850;
-            font-size: .9rem;
-
-            transition: .25s ease;
-        }
-
-        .btn-hero-primary {
-            color: #fff;
-            background: var(--red);
-            border: 1px solid var(--red);
-
-            box-shadow: 0 8px 28px rgba(230,33,23,.25);
-        }
-
-        .btn-hero-primary:hover {
-            color: #fff;
-            background: #c91d15;
-            transform: translateY(-3px);
-        }
-
-        .btn-hero-secondary {
-            color: #fff;
-            background: rgba(255,255,255,.08);
-            border: 1px solid rgba(255,255,255,.2);
-            backdrop-filter: blur(8px);
-        }
-
-        .btn-hero-secondary:hover {
-            color: #fff;
-            background: rgba(255,255,255,.15);
-        }
-
-
-        /* =====================================================
-           5. PAINEL DE CATÁLOGO
-        ====================================================== */
-
-        .catalog-top {
-            display: flex;
-            align-items: end;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 24px;
-        }
-
-        .catalog-label {
-            color: var(--red-light);
-            text-transform: uppercase;
-            font-size: .69rem;
-            letter-spacing: .16em;
-            font-weight: 900;
-            margin-bottom: 7px;
-        }
-
-        .catalog-title {
-            color: #fff;
-            font-size: clamp(1.6rem, 3vw, 2.25rem);
-            letter-spacing: -.05em;
-            font-weight: 900;
-            margin: 0;
-        }
-
-        .catalog-description {
-            color: var(--muted);
-            font-size: .85rem;
-            margin: 7px 0 0;
-        }
-
-        .catalog-stats {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            color: #aeb7c7;
-            font-size: .8rem;
-        }
-
-        .stat-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-        }
-
-        .stat-item i {
-            color: var(--red-light);
-        }
-
-
-        /* =====================================================
-           6. BARRA DE PESQUISA
-        ====================================================== */
-
-        .search-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-
-        .search-box {
-            position: relative;
-            flex: 1;
-            min-width: 220px;
-        }
-
-        .search-box i {
-            position: absolute;
-            left: 17px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #8994a7;
-            pointer-events: none;
-        }
-
-        .search-input {
-            width: 100%;
-            height: 49px;
-
-            border: 1px solid #30394b;
-            background: rgba(21,26,39,.88);
-
-            color: #fff;
-            border-radius: 13px;
-
-            padding: 10px 45px 10px 45px;
-            outline: none;
-
-            transition: .2s ease;
-        }
-
-        .search-input::placeholder {
-            color: #818da0;
-        }
-
-        .search-input:focus {
-            border-color: rgba(255,98,89,.8);
-            box-shadow: 0 0 0 4px rgba(230,33,23,.12);
-        }
-
-        .clear-search {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-
-            color: #9ba5b7;
-            background: transparent;
-            border: 0;
-
-            display: none;
-            font-size: 1.1rem;
-        }
-
-        .clear-search.visible {
-            display: block;
-        }
-
-        .search-hint {
-            color: #7e899c;
-            font-size: .75rem;
-            white-space: nowrap;
-        }
-
-
-        /* =====================================================
-           7. FILTROS
-        ====================================================== */
-
-        .filter-area {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-
-            overflow-x: auto;
-            padding: 2px 1px 13px;
-            margin-bottom: 32px;
-
-            scrollbar-width: thin;
-            scrollbar-color: #3b4557 transparent;
-        }
-
-        .filter-chip {
-            flex: 0 0 auto;
-
-            border: 1px solid #30394b;
-            color: #bfc7d5;
-
-            background: #151a27;
-
-            border-radius: 999px;
-            padding: 9px 16px;
-
-            font-size: .81rem;
-            font-weight: 800;
-
-            cursor: pointer;
-            transition: .2s ease;
-        }
-
-        .filter-chip:hover {
-            color: #fff;
-            border-color: #777f91;
-        }
-
-        .filter-chip.active {
-            color: #fff;
-            background: linear-gradient(135deg, #e62117, #a91a22);
-            border-color: #ed3c34;
-            box-shadow: 0 5px 18px rgba(230,33,23,.18);
-        }
-
-
-        /* =====================================================
-           8. FILEIRAS DE VÍDEOS
-        ====================================================== */
-
-        .category-section {
-            margin-bottom: 48px;
-            position: relative;
-            scroll-margin-top: 100px;
-        }
-
-        .category-heading {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            margin-bottom: 17px;
-        }
-
-        .category-heading-main {
-            min-width: 0;
-        }
-
-        .category-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            color: #fff;
-            font-size: clamp(1.15rem, 2vw, 1.55rem);
-            font-weight: 900;
-            letter-spacing: -.04em;
-
-            margin: 0;
-        }
-
-        .category-title::before {
-            content: "";
-            display: block;
-
-            width: 4px;
-            height: 25px;
-
-            border-radius: 10px;
-
-            background: linear-gradient(
-                to bottom,
-                #ff6259,
-                #a91a22
-            );
-
-            box-shadow: 0 0 15px rgba(230,33,23,.45);
-        }
-
-        .category-description {
-            color: #818da0;
-            font-size: .78rem;
-            margin: 6px 0 0 14px;
-        }
-
-        .category-controls {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-shrink: 0;
-        }
-
-        .rail-button {
-            width: 34px;
-            height: 34px;
-
-            display: grid;
-            place-items: center;
-
-            border: 1px solid #394253;
-            border-radius: 50%;
-
-            color: #fff;
-            background: #171d2a;
-
-            transition: .2s ease;
-        }
-
-        .rail-button:hover {
-            color: #fff;
-            background: #30394b;
-            border-color: #737f94;
-        }
-
-        .view-all-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-
-            border: 0;
-            background: transparent;
-
-            color: #ff8b84;
-            font-size: .79rem;
-            font-weight: 850;
-
-            padding: 8px 5px;
-            transition: .2s ease;
-        }
-
-        .view-all-button:hover {
-            color: #fff;
-        }
-
-
-        /* =====================================================
-           9. TRILHO HORIZONTAL
-        ====================================================== */
-
-        .video-rail {
-            display: grid;
-            grid-auto-flow: column;
-            grid-auto-columns: calc((100% - 4 * 15px) / 5);
-
-            gap: 15px;
-
-            overflow-x: auto;
-            overflow-y: hidden;
-
-            scroll-behavior: smooth;
-            scroll-snap-type: x mandatory;
-
-            padding: 4px 2px 16px;
-
-            scrollbar-width: thin;
-            scrollbar-color: #3a4354 transparent;
-        }
-
-        .video-rail::-webkit-scrollbar {
-            height: 5px;
-        }
-
-        .video-rail::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .video-rail::-webkit-scrollbar-thumb {
-            background: #3a4354;
-            border-radius: 10px;
-        }
-
-        .video-card {
-            min-width: 0;
-            padding: 0;
-            border: 0;
-
-            text-align: left;
-            color: inherit;
-            background: transparent;
-
-            cursor: pointer;
-            scroll-snap-align: start;
-
-            transition: transform .25s ease;
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .thumb-wrap {
-            position: relative;
-            overflow: hidden;
-
-            aspect-ratio: 16 / 9;
-
-            border-radius: 12px;
-            background: #1c2433;
-
-            border: 1px solid rgba(255,255,255,.1);
-
-            box-shadow: 0 7px 22px rgba(0,0,0,.2);
-        }
-
-        .video-thumb {
-            display: block;
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            transition: transform .4s ease, filter .3s ease;
-        }
-
-        .video-card:hover .video-thumb {
-            transform: scale(1.08);
-            filter: brightness(.63);
-        }
-
-        .thumb-overlay {
-            position: absolute;
-            inset: 0;
-
-            display: grid;
-            place-items: center;
-
-            opacity: 0;
-            transition: opacity .25s ease;
-
-            background: linear-gradient(
-                0deg,
-                rgba(0,0,0,.25),
-                transparent 60%
-            );
-        }
-
-        .video-card:hover .thumb-overlay {
-            opacity: 1;
-        }
-
-        .play-icon {
-            width: 48px;
-            height: 48px;
-
-            display: grid;
-            place-items: center;
-
-            padding-left: 3px;
-
-            color: #fff;
-            background: var(--red);
-
-            border-radius: 50%;
-
-            font-size: 1.35rem;
-
-            box-shadow: 0 5px 25px rgba(0,0,0,.5);
-        }
-
-        .video-position {
-            position: absolute;
-            left: 9px;
-            top: 9px;
-
-            color: #fff;
-            background: rgba(0,0,0,.72);
-
-            padding: 4px 8px;
-            border-radius: 6px;
-
-            font-size: .65rem;
-            font-weight: 900;
-
-            backdrop-filter: blur(5px);
-        }
-
-        .video-info {
-            padding: 10px 2px 0;
-        }
-
-        .video-title {
-            color: #e8ebf2;
-
-            font-size: .86rem;
-            font-weight: 800;
-            line-height: 1.42;
-
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-
-            overflow: hidden;
-            min-height: 2.45em;
-
-            margin: 0;
-
-            transition: color .2s ease;
-        }
-
-        .video-card:hover .video-title {
-            color: #ff8b84;
-        }
-
-        .video-subtitle {
-            color: #7f8a9d;
-            font-size: .7rem;
-            margin-top: 5px;
-        }
-
-
-        /* =====================================================
-           10. VISUALIZAÇÃO COMPLETA DA CATEGORIA
-        ====================================================== */
-
-        .category-section.expanded .video-rail {
-            display: grid;
-
-            grid-auto-flow: row;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
-
-            overflow: visible;
-            scroll-snap-type: none;
-
-            padding-bottom: 4px;
-        }
-
-        .category-section.expanded .category-controls .rail-button {
-            display: none;
-        }
-
-        .category-section.expanded .video-card {
-            animation: cardAppear .35s ease both;
-        }
-
-        @keyframes cardAppear {
-            from {
-                opacity: 0;
-                transform: translateY(9px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .load-more-wrap {
-            display: flex;
-            justify-content: center;
-            padding: 23px 0 0;
-        }
-
-        .load-more-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-
-            color: #fff;
-            background: #1b2231;
-
-            border: 1px solid #394253;
-            border-radius: 999px;
-
-            padding: 11px 21px;
-
-            font-size: .84rem;
-            font-weight: 800;
-
-            transition: .2s ease;
-        }
-
-        .load-more-button:hover {
-            color: #fff;
-            background: #30394b;
-            border-color: #78849a;
-        }
-
-
-        /* =====================================================
-           11. RESULTADOS DA PESQUISA
-        ====================================================== */
-
-        .search-results-heading {
-            color: #fff;
-            font-size: 1.25rem;
-            font-weight: 850;
-            margin-bottom: 20px;
-        }
-
-        .search-results-grid {
-            display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
-            gap: 23px 15px;
-        }
-
-        .empty-state {
-            padding: 65px 20px;
-            text-align: center;
-
-            border: 1px dashed #3a4558;
-            border-radius: 18px;
-
-            background: rgba(255,255,255,.025);
-            color: #aeb8c8;
-        }
-
-        .empty-state i {
-            display: block;
-            color: #ff7770;
-            font-size: 2.6rem;
-            margin-bottom: 14px;
-        }
-
-        .empty-state h3 {
-            color: #fff;
-            font-weight: 850;
-        }
-
-
-        /* =====================================================
-           12. CARREGAMENTO
-        ====================================================== */
-
-        .loading-state {
-            padding: 70px 20px;
-            text-align: center;
-            color: #aeb8c8;
-        }
-
-        .loading-spinner {
-            width: 37px;
-            height: 37px;
-
-            display: inline-block;
-
-            border: 3px solid rgba(255,255,255,.15);
-            border-top-color: var(--red-light);
-
-            border-radius: 50%;
-
-            animation: spin .8s linear infinite;
-
-            margin-bottom: 15px;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-
-        /* =====================================================
-           13. MODAL DO PLAYER
-        ====================================================== */
-
-        .play-modal .modal-dialog {
-            max-width: 1160px;
-            margin: 1.2rem auto;
-        }
-
-        .play-modal .modal-content {
-            color: #fff;
-            background: #10141e;
-
-            border: 1px solid #343d4e;
-            border-radius: 20px;
-
-            overflow: hidden;
-
-            box-shadow: 0 30px 100px rgba(0,0,0,.65);
-        }
-
-        .play-modal .modal-header {
-            background: #151b28;
-            border-bottom: 1px solid #30394a;
-            padding: 15px 20px;
-        }
-
-        .modal-brand {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-
-            color: #c4ccda;
-
-            font-size: .8rem;
-            font-weight: 900;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-        }
-
-        .modal-brand i {
-            color: #ff5148;
-            font-size: 1.1rem;
-        }
-
-        .play-modal .btn-close {
-            filter: invert(1);
-            opacity: .8;
-        }
-
-        .play-modal .modal-body {
-            padding: 0;
-        }
-
-        .player-stage {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background: #000;
-        }
-
-        .player-stage iframe {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .player-info {
-            padding: 25px clamp(18px, 3vw, 36px) 30px;
-
-            background:
-                radial-gradient(
-                    ellipse at 0% 0%,
-                    rgba(230,33,23,.09),
-                    transparent 50%
-                ),
-                #10141e;
-        }
-
-        .player-category {
-            color: #ff7770;
-
-            font-size: .7rem;
-            font-weight: 900;
-            letter-spacing: .15em;
-            text-transform: uppercase;
-
-            margin-bottom: 9px;
-        }
-
-        .player-title {
-            color: #fff;
-
-            font-size: clamp(1.25rem, 3vw, 2rem);
-            font-weight: 900;
-            letter-spacing: -.04em;
-            line-height: 1.2;
-
-            margin: 0 0 19px;
-        }
-
-        .player-actions {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .youtube-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-
-            color: #fff;
-            background: #e62117;
-
-            border-radius: 999px;
-            padding: 11px 18px;
-
-            font-size: .84rem;
-            font-weight: 850;
-
-            transition: .2s ease;
-        }
-
-        .youtube-button:hover {
-            color: #fff;
-            background: #c51b14;
-            transform: translateY(-2px);
-        }
-
-        .player-note {
-            color: #8792a5;
-            font-size: .78rem;
-            margin: 16px 0 0;
-        }
-
-        .play-modal .modal-footer {
-            display: flex;
-            justify-content: space-between;
-
-            color: #8792a5;
-            font-size: .75rem;
-
-            border-top: 1px solid #30394a;
-            padding: 12px 20px;
-        }
-
-
-        /* =====================================================
-           14. RODAPÉ ORIGINAL
-        ====================================================== */
-
-        .main-footer {
-            width: 100%;
-            background: var(--footer);
-            color: #eee;
-
-            margin-top: auto;
-            border-top: 1px solid rgba(255,255,255,.06);
-        }
-
-        .footer-container {
-            max-width: var(--max-width);
-            margin: auto;
-            padding: 28px 24px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #3b3b3b;
-            padding-top: 18px;
-            margin-top: 18px;
-
-            color: #aaa;
-            font-size: 13px;
-            text-align: center;
-        }
-
-
-        /* =====================================================
-           15. TABLETS
-        ====================================================== */
-
-        @media (max-width: 1100px) {
-
-            .video-rail {
-                grid-auto-columns: calc((100% - 3 * 13px) / 4);
-                gap: 13px;
-            }
-
-            .category-section.expanded .video-rail,
-            .search-results-grid {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-            }
-
-        }
-
-
-        /* =====================================================
-           16. CELULARES
-        ====================================================== */
-
-        @media (max-width: 768px) {
-
-            :root {
-                --header-height: 60px;
-            }
-
-            .header-container {
-                padding: 7px 15px;
-            }
-
-            .brand-logo {
-                width: 40px;
-                height: 40px;
-            }
-
-            .brand-name {
-                font-size: 17px;
-            }
-
-            main {
-                padding: 0 16px 45px;
-            }
-
-            .footer-container {
-                padding: 24px 18px;
-            }
-
-            .hero {
-                min-height: 340px;
-                margin: 17px 0 35px;
-                border-radius: 18px;
-                padding: 29px 23px;
-            }
-
-            .hero::after {
-                right: -12%;
-                opacity: .7;
-            }
-
-            .hero::before {
-                right: -25%;
-            }
-
-            .hero-description {
-                font-size: .92rem;
-            }
-
-            .catalog-top {
-                margin-bottom: 21px;
-            }
-
-            .catalog-stats {
-                width: 100%;
-            }
-
-            .search-area {
-                gap: 8px;
-            }
-
-            .search-box {
-                min-width: 100%;
-            }
-
-            .search-hint {
-                display: none;
-            }
-
-            .video-rail {
-                grid-auto-columns: calc((100% - 12px) / 2);
-                gap: 12px;
-            }
-
-            .category-section.expanded .video-rail,
-            .search-results-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .category-heading {
-                align-items: center;
-            }
-
-            .category-controls {
-                gap: 5px;
-            }
-
-            .rail-button {
-                width: 30px;
-                height: 30px;
-            }
-
-            .view-all-button {
-                font-size: .72rem;
-            }
-
-            .video-title {
-                font-size: .8rem;
-            }
-
-            .play-modal .modal-dialog {
-                margin: 0;
-                min-height: 100%;
-            }
-
-            .play-modal .modal-content {
-                min-height: 100vh;
-                border: 0;
-                border-radius: 0;
-            }
-
-            .play-modal .modal-body {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-
-            .player-info {
-                padding: 20px 17px 25px;
-            }
-
-            .play-modal .modal-footer {
-                margin-top: auto;
-            }
-
-        }
-
-
-        /* =====================================================
-           17. CELULARES PEQUENOS
-        ====================================================== */
-
-        @media (max-width: 390px) {
-
-            .brand-logo {
-                width: 35px;
-                height: 35px;
-            }
-
-            .brand-name {
-                font-size: 15px;
-            }
-
-            .hero {
-                padding: 24px 19px;
-            }
-
-            .btn-hero {
-                padding: 11px 16px;
-                font-size: .8rem;
-            }
-
-            .video-rail {
-                grid-auto-columns: calc((100% - 10px) / 2);
-                gap: 10px;
-            }
-
-            .thumb-wrap {
-                border-radius: 9px;
-            }
-
-            .video-title {
-                font-size: .77rem;
-            }
-
-            .category-title {
-                font-size: 1.05rem;
-            }
-
-        }
-
-
-        /* =====================================================
-           18. ACESSIBILIDADE
-        ====================================================== */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                scroll-behavior: auto !important;
-                animation-duration: .01ms !important;
-                transition-duration: .01ms !important;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090b19">
+
+<title>Digo&Jackie Play | Entretenimento sem limites</title>
+<meta name="description" content="Explore o universo Digo&Jackie Play: vídeos, curiosidades, cinema, mistérios e muito mais.">
+<meta property="og:title" content="Digo&Jackie Play">
+<meta property="og:description" content="Seu universo de entretenimento começa aqui.">
+<meta property="og:image" content="https://portaldigoejackie.github.io/Logotipo-Digo%26Jackie.png">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="https://portaldigoejackie.github.io/Logotipo-Digo%26Jackie.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #090b19;
+  --bg2: #101329;
+  --surface: #171b35;
+  --surface2: #202647;
+  --white: #f8f8ff;
+  --muted: #a3a8c5;
+  --red: #ff416c;
+  --orange: #ff9d4d;
+  --purple: #a56bff;
+  --blue: #4ca8ff;
+  --cyan: #45e2e6;
+  --green: #62e6b5;
+  --border: rgba(255,255,255,.10);
+  --radius: 22px;
+  --shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 95px;
+}
+
+body {
+  margin: 0;
+  color: var(--white);
+  background:
+    radial-gradient(ellipse at 10% 5%, rgba(165,107,255,.13), transparent 32%),
+    radial-gradient(ellipse at 90% 25%, rgba(69,226,230,.09), transparent 30%),
+    radial-gradient(ellipse at 50% 75%, rgba(255,65,108,.07), transparent 35%),
+    var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: .17;
+  background-image: radial-gradient(rgba(255,255,255,.28) .7px, transparent .7px);
+  background-size: 27px 27px;
+}
+
+a { text-decoration: none; color: inherit; }
+button, input { font: inherit; }
+
+::selection {
+  background: var(--purple);
+  color: white;
+}
+
+/* ELEMENTOS DECORATIVOS */
+
+.ambient {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: .12;
+  pointer-events: none;
+  z-index: -1;
+  animation: ambientFloat 15s ease-in-out infinite alternate;
+}
+
+.ambient.one {
+  background: var(--purple);
+  top: 15%;
+  left: -250px;
+}
+
+.ambient.two {
+  background: var(--cyan);
+  right: -250px;
+  top: 50%;
+  animation-delay: -5s;
+}
+
+.ambient.three {
+  background: var(--red);
+  bottom: -250px;
+  left: 35%;
+  animation-delay: -9s;
+}
+
+@keyframes ambientFloat {
+  from { transform: translate3d(0,-30px,0) scale(.9); }
+  to { transform: translate3d(50px,50px,0) scale(1.2); }
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  opacity: .025;
+  pointer-events: none;
+  z-index: 100;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+
+/* HEADER */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(9,11,25,.76);
+  backdrop-filter: blur(22px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.brand img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 14px rgba(255,255,255,.16));
+  transition: transform .35s ease;
+}
+
+.brand:hover img {
+  transform: rotate(-5deg) scale(1.07);
+}
+
+.brand-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -.8px;
+  line-height: 1.05;
+}
+
+.brand-name span {
+  display: block;
+  font-size: 10px;
+  color: var(--cyan);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.main-nav a {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 11px 13px;
+  border-radius: 30px;
+  transition: .25s;
+}
+
+.main-nav a:hover {
+  color: white;
+  background: rgba(255,255,255,.08);
+}
+
+.header-action {
+  color: white;
+  border: 0;
+  border-radius: 30px;
+  padding: 12px 19px;
+  background: linear-gradient(110deg,var(--red),var(--purple));
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 6px 24px rgba(255,65,108,.22);
+  transition: .3s;
+}
+
+.header-action:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255,65,108,.35);
+}
+
+.mobile-menu {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: white;
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  font-size: 22px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 610px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 75px 0 90px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 35px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid rgba(69,226,230,.27);
+  background: rgba(69,226,230,.07);
+  color: var(--cyan);
+  border-radius: 30px;
+  padding: 9px 15px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--green);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  50% { opacity: .35; transform: scale(.7); }
+}
+
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3.2rem,7vw,6.2rem);
+  line-height: .98;
+  font-weight: 700;
+  letter-spacing: -5px;
+  margin: 28px 0;
+}
+
+.hero h1 .gradient-text {
+  display: block;
+  background: linear-gradient(100deg,#fff 5%,#b69bff 40%,#ff7798 75%,#ffb46f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-description {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.85;
+  max-width: 520px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 32px;
+}
+
+.btn-main {
+  border: 0;
+  border-radius: 14px;
+  color: white;
+  font-weight: 800;
+  padding: 15px 23px;
+  background: linear-gradient(110deg,var(--red),#b85bff);
+  box-shadow: 0 10px 30px rgba(255,65,108,.22);
+  transition: .3s;
+}
+
+.btn-main:hover {
+  transform: translateY(-4px);
+  color: white;
+  box-shadow: 0 15px 35px rgba(255,65,108,.35);
+}
+
+.btn-secondary-custom {
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.05);
+  color: white;
+  border-radius: 14px;
+  padding: 14px 21px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.btn-secondary-custom:hover {
+  background: rgba(255,255,255,.13);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 35px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hero-meta i {
+  color: var(--cyan);
+  margin-right: 6px;
+}
+
+/* HERO VISUAL */
+
+.hero-art {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 900px;
+}
+
+.orbit {
+  position: absolute;
+  width: min(400px,90%);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+  animation: orbitRotate 35s linear infinite;
+}
+
+.orbit::before, .orbit::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(165,107,255,.23);
+}
+
+.orbit::before { inset: 28px; }
+.orbit::after { inset: 65px; }
+
+@keyframes orbitRotate {
+  to { transform: rotate(340deg); }
+}
+
+.orbit-point {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 22px var(--cyan);
+  top: 10%;
+  left: 20%;
+}
+
+.orbit-point.second {
+  background: var(--red);
+  box-shadow: 0 0 22px var(--red);
+  top: 78%;
+  left: 83%;
+  width: 9px;
+  height: 9px;
+}
+
+.play-emblem {
+  position: relative;
+  z-index: 2;
+  width: 260px;
+  height: 260px;
+  border-radius: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-8deg);
+  background:
+    linear-gradient(140deg,rgba(255,255,255,.16),transparent 50%),
+    linear-gradient(135deg,#ff416c,#8d52ff 60%,#35bde6);
+  box-shadow:
+    0 30px 80px rgba(165,107,255,.28),
+    inset 0 1px 1px rgba(255,255,255,.5);
+  animation: emblemFloat 5s ease-in-out infinite;
+}
+
+.play-emblem::before {
+  content: "";
+  position: absolute;
+  inset: 13px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 38px;
+}
+
+.play-emblem i {
+  font-size: 100px;
+  color: white;
+  filter: drop-shadow(0 8px 15px rgba(0,0,0,.3));
+  transform: rotate(8deg);
+}
+
+@keyframes emblemFloat {
+  0%,100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-17px) rotate(-4deg); }
+}
+
+.floating-card {
+  position: absolute;
+  z-index: 3;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(20,24,48,.82);
+  backdrop-filter: blur(15px);
+  border-radius: 17px;
+  padding: 13px 16px;
+  box-shadow: var(--shadow);
+  animation: cardFloat 5s ease-in-out infinite;
+}
+
+.floating-card strong {
+  display: block;
+  font-size: 13px;
+}
+
+.floating-card small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.floating-card i {
+  color: var(--cyan);
+  margin-right: 5px;
+}
+
+.float-top { top: 45px; right: 0; }
+.float-bottom { bottom: 45px; left: 0; animation-delay: -2s; }
+
+@keyframes cardFloat {
+  50% { transform: translateY(-10px); }
+}
+
+/* DIVISOR */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg,transparent,rgba(165,107,255,.6),rgba(69,226,230,.5),transparent);
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* SEÇÕES */
+
+.section {
+  padding: 75px 0;
+  position: relative;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.section-kicker {
+  color: var(--cyan);
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 9px;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.8rem,4vw,2.8rem);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin: 0;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 9px;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg,var(--cyan),var(--purple),var(--red));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* DESTAQUES */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 15px;
+}
+
+.stat-card {
+  border: 1px solid var(--border);
+  border-radius: 19px;
+  background: linear-gradient(140deg,rgba(255,255,255,.065),rgba(255,255,255,.015));
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.stat-card::after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  right: -35px;
+  bottom: -50px;
+  background: var(--accent,var(--purple));
+  filter: blur(35px);
+  opacity: .3;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,.25);
+}
+
+.stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.08);
+  color: var(--accent,var(--cyan));
+  font-size: 19px;
+  margin-bottom: 16px;
+}
+
+.stat-number {
+  font-family: 'Space Grotesk',sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* BUSCA */
+
+.search-panel {
+  padding: 27px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 0 0,rgba(165,107,255,.15),transparent 40%),
+    linear-gradient(120deg,#171b35,#11152b);
+  box-shadow: var(--shadow);
+}
+
+.search-wrapper {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: rgba(4,6,17,.6);
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 16px;
+  padding: 5px 8px 5px 18px;
+  transition: .3s;
+}
+
+.search-wrapper:focus-within {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 4px rgba(165,107,255,.12);
+}
+
+.search-wrapper i {
+  color: var(--cyan);
+  font-size: 20px;
+}
+
+.search-wrapper input {
+  width: 100%;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: white;
+  padding: 13px 0;
+  font-size: 14px;
+}
+
+.search-wrapper input::placeholder {
+  color: #777e9e;
+}
+
+.search-button {
+  border: 0;
+  background: linear-gradient(100deg,var(--purple),var(--blue));
+  color: white;
+  border-radius: 12px;
+  padding: 12px 19px;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.search-hint {
+  color: var(--muted);
+  font-size: 11px;
+  margin: 13px 0 0 5px;
+}
+
+/* FILTROS */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 23px 0 30px;
+}
+
+.filter-btn {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.035);
+  color: var(--muted);
+  border-radius: 30px;
+  padding: 9px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .25s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  color: white;
+  border-color: transparent;
+  background: linear-gradient(100deg,var(--purple),#6d75f7);
+  box-shadow: 0 5px 20px rgba(165,107,255,.2);
+}
+
+/* CATÁLOGO */
+
+.catalog-status {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.category-block {
+  margin-bottom: 55px;
+  scroll-margin-top: 110px;
+}
+
+.category-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  gap: 12px;
+}
+
+.category-heading h3 {
+  font-family: 'Space Grotesk',sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.category-heading h3::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 21px;
+  vertical-align: -4px;
+  border-radius: 5px;
+  margin-right: 11px;
+  background: linear-gradient(var(--red),var(--purple));
+}
+
+.category-count {
+  color: var(--muted);
+  font-size: 11px;
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+
+.video-rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px,1fr);
+  grid-auto-columns: 260px;
+  gap: 17px;
+  overflow-x: auto;
+  padding: 5px 2px 20px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #55517f transparent;
+}
+
+.video-rail::-webkit-scrollbar { height: 5px; }
+.video-rail::-webkit-scrollbar-thumb {
+  background: #55517f;
+  border-radius: 10px;
+}
+
+.video-card {
+  min-width: 0;
+  scroll-snap-align: start;
+  background: linear-gradient(145deg,#202542,#13172d);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .35s, border-color .35s, box-shadow .35s;
+  position: relative;
+}
+
+.video-card:hover {
+  transform: translateY(-7px) scale(1.015);
+  border-color: rgba(165,107,255,.65);
+  box-shadow: 0 18px 35px rgba(0,0,0,.35),0 0 22px rgba(165,107,255,.12);
+}
+
+.video-thumb {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: linear-gradient(135deg,#272b50,#171a30);
+}
+
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s;
+}
+
+.video-card:hover .video-thumb img {
+  transform: scale(1.08);
+}
+
+.video-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(transparent,rgba(0,0,0,.4));
+  pointer-events: none;
+}
+
+.play-overlay {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%,-50%) scale(.8);
+  display: grid;
+  place-items: center;
+  background: rgba(255,65,108,.9);
+  color: white;
+  border-radius: 50%;
+  opacity: 0;
+  transition: .3s;
+  box-shadow: 0 0 25px rgba(255,65,108,.4);
+}
+
+.video-card:hover .play-overlay {
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+}
+
+.video-info {
+  padding: 14px;
+}
+
+.video-title {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+  min-height: 38px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.video-category {
+  color: var(--cyan);
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.video-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.video-open {
+  color: white;
+  background: rgba(255,255,255,.09);
+  border: 0;
+  border-radius: 9px;
+  padding: 7px 11px;
+  font-size: 11px;
+}
+
+.video-open:hover {
+  background: var(--red);
+}
+
+.show-more {
+  display: block;
+  margin: 20px auto 0;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  color: white;
+  border-radius: 30px;
+  padding: 10px 19px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .25s;
+}
+
+.show-more:hover {
+  background: rgba(165,107,255,.2);
+  border-color: var(--purple);
+}
+
+.empty-state {
+  padding: 55px 20px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed rgba(255,255,255,.17);
+  border-radius: 20px;
+}
+
+.empty-state i {
+  font-size: 38px;
+  display: block;
+  margin-bottom: 12px;
+  color: var(--purple);
+}
+
+/* BANNER */
+
+.promo-banner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 45px;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(255,255,255,.18),transparent 25%),
+    linear-gradient(110deg,#783fff,#a44eff 45%,#ff416c);
+  box-shadow: 0 25px 65px rgba(135,63,255,.19);
+}
+
+.promo-banner::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 50%;
+  right: -60px;
+  top: -150px;
+  box-shadow: 0 0 0 35px rgba(255,255,255,.04),0 0 0 70px rgba(255,255,255,.025);
+}
+
+.promo-banner h2 {
+  font-family: 'Space Grotesk',sans-serif;
+  font-size: clamp(1.8rem,4vw,2.8rem);
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.promo-banner p {
+  max-width: 540px;
+  color: rgba(255,255,255,.83);
+  font-size: 14px;
+  line-height: 1.8;
+  position: relative;
+  z-index: 2;
+}
+
+.promo-banner a {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  margin-top: 12px;
+  background: white;
+  color: #6e3ee4;
+  padding: 13px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  position: relative;
+  z-index: 2;
+  transition: .3s;
+}
+
+.promo-banner a:hover { transform: translateY(-4px); }
+
+/* FOOTER */
+
+.site-footer {
+  margin-top: 60px;
+  padding: 65px 0 25px;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg,transparent,rgba(4,5,15,.65));
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 45px;
+}
+
+.footer-brand img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 340px;
+}
+
+.footer-column h4 {
+  font-family: 'Space Grotesk',sans-serif;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.footer-column a {
+  display: block;
+  width: fit-content;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 12px 0;
+  transition: .2s;
+}
+
+.footer-column a:hover { color: var(--cyan); transform: translateX(4px); }
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* MODAL */
+
+.modal-content {
+  background: #11152b;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 20px;
+  color: white;
+  overflow: hidden;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-header .btn-close {
+  filter: invert(1);
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.player-frame {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: 0;
+  display: block;
+}
+
+/* CHATBOT */
+
+.chat-launcher {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 17px 10px 10px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50px;
+  color: white;
+  background: linear-gradient(110deg,#793fff,#a34cff,#ff416c);
+  box-shadow: 0 10px 35px rgba(135,63,255,.4);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.chat-launcher:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+
+.bot-avatar {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.2);
+  border: 1px solid rgba(255,255,255,.4);
+  font-size: 21px;
+}
+
+.chat-launcher strong {
+  font-size: 12px;
+  display: block;
+}
+
+.chat-launcher small {
+  display: block;
+  font-size: 9px;
+  opacity: .8;
+}
+
+.chat-window {
+  position: fixed;
+  right: 25px;
+  bottom: 95px;
+  width: min(370px,calc(100vw - 30px));
+  height: min(520px,calc(100dvh - 130px));
+  z-index: 1101;
+  background: #11152b;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 25px 80px rgba(0,0,0,.55);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(.97);
+  transform-origin: bottom right;
+  transition: .3s;
+}
+
+.chat-window.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.chat-header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: linear-gradient(110deg,#7038df,#9a4ee8,#e94b83);
+}
+
+.chat-header .bot-avatar {
+  flex-shrink: 0;
+}
+
+.chat-header strong {
+  display: block;
+  font-size: 13px;
+}
+
+.chat-header small {
+  font-size: 10px;
+  opacity: .8;
+}
+
+.chat-close {
+  margin-left: auto;
+  border: 0;
+  background: rgba(255,255,255,.15);
+  color: white;
+  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-message {
+  max-width: 88%;
+  padding: 11px 13px;
+  font-size: 12px;
+  line-height: 1.6;
+  border-radius: 14px;
+  animation: messageIn .25s ease;
+}
+
+@keyframes messageIn {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-message.bot {
+  align-self: flex-start;
+  background: #222744;
+  border: 1px solid rgba(255,255,255,.06);
+  border-bottom-left-radius: 4px;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+  background: linear-gradient(110deg,#743ee1,#a54cda);
+  border-bottom-right-radius: 4px;
+}
+
+.chat-message a {
+  color: var(--cyan);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 0 15px 12px;
+}
+
+.chat-suggestion {
+  background: rgba(165,107,255,.13);
+  color: #d7c6ff;
+  border: 1px solid rgba(165,107,255,.3);
+  border-radius: 20px;
+  padding: 7px 10px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.chat-suggestion:hover {
+  background: rgba(165,107,255,.3);
+}
+
+.chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid var(--border);
+  background: rgba(255,255,255,.025);
+}
+
+.chat-form input {
+  flex: 1;
+  min-width: 0;
+  background: #202542;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  padding: 11px 12px;
+  outline: none;
+  color: white;
+  font-size: 12px;
+}
+
+.chat-form input:focus { border-color: var(--purple); }
+
+.chat-form button {
+  border: 0;
+  width: 42px;
+  border-radius: 12px;
+  color: white;
+  background: linear-gradient(130deg,var(--purple),var(--red));
+}
+
+/* BOTÕES AUXILIARES */
+
+.back-top {
+  position: fixed;
+  left: 22px;
+  bottom: 25px;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(20,24,48,.85);
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: .3s;
+  z-index: 900;
+}
+
+.back-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ANIMAÇÃO DE ENTRADA */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .7s ease,transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.loading-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--muted);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255,255,255,.1);
+  border-top-color: var(--cyan);
+  border-radius: 50%;
+  margin: 0 auto 17px;
+  animation: spin .8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 991px) {
+  .main-nav { gap: 0; }
+  .main-nav a { padding: 10px 9px; font-size: 11px; }
+  .hero { min-height: 560px; }
+  .hero-grid { gap: 10px; }
+  .play-emblem { width: 220px; height: 220px; }
+  .play-emblem i { font-size: 85px; }
+}
+
+@media(max-width: 767px) {
+  .header-inner { min-height: 72px; }
+  .brand img { width: 55px; height: 55px; }
+  .brand-name { font-size: 16px; }
+  .mobile-menu { display: block; }
+  .header-action { display: none; }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 12px;
+    right: 12px;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: rgba(14,17,37,.98);
+    box-shadow: var(--shadow);
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .main-nav.show { display: flex; }
+  .main-nav a { font-size: 13px; padding: 13px; }
+
+  .hero {
+    min-height: auto;
+    padding: 65px 0 55px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content { margin: auto; }
+  .hero h1 { letter-spacing: -3px; }
+  .hero-description { margin: auto; }
+  .hero-buttons { justify-content: center; }
+  .hero-meta { justify-content: center; }
+
+  .hero-art { min-height: 350px; margin-top: 15px; }
+  .play-emblem { width: 190px; height: 190px; border-radius: 38px; }
+  .play-emblem::before { border-radius: 29px; }
+  .play-emblem i { font-size: 75px; }
+  .orbit { width: 300px; }
+  .float-top { right: 2%; top: 20px; }
+  .float-bottom { left: 1%; bottom: 20px; }
+
+  .section { padding: 55px 0; }
+  .section-heading { align-items: start; flex-direction: column; }
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .stat-card { padding: 17px; }
+  .stat-number { font-size: 25px; }
+  .search-panel { padding: 17px; }
+  .video-rail { grid-auto-columns: 220px; }
+  .promo-banner { padding: 30px 24px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .footer-brand { grid-column: 1/-1; }
+  .footer-bottom { flex-direction: column; }
+}
+
+@media(max-width: 420px) {
+  .hero h1 { font-size: 3.1rem; }
+  .hero-art { min-height: 300px; }
+  .play-emblem { width: 165px; height: 165px; }
+  .play-emblem i { font-size: 65px; }
+  .orbit { width: 260px; }
+  .floating-card { padding: 10px 12px; }
+  .floating-card strong { font-size: 11px; }
+  .stats-grid { gap: 10px; }
+  .stat-card { padding: 13px; }
+  .search-wrapper { gap: 8px; padding-left: 12px; }
+  .search-button { padding: 11px 12px; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: auto; }
+  .chat-launcher { right: 14px; bottom: 14px; }
+  .chat-window { right: 10px; bottom: 82px; }
+  .back-top { left: 14px; bottom: 17px; }
+}
+</style>
 </head>
-
 
 <body>
 
+<div class="ambient one"></div>
+<div class="ambient two"></div>
+<div class="ambient three"></div>
+<div class="noise"></div>
 
-    <!-- =====================================================
-         CABEÇALHO
-    ====================================================== -->
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
 
-    <header class="main-header">
+      <a class="brand" href="#">
+        <img src="https://portaldigoejackie.github.io/Logotipo-Digo%26Jackie.png" alt="Digo e Jackie">
+        <div class="brand-name">
+          Digo&Jackie
+          <span>PLAY EXPERIENCE</span>
+        </div>
+      </a>
 
-        <div class="header-container">
+      <nav class="main-nav" id="mainNav">
+        <a href="#inicio">Início</a>
+        <a href="#explorar">Explorar</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#sobre">Sobre o Play</a>
+      </nav>
 
-            <a href="https://portaldigoejackie.github.io/"
-               class="brand-area"
-               aria-label="Digo & Jackie - Página inicial">
+      <a href="#catalogo" class="header-action">
+        <i class="bi bi-play-circle-fill me-1"></i> Assistir agora
+      </a>
 
-                <img
-                    src="https://portaldigoejackie.github.io/logo-digoejackie.png"
-                    class="brand-logo"
-                    alt="Logo Digo & Jackie"
-                    width="46"
-                    height="46">
+      <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu">
+        <i class="bi bi-list"></i>
+      </button>
 
-                <h1 class="brand-name">
-                    Digo <span>&</span> Jackie
-                </h1>
+    </div>
+  </div>
+</header>
 
-            </a>
+<!-- HERO -->
+<main id="inicio">
 
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
 
-            <nav class="main-navigation d-none d-md-flex"
-                 aria-label="Navegação principal">
-
-                <a href="https://portaldigoejackie.github.io/"
-                   class="nav-link">
-
-                    <i class="bi bi-house-door me-1"></i>
-                    Início
-
-                </a>
-
-                <a href="https://portaldigoejackie.github.io/digo-jackie-play.html"
-                   class="nav-link active"
-                   aria-current="page">
-
-                    <i class="bi bi-play-circle me-1"></i>
-                    Play
-
-                </a>
-
-            </nav>
-
-
-            <button
-                class="mobile-menu-button d-md-none"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mobileMenu"
-                aria-controls="mobileMenu"
-                aria-expanded="false"
-                aria-label="Abrir menu de navegação">
-
-                <i class="bi bi-list"></i>
-
-            </button>
-
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="live-dot"></span>
+          Seu universo de entretenimento
         </div>
 
+        <h1>
+          O próximo
+          <span class="gradient-text">play é seu.</span>
+        </h1>
 
-        <div class="collapse mobile-navigation d-md-none"
-             id="mobileMenu">
+        <p class="hero-description">
+          Cinema, curiosidades, histórias, mistérios e muito mais.
+          Um universo de conteúdos para explorar, descobrir e se divertir.
+          Escolha o que assistir. A próxima descoberta está a um clique.
+        </p>
 
-            <nav aria-label="Navegação mobile">
-
-                <a href="https://portaldigoejackie.github.io/"
-                   class="nav-link">
-
-                    <i class="bi bi-house-door me-2"></i>
-                    Início
-
-                </a>
-
-                <a href="https://portaldigoejackie.github.io/digo-jackie-play.html"
-                   class="nav-link">
-
-                    <i class="bi bi-play-circle me-2"></i>
-                    Digo&Jackie Play
-
-                </a>
-
-            </nav>
-
+        <div class="hero-buttons">
+          <a href="#catalogo" class="btn-main">
+            <i class="bi bi-play-fill me-2"></i>Explorar conteúdos
+          </a>
+          <a href="#explorar" class="btn-secondary-custom">
+            <i class="bi bi-compass me-2"></i>Conhecer o Play
+          </a>
         </div>
 
-    </header>
-
-
-
-    <!-- =====================================================
-         CONTEÚDO
-    ====================================================== -->
-
-    <main id="conteudo-principal">
-
-
-        <!-- DESTAQUE -->
-
-        <section class="hero">
-
-            <div class="hero-content">
-
-                <div class="hero-badge">
-
-                    <i class="bi bi-stars"></i>
-
-                    Seu universo de entretenimento
-
-                </div>
-
-
-                <h2 class="hero-title">
-                    Digo&Jackie <span>Play.</span>
-                </h2>
-
-
-                <p class="hero-description">
-
-                    Histórias que surpreendem, descobertas que
-                    despertam a curiosidade e conteúdos para
-                    todos os gostos. Seu próximo vídeo está aqui.
-
-                </p>
-
-
-                <div class="hero-actions">
-
-                    <a href="#catalogo"
-                       class="btn-hero btn-hero-primary">
-
-                        <i class="bi bi-play-fill"></i>
-                        Explorar catálogo
-
-                    </a>
-
-
-                    <a href="https://portaldigoejackie.github.io/"
-                       class="btn-hero btn-hero-secondary">
-
-                        <i class="bi bi-house-door"></i>
-                        Voltar ao portal
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- CATÁLOGO -->
-
-        <section id="catalogo">
-
-
-            <div class="catalog-top">
-
-                <div>
-
-                    <div class="catalog-label">
-                        Digo&Jackie Play
-                    </div>
-
-                    <h2 class="catalog-title">
-                        Descubra algo novo.
-                    </h2>
-
-                    <p class="catalog-description">
-                        Escolha uma categoria e encontre seu próximo conteúdo.
-                    </p>
-
-                </div>
-
-
-                <div class="catalog-stats">
-
-                    <span class="stat-item">
-                        <i class="bi bi-collection-play"></i>
-                        <span id="totalVideos">Carregando...</span>
-                    </span>
-
-                    <span class="stat-item">
-                        <i class="bi bi-grid"></i>
-                        <span id="totalCategories">-- playlists</span>
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PESQUISA -->
-
-            <div class="search-area">
-
-                <div class="search-box">
-
-                    <i class="bi bi-search"></i>
-
-                    <input
-                        type="search"
-                        id="searchInput"
-                        class="search-input"
-                        placeholder="O que você quer assistir?"
-                        aria-label="Pesquisar vídeos e categorias"
-                        autocomplete="off">
-
-                    <button
-                        class="clear-search"
-                        id="clearSearch"
-                        type="button"
-                        aria-label="Limpar pesquisa">
-
-                        <i class="bi bi-x-circle-fill"></i>
-
-                    </button>
-
-                </div>
-
-                <span class="search-hint">
-                    Pesquise por título ou categoria
-                </span>
-
-            </div>
-
-
-
-            <!-- FILTROS -->
-
-            <nav class="filter-area"
-                 id="categoryFilters"
-                 aria-label="Categorias">
-
-                <button
-                    class="filter-chip active"
-                    type="button"
-                    data-category="all">
-
-                    <i class="bi bi-grid-fill me-1"></i>
-                    Tudo
-
-                </button>
-
-            </nav>
-
-
-
-            <!-- RESULTADOS -->
-
-            <div id="catalogContent" aria-live="polite">
-
-                <div class="loading-state">
-
-                    <span class="loading-spinner"></span>
-
-                    <div class="fw-bold">
-                        Preparando sua sessão...
-                    </div>
-
-                    <div class="small mt-2">
-                        Estamos organizando os conteúdos para você.
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =====================================================
-         PLAYER MODAL
-    ====================================================== -->
-
-    <div class="modal fade play-modal"
-         id="videoModal"
-         tabindex="-1"
-         aria-labelledby="playerTitle"
-         aria-hidden="true">
-
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-
-            <div class="modal-content">
-
-
-                <div class="modal-header">
-
-                    <div class="modal-brand">
-
-                        <i class="bi bi-play-circle-fill"></i>
-
-                        Digo&Jackie Play
-
-                    </div>
-
-
-                    <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Fechar">
-
-                    </button>
-
-                </div>
-
-
-
-                <div class="modal-body">
-
-
-                    <div class="player-stage" id="playerStage">
-
-                    </div>
-
-
-                    <div class="player-info">
-
-                        <div class="player-category"
-                             id="playerCategory">
-
-                            Digo&Jackie Play
-
-                        </div>
-
-
-                        <h2 class="player-title"
-                            id="playerTitle">
-
-                            Título do vídeo
-
-                        </h2>
-
-
-                        <div class="player-actions">
-
-                            <a href="#"
-                               id="youtubeLink"
-                               class="youtube-button"
-                               target="_blank"
-                               rel="noopener noreferrer">
-
-                                <i class="bi bi-youtube"></i>
-                                Assistir diretamente no YouTube
-
-                            </a>
-
-                        </div>
-
-
-                        <p class="player-note">
-
-                            Aproveite o conteúdo! A reprodução é
-                            incorporada diretamente do YouTube.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="modal-footer">
-
-                    <span>
-                        <i class="bi bi-camera-video me-1"></i>
-                        Reprodução incorporada
-                    </span>
-
-                    <span>
-                        Conteúdo gratuito
-                    </span>
-
-                </div>
-
-
-            </div>
-
+        <div class="hero-meta">
+          <span><i class="bi bi-collection-play"></i> Várias categorias</span>
+          <span><i class="bi bi-lightning-charge"></i> Novas descobertas</span>
+          <span><i class="bi bi-phone"></i> Em qualquer tela</span>
         </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="orbit">
+          <span class="orbit-point"></span>
+          <span class="orbit-point second"></span>
+        </div>
+
+        <div class="play-emblem">
+          <i class="bi bi-play-fill"></i>
+        </div>
+
+        <div class="floating-card float-top">
+          <strong><i class="bi bi-stars"></i> Descubra algo novo</strong>
+          <small>Seu próximo conteúdo favorito</small>
+        </div>
+
+        <div class="floating-card float-bottom">
+          <strong><i class="bi bi-camera-reels"></i> Digo&Jackie Play</strong>
+          <small>Entretenimento em movimento</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EXPLORAR -->
+<section class="section" id="explorar">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <div>
+        <div class="section-kicker">Explore o universo</div>
+        <h2 class="section-title">Um mundo de <span class="text-gradient">possibilidades.</span></h2>
+        <p class="section-subtitle">Tudo começa com uma boa descoberta.</p>
+      </div>
+    </div>
+
+    <div class="stats-grid reveal">
+      <div class="stat-card" style="--accent:var(--purple)">
+        <div class="stat-icon"><i class="bi bi-grid-3x3-gap"></i></div>
+        <div class="stat-number" id="statCategories">--</div>
+        <div class="stat-label">Categorias disponíveis</div>
+      </div>
+
+      <div class="stat-card" style="--accent:var(--cyan)">
+        <div class="stat-icon"><i class="bi bi-play-btn"></i></div>
+        <div class="stat-number" id="statVideos">--</div>
+        <div class="stat-label">Vídeos no catálogo</div>
+      </div>
+
+      <div class="stat-card" style="--accent:var(--red)">
+        <div class="stat-icon"><i class="bi bi-search"></i></div>
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Conteúdo pesquisável</div>
+      </div>
+
+      <div class="stat-card" style="--accent:var(--green)">
+        <div class="stat-icon"><i class="bi bi-phone"></i></div>
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Possibilidades de descoberta</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CATÁLOGO -->
+<section class="section" id="catalogo">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <div>
+        <div class="section-kicker">Sua próxima descoberta</div>
+        <h2 class="section-title">Explore o <span class="text-gradient">catálogo.</span></h2>
+        <p class="section-subtitle">Encontre um tema, escolha um vídeo e dê o play.</p>
+      </div>
+    </div>
+
+    <div class="search-panel reveal">
+      <div class="search-wrapper">
+        <i class="bi bi-search"></i>
+        <input type="search" id="searchInput" placeholder="O que você quer assistir hoje?" autocomplete="off">
+        <button class="search-button" id="searchButton">Pesquisar</button>
+      </div>
+      <div class="search-hint">
+        <i class="bi bi-lightbulb me-1"></i>
+        Pesquise pelo título de um vídeo ou pelo nome de uma categoria.
+      </div>
+    </div>
+
+    <div class="filters" id="categoryFilters">
+      <button class="filter-btn active" data-category="all">Tudo</button>
+    </div>
+
+    <div class="catalog-status" id="catalogStatus">
+      Preparando seu catálogo...
+    </div>
+
+    <div id="catalogContent">
+      <div class="loading-state">
+        <div class="loading-spinner"></div>
+        Carregando experiências...
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BANNER -->
+<section class="section pt-0" id="sobre">
+  <div class="container">
+    <div class="promo-banner reveal">
+      <div class="section-kicker" style="color:#fff;opacity:.8">Digo&Jackie Play</div>
+      <h2>Não fique só no óbvio.<br>Explore o extraordinário.</h2>
+      <p>
+        Cada vídeo é uma oportunidade de descobrir alguma coisa,
+        conhecer novas histórias e enxergar o mundo por outros ângulos.
+        Escolha seu próximo destino.
+      </p>
+      <a href="#catalogo">
+        Explorar o catálogo <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <img src="https://portaldigoejackie.github.io/Logotipo-Digo%26Jackie.png" alt="Digo&Jackie">
+        <p>
+          Digo&Jackie Play. Um espaço para descobrir conteúdos,
+          explorar histórias e aproveitar o melhor do entretenimento.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Navegação</h4>
+        <a href="#inicio">Início</a>
+        <a href="#explorar">Explorar</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#sobre">Sobre o Play</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Portal Digo&Jackie</h4>
+        <a href="https://portaldigoejackie.github.io/">Página principal</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="#catalogo">Assistir conteúdos</a>
+        <a href="#" id="footerBotLink">Falar com DJ Bot</a>
+      </div>
 
     </div>
 
+    <div class="footer-bottom">
+      <span>© <span id="currentYear"></span> Digo&Jackie. Todos os direitos reservados.</span>
+      <span>Feito para quem gosta de descobrir coisas novas. ✦</span>
+    </div>
 
+  </div>
+</footer>
 
-    <!-- =====================================================
-         RODAPÉ
-    ====================================================== -->
+<!-- PLAYER MODAL -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
 
-    <footer class="main-footer">
-
-        <div class="footer-container">
-
-            <div class="footer-bottom">
-
-                &copy; <span id="currentYear"></span>
-                Digo & Jackie. Todos os direitos reservados.
-
-            </div>
-
+      <div class="modal-header">
+        <div>
+          <div class="section-kicker mb-1">Digo&Jackie Play</div>
+          <h5 class="modal-title fs-6" id="modalVideoTitle">Assistindo agora</h5>
         </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <div class="modal-body">
+        <iframe
+          id="youtubePlayer"
+          class="player-frame"
+          src=""
+          title="Player de vídeo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CHATBOT -->
+<button class="chat-launcher" id="chatLauncher" aria-label="Abrir assistente">
+  <span class="bot-avatar"><i class="bi bi-robot"></i></span>
+  <span>
+    <strong>DJ Bot</strong>
+    <small>Como posso ajudar?</small>
+  </span>
+</button>
+
+<div class="chat-window" id="chatWindow">
+
+  <div class="chat-header">
+    <span class="bot-avatar"><i class="bi bi-robot"></i></span>
+    <div>
+      <strong>DJ Bot</strong>
+      <small><i class="bi bi-circle-fill me-1" style="font-size:6px;color:#62e6b5"></i> Assistente do Digo&Jackie Play</small>
+    </div>
+    <button class="chat-close" id="chatClose" aria-label="Fechar chat">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-message bot">
+      Opa! 👋 Eu sou o DJ Bot! Posso ajudar você a explorar o Digo&Jackie Play. Quer encontrar um vídeo, conhecer as categorias ou descobrir como navegar por aqui?
+    </div>
+  </div>
+
+  <div class="chat-suggestions" id="chatSuggestions">
+    <button class="chat-suggestion" data-action="categorias">Ver categorias</button>
+    <button class="chat-suggestion" data-action="buscar">Buscar vídeo</button>
+    <button class="chat-suggestion" data-action="catalogo">Abrir catálogo</button>
+  </div>
+
+  <form class="chat-form" id="chatForm">
+    <input id="chatInput" type="text" placeholder="Digite sua mensagem..." autocomplete="off">
+    <button type="submit" aria-label="Enviar mensagem"><i class="bi bi-send-fill"></i></button>
+  </form>
+
+</div>
+
+<button class="back-top" id="backTop" aria-label="Voltar ao topo">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+/* =====================================================
+   CONFIGURAÇÕES DO CATÁLOGO
+===================================================== */
+
+const CATALOG_URL = "https://portaldigoejackie.github.io/catalogo_digoejackie.json";
+
+let categories = [];
+let allVideos = [];
+let currentFilter = "all";
+let searchTerm = "";
+let unavailableVideos = new Set();
+let expandedCategories = new Set();
+
+const catalogContent = document.getElementById("catalogContent");
+const searchInput = document.getElementById("searchInput");
+const catalogStatus = document.getElementById("catalogStatus");
+
+/* =====================================================
+   UTILITÁRIOS
+===================================================== */
+
+function normalizeText(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  })[char]);
+}
 
-    </footer>
+function getVideoId(video) {
+  const possible = [video?.id, video?.url];
 
+  for (const value of possible) {
+    if (!value) continue;
 
+    const text = String(value).trim();
 
-    <!-- BOOTSTRAP -->
+    if (/^[a-zA-Z0-9_-]{11}$/.test(text)) {
+      return text;
+    }
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous">
-    </script>
+    try {
+      const url = new URL(text);
 
+      if (url.hostname.includes("youtu.be")) {
+        return url.pathname.split("/").filter(Boolean)[0] || null;
+      }
 
+      if (url.hostname.includes("youtube.com")) {
+        const id = url.searchParams.get("v");
+        if (id) return id;
 
-    <!-- =====================================================
-         JAVASCRIPT DA PLATAFORMA
-    ====================================================== -->
-
-    <script>
-
-        "use strict";
-
-
-        /* =====================================================
-           CONFIGURAÇÕES
-        ====================================================== */
-
-        const CATALOG_URL =
-            "https://portaldigoejackie.github.io/catalogo_digoejackie.json";
-
-
-        const INITIAL_LIMIT = 5;
-
-        const LOAD_MORE_STEP = 5;
-
-
-        /* =====================================================
-           ELEMENTOS
-        ====================================================== */
-
-        const catalogContent =
-            document.getElementById("catalogContent");
-
-        const categoryFilters =
-            document.getElementById("categoryFilters");
-
-        const searchInput =
-            document.getElementById("searchInput");
-
-        const clearSearch =
-            document.getElementById("clearSearch");
-
-        const totalVideosElement =
-            document.getElementById("totalVideos");
-
-        const totalCategoriesElement =
-            document.getElementById("totalCategories");
-
-        const videoModalElement =
-            document.getElementById("videoModal");
-
-        const videoModal =
-            new bootstrap.Modal(videoModalElement);
-
-        const playerStage =
-            document.getElementById("playerStage");
-
-
-        /* =====================================================
-           ESTADO
-        ====================================================== */
-
-        let categories = [];
-
-        let allVideos = [];
-
-        let selectedCategory = "all";
-
-        let searchTerm = "";
-
-        let expandedCategories = new Set();
-
-        let visibleLimits = new Map();
-
-        let unavailableVideos = new Set();
-
-        let imageValidationStarted = false;
-
-
-        /* =====================================================
-           ANO
-        ====================================================== */
-
-        document.getElementById("currentYear").textContent =
-            new Date().getFullYear();
-
-
-        /* =====================================================
-           FUNÇÕES AUXILIARES
-        ====================================================== */
-
-        function escapeHTML(value) {
-
-            return String(value ?? "").replace(
-                /[&<>"']/g,
-                character => ({
-                    "&": "&amp;",
-                    "<": "&lt;",
-                    ">": "&gt;",
-                    '"': "&quot;",
-                    "'": "&#39;"
-                })[character]
-            );
-
-        }
-
-
-        function normalizeText(value) {
-
-            return String(value ?? "")
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "")
-                .toLocaleLowerCase("pt-BR");
-
-        }
-
-
-        function categoryName(category) {
-
-            return String(
-                category.nome ||
-                category.name ||
-                category.playlist_id ||
-                "Playlist"
-            )
-                .replace(/[-_]+/g, " ")
-                .replace(/\s+/g, " ")
-                .trim();
-
-        }
-
-
-        function formatCategoryName(name) {
-
-            return String(name).replace(
-                /\b\w/g,
-                letter => letter.toLocaleUpperCase("pt-BR")
-            );
-
-        }
-
-
-        function getVideoId(video) {
-
-            if (video?.id) {
-                return String(video.id).trim();
-            }
-
-            const url = String(video?.url || "");
-
-            const match = url.match(/[?&]v=([^&]+)/);
-
-            return match ? match[1] : "";
-
-        }
-
-
-        function getVideoUrl(video) {
-
-            const id = getVideoId(video);
-
-            return video.url || (
-                id
-                    ? `https://www.youtube.com/watch?v=${encodeURIComponent(id)}`
-                    : "https://www.youtube.com/"
-            );
-
-        }
-
-
-        function getThumbnail(video) {
-
-            const id = getVideoId(video);
-
-            return video.thumbnail || (
-                id
-                    ? `https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg`
-                    : ""
-            );
-
-        }
-
-
-        function getVideoKey(categoryIndex, videoIndex) {
-
-            return `${categoryIndex}:${videoIndex}`;
-
-        }
-
-
-        function getAllVideoCount() {
-
-            return categories.reduce(
-                (total, category) => {
-
-                    return total + (
-                        Array.isArray(category.videos)
-                            ? category.videos.length
-                            : 0
-                    );
-
-                },
-                0
-            );
-
-        }
-
-
-        function isVideoPublic(video) {
-
-            /*
-               Se o JSON possuir um campo de visibilidade,
-               ele será respeitado.
-
-               Exemplos aceitos:
-               publico: false
-               public: false
-               status: "private"
-               visibility: "private"
-            */
-
-            if (video.publico === false || video.public === false) {
-                return false;
-            }
-
-            const status = normalizeText(
-                video.status || video.visibility || ""
-            );
-
-            const privateStatuses = [
-                "private",
-                "privado",
-                "deleted",
-                "deleted video",
-                "removido",
-                "indisponivel"
-            ];
-
-            return !privateStatuses.includes(status);
-
-        }
-
-
-        /* =====================================================
-           TESTE DAS MINIATURAS
-        ====================================================== */
-
-        function validateThumbnail(video, key) {
-
-            return new Promise(resolve => {
-
-                const url = getThumbnail(video);
-
-                if (!url) {
-                    resolve(false);
-                    return;
-                }
-
-                const image = new Image();
-
-                let completed = false;
-
-                const finish = result => {
-
-                    if (completed) {
-                        return;
-                    }
-
-                    completed = true;
-
-                    resolve(result);
-
-                };
-
-                image.onload = () => {
-
-                    /*
-                       Miniaturas genéricas de vídeos
-                       indisponíveis podem retornar dimensões
-                       muito pequenas.
-
-                       Miniaturas normais do YouTube costumam
-                       ter 480 x 360 ou dimensões maiores.
-                    */
-
-                    const validDimensions =
-                        image.naturalWidth > 120 &&
-                        image.naturalHeight > 90;
-
-                    finish(validDimensions);
-
-                };
-
-                image.onerror = () => finish(false);
-
-                image.src = url;
-
-                setTimeout(() => finish(false), 8000);
-
-            });
-
-        }
-
-
-        async function validateAllThumbnails() {
-
-            if (imageValidationStarted) {
-                return;
-            }
-
-            imageValidationStarted = true;
-
-            const checks = [];
-
-            categories.forEach((category, categoryIndex) => {
-
-                (category.videos || []).forEach(
-                    (video, videoIndex) => {
-
-                        const key = getVideoKey(
-                            categoryIndex,
-                            videoIndex
-                        );
-
-                        if (!isVideoPublic(video)) {
-
-                            unavailableVideos.add(key);
-                            return;
-
-                        }
-
-                        checks.push(async () => {
-
-                            const valid = await validateThumbnail(
-                                video,
-                                key
-                            );
-
-                            if (!valid) {
-
-                                unavailableVideos.add(key);
-
-                                renderCurrentView();
-
-                            }
-
-                        });
-
-                    }
-                );
-
-            });
-
-
-            /*
-               Executa em pequenos grupos para evitar
-               abrir centenas de conexões simultâneas.
-            */
-
-            const batchSize = 8;
-
-            for (
-                let index = 0;
-                index < checks.length;
-                index += batchSize
-            ) {
-
-                const batch = checks.slice(
-                    index,
-                    index + batchSize
-                );
-
-                await Promise.all(
-                    batch.map(check => check())
-                );
-
-            }
-
-
-            renderCurrentView();
-
-        }
-
-
-        /* =====================================================
-           ESTADO DOS FILTROS
-        ====================================================== */
-
-        function renderFilters() {
-
-            const buttons = [
-
-                `
-                    <button
-                        class="filter-chip ${selectedCategory === "all" ? "active" : ""}"
-                        type="button"
-                        data-category="all">
-
-                        <i class="bi bi-grid-fill me-1"></i>
-                        Tudo
-
-                    </button>
-                `,
-
-                ...categories.map((category, index) => {
-
-                    const name = formatCategoryName(
-                        categoryName(category)
-                    );
-
-                    return `
-
-                        <button
-                            class="filter-chip ${selectedCategory === String(index) ? "active" : ""}"
-                            type="button"
-                            data-category="${index}">
-
-                            ${escapeHTML(name)}
-
-                        </button>
-
-                    `;
-
-                })
-
-            ];
-
-            categoryFilters.innerHTML = buttons.join("");
-
-        }
-
-
-        /* =====================================================
-           CONTADORES
-        ====================================================== */
-
-        function updateStats() {
-
-            const total = getAllVideoCount();
-
-            const unavailable = unavailableVideos.size;
-
-            totalVideosElement.textContent =
-                `${total - unavailable} vídeos`;
-
-            totalCategoriesElement.textContent =
-                `${categories.length} playlists`;
-
-        }
-
-
-        /* =====================================================
-           CARD DE VÍDEO
-        ====================================================== */
-
-        function createVideoCard(video, categoryIndex, videoIndex) {
-
-            const title = escapeHTML(
-                video.title || "Vídeo sem título"
-            );
-
-            const thumbnail = escapeHTML(
-                getThumbnail(video)
-            );
-
-            const position = Number(video.position) || videoIndex + 1;
-
-            const key = getVideoKey(
-                categoryIndex,
-                videoIndex
-            );
-
-            return `
-
-                <button
-                    class="video-card"
-                    type="button"
-                    data-category-index="${categoryIndex}"
-                    data-video-index="${videoIndex}"
-                    aria-label="Assistir ${title}">
-
-                    <div class="thumb-wrap">
-
-                        <img
-                            class="video-thumb"
-                            src="${thumbnail}"
-                            alt="Miniatura: ${title}"
-                            loading="lazy"
-                            decoding="async">
-
-                        <span class="video-position">
-                            ${String(position).padStart(2, "0")}
-                        </span>
-
-                        <span class="thumb-overlay"
-                              aria-hidden="true">
-
-                            <span class="play-icon">
-                                <i class="bi bi-play-fill"></i>
-                            </span>
-
-                        </span>
-
-                    </div>
-
-
-                    <div class="video-info">
-
-                        <h4 class="video-title">
-                            ${title}
-                        </h4>
-
-                        <div class="video-subtitle">
-                            Digo&Jackie Play
-                        </div>
-
-                    </div>
-
-                </button>
-
-            `;
-
-        }
-
-
-        /* =====================================================
-           OBTER VÍDEOS VÁLIDOS
-        ====================================================== */
-
-        function getAvailableVideos(category, categoryIndex) {
-
-            return (category.videos || [])
-                .map((video, videoIndex) => ({
-                    video,
-                    videoIndex
-                }))
-                .filter(item => {
-
-                    const key = getVideoKey(
-                        categoryIndex,
-                        item.videoIndex
-                    );
-
-                    return !unavailableVideos.has(key);
-
-                });
-
-        }
-
-
-        /* =====================================================
-           FILEIRA DE CATEGORIA
-        ====================================================== */
-
-        function renderCategory(category, categoryIndex) {
-
-            const name = formatCategoryName(
-                categoryName(category)
-            );
-
-            const availableVideos = getAvailableVideos(
-                category,
-                categoryIndex
-            );
-
-
-            if (!availableVideos.length) {
-                return "";
-            }
-
-
-            const expanded = expandedCategories.has(
-                String(categoryIndex)
-            );
-
-
-            const visibleLimit = visibleLimits.get(
-                String(categoryIndex)
-            ) || INITIAL_LIMIT;
-
-
-            const displayedVideos = expanded
-                ? availableVideos.slice(0, visibleLimit)
-                : availableVideos;
-
-
-            const cards = displayedVideos.map(item => {
-
-                return createVideoCard(
-                    item.video,
-                    categoryIndex,
-                    item.videoIndex
-                );
-
-            }).join("");
-
-
-            const hasMore = visibleLimit < availableVideos.length;
-
-            const hasMoreThanInitial =
-                availableVideos.length > INITIAL_LIMIT;
-
-
-            const controls = `
-
-                <div class="category-controls">
-
-                    <button
-                        class="rail-button"
-                        type="button"
-                        data-action="scroll-left"
-                        data-category="${categoryIndex}"
-                        aria-label="Rolar para a esquerda">
-
-                        <i class="bi bi-chevron-left"></i>
-
-                    </button>
-
-
-                    <button
-                        class="rail-button"
-                        type="button"
-                        data-action="scroll-right"
-                        data-category="${categoryIndex}"
-                        aria-label="Rolar para a direita">
-
-                        <i class="bi bi-chevron-right"></i>
-
-                    </button>
-
-
-                    ${hasMoreThanInitial ? `
-
-                        <button
-                            class="view-all-button"
-                            type="button"
-                            data-action="toggle-view"
-                            data-category="${categoryIndex}">
-
-                            ${expanded
-                                ? "Ver menos"
-                                : "Ver todos"}
-
-                            <i class="bi ${expanded ? "bi-chevron-up" : "bi-chevron-right"}"></i>
-
-                        </button>
-
-                    ` : ""}
-
-                </div>
-
-            `;
-
-
-            return `
-
-                <section
-                    class="category-section ${expanded ? "expanded" : ""}"
-                    id="category-${categoryIndex}">
-
-                    <div class="category-heading">
-
-                        <div class="category-heading-main">
-
-                            <h3 class="category-title">
-                                ${escapeHTML(name)}
-                            </h3>
-
-                            <p class="category-description">
-
-                                ${availableVideos.length}
-
-                                ${availableVideos.length === 1
-                                    ? "conteúdo disponível"
-                                    : "conteúdos disponíveis"}
-
-                            </p>
-
-                        </div>
-
-
-                        ${controls}
-
-                    </div>
-
-
-                    <div class="video-rail"
-                         id="rail-${categoryIndex}">
-
-                        ${cards}
-
-                    </div>
-
-
-                    ${expanded && hasMore ? `
-
-                        <div class="load-more-wrap">
-
-                            <button
-                                class="load-more-button"
-                                type="button"
-                                data-action="load-more"
-                                data-category="${categoryIndex}">
-
-                                <i class="bi bi-plus-circle"></i>
-
-                                Mostrar mais vídeos
-
-                            </button>
-
-                        </div>
-
-                    ` : ""}
-
-                </section>
-
-            `;
-
-        }
-
-
-        /* =====================================================
-           PESQUISA
-        ====================================================== */
-
-        function renderSearchResults() {
-
-            const query = normalizeText(searchTerm);
-
-            const results = [];
-
-
-            categories.forEach((category, categoryIndex) => {
-
-                const name = categoryName(category);
-
-                const categoryMatches =
-                    normalizeText(name).includes(query);
-
-
-                (category.videos || []).forEach(
-                    (video, videoIndex) => {
-
-                        const key = getVideoKey(
-                            categoryIndex,
-                            videoIndex
-                        );
-
-                        if (unavailableVideos.has(key)) {
-                            return;
-                        }
-
-                        const titleMatches =
-                            normalizeText(video.title).includes(query);
-
-                        if (titleMatches || categoryMatches) {
-
-                            results.push({
-                                video,
-                                categoryIndex,
-                                videoIndex
-                            });
-
-                        }
-
-                    }
-                );
-
-            });
-
-
-            if (!results.length) {
-
-                catalogContent.innerHTML = `
-
-                    <div class="empty-state">
-
-                        <i class="bi bi-search"></i>
-
-                        <h3 class="h5">
-                            Não encontramos esse conteúdo.
-                        </h3>
-
-                        <p class="mb-0">
-                            Experimente pesquisar por outro título ou categoria.
-                        </p>
-
-                    </div>
-
-                `;
-
-                return;
-
-            }
-
-
-            const cards = results.map(item => {
-
-                return createVideoCard(
-                    item.video,
-                    item.categoryIndex,
-                    item.videoIndex
-                );
-
-            }).join("");
-
-
-            catalogContent.innerHTML = `
-
-                <h3 class="search-results-heading">
-
-                    <i class="bi bi-search me-2"></i>
-
-                    ${results.length}
-                    ${results.length === 1 ? "resultado encontrado" : "resultados encontrados"}
-
-                </h3>
-
-
-                <div class="search-results-grid">
-
-                    ${cards}
-
-                </div>
-
-            `;
-
-        }
-
-
-        /* =====================================================
-           RENDERIZAÇÃO PRINCIPAL
-        ====================================================== */
-
-        function renderCurrentView() {
-
-            updateStats();
-
-
-            if (searchTerm.trim()) {
-
-                renderSearchResults();
-
-                return;
-
-            }
-
-
-            const sections = [];
-
-
-            categories.forEach((category, categoryIndex) => {
-
-                if (
-                    selectedCategory !== "all" &&
-                    selectedCategory !== String(categoryIndex)
-                ) {
-                    return;
-                }
-
-                const html = renderCategory(
-                    category,
-                    categoryIndex
-                );
-
-                if (html) {
-                    sections.push(html);
-                }
-
-            });
-
-
-            if (!sections.length) {
-
-                catalogContent.innerHTML = `
-
-                    <div class="empty-state">
-
-                        <i class="bi bi-collection-play"></i>
-
-                        <h3 class="h5">
-                            Nenhum vídeo disponível nesta categoria.
-                        </h3>
-
-                        <p class="mb-0">
-                            Experimente outra categoria.
-                        </p>
-
-                    </div>
-
-                `;
-
-                return;
-
-            }
-
-
-            catalogContent.innerHTML = sections.join("");
-
-        }
-
-
-        /* =====================================================
-           PLAYER
-        ====================================================== */
-
-        function openVideo(video, category) {
-
-            const id = getVideoId(video);
-
-            if (!id) {
-                return;
-            }
-
-
-            document.getElementById("playerTitle").textContent =
-                video.title || "Digo&Jackie Play";
-
-
-            document.getElementById("playerCategory").textContent =
-                formatCategoryName(category);
-
-
-            document.getElementById("youtubeLink").href =
-                getVideoUrl(video);
-
-
-            const iframe = document.createElement("iframe");
-
-            iframe.src =
-                `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&rel=0&modestbranding=1`;
-
-            iframe.title = video.title || "Vídeo Digo & Jackie";
-
-            iframe.allow =
-                "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-
-            iframe.allowFullscreen = true;
-
-            iframe.referrerPolicy =
-                "strict-origin-when-cross-origin";
-
-
-            playerStage.replaceChildren(iframe);
-
-            videoModal.show();
-
-        }
-
-
-        /* =====================================================
-           CARREGAR MAIS
-        ====================================================== */
-
-        function loadMore(categoryIndex) {
-
-            const key = String(categoryIndex);
-
-            const currentLimit =
-                visibleLimits.get(key) || INITIAL_LIMIT;
-
-            visibleLimits.set(
-                key,
-                currentLimit + LOAD_MORE_STEP
-            );
-
-            renderCurrentView();
-
-        }
-
-
-        /* =====================================================
-           EXPANDIR / RECOLHER CATEGORIA
-        ====================================================== */
-
-        function toggleCategoryView(categoryIndex) {
-
-            const key = String(categoryIndex);
-
-            if (expandedCategories.has(key)) {
-
-                expandedCategories.delete(key);
-
-                visibleLimits.set(
-                    key,
-                    INITIAL_LIMIT
-                );
-
-            } else {
-
-                expandedCategories.add(key);
-
-                visibleLimits.set(
-                    key,
-                    INITIAL_LIMIT * 2
-                );
-
-            }
-
-            renderCurrentView();
-
-        }
-
-
-        /* =====================================================
-           ROLAR FILEIRAS
-        ====================================================== */
-
-        function scrollRail(categoryIndex, direction) {
-
-            const rail = document.getElementById(
-                `rail-${categoryIndex}`
-            );
-
-            if (!rail) {
-                return;
-            }
-
-            const amount = rail.clientWidth * .8;
-
-            rail.scrollBy({
-
-                left: direction * amount,
-                behavior: "smooth"
-
-            });
-
-        }
-
-
-        /* =====================================================
-           CARREGAMENTO DO JSON
-        ====================================================== */
-
-        async function loadCatalog() {
-
-            try {
-
-                const response = await fetch(
-                    CATALOG_URL,
-                    { cache: "no-cache" }
-                );
-
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        `Erro HTTP ${response.status}`
-                    );
-
-                }
-
-
-                const data = await response.json();
-
-
-                if (
-                    !data ||
-                    !Array.isArray(data.categorias)
-                ) {
-
-                    throw new Error(
-                        "Estrutura de catálogo inválida."
-                    );
-
-                }
-
-
-                categories = data.categorias;
-
-
-                renderFilters();
-
-                renderCurrentView();
-
-
-                /*
-                   A validação acontece depois da primeira
-                   renderização, para que o catálogo não
-                   fique parado esperando todas as imagens.
-                */
-
-                validateAllThumbnails();
-
-
-            } catch (error) {
-
-                console.error(
-                    "Erro ao carregar catálogo:",
-                    error
-                );
-
-
-                catalogContent.innerHTML = `
-
-                    <div class="empty-state">
-
-                        <i class="bi bi-exclamation-triangle"></i>
-
-                        <h3 class="h5">
-                            Não foi possível carregar o catálogo.
-                        </h3>
-
-                        <p>
-                            Verifique a disponibilidade do arquivo JSON.
-                        </p>
-
-                        <button
-                            class="load-more-button"
-                            type="button"
-                            id="retryCatalog">
-
-                            <i class="bi bi-arrow-clockwise"></i>
-                            Tentar novamente
-
-                        </button>
-
-                    </div>
-
-                `;
-
-
-                document
-                    .getElementById("retryCatalog")
-                    ?.addEventListener("click", loadCatalog);
-
-            }
-
-        }
-
-
-        /* =====================================================
-           EVENTOS DOS FILTROS
-        ====================================================== */
-
-        categoryFilters.addEventListener("click", event => {
-
-            const button = event.target.closest("[data-category]");
-
-            if (!button) {
-                return;
-            }
-
-            selectedCategory = button.dataset.category;
-
-            renderFilters();
-
-            renderCurrentView();
-
-        });
-
-
-        /* =====================================================
-           PESQUISA EM TEMPO REAL
-        ====================================================== */
-
-        searchInput.addEventListener("input", event => {
-
-            searchTerm = event.target.value.trim();
-
-            clearSearch.classList.toggle(
-                "visible",
-                searchTerm.length > 0
-            );
-
-            renderCurrentView();
-
-        });
-
-
-        clearSearch.addEventListener("click", () => {
-
-            searchInput.value = "";
-
-            searchTerm = "";
-
-            clearSearch.classList.remove("visible");
-
-            renderCurrentView();
-
-            searchInput.focus();
-
-        });
-
-
-        /* =====================================================
-           EVENTOS DAS FILEIRAS E CARDS
-        ====================================================== */
-
-        catalogContent.addEventListener("click", event => {
-
-
-            /* CARD DE VÍDEO */
-
-            const card = event.target.closest(".video-card");
-
-            if (card) {
-
-                const categoryIndex =
-                    Number(card.dataset.categoryIndex);
-
-                const videoIndex =
-                    Number(card.dataset.videoIndex);
-
-
-                const category = categories[categoryIndex];
-
-                const video = category?.videos?.[videoIndex];
-
-
-                if (!video) {
-                    return;
-                }
-
-
-                openVideo(
-                    video,
-                    categoryName(category)
-                );
-
-                return;
-
-            }
-
-
-            /* AÇÕES DE CATEGORIA */
-
-            const actionButton = event.target.closest("[data-action]");
-
-            if (!actionButton) {
-                return;
-            }
-
-
-            const categoryIndex =
-                Number(actionButton.dataset.category);
-
-
-            const action =
-                actionButton.dataset.action;
-
-
-            switch (action) {
-
-                case "scroll-left":
-
-                    scrollRail(categoryIndex, -1);
-
-                    break;
-
-
-                case "scroll-right":
-
-                    scrollRail(categoryIndex, 1);
-
-                    break;
-
-
-                case "toggle-view":
-
-                    toggleCategoryView(categoryIndex);
-
-                    break;
-
-
-                case "load-more":
-
-                    loadMore(categoryIndex);
-
-                    break;
-
-            }
-
-        });
-
-
-        /* =====================================================
-           ENCERRAR PLAYER AO FECHAR
-        ====================================================== */
-
-        videoModalElement.addEventListener(
-            "hidden.bs.modal",
-            () => {
-
-                playerStage.replaceChildren();
-
-            }
+        const parts = url.pathname.split("/").filter(Boolean);
+        const marker = parts.findIndex(part =>
+          ["embed", "shorts", "live"].includes(part)
         );
 
+        if (marker >= 0) return parts[marker + 1] || null;
+      }
+    } catch (_) {}
+  }
 
-        /* =====================================================
-           INICIALIZAÇÃO
-        ====================================================== */
+  return null;
+}
 
-        loadCatalog();
+function getVideoUrl(video) {
+  const id = getVideoId(video);
+  return id ? `https://www.youtube.com/watch?v=${id}` : "";
+}
 
-    </script>
+function getThumbnail(video) {
+  if (video.thumbnail && /^https?:\/\//i.test(video.thumbnail)) {
+    return video.thumbnail;
+  }
 
+  const id = getVideoId(video);
+
+  return id
+    ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
+    : "https://placehold.co/640x360/202542/ffffff?text=Digo%26Jackie+Play";
+}
+
+function isPublic(video) {
+  if (video.publico === false || video.public === false) return false;
+
+  const status = normalizeText(video.status || video.visibility || "");
+
+  return !["privado", "private", "indisponivel", "unavailable"].includes(status);
+}
+
+function getVisibleVideos(category) {
+  return (category.videos || []).filter(video => isPublic(video));
+}
+
+/* =====================================================
+   CARREGAMENTO DO JSON
+===================================================== */
+
+async function loadCatalog() {
+  try {
+    const response = await fetch(CATALOG_URL, { cache: "no-cache" });
+
+    if (!response.ok) {
+      throw new Error("Não foi possível acessar o catálogo.");
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data.categorias)) {
+      throw new Error("Estrutura de categorias inválida.");
+    }
+
+    categories = data.categorias.map((category, index) => ({
+      ...category,
+      _index: index,
+      nome: category.nome || `Categoria ${index + 1}`,
+      videos: Array.isArray(category.videos) ? category.videos : []
+    }));
+
+    allVideos = categories.flatMap((category, categoryIndex) =>
+      getVisibleVideos(category).map((video, videoIndex) => ({
+        ...video,
+        _category: category.nome,
+        _categoryIndex: categoryIndex,
+        _videoIndex: videoIndex
+      }))
+    );
+
+    renderFilters();
+    renderCatalog();
+    updateStats();
+    updateChatSuggestions();
+
+    catalogStatus.textContent =
+      `${categories.length} categorias disponíveis • ${allVideos.length} vídeos carregados`;
+
+    validateAllThumbnails();
+
+  } catch (error) {
+    console.error("Erro ao carregar catálogo:", error);
+
+    catalogStatus.textContent = "Não foi possível carregar o catálogo.";
+
+    catalogContent.innerHTML = `
+      <div class="empty-state">
+        <i class="bi bi-cloud-slash"></i>
+        <strong>O catálogo não conseguiu carregar.</strong>
+        <p class="mt-2">Verifique sua conexão e tente novamente.</p>
+        <button class="show-more" onclick="loadCatalog()">Tentar novamente</button>
+      </div>`;
+  }
+}
+
+/* =====================================================
+   INDICADORES
+===================================================== */
+
+function updateStats() {
+  document.getElementById("statCategories").textContent = categories.length;
+  document.getElementById("statVideos").textContent = allVideos.length;
+}
+
+/* =====================================================
+   FILTROS
+===================================================== */
+
+function renderFilters() {
+  const container = document.getElementById("categoryFilters");
+
+  container.innerHTML = `
+    <button class="filter-btn ${currentFilter === "all" ? "active" : ""}"
+      data-category="all">Tudo</button>
+  `;
+
+  categories.forEach(category => {
+    const button = document.createElement("button");
+
+    button.className = `filter-btn ${currentFilter === category.nome ? "active" : ""}`;
+    button.dataset.category = category.nome;
+    button.textContent = category.nome;
+
+    container.appendChild(button);
+  });
+}
+
+document.getElementById("categoryFilters").addEventListener("click", event => {
+  const button = event.target.closest("[data-category]");
+  if (!button) return;
+
+  currentFilter = button.dataset.category;
+  searchTerm = "";
+  searchInput.value = "";
+
+  renderFilters();
+  renderCatalog();
+
+  if (currentFilter !== "all") {
+    const target = document.getElementById(
+      `category-${categories.findIndex(c => c.nome === currentFilter)}`
+    );
+
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+});
+
+/* =====================================================
+   CARDS DE VÍDEO
+===================================================== */
+
+function createVideoCard(video, categoryName) {
+  const card = document.createElement("article");
+  card.className = "video-card";
+
+  const title = escapeHTML(video.title || "Vídeo sem título");
+  const thumbnail = escapeHTML(getThumbnail(video));
+  const category = escapeHTML(categoryName);
+
+  card.innerHTML = `
+    <div class="video-thumb">
+      <img src="${thumbnail}" alt="${title}" loading="lazy">
+      <span class="play-overlay"><i class="bi bi-play-fill fs-3"></i></span>
+    </div>
+
+    <div class="video-info">
+      <div class="video-title">${title}</div>
+      <div class="video-category">${category}</div>
+
+      <div class="video-actions">
+        <span><i class="bi bi-play-circle me-1"></i> Assistir</span>
+        <button class="video-open">Dar play <i class="bi bi-arrow-right"></i></button>
+      </div>
+    </div>
+  `;
+
+  card.addEventListener("click", () => openVideo(video));
+
+  return card;
+}
+
+function openVideo(video) {
+  const id = getVideoId(video);
+
+  if (!id) {
+    alert("Não foi possível identificar o vídeo.");
+    return;
+  }
+
+  const player = document.getElementById("youtubePlayer");
+
+  player.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&rel=0`;
+
+  document.getElementById("modalVideoTitle").textContent =
+    video.title || "Assistindo agora";
+
+  bootstrap.Modal.getOrCreateInstance(
+    document.getElementById("videoModal")
+  ).show();
+}
+
+document.getElementById("videoModal").addEventListener("hidden.bs.modal", () => {
+  document.getElementById("youtubePlayer").src = "";
+});
+
+/* =====================================================
+   RENDERIZAÇÃO DAS CATEGORIAS
+===================================================== */
+
+function renderCategory(category, index) {
+  const videos = getVisibleVideos(category);
+
+  if (!videos.length) return null;
+
+  const wrapper = document.createElement("section");
+  wrapper.className = "category-block reveal";
+  wrapper.id = `category-${index}`;
+
+  const isExpanded = expandedCategories.has(index);
+  const displayed = isExpanded ? videos : videos;
+  const rail = document.createElement("div");
+
+  rail.className = "video-rail";
+
+  displayed.forEach(video => {
+    rail.appendChild(createVideoCard(video, category.nome));
+  });
+
+  wrapper.innerHTML = `
+    <div class="category-heading">
+      <h3>${escapeHTML(category.nome)}</h3>
+      <span class="category-count">${videos.length} vídeos</span>
+    </div>
+  `;
+
+  wrapper.appendChild(rail);
+
+  return wrapper;
+}
+
+/* =====================================================
+   BUSCA
+===================================================== */
+
+function renderSearchResults() {
+  const query = normalizeText(searchTerm);
+
+  const matchingCategories = categories.filter(category =>
+    normalizeText(category.nome).includes(query)
+  );
+
+  const results = [];
+
+  categories.forEach((category, index) => {
+    const categoryMatches = matchingCategories.includes(category);
+
+    getVisibleVideos(category).forEach(video => {
+      const titleMatches = normalizeText(video.title).includes(query);
+
+      if (categoryMatches || titleMatches) {
+        results.push({ video, category: category.nome, index });
+      }
+    });
+  });
+
+  catalogContent.innerHTML = "";
+
+  if (!results.length) {
+    catalogContent.innerHTML = `
+      <div class="empty-state">
+        <i class="bi bi-search"></i>
+        <strong>Nenhum resultado encontrado.</strong>
+        <p class="mt-2">Experimente pesquisar com outros termos.</p>
+      </div>`;
+    return;
+  }
+
+  const resultHeading = document.createElement("div");
+  resultHeading.className = "category-heading mb-3";
+  resultHeading.innerHTML = `
+    <h3>Resultados da busca</h3>
+    <span class="category-count">${results.length} encontrados</span>
+  `;
+
+  const grid = document.createElement("div");
+  grid.className = "row g-3";
+
+  results.forEach(result => {
+    const col = document.createElement("div");
+    col.className = "col-12 col-sm-6 col-lg-4 col-xl-3";
+
+    col.appendChild(createVideoCard(result.video, result.category));
+    grid.appendChild(col);
+  });
+
+  catalogContent.appendChild(resultHeading);
+  catalogContent.appendChild(grid);
+}
+
+function renderCatalog() {
+  catalogContent.innerHTML = "";
+
+  if (searchTerm.trim()) {
+    renderSearchResults();
+    return;
+  }
+
+  const filtered = categories.filter(category =>
+    currentFilter === "all" || category.nome === currentFilter
+  );
+
+  let rendered = 0;
+
+  filtered.forEach(category => {
+    const index = categories.indexOf(category);
+    const section = renderCategory(category, index);
+
+    if (section) {
+      catalogContent.appendChild(section);
+      rendered++;
+    }
+  });
+
+  if (!rendered) {
+    catalogContent.innerHTML = `
+      <div class="empty-state">
+        <i class="bi bi-collection"></i>
+        <strong>Nenhum vídeo disponível nesta categoria.</strong>
+      </div>`;
+  }
+
+  observeReveals();
+}
+
+/* =====================================================
+   PESQUISA
+===================================================== */
+
+function executeSearch() {
+  searchTerm = searchInput.value.trim();
+  currentFilter = "all";
+  renderFilters();
+  renderCatalog();
+
+  document.getElementById("catalogo").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+document.getElementById("searchButton").addEventListener("click", executeSearch);
+
+searchInput.addEventListener("keydown", event => {
+  if (event.key === "Enter") executeSearch();
+});
+
+searchInput.addEventListener("input", () => {
+  if (!searchInput.value.trim()) {
+    searchTerm = "";
+    renderCatalog();
+  }
+});
+
+/* =====================================================
+   VALIDAÇÃO DE MINIATURAS
+===================================================== */
+
+function validateThumbnail(url) {
+  return new Promise(resolve => {
+    const img = new Image();
+    let finished = false;
+
+    const finish = result => {
+      if (finished) return;
+      finished = true;
+      clearTimeout(timeout);
+      resolve(result);
+    };
+
+    const timeout = setTimeout(() => finish(false), 8000);
+
+    img.onload = () => finish(img.naturalWidth > 100);
+    img.onerror = () => finish(false);
+    img.src = url;
+  });
+}
+
+async function validateAllThumbnails() {
+  const tasks = allVideos.map(async video => {
+    const url = getThumbnail(video);
+    const valid = await validateThumbnail(url);
+
+    if (!valid) {
+      const cardImages = document.querySelectorAll(".video-card img");
+
+      cardImages.forEach(img => {
+        if (img.src === url) {
+          img.src = "https://placehold.co/640x360/202542/ffffff?text=Digo%26Jackie+Play";
+        }
+      });
+    }
+  });
+
+  for (let i = 0; i < tasks.length; i += 8) {
+    await Promise.all(tasks.slice(i, i + 8));
+  }
+}
+
+/* =====================================================
+   DJ BOT — ASSISTENTE DE NAVEGAÇÃO
+===================================================== */
+
+const chatWindow = document.getElementById("chatWindow");
+const chatMessages = document.getElementById("chatMessages");
+const chatInput = document.getElementById("chatInput");
+const chatSuggestions = document.getElementById("chatSuggestions");
+
+function toggleChat(force) {
+  const open = typeof force === "boolean"
+    ? force
+    : !chatWindow.classList.contains("open");
+
+  chatWindow.classList.toggle("open", open);
+
+  if (open) {
+    setTimeout(() => chatInput.focus(), 200);
+  }
+}
+
+document.getElementById("chatLauncher").addEventListener("click", () => toggleChat());
+document.getElementById("chatClose").addEventListener("click", () => toggleChat(false));
+
+document.getElementById("footerBotLink").addEventListener("click", event => {
+  event.preventDefault();
+  toggleChat(true);
+});
+
+function addMessage(message, type = "bot") {
+  const element = document.createElement("div");
+  element.className = `chat-message ${type}`;
+  element.textContent = message;
+
+  chatMessages.appendChild(element);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function updateChatSuggestions() {
+  chatSuggestions.innerHTML = `
+    <button class="chat-suggestion" data-action="categorias">Ver categorias</button>
+    <button class="chat-suggestion" data-action="buscar">Buscar vídeo</button>
+    <button class="chat-suggestion" data-action="catalogo">Abrir catálogo</button>
+  `;
+}
+
+function showCategories() {
+  if (!categories.length) {
+    addMessage("Opa! Ainda estou carregando as categorias. Tente novamente em alguns segundos.");
+    return;
+  }
+
+  const names = categories.map(category => category.nome);
+
+  addMessage("Olha só o que temos por aqui: " + names.join(", ") + ". Qual delas você quer explorar?");
+}
+
+function navigateToCatalog() {
+  document.getElementById("catalogo").scrollIntoView({ behavior: "smooth" });
+  toggleChat(false);
+}
+
+function startSearch() {
+  addMessage("Boa! Digite o nome de um vídeo ou categoria na barra de pesquisa do catálogo. Eu te levo até lá!");
+  toggleChat(false);
+
+  setTimeout(() => {
+    searchInput.focus();
+    document.getElementById("catalogo").scrollIntoView({ behavior: "smooth" });
+  }, 350);
+}
+
+function searchCategory(term) {
+  const normalized = normalizeText(term);
+
+  const category = categories.find(item =>
+    normalizeText(item.nome).includes(normalized)
+  );
+
+  if (!category) return false;
+
+  currentFilter = category.nome;
+  searchTerm = "";
+  searchInput.value = "";
+
+  renderFilters();
+  renderCatalog();
+
+  document.getElementById("catalogo").scrollIntoView({ behavior: "smooth" });
+
+  return true;
+}
+
+function botResponse(rawMessage) {
+  const message = normalizeText(rawMessage);
+
+  if (/^(oi|ola|opa|eai|e ai|bom dia|boa tarde|boa noite)/.test(message)) {
+    return "Opa! 😎 Seja bem-vindo! Quer explorar as categorias, encontrar um vídeo ou conhecer o catálogo?";
+  }
+
+  if (message.includes("categoria") || message.includes("temas") || message.includes("assuntos")) {
+    showCategories();
+    return null;
+  }
+
+  if (message.includes("buscar") || message.includes("pesquisar") || message.includes("procurar")) {
+    startSearch();
+    return null;
+  }
+
+  if (message.includes("catalogo") || message.includes("catalog")) {
+    navigateToCatalog();
+    return "Bora explorar! O catálogo está logo ali. 🚀";
+  }
+
+  if (message.includes("inicio") || message.includes("começo") || message.includes("topo")) {
+    document.getElementById("inicio").scrollIntoView({ behavior: "smooth" });
+    return "Voltamos ao início da aventura!";
+  }
+
+  if (message.includes("sobre") || message.includes("digo") || message.includes("jackie")) {
+    document.getElementById("sobre").scrollIntoView({ behavior: "smooth" });
+    return "Essa é a área sobre o Digo&Jackie Play. Dá uma olhada!";
+  }
+
+  if (message.includes("ajuda") || message.includes("fazer") || message.includes("funciona")) {
+    return "Eu posso ajudar você a navegar! Posso mostrar as categorias, levar ao catálogo ou orientar uma pesquisa. É só pedir!";
+  }
+
+  if (message.includes("obrigado") || message.includes("obrigada") || message.includes("valeu")) {
+    return "Tamo junto! 😁 Agora é só escolher o próximo play!";
+  }
+
+  // Tenta reconhecer o nome de uma categoria
+  for (const category of categories) {
+    if (message.includes(normalizeText(category.nome))) {
+      searchCategory(category.nome);
+      return `Encontrei! 🚀 Mostrando a categoria ${category.nome} no catálogo.`;
+    }
+  }
+
+  // Tenta encontrar um vídeo pelo título
+  const videoMatch = allVideos.find(video =>
+    normalizeText(video.title).includes(message) && message.length >= 3
+  );
+
+  if (videoMatch) {
+    openVideo(videoMatch);
+    return "Achei um vídeo que combina com sua busca! Prepare a pipoca. 🍿";
+  }
+
+  return "Hmm... ainda não encontrei isso. 🤔 Você pode pedir para ver as categorias, abrir o catálogo ou pesquisar pelo título de um vídeo.";
+}
+
+document.getElementById("chatForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const message = chatInput.value.trim();
+  if (!message) return;
+
+  addMessage(message, "user");
+  chatInput.value = "";
+
+  setTimeout(() => {
+    const response = botResponse(message);
+
+    if (response) addMessage(response);
+  }, 350);
+});
+
+chatSuggestions.addEventListener("click", event => {
+  const button = event.target.closest("[data-action]");
+  if (!button) return;
+
+  const action = button.dataset.action;
+
+  if (action === "categorias") showCategories();
+  if (action === "buscar") startSearch();
+  if (action === "catalogo") navigateToCatalog();
+});
+
+/* =====================================================
+   MENU MOBILE
+===================================================== */
+
+const mobileMenu = document.getElementById("mobileMenu");
+const mainNav = document.getElementById("mainNav");
+
+mobileMenu.addEventListener("click", () => {
+  mainNav.classList.toggle("show");
+  mobileMenu.innerHTML = mainNav.classList.contains("show")
+    ? '<i class="bi bi-x-lg"></i>'
+    : '<i class="bi bi-list"></i>';
+});
+
+mainNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("show");
+    mobileMenu.innerHTML = '<i class="bi bi-list"></i>';
+  });
+});
+
+/* =====================================================
+   EFEITOS DE ENTRADA
+===================================================== */
+
+let revealObserver;
+
+function observeReveals() {
+  if (!("IntersectionObserver" in window)) {
+    document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+    return;
+  }
+
+  if (revealObserver) revealObserver.disconnect();
+
+  revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .08 });
+
+  document.querySelectorAll(".reveal:not(.visible)").forEach(el => {
+    revealObserver.observe(el);
+  });
+}
+
+/* =====================================================
+   VOLTAR AO TOPO
+===================================================== */
+
+const backTop = document.getElementById("backTop");
+
+window.addEventListener("scroll", () => {
+  backTop.classList.toggle("visible", window.scrollY > 500);
+}, { passive: true });
+
+backTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+/* =====================================================
+   INICIALIZAÇÃO
+===================================================== */
+
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+observeReveals();
+loadCatalog();
+
+</script>
 </body>
 </html>
