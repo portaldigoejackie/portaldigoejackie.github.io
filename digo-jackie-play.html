@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -42,9 +41,7 @@
       --shadow: 0 24px 70px rgba(0,0,0,.4);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -62,16 +59,10 @@
       overflow-x: hidden;
     }
 
-    a {
-      text-decoration: none;
-    }
+    a { text-decoration: none; }
+    button, input { font-family: inherit; }
 
-    button, input {
-      font-family: inherit;
-    }
-
-    .display-font,
-    h1, h2, h3, h4, h5 {
+    .display-font, h1, h2, h3, h4, h5 {
       font-family: 'Space Grotesk', sans-serif;
     }
 
@@ -82,9 +73,7 @@
       color: transparent;
     }
 
-    .text-muted-custom {
-      color: var(--muted);
-    }
+    .text-muted-custom { color: var(--muted); }
 
     /* HEADER */
 
@@ -92,14 +81,12 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(11,11,22,.82);
+      background: rgba(11,11,22,.88);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(18px);
     }
 
-    .navbar {
-      min-height: 76px;
-    }
+    .navbar { min-height: 76px; }
 
     .brand-logo {
       width: 155px;
@@ -114,9 +101,7 @@
       transition: .25s;
     }
 
-    .nav-link:hover {
-      color: var(--yellow) !important;
-    }
+    .nav-link:hover { color: var(--yellow) !important; }
 
     .nav-cta {
       border: 0;
@@ -134,7 +119,29 @@
       color: white;
     }
 
-    /* BOTÃO DO MENU MOBILE */
+    /* ACESSO AO PORTAL */
+
+    .nav-portal {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border: 1px solid rgba(69,217,232,.35);
+      border-radius: 50px;
+      background: rgba(69,217,232,.07);
+      color: var(--cyan) !important;
+      font-size: .88rem;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .nav-portal:hover {
+      border-color: var(--cyan);
+      background: rgba(69,217,232,.16);
+      color: white !important;
+      transform: translateY(-2px);
+    }
 
     .navbar-toggler {
       display: grid;
@@ -313,19 +320,13 @@
       font-size: .9rem;
     }
 
-    .hero-floating small {
-      color: var(--muted);
-    }
+    .hero-floating small { color: var(--muted); }
 
     /* SEÇÕES */
 
-    .section-space {
-      padding: 85px 0;
-    }
+    .section-space { padding: 85px 0; }
 
-    .section-heading {
-      margin-bottom: 30px;
-    }
+    .section-heading { margin-bottom: 30px; }
 
     .section-eyebrow {
       color: var(--orange);
@@ -387,9 +388,7 @@
 
     /* CATÁLOGO */
 
-    .catalog-section {
-      padding-top: 95px;
-    }
+    .catalog-section { padding-top: 95px; }
 
     .search-box {
       display: flex;
@@ -422,9 +421,7 @@
       color: white;
     }
 
-    .search-box input::placeholder {
-      color: #88889f;
-    }
+    .search-box input::placeholder { color: #88889f; }
 
     .search-box button {
       flex-shrink: 0;
@@ -500,9 +497,7 @@
       font-weight: 800;
     }
 
-    .category-title small {
-      color: var(--muted);
-    }
+    .category-title small { color: var(--muted); }
 
     .see-all-btn {
       flex-shrink: 0;
@@ -565,9 +560,7 @@
       transition: transform .5s;
     }
 
-    .video-card:hover .video-thumb img {
-      transform: scale(1.07);
-    }
+    .video-card:hover .video-thumb img { transform: scale(1.07); }
 
     .play-overlay {
       position: absolute;
@@ -579,9 +572,7 @@
       transition: .25s;
     }
 
-    .video-card:hover .play-overlay {
-      opacity: 1;
-    }
+    .video-card:hover .play-overlay { opacity: 1; }
 
     .play-overlay i {
       display: grid;
@@ -595,9 +586,7 @@
       box-shadow: 0 5px 20px rgba(0,0,0,.3);
     }
 
-    .video-info {
-      padding: 14px 15px 16px;
-    }
+    .video-info { padding: 14px 15px 16px; }
 
     .video-info h4 {
       display: -webkit-box;
@@ -638,17 +627,9 @@
       box-shadow: var(--shadow);
     }
 
-    .modal-header {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .modal-footer {
-      border-top: 1px solid var(--border);
-    }
-
-    .btn-close {
-      filter: invert(1);
-    }
+    .modal-header { border-bottom: 1px solid var(--border); }
+    .modal-footer { border-top: 1px solid var(--border); }
+    .btn-close { filter: invert(1); }
 
     .all-videos-grid {
       display: grid;
@@ -748,6 +729,30 @@
       z-index: 1;
     }
 
+    /* BOTÃO PORTAL NO DESTAQUE */
+
+    .btn-portal {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border: 1px solid rgba(69,217,232,.5);
+      border-radius: 50px;
+      background: rgba(69,217,232,.1);
+      color: var(--cyan);
+      font-weight: 800;
+      transition: .3s;
+    }
+
+    .btn-portal:hover {
+      transform: translateY(-3px);
+      border-color: var(--cyan);
+      background: rgba(69,217,232,.2);
+      color: white;
+      box-shadow: 0 10px 30px rgba(69,217,232,.12);
+    }
+
     /* FOOTER */
 
     .site-footer {
@@ -788,9 +793,14 @@
       transition: .2s;
     }
 
-    .footer-links a:hover {
-      color: var(--yellow);
+    .footer-links a:hover { color: var(--yellow); }
+
+    .footer-links .portal-footer-link {
+      color: var(--cyan);
+      font-weight: 700;
     }
+
+    .footer-links .portal-footer-link:hover { color: white; }
 
     .footer-bottom {
       margin-top: 45px;
@@ -950,13 +960,8 @@
       color: white;
     }
 
-    .dj-message p {
-      margin: 0 0 10px;
-    }
-
-    .dj-message p:last-child {
-      margin-bottom: 0;
-    }
+    .dj-message p { margin: 0 0 10px; }
+    .dj-message p:last-child { margin-bottom: 0; }
 
     .dj-message .message-list {
       display: grid;
@@ -1010,13 +1015,8 @@
       font-size: .87rem;
     }
 
-    .dj-input-area input:focus {
-      border-color: var(--purple);
-    }
-
-    .dj-input-area input::placeholder {
-      color: #9292a9;
-    }
+    .dj-input-area input:focus { border-color: var(--purple); }
+    .dj-input-area input::placeholder { color: #9292a9; }
 
     .dj-send {
       display: grid;
@@ -1032,9 +1032,7 @@
       cursor: pointer;
     }
 
-    .dj-send:hover {
-      filter: brightness(1.12);
-    }
+    .dj-send:hover { filter: brightness(1.12); }
 
     /* ANIMAÇÕES */
 
@@ -1056,22 +1054,16 @@
     /* RESPONSIVIDADE */
 
     @media (max-width: 991px) {
-      .hero {
-        min-height: 600px;
-      }
+      .hero { min-height: 600px; }
 
       .hero-floating {
         right: 5%;
         bottom: 6%;
       }
 
-      .section-space {
-        padding: 65px 0;
-      }
+      .section-space { padding: 65px 0; }
 
-      .navbar-collapse {
-        padding: 12px 0 18px;
-      }
+      .navbar-collapse { padding: 12px 0 18px; }
 
       .navbar-nav {
         align-items: stretch !important;
@@ -1087,15 +1079,16 @@
         background: rgba(255,255,255,.06);
       }
 
-      .navbar-nav .nav-cta {
-        text-align: center;
+      .navbar-nav .nav-cta { text-align: center; }
+
+      .navbar-nav .nav-portal {
+        margin-top: 5px;
+        justify-content: center;
       }
     }
 
     @media (max-width: 767px) {
-      html {
-        scroll-padding-top: 75px;
-      }
+      html { scroll-padding-top: 75px; }
 
       .navbar {
         min-height: 68px;
@@ -1108,9 +1101,7 @@
         max-height: 53px;
       }
 
-      .hero {
-        min-height: 610px;
-      }
+      .hero { min-height: 610px; }
 
       .hero::before {
         background:
@@ -1143,59 +1134,34 @@
         bottom: 20px;
       }
 
-      .stats-wrap {
-        margin-top: -15px;
-      }
+      .stats-wrap { margin-top: -15px; }
 
       .stats-panel {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .stat-item {
-        padding: 19px 8px;
-      }
+      .stat-item { padding: 19px 8px; }
+      .stat-item strong { font-size: 1.65rem; }
+      .stat-item span { font-size: .76rem; }
 
-      .stat-item strong {
-        font-size: 1.65rem;
-      }
-
-      .stat-item span {
-        font-size: .76rem;
-      }
-
-      .catalog-section {
-        padding-top: 65px;
-      }
-
-      .section-space {
-        padding: 55px 0;
-      }
+      .catalog-section { padding-top: 65px; }
+      .section-space { padding: 55px 0; }
 
       .video-rail {
         grid-auto-columns: minmax(215px, 76vw);
         gap: 13px;
       }
 
-      .category-section {
-        margin-bottom: 40px;
-      }
+      .category-section { margin-bottom: 40px; }
 
       .category-header {
         align-items: center;
         gap: 8px;
       }
 
-      .category-title {
-        gap: 9px;
-      }
-
-      .category-title h3 {
-        font-size: 1.08rem;
-      }
-
-      .category-title small {
-        font-size: .72rem;
-      }
+      .category-title { gap: 9px; }
+      .category-title h3 { font-size: 1.08rem; }
+      .category-title small { font-size: .72rem; }
 
       .category-symbol {
         width: 38px;
@@ -1207,9 +1173,7 @@
         font-size: .75rem;
       }
 
-      .discovery-banner {
-        padding: 35px 25px;
-      }
+      .discovery-banner { padding: 35px 25px; }
 
       .dj-launcher {
         right: 14px;
@@ -1233,14 +1197,8 @@
         border-radius: 19px;
       }
 
-      .dj-header {
-        padding: 12px 14px;
-      }
-
-      .dj-messages {
-        padding: 13px;
-        gap: 11px;
-      }
+      .dj-header { padding: 12px 14px; }
+      .dj-messages { padding: 13px; gap: 11px; }
 
       .dj-message {
         max-width: 95%;
@@ -1249,9 +1207,7 @@
         line-height: 1.6;
       }
 
-      .dj-input-area {
-        padding: 9px;
-      }
+      .dj-input-area { padding: 9px; }
 
       .dj-input-area input {
         padding: 11px 13px;
@@ -1263,25 +1219,15 @@
         height: 41px;
       }
 
-      .modal-dialog {
-        margin: 10px;
-      }
+      .modal-dialog { margin: 10px; }
 
       .modal-dialog-centered {
         min-height: calc(100% - 20px);
       }
 
-      .modal-content {
-        border-radius: 16px;
-      }
-
-      .modal-header {
-        padding: 13px 14px;
-      }
-
-      .modal-body {
-        padding: 13px;
-      }
+      .modal-content { border-radius: 16px; }
+      .modal-header { padding: 13px 14px; }
+      .modal-body { padding: 13px; }
 
       .all-videos-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1301,9 +1247,7 @@
     }
 
     @media (max-width: 420px) {
-      .hero {
-        min-height: 590px;
-      }
+      .hero { min-height: 590px; }
 
       .hero-actions {
         flex-direction: column;
@@ -1311,9 +1255,7 @@
         max-width: 330px;
       }
 
-      .hero-actions a {
-        width: 100%;
-      }
+      .hero-actions a { width: 100%; }
 
       .search-box {
         gap: 6px;
@@ -1325,18 +1267,14 @@
         font-size: .83rem;
       }
 
-      .filter-list {
-        gap: 7px;
-      }
+      .filter-list { gap: 7px; }
 
       .filter-btn {
         padding: 8px 12px;
         font-size: .78rem;
       }
 
-      .category-title h3 {
-        font-size: 1rem;
-      }
+      .category-title h3 { font-size: 1rem; }
 
       .see-all-btn {
         padding: 8px 9px;
@@ -1351,9 +1289,7 @@
         max-height: calc(100dvh - 95px);
       }
 
-      .all-videos-grid {
-        gap: 8px;
-      }
+      .all-videos-grid { gap: 8px; }
     }
 
     @media (max-height: 520px) and (max-width: 767px) {
@@ -1363,21 +1299,10 @@
         bottom: 70px;
       }
 
-      .dj-launcher {
-        bottom: 10px;
-      }
-
-      .dj-header {
-        padding: 8px 12px;
-      }
-
-      .dj-messages {
-        padding: 9px;
-      }
-
-      .dj-input-area {
-        padding: 7px;
-      }
+      .dj-launcher { bottom: 10px; }
+      .dj-header { padding: 8px 12px; }
+      .dj-messages { padding: 9px; }
+      .dj-input-area { padding: 7px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1396,6 +1321,7 @@
   <!-- CABEÇALHO -->
   <header class="site-header">
     <nav class="navbar navbar-expand-lg navbar-dark container">
+
       <a class="navbar-brand" href="#inicio" aria-label="Digo e Jackie Play - Início">
         <img
           class="brand-logo"
@@ -1403,23 +1329,51 @@
           alt="Digo&Jackie Play">
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#mainNav" aria-controls="mainNav"
-        aria-expanded="false" aria-label="Abrir navegação">
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Abrir navegação">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="#explorar">Explorar</a></li>
-          <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre o Play</a></li>
-          <li class="nav-item ms-lg-2">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">Início</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#explorar">Explorar</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#catalogo">Catálogo</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#sobre">Sobre o Play</a>
+          </li>
+
+          <li class="nav-item ms-lg-1">
+            <a class="nav-portal"
+              href="https://portaldigoejackie.github.io/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <i class="bi bi-globe2"></i>
+              Portal Digo&Jackie
+              <i class="bi bi-box-arrow-up-right small"></i>
+            </a>
+          </li>
+
+          <li class="nav-item ms-lg-1">
             <a class="nav-cta d-inline-block mt-2 mt-lg-0" href="#catalogo">
               <i class="bi bi-play-fill"></i> Assistir agora
             </a>
           </li>
+
         </ul>
       </div>
     </nav>
@@ -1431,6 +1385,7 @@
     <section class="hero" id="inicio">
       <div class="container">
         <div class="hero-content">
+
           <span class="hero-tag">
             <i class="bi bi-stars"></i>
             Seu universo de entretenimento
@@ -1455,6 +1410,7 @@
               Conhecer o Play
             </a>
           </div>
+
         </div>
       </div>
 
@@ -1472,22 +1428,27 @@
     <!-- ESTATÍSTICAS -->
     <div class="container stats-wrap">
       <div class="stats-panel">
+
         <div class="stat-item">
           <strong id="statCategories">--</strong>
           <span>Categorias disponíveis</span>
         </div>
+
         <div class="stat-item">
           <strong id="statVideos">--</strong>
           <span>Vídeos no catálogo</span>
         </div>
+
         <div class="stat-item">
           <strong>100%</strong>
           <span>Conteúdo pesquisável</span>
         </div>
+
         <div class="stat-item">
           <strong>∞</strong>
           <span>Possibilidades de descoberta</span>
         </div>
+
       </div>
     </div>
 
@@ -1504,6 +1465,7 @@
 
     <!-- CATÁLOGO -->
     <section class="container pb-5" id="catalogo">
+
       <div class="section-heading">
         <span class="section-eyebrow">Sua próxima descoberta</span>
         <h2>Explore o <span class="text-gradient">catálogo.</span></h2>
@@ -1531,163 +1493,269 @@
       </div>
 
       <div id="catalogResults"></div>
+
     </section>
 
     <!-- CHAMADA -->
     <section class="container section-space" id="sobre">
+
       <div class="discovery-banner">
+
         <span class="section-eyebrow">Digo&Jackie Play</span>
+
         <h2>Entretenimento em movimento. Descobertas sem roteiro.</h2>
+
         <p>
           Um espaço para descobrir conteúdos, explorar histórias e
           aproveitar o melhor do entretenimento. Escolha seu próximo
           destino e deixe a curiosidade fazer o resto.
         </p>
-        <a href="#catalogo" class="btn-play">
-          <i class="bi bi-play-fill"></i> Explorar o catálogo
-        </a>
+
+        <div class="d-flex flex-wrap gap-3 mt-4">
+
+          <a href="#catalogo" class="btn-play">
+            <i class="bi bi-play-fill"></i>
+            Explorar o catálogo
+          </a>
+
+          <a href="https://portaldigoejackie.github.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-portal">
+            <i class="bi bi-globe2"></i>
+            Conhecer o Portal
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+
+        </div>
       </div>
+
     </section>
 
   </main>
 
   <!-- RODAPÉ -->
   <footer class="site-footer">
+
     <div class="container">
+
       <div class="row g-4">
+
         <div class="col-lg-5">
+
           <img class="footer-logo"
             src="https://portaldigoejackie.github.io/Logotipo-Digo%26Jackie.png"
             alt="Digo&Jackie Play">
+
           <p class="footer-text">
             Digo&Jackie Play. Um espaço para descobrir conteúdos,
             explorar histórias e aproveitar o melhor do entretenimento.
           </p>
+
         </div>
 
         <div class="col-6 col-lg-3">
+
           <h5 class="footer-heading">Navegação</h5>
+
           <div class="footer-links">
             <a href="#inicio">Início</a>
             <a href="#explorar">Explorar</a>
             <a href="#catalogo">Catálogo</a>
             <a href="#sobre">Sobre o Play</a>
           </div>
+
         </div>
 
         <div class="col-6 col-lg-4">
+
           <h5 class="footer-heading">Portal Digo&Jackie</h5>
+
           <div class="footer-links">
-            <a href="https://portaldigoejackie.github.io/">Página principal</a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+
+            <a href="https://portaldigoejackie.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="portal-footer-link">
+              <i class="bi bi-globe2 me-1"></i>
+              Acessar página principal
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+
+            <a href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer">
+              YouTube
+            </a>
+
             <a href="#catalogo">Assistir conteúdos</a>
-            <a href="javascript:void(0)" id="footerBotLink">Falar com DJ Bot</a>
+
+            <a href="#" id="footerBotLink">Falar com DJ Bot</a>
+
           </div>
+
         </div>
+
       </div>
 
       <div class="footer-bottom">
         © <span id="currentYear"></span> Digo&Jackie. Todos os direitos reservados.
         Feito para quem gosta de descobrir coisas novas. ✦
       </div>
+
     </div>
+
   </footer>
 
   <!-- MODAL: TODOS OS VÍDEOS -->
   <div class="modal fade" id="categoryModal" tabindex="-1" aria-hidden="true">
+
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
       <div class="modal-content">
+
         <div class="modal-header">
+
           <div>
             <small class="section-eyebrow">Explore os conteúdos</small>
+
             <h5 class="modal-title display-font fw-bold" id="categoryModalTitle">
               Vídeos
             </h5>
+
             <small class="text-muted-custom" id="categoryModalCount"></small>
           </div>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"
+
+          <button type="button" class="btn-close"
+            data-bs-dismiss="modal"
             aria-label="Fechar"></button>
+
         </div>
 
         <div class="modal-body">
           <div class="all-videos-grid" id="categoryModalVideos"></div>
         </div>
+
       </div>
     </div>
   </div>
 
   <!-- MODAL: PLAYER -->
   <div class="modal fade" id="playerModal" tabindex="-1" aria-hidden="true">
+
     <div class="modal-dialog modal-xl modal-dialog-centered">
+
       <div class="modal-content">
+
         <div class="modal-header">
+
           <div>
             <small class="section-eyebrow">Digo&Jackie Play</small>
-            <h5 class="modal-title fw-bold" id="playerTitle">Assistindo agora</h5>
+            <h5 class="modal-title fw-bold" id="playerTitle">
+              Assistindo agora
+            </h5>
           </div>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"
+
+          <button type="button" class="btn-close"
+            data-bs-dismiss="modal"
             aria-label="Fechar"></button>
+
         </div>
+
         <div class="modal-body p-0">
-          <iframe id="playerFrame" class="player-frame"
+
+          <iframe id="playerFrame"
+            class="player-frame"
             src="about:blank"
             title="Reprodutor de vídeo do YouTube"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
+            allowfullscreen>
+          </iframe>
+
         </div>
+
       </div>
     </div>
   </div>
 
   <!-- DJ BOT: BOTÃO -->
   <button class="dj-launcher" id="djLauncher"
-    type="button" aria-label="Abrir assistente DJ Bot"
-    aria-expanded="false" aria-controls="djWindow">
-    <span class="dj-avatar"><i class="bi bi-robot"></i></span>
+    type="button"
+    aria-label="Abrir assistente DJ Bot"
+    aria-expanded="false"
+    aria-controls="djWindow">
+
+    <span class="dj-avatar">
+      <i class="bi bi-robot"></i>
+    </span>
+
     <span>Falar com DJ Bot</span>
+
   </button>
 
   <!-- DJ BOT: JANELA -->
   <section class="dj-window" id="djWindow"
-    role="dialog" aria-label="Assistente DJ Bot" aria-hidden="true">
+    role="dialog"
+    aria-label="Assistente DJ Bot"
+    aria-hidden="true">
 
     <div class="dj-header">
+
       <div class="dj-header-info">
-        <span class="dj-avatar"><i class="bi bi-robot"></i></span>
+
+        <span class="dj-avatar">
+          <i class="bi bi-robot"></i>
+        </span>
+
         <div>
           <strong>DJ Bot</strong>
           <small>Assistente do Digo&Jackie Play</small>
         </div>
+
       </div>
 
       <button class="dj-close" id="djClose"
-        type="button" aria-label="Fechar chatbot">
+        type="button"
+        aria-label="Fechar chatbot">
         <i class="bi bi-x-lg"></i>
       </button>
+
     </div>
 
     <div class="dj-messages" id="djMessages" aria-live="polite">
+
       <div class="dj-message">
+
         <p>Opa! 👋 Eu sou o DJ Bot!</p>
-        <p>Posso ajudar você a explorar o Digo&Jackie Play. Quer encontrar um vídeo, conhecer as categorias ou abrir o catálogo completo?</p>
+
+        <p>
+          Posso ajudar você a explorar o Digo&Jackie Play.
+          Quer encontrar um vídeo, conhecer as categorias ou abrir o catálogo completo?
+        </p>
 
         <div class="dj-quick-actions">
           <button type="button" data-action="categories">Ver categorias</button>
           <button type="button" data-action="search">Buscar vídeo</button>
           <button type="button" data-action="catalog">Abrir catálogo</button>
         </div>
+
       </div>
+
     </div>
 
     <form class="dj-input-area" id="djForm" autocomplete="off">
+
       <input id="djInput" type="text"
         placeholder="Digite sua mensagem..."
         aria-label="Mensagem para o DJ Bot">
+
       <button class="dj-send" type="submit" aria-label="Enviar mensagem">
         <i class="bi bi-send-fill"></i>
       </button>
+
     </form>
+
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
@@ -1764,7 +1832,9 @@
           }
 
           const match = url.pathname.match(/\/(?:embed|shorts)\/([a-zA-Z0-9_-]{11})/);
+
           return match ? match[1] : "";
+
         } catch {
           return "";
         }
@@ -1902,9 +1972,9 @@
       function renderFilters() {
         elements.filters.innerHTML = `
           <button class="filter-btn active" data-filter="all">Tudo</button>
+
           ${state.categories.map((category, index) => `
-            <button class="filter-btn"
-              data-filter="${index}">
+            <button class="filter-btn" data-filter="${index}">
               ${escapeHTML(getCategoryName(category))}
             </button>
           `).join("")}
@@ -1953,10 +2023,13 @@
 
             <div class="video-info">
               <h4>${title}</h4>
-              <small><i class="bi bi-collection-play"></i>
+
+              <small>
+                <i class="bi bi-collection-play"></i>
                 ${escapeHTML(categoryName)}
               </small>
             </div>
+
           </article>
         `;
       }
@@ -1964,6 +2037,7 @@
       function bindVideoCards(container) {
         container.querySelectorAll("[data-video-id]")
           .forEach(card => {
+
             const play = () => {
               openPlayer(
                 card.dataset.videoId,
@@ -1979,6 +2053,7 @@
                 play();
               }
             });
+
           });
       }
 
@@ -1992,8 +2067,11 @@
 
         return `
           <section class="category-section">
+
             <div class="category-header">
+
               <div class="category-title">
+
                 <span class="category-symbol">
                   <i class="bi ${getCategoryIcon(index)}"></i>
                 </span>
@@ -2002,6 +2080,7 @@
                   <h3>${escapeHTML(name)}</h3>
                   <small>${categoryVideos.length} conteúdo(s)</small>
                 </div>
+
               </div>
 
               <button class="see-all-btn"
@@ -2009,6 +2088,7 @@
                 data-open-category="${index}">
                 Ver todos <i class="bi bi-arrow-right"></i>
               </button>
+
             </div>
 
             <div class="video-rail">
@@ -2016,6 +2096,7 @@
                 createVideoCard(video, name)
               ).join("")}
             </div>
+
           </section>
         `;
       }
@@ -2029,6 +2110,7 @@
               <p>Tente outra palavra ou selecione outra categoria.</p>
             </div>
           `;
+
           return;
         }
 
@@ -2114,7 +2196,7 @@
         }
       });
 
-      /* MODAL COM TODOS OS VÍDEOS DO CATÁLOGO OU DA CATEGORIA */
+      /* MODAL COM TODOS OS VÍDEOS */
 
       function renderModalVideos(entries) {
         elements.categoryVideos.innerHTML = entries.map(entry => {
@@ -2135,9 +2217,12 @@
                 onerror="this.onerror=null;this.src='${FALLBACK_THUMBNAIL}'">
 
               <span>${escapeHTML(video.title || "Vídeo sem título")}</span>
-              <small><i class="bi bi-collection-play"></i>
+
+              <small>
+                <i class="bi bi-collection-play"></i>
                 ${escapeHTML(categoryName)}
               </small>
+
             </article>
           `;
         }).join("");
@@ -2154,6 +2239,7 @@
         const name = getCategoryName(category);
 
         elements.categoryTitle.textContent = name;
+
         elements.categoryCount.textContent =
           `${videos.length} conteúdo(s) disponíveis`;
 
@@ -2169,6 +2255,7 @@
         const entries = getAllVideos();
 
         elements.categoryTitle.textContent = "Catálogo completo";
+
         elements.categoryCount.textContent =
           `${entries.length} vídeo(s) em ${state.categories.length} categoria(s)`;
 
@@ -2230,7 +2317,8 @@
       bot.close.addEventListener("click", closeBot);
 
       document.getElementById("footerBotLink")
-        .addEventListener("click", () => {
+        .addEventListener("click", event => {
+          event.preventDefault();
           openBot();
         });
 
@@ -2396,6 +2484,35 @@
           term.includes("procurar")
         ) {
           handleBotAction("search");
+          return;
+        }
+
+        /* ACESSO AO PORTAL PELO DJ BOT */
+
+        if (
+          term.includes("portal") ||
+          term.includes("pagina principal") ||
+          term.includes("site principal") ||
+          term.includes("site oficial")
+        ) {
+          addBotMessage(
+            "Claro! 🌐 O Portal Digo&Jackie reúne o universo principal do projeto.\n\nVocê pode acessá-lo pelo link abaixo:"
+          );
+
+          const message = document.createElement("div");
+          message.className = "dj-message";
+
+          const link = document.createElement("a");
+          link.href = "https://portaldigoejackie.github.io/";
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.className = "btn-portal";
+          link.innerHTML = '<i class="bi bi-globe2"></i> Acessar Portal Digo&Jackie <i class="bi bi-arrow-up-right"></i>';
+
+          message.appendChild(link);
+          bot.messages.appendChild(message);
+          bot.messages.scrollTop = bot.messages.scrollHeight;
+
           return;
         }
 
