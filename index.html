@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Conexão antecipada com as imagens do YouTube -->
+  <!-- Conexão antecipada com o YouTube -->
   <link rel="preconnect" href="https://i.ytimg.com">
 
   <!-- Bootstrap 5.3.8 -->
@@ -309,7 +309,7 @@
       box-shadow: 0 12px 40px rgba(19,40,75,.07);
     }
 
-    /* THUMBNAIL DO VÍDEO */
+    /* THUMBNAIL DO YOUTUBE */
 
     .live-image-container {
       position: relative;
@@ -343,6 +343,7 @@
       justify-content: center;
       background: rgba(4,12,25,.20);
       transition: background .25s ease;
+      pointer-events: none;
     }
 
     .live-image-container:hover .live-overlay {
@@ -1163,11 +1164,12 @@
             <img
               id="liveThumbnail"
               class="live-image"
-              src="https://i.ytimg.com/vi/R0EiL6wTyjY/maxresdefault.jpg"
+              src="https://i.ytimg.com/vi/R0EiL6wTyjY/hqdefault.jpg"
               alt="Thumbnail do vídeo A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê?"
-              width="1280"
-              height="720"
+              width="480"
+              height="360"
               fetchpriority="high"
+              loading="eager"
               decoding="async">
 
             <div class="live-overlay"></div>
@@ -1316,9 +1318,7 @@
 
 
     <div class="row g-4" id="newsGrid">
-
       <!-- CARDS GERADOS PELO JAVASCRIPT -->
-
     </div>
 
     <div class="no-results d-none" id="noResults">
@@ -1720,43 +1720,35 @@
 
 /* ==========================================
    CONFIGURAÇÃO DO VÍDEO EM DESTAQUE
+
+   Thumbnail confirmada pelo yt-dlp:
+   https://i.ytimg.com/vi/R0EiL6wTyjY/hqdefault.jpg
 ========================================== */
 
 const LIVE = {
   id: 'R0EiL6wTyjY',
   titulo: 'A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê? 🌌',
-  thumbnail: 'https://i.ytimg.com/vi/R0EiL6wTyjY/maxresdefault.jpg',
-  thumbnailFallback: 'https://i.ytimg.com/vi/R0EiL6wTyjY/hqdefault.jpg',
+  thumbnail: 'https://i.ytimg.com/vi/R0EiL6wTyjY/hqdefault.jpg',
   youtube: 'https://youtu.be/R0EiL6wTyjY'
 };
 
 
 /* ==========================================
-   CARREGAMENTO E FALLBACK DA THUMBNAIL
+   GARANTIA DO ENDEREÇO DA THUMBNAIL
 
-   Primeiro tenta a imagem em alta resolução.
-   Se ela não estiver disponível, utiliza
-   automaticamente a versão hqdefault.
+   O mesmo endereço confirmado pelo yt-dlp
+   é aplicado diretamente ao elemento da imagem.
 ========================================== */
 
 const liveThumbnail = document.getElementById('liveThumbnail');
 
-liveThumbnail.addEventListener('error', function () {
-
-  if (this.dataset.fallbackApplied === 'true') {
-    return;
-  }
-
-  this.dataset.fallbackApplied = 'true';
-  this.src = LIVE.thumbnailFallback;
-
-});
+liveThumbnail.src = LIVE.thumbnail;
 
 
 /* ==========================================
    AVISO TEMPORÁRIO DE ADIAMENTO
 
-   O aviso desaparece às 23h59 de 15/11/2026.
+   O aviso desaparece às 00h de 16/11/2026.
    Referência de horário: Brasília (UTC-3).
 ========================================== */
 
@@ -1764,7 +1756,6 @@ function manageLiveNotice() {
 
   const notice = document.getElementById('liveNotice');
 
-  // 16/11/2026 às 00h00 no horário de Brasília.
   const expiration = new Date('2026-11-16T00:00:00-03:00').getTime();
 
   const now = Date.now();
@@ -1788,9 +1779,7 @@ manageLiveNotice();
 
 const news = [
 
-  /* ========================================
-     HISTÓRIA E ARQUEOLOGIA
-  ======================================== */
+  /* HISTÓRIA E ARQUEOLOGIA */
 
   {
     id: 1,
@@ -1817,9 +1806,7 @@ const news = [
   },
 
 
-  /* ========================================
-     CIÊNCIA
-  ======================================== */
+  /* CIÊNCIA */
 
   {
     id: 3,
@@ -1846,9 +1833,7 @@ const news = [
   },
 
 
-  /* ========================================
-     CINEMA E ENTRETENIMENTO
-  ======================================== */
+  /* CINEMA E ENTRETENIMENTO */
 
   {
     id: 5,
@@ -1875,9 +1860,7 @@ const news = [
   },
 
 
-  /* ========================================
-     MUNDO GEEK E CULTURA POP
-  ======================================== */
+  /* MUNDO GEEK E CULTURA POP */
 
   {
     id: 7,
