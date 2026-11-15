@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -38,6 +37,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Conexão antecipada com as imagens do YouTube -->
+  <link rel="preconnect" href="https://i.ytimg.com">
 
   <!-- Bootstrap 5.3.8 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -307,19 +309,30 @@
       box-shadow: 0 12px 40px rgba(19,40,75,.07);
     }
 
+    /* THUMBNAIL DO VÍDEO */
+
     .live-image-container {
       position: relative;
-      background: #101a2b;
-      min-height: 260px;
-      height: 100%;
-    }
-
-    .live-image {
       width: 100%;
       height: 100%;
       min-height: 260px;
+      aspect-ratio: 16 / 9;
+      background: #101a2b;
+      overflow: hidden;
+    }
+
+    .live-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform .35s ease;
+    }
+
+    .live-image-container:hover .live-image {
+      transform: scale(1.035);
     }
 
     .live-overlay {
@@ -328,25 +341,53 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(4,12,25,.16);
+      background: rgba(4,12,25,.20);
+      transition: background .25s ease;
+    }
+
+    .live-image-container:hover .live-overlay {
+      background: rgba(4,12,25,.34);
+    }
+
+    .live-thumbnail-button {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
 
     .live-play-icon {
       width: 76px;
       height: 76px;
-      background: rgba(255,255,255,.95);
+      background: rgba(255,255,255,.96);
       color: #e62117;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
-      transition: .25s;
-      box-shadow: 0 8px 30px rgba(0,0,0,.2);
+      font-size: 2.3rem;
+      transition: transform .25s ease, box-shadow .25s ease;
+      box-shadow: 0 8px 30px rgba(0,0,0,.28);
+      padding-left: 5px;
     }
 
-    .live-play-icon:hover {
-      transform: scale(1.1);
+    .live-thumbnail-button:hover .live-play-icon,
+    .live-thumbnail-button:focus-visible .live-play-icon {
+      transform: scale(1.12);
+      box-shadow: 0 10px 35px rgba(0,0,0,.4);
+    }
+
+    .live-thumbnail-button:focus-visible {
+      outline: 3px solid white;
+      outline-offset: -6px;
     }
 
     .live-info {
@@ -357,25 +398,13 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: #fff0f0;
-      color: #df3030;
+      background: #edf4ff;
+      color: #2878ff;
       font-size: .72rem;
       font-weight: 800;
       letter-spacing: 1px;
       border-radius: 6px;
       padding: 7px 10px;
-    }
-
-    .live-label .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #e73535;
-      animation: pulse 1.4s infinite;
-    }
-
-    @keyframes pulse {
-      50% { opacity: .3; }
     }
 
     .live-title {
@@ -390,42 +419,11 @@
       font-size: .88rem;
     }
 
-    .countdown {
-      display: flex;
-      gap: 9px;
-      margin: 23px 0;
-    }
-
-    .countdown-item {
-      flex: 1;
-      background: #f3f6fb;
-      border-radius: 11px;
-      text-align: center;
-      padding: 13px 5px;
-      min-width: 0;
-    }
-
-    .countdown-item strong {
-      display: block;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(1.3rem, 3vw, 1.9rem);
-      color: var(--navy);
-      font-weight: 700;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .countdown-item small {
-      color: var(--muted);
-      font-size: .68rem;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
     .live-status {
       font-size: .84rem;
       color: #657386;
-      margin-bottom: 20px;
-      min-height: 22px;
+      margin: 20px 0;
+      line-height: 1.7;
     }
 
     .btn-live {
@@ -464,6 +462,34 @@
     .btn-live-secondary:hover {
       background: #f3f6fb;
       color: var(--navy);
+    }
+
+    /* AVISO DE ADIAMENTO */
+
+    .live-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      padding: 13px 16px;
+      margin-bottom: 20px;
+      background: #fff8e8;
+      border: 1px solid #f3dfb5;
+      border-left: 4px solid #e5a52c;
+      border-radius: 10px;
+      color: #76551c;
+      font-size: .82rem;
+      line-height: 1.6;
+    }
+
+    .live-notice i {
+      color: #d49319;
+      font-size: 1.05rem;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .live-notice strong {
+      color: #634515;
     }
 
     /* NEWS FILTERS */
@@ -831,6 +857,8 @@
     }
 
     .video-container iframe {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       border: 0;
@@ -900,10 +928,16 @@
         padding: 22px;
       }
 
-      .live-image-container,
-      .live-image {
+      .live-image-container {
         min-height: 210px;
-        max-height: 280px;
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+
+      .live-play-icon {
+        width: 66px;
+        height: 66px;
+        font-size: 2rem;
       }
 
       .news-image-wrap {
@@ -931,18 +965,6 @@
       .brand-logo {
         width: 43px;
         height: 43px;
-      }
-
-      .countdown {
-        gap: 5px;
-      }
-
-      .countdown-item {
-        padding: 11px 2px;
-      }
-
-      .countdown-item small {
-        font-size: .59rem;
       }
     }
 
@@ -1102,22 +1124,37 @@
 
     <div class="section-heading">
 
-      <span class="section-eyebrow">Programação especial</span>
+      <span class="section-eyebrow">Conteúdo especial</span>
 
       <h2 class="section-title">
-        <i class="bi bi-broadcast text-danger me-2"></i>
-        Nosso próximo encontro
+        <i class="bi bi-play-circle-fill text-danger me-2"></i>
+        Destaque do Digo&Jackie
       </h2>
 
       <p class="section-description">
-        Amanhã tem encontro marcado! Prepare-se para uma transmissão especial. A contagem já começou!
+        Prepare-se para explorar um dos grandes mistérios da existência: por que ainda não encontramos outras civilizações no Universo?
       </p>
+
+    </div>
+
+    <!-- AVISO TEMPORÁRIO DE ADIAMENTO -->
+
+    <div class="live-notice d-none" id="liveNotice" role="status" aria-live="polite">
+
+      <i class="bi bi-info-circle-fill"></i>
+
+      <div>
+        <strong>Comunicado:</strong>
+        Por motivos de força maior, a live programada para hoje foi adiada. Agradecemos a compreensão!
+      </div>
 
     </div>
 
     <div class="live-card">
 
       <div class="row g-0">
+
+        <!-- THUMBNAIL CLICÁVEL -->
 
         <div class="col-lg-6">
 
@@ -1126,75 +1163,54 @@
             <img
               id="liveThumbnail"
               class="live-image"
-              src="https://i.ytimg.com/vi/Zy7koxAIwhk/maxresdefault.jpg"
-              alt="Thumbnail da transmissão Bob Lazar revelou o maior segredo dos EUA?"
-              fetchpriority="high">
+              src="https://i.ytimg.com/vi/R0EiL6wTyjY/maxresdefault.jpg"
+              alt="Thumbnail do vídeo A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê?"
+              width="1280"
+              height="720"
+              fetchpriority="high"
+              decoding="async">
 
-            <div class="live-overlay">
+            <div class="live-overlay"></div>
 
-              <button
-                class="btn p-0 border-0 bg-transparent"
-                type="button"
-                data-bs-toggle="modal"
-                data-bs-target="#liveModal"
-                aria-label="Assistir à transmissão">
+            <button
+              class="live-thumbnail-button"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#liveModal"
+              aria-label="Reproduzir A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê?">
 
-                <span class="live-play-icon">
-                  <i class="bi bi-play-fill"></i>
-                </span>
+              <span class="live-play-icon">
+                <i class="bi bi-play-fill"></i>
+              </span>
 
-              </button>
-
-            </div>
+            </button>
 
           </div>
 
         </div>
+
+        <!-- INFORMAÇÕES DO VÍDEO -->
 
         <div class="col-lg-6">
 
           <div class="live-info">
 
             <span class="live-label" id="liveBadge">
-              <span class="dot"></span>
-              PRÓXIMA LIVE
+              <i class="bi bi-stars"></i>
+              VÍDEO EM DESTAQUE
             </span>
 
             <h3 class="live-title" id="liveTitle">
-              BOB LAZAR REVELOU O MAIOR SEGREDO DOS EUA?
+              A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê? 🌌
             </h3>
 
             <div class="live-date">
-              <i class="bi bi-calendar-event me-1"></i>
-              <span id="liveDate">15 de novembro de 2026 às 21h30</span>
+              <i class="bi bi-youtube me-1"></i>
+              Conteúdo disponível para assistir
             </div>
 
-            <div class="countdown" id="countdown">
-
-              <div class="countdown-item">
-                <strong id="days">00</strong>
-                <small>Dias</small>
-              </div>
-
-              <div class="countdown-item">
-                <strong id="hours">00</strong>
-                <small>Horas</small>
-              </div>
-
-              <div class="countdown-item">
-                <strong id="minutes">00</strong>
-                <small>Minutos</small>
-              </div>
-
-              <div class="countdown-item">
-                <strong id="seconds">00</strong>
-                <small>Segundos</small>
-              </div>
-
-            </div>
-
-            <p class="live-status" id="liveStatus" aria-live="polite">
-              Estamos preparando tudo. Nos encontramos amanhã às 21h30!
+            <p class="live-status" id="liveStatus">
+              O Universo é imenso, mas até agora o silêncio permanece. Conheça algumas das hipóteses que tentam explicar por que ainda não encontramos outras civilizações.
             </p>
 
             <div class="d-flex flex-wrap gap-2">
@@ -1211,7 +1227,7 @@
               </button>
 
               <a
-                href="https://www.youtube.com/live/Zy7koxAIwhk"
+                href="https://youtu.be/R0EiL6wTyjY"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-live-secondary">
@@ -1617,7 +1633,7 @@
 </div>
 
 
-<!-- ================= MODAL LIVE ================= -->
+<!-- ================= MODAL VÍDEO ================= -->
 
 <div class="modal fade" id="liveModal" tabindex="-1" aria-labelledby="liveModalTitle" aria-hidden="true">
 
@@ -1629,7 +1645,7 @@
 
         <h5 class="modal-title fw-bold" id="liveModalTitle">
           <i class="bi bi-youtube text-danger me-2"></i>
-          BOB LAZAR REVELOU O MAIOR SEGREDO DOS EUA?
+          A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê? 🌌
         </h5>
 
         <button
@@ -1647,8 +1663,8 @@
 
           <iframe
             id="livePlayer"
-            src=""
-            title="Transmissão Digo e Jackie - Bob Lazar"
+            src="about:blank"
+            title="A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê?"
             loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
@@ -1659,17 +1675,17 @@
 
         <p class="text-secondary small mt-3 mb-0">
           <i class="bi bi-info-circle me-1"></i>
-          Assista diretamente pelo site. O chat ao vivo fica disponível na página do YouTube.
+          Assista diretamente pelo site ou abra o vídeo no YouTube.
         </p>
 
         <a
-          href="https://www.youtube.com/live/Zy7koxAIwhk"
+          href="https://youtu.be/R0EiL6wTyjY"
           target="_blank"
           rel="noopener noreferrer"
           class="source-link mt-3">
 
           <i class="bi bi-youtube"></i>
-          Abrir transmissão no YouTube
+          Assistir pelo YouTube
 
         </a>
 
@@ -1703,17 +1719,65 @@
 'use strict';
 
 /* ==========================================
-   CONFIGURAÇÃO DA LIVE
-   Dados da transmissão.
+   CONFIGURAÇÃO DO VÍDEO EM DESTAQUE
 ========================================== */
 
 const LIVE = {
-  id: 'Zy7koxAIwhk',
-  titulo: 'BOB LAZAR REVELOU O MAIOR SEGREDO DOS EUA?',
-  horario: 1794789000,
-  thumbnail: 'https://i.ytimg.com/vi/Zy7koxAIwhk/maxresdefault.jpg',
-  youtube: 'https://www.youtube.com/live/Zy7koxAIwhk'
+  id: 'R0EiL6wTyjY',
+  titulo: 'A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê? 🌌',
+  thumbnail: 'https://i.ytimg.com/vi/R0EiL6wTyjY/maxresdefault.jpg',
+  thumbnailFallback: 'https://i.ytimg.com/vi/R0EiL6wTyjY/hqdefault.jpg',
+  youtube: 'https://youtu.be/R0EiL6wTyjY'
 };
+
+
+/* ==========================================
+   CARREGAMENTO E FALLBACK DA THUMBNAIL
+
+   Primeiro tenta a imagem em alta resolução.
+   Se ela não estiver disponível, utiliza
+   automaticamente a versão hqdefault.
+========================================== */
+
+const liveThumbnail = document.getElementById('liveThumbnail');
+
+liveThumbnail.addEventListener('error', function () {
+
+  if (this.dataset.fallbackApplied === 'true') {
+    return;
+  }
+
+  this.dataset.fallbackApplied = 'true';
+  this.src = LIVE.thumbnailFallback;
+
+});
+
+
+/* ==========================================
+   AVISO TEMPORÁRIO DE ADIAMENTO
+
+   O aviso desaparece às 23h59 de 15/11/2026.
+   Referência de horário: Brasília (UTC-3).
+========================================== */
+
+function manageLiveNotice() {
+
+  const notice = document.getElementById('liveNotice');
+
+  // 16/11/2026 às 00h00 no horário de Brasília.
+  const expiration = new Date('2026-11-16T00:00:00-03:00').getTime();
+
+  const now = Date.now();
+
+  if (now >= expiration) {
+    notice.classList.add('d-none');
+    return;
+  }
+
+  notice.classList.remove('d-none');
+}
+
+manageLiveNotice();
 
 
 /* ==========================================
@@ -2049,89 +2113,28 @@ searchInput.addEventListener('input', filterNews);
 
 
 /* ==========================================
-   CONTADOR REGRESSIVO DA LIVE
-========================================== */
-
-const liveTimestamp = LIVE.horario * 1000;
-
-const liveDate = new Date(liveTimestamp);
-
-const liveDateElement = document.getElementById('liveDate');
-
-liveDateElement.textContent = liveDate.toLocaleString('pt-BR', {
-  day: '2-digit',
-  month: 'long',
-  year: 'numeric',
-  hour: '2-digit',
-  minute: '2-digit'
-});
-
-function updateCountdown() {
-
-  const now = Date.now();
-  const difference = liveTimestamp - now;
-
-  if (difference <= 0) {
-
-    clearInterval(countdownInterval);
-
-    document.getElementById('days').textContent = '00';
-    document.getElementById('hours').textContent = '00';
-    document.getElementById('minutes').textContent = '00';
-    document.getElementById('seconds').textContent = '00';
-
-    document.getElementById('countdown').classList.add('d-none');
-
-    document.getElementById('liveBadge').innerHTML =
-      '<span class="dot"></span> HORÁRIO DA LIVE';
-
-    document.getElementById('liveStatus').textContent =
-      'O horário previsto chegou! A transmissão pode estar começando ou já estar disponível.';
-
-    return;
-  }
-
-  const days = Math.floor(difference / 86400000);
-  const hours = Math.floor((difference % 86400000) / 3600000);
-  const minutes = Math.floor((difference % 3600000) / 60000);
-  const seconds = Math.floor((difference % 60000) / 1000);
-
-  document.getElementById('days').textContent = String(days).padStart(2, '0');
-  document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-  document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-  document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
-}
-
-updateCountdown();
-
-const countdownInterval = setInterval(updateCountdown, 1000);
-
-
-/* ==========================================
    PLAYER INCORPORADO
+
+   Carrega o vídeo somente quando o modal
+   é aberto e interrompe a reprodução
+   quando o modal é fechado.
 ========================================== */
 
 const liveModal = document.getElementById('liveModal');
+const livePlayer = document.getElementById('livePlayer');
 
 liveModal.addEventListener('show.bs.modal', () => {
 
-  const player = document.getElementById('livePlayer');
-
-  if (!player.src) {
-    player.src =
-      'https://www.youtube-nocookie.com/embed/' +
-      encodeURIComponent(LIVE.id) +
-      '?autoplay=1&rel=0';
-  }
+  livePlayer.src =
+    'https://www.youtube-nocookie.com/embed/' +
+    encodeURIComponent(LIVE.id) +
+    '?autoplay=1&rel=0';
 
 });
 
 liveModal.addEventListener('hidden.bs.modal', () => {
 
-  const player = document.getElementById('livePlayer');
-
-  player.src = '';
+  livePlayer.src = 'about:blank';
 
 });
 
