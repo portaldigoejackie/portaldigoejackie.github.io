@@ -7,7 +7,7 @@
   <title>Digo&Jackie | O Mundo e Suas Curiosidades</title>
 
   <meta name="description" content="Digo&Jackie: histórias surpreendentes, ciência, descobertas, entretenimento, curiosidades e transmissões ao vivo. Explore o mundo com a gente!">
-  <meta name="keywords" content="Digo e Jackie, curiosidades, história, ciência, entretenimento, notícias, Bob Lazar, espaço, arqueologia">
+  <meta name="keywords" content="Digo e Jackie, curiosidades, história, ciência, entretenimento, notícias, arqueologia, cinema, televisão, cultura geek">
   <meta name="author" content="Digo&Jackie">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#071426">
@@ -1717,81 +1717,125 @@ const LIVE = {
 
 /* ==========================================
    NOTÍCIAS
-   Resumos editoriais e links das fontes.
+   Oito notícias: duas por categoria.
+   Imagens hospedadas no Postimage.
 ========================================== */
 
 const news = [
 
+  /* ========================================
+     HISTÓRIA E ARQUEOLOGIA
+  ======================================== */
+
   {
     id: 1,
-    category: 'science',
-    categoryName: 'Ciência',
-    title: 'Euclid divulga dados de mais de 900 milhões de objetos cósmicos',
-    date: '13/11/2026',
-    image: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=900&q=80',
-    description: 'O telescópio espacial Euclid, da Agência Espacial Europeia, divulgou seu primeiro grande conjunto de dados. O levantamento reúne informações sobre mais de um bilhão de objetos cósmicos e cobre uma área equivalente a 9.500 luas cheias. São aproximadamente 13 meses de observações, que servirão de base para a construção de um grande mapa tridimensional do Universo e para pesquisas sobre matéria escura e energia escura.',
-    source: 'CNN Brasil',
-    url: 'https://www.cnnbrasil.com.br/ciencia/telescopio-da-esa-divulga-imagens-de-mais-de-900-milhoes-de-galaxias-e-prepara-maior-mapa-3d-do-universo-veja/'
+    category: 'history',
+    categoryName: 'História e arqueologia',
+    title: 'Pompeia revela objetos preservados por quase dois mil anos',
+    date: '14/11/2026',
+    image: 'https://i.postimg.cc/2jJ2wDwX/Pompeia-revela-objetos-preservados-por-quase-dois-mil-anos.webp',
+    description: 'Uma escavação arqueológica em Pompeia, na Itália, revelou vestígios de um armário de madeira que permaneceu fechado desde a erupção do Vesúvio, no ano 79 d.C. O móvel e os objetos encontrados em seu interior ficaram protegidos pelas cinzas vulcânicas durante quase dois mil anos. A descoberta ajuda os pesquisadores a compreender melhor a rotina doméstica, os costumes e a organização das residências romanas antes da tragédia que destruiu a cidade.',
+    source: 'VEJA',
+    url: 'https://veja.abril.com.br/ciencia/a-vida-que-nao-virou-cinzas-escavacao-revela-objetos-selados-por-milenios-em-armario-de-pompeia/'
   },
 
   {
     id: 2,
-    category: 'science',
-    categoryName: 'Ciência',
-    title: 'China quer construir estradas na Lua usando uma técnica milenar',
-    date: '13/11/2026',
-    image: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=900&q=80',
-    description: 'Pesquisadores da Universidade de Beihang apresentaram o conceito Qinzhidao Lunar, que propõe utilizar materiais encontrados na própria superfície lunar para construir estradas. A inspiração vem de uma antiga técnica de pavimentação: pedras de diferentes tamanhos seriam organizadas e compactadas para formar vias resistentes. Por enquanto, trata-se de uma proposta conceitual que ainda precisa passar por testes.',
-    source: 'UOL Tilt',
-    url: 'https://www.uol.com.br/tilt/noticias/redacao/2026/11/13/china-resgata-ideia-de-2-mil-anos-para-construir-primeiras-estradas-na-lua.ghtm'
+    category: 'history',
+    categoryName: 'História e arqueologia',
+    title: 'Espada de 3.300 anos é encontrada em lago vulcânico na Itália',
+    date: '11/11/2026',
+    image: 'https://i.postimg.cc/kMZfcmcY/Espada-de-3-300-anos-encontrada-em-lago-vulcanico.webp',
+    description: 'Arqueólogos descobriram uma espada com aproximadamente 3.300 anos no Lago Mezzano, em Valentano, na Itália. O artefato remonta ao século XIII a.C., período final da Idade do Bronze. A investigação subaquática também identificou outros objetos antigos, incluindo machados, pontas de flechas, adagas, pontas de lança e vasos. A descoberta amplia o conhecimento sobre a presença humana e a produção de armamentos naquela região da Itália durante a Antiguidade.',
+    source: 'CNN Brasil',
+    url: 'https://www.cnnbrasil.com.br/curiosidades/espada-de-3-mil-anos-e-descoberta-em-lago-formado-em-cratera-vulcanica/'
   },
+
+
+  /* ========================================
+     CIÊNCIA
+  ======================================== */
 
   {
     id: 3,
-    category: 'history',
-    categoryName: 'História',
-    title: 'Três mil toneladas de lama removidas sob a Hagia Sophia revelam estruturas históricas',
+    category: 'science',
+    categoryName: 'Ciência',
+    title: 'Gatos miam mais quando têm humanos como plateia',
     date: '13/11/2026',
-    image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=900&q=80',
-    description: 'Uma operação de limpeza em Istambul removeu aproximadamente 3 mil toneladas de detritos acumulados sob a Hagia Sophia. O trabalho revelou passagens subterrâneas e estruturas antigas que estavam soterradas. A descoberta oferece novas pistas sobre as diferentes fases históricas de um dos edifícios religiosos mais importantes do mundo.',
-    source: 'CNN Brasil',
-    url: 'https://www.cnnbrasil.com.br/curiosidades/de-centro-do-cristianismo-oriental-a-mesquita-as-camadas-de-historia-reveladas-apos-remocao-de-3-mil-toneladas-de-lama-sob-a-hagia-sophia/'
+    image: 'https://i.postimg.cc/KcVJN2Nq/Gatos-miam-mais-quando-tem-humanos-como-plateia.webp',
+    description: 'Um estudo investigou como os gatos domésticos utilizam o miado durante as interações com seres humanos. Os resultados indicam que os animais vocalizam com maior frequência quando estão diante de pessoas do que quando estão na presença de outros gatos. A pesquisa também sugere que os miados podem funcionar como uma ferramenta de comunicação social direcionada aos humanos, e não apenas como uma reação automática à fome ou à frustração.',
+    source: 'Jornal da USP',
+    url: 'https://jornal.usp.br/ciencias/gatos-miam-mais-para-plateia-humana-que-para-outros-gatos-e-nos-usam-para-resolver-seus-problemas/'
   },
 
   {
     id: 4,
-    category: 'history',
-    categoryName: 'História',
-    title: 'Brasil recebe de volta restos mortais de pessoas escravizadas que estavam em Harvard',
-    date: '11/11/2026',
-    image: 'https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=900&q=80',
-    description: 'Dois conjuntos de restos mortais de pessoas escravizadas, retirados do Brasil no século XIX, foram repatriados após permanecerem por mais de 150 anos em instituições vinculadas à Universidade Harvard. Um dos homens teria sido ferido durante a Revolta dos Malês, em Salvador, em 1835. Os remanescentes ficarão sob guarda temporária do Museu Nacional/UFRJ e da UFBA, enquanto são definidos os procedimentos para sua destinação definitiva.',
-    source: 'Ministério dos Direitos Humanos e da Cidadania',
-    url: 'https://www.gov.br/mdh/pt-br/assuntos/noticias/2026/novembro/brasil-realiza-cerimonias-de-repatriacao-de-restos-mortais-de-pessoas-escravizadas-que-estavam-sob-a-guarda-da-universidade-harvard'
+    category: 'science',
+    categoryName: 'Ciência',
+    title: 'Cientistas investigam a origem da matéria que forma o Universo',
+    date: '12/11/2026',
+    image: 'https://i.postimg.cc/ZYgVcScV/Cientistas-investigam-a-origem-da-materia-do-Universo.webp',
+    description: 'Pesquisadores da Universidade de São Paulo participarão do experimento internacional CUPID, que será instalado em um laboratório subterrâneo na Itália. O projeto busca investigar propriedades dos neutrinos e um fenômeno extremamente raro conhecido como duplo decaimento beta sem emissão de neutrinos. A descoberta desse processo poderia ajudar a esclarecer por que existe muito mais matéria do que antimatéria no Universo. Os primeiros dados científicos estão previstos para 2030.',
+    source: 'Jornal da USP',
+    url: 'https://jornal.usp.br/ciencias/experimento-de-fisica-mira-a-origem-da-materia-que-forma-o-universo/'
   },
+
+
+  /* ========================================
+     CINEMA E ENTRETENIMENTO
+  ======================================== */
 
   {
     id: 5,
     category: 'entertainment',
-    categoryName: 'Entretenimento',
-    title: 'Taylor Swift confirma retorno ao palco do CMA Awards após 13 anos',
-    date: '13/11/2026',
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80',
-    description: 'A Country Music Association e a ABC anunciaram que Taylor Swift participará da 60ª edição do CMA Awards. A apresentação marca seu retorno ao evento após 13 anos desde sua última performance na premiação. A cerimônia está programada para 18 de novembro de 2026, em Nashville, com transmissão pela ABC e Disney+.',
-    source: 'Country Music Association',
-    url: 'https://cmaawards.com/news/taylor-swift-to-perform-at-the-60th-annual-cma-awards/'
+    categoryName: 'Cinema e TV',
+    title: 'Johnny Depp retorna às grandes produções de Hollywood',
+    date: '12/11/2026',
+    image: 'https://i.postimg.cc/2jJ2wDw0/Johnny-Depp-retorna-as-grandes-producoes-de-Hollywood.webp',
+    description: 'Johnny Depp está de volta ao protagonismo de uma grande produção de Hollywood em Ebenezer e os Fantasmas do Natal, nova adaptação do clássico Um Conto de Natal, de Charles Dickens. Dirigido por Ti West, o filme apresenta o ator no papel de Ebenezer Scrooge, o personagem avarento que recebe a visita de três espíritos na véspera de Natal. A produção chegou aos cinemas brasileiros em 12 de novembro de 2026 e conta também com Ian McKellen, Rupert Grint e Daisy Ridley no elenco.',
+    source: 'Folha de S.Paulo',
+    url: 'https://www1.folha.uol.com.br/ilustrada/2026/11/johnny-depp-volta-a-hollywood-em-filme-natalino-sobre-sovina.shtml'
   },
 
   {
     id: 6,
     category: 'entertainment',
-    categoryName: 'Entretenimento',
-    title: 'Festival MixBrasil reúne cinema, cultura e experiências imersivas',
-    date: 'Novembro de 2026',
-    image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80',
-    description: 'O 34º Festival MixBrasil apresenta uma programação de cinema, atividades culturais e experiências imersivas. A programação oficial reúne atividades gratuitas e pagas em diferentes espaços de São Paulo, incluindo experiências de realidade virtual e exibições cinematográficas.',
-    source: 'Festival MixBrasil',
-    url: 'https://2026.mixbrasil.org.br/programacao/'
+    categoryName: 'Cinema e TV',
+    title: 'The Chosen prepara sua temporada final e chega a uma nova fase',
+    date: '15/11/2026',
+    image: 'https://i.postimg.cc/mZq8wswV/The-Chosen-prepara-sua-temporada-final.webp',
+    description: 'The Chosen chega a um momento decisivo de sua história. A sexta temporada estreia em 15 de novembro de 2026 no Prime Video, com três episódios disponibilizados inicialmente e os demais lançados semanalmente. A temporada acompanha os acontecimentos que levam à crucificação de Jesus. A sétima e última temporada será dedicada à ressurreição e tem lançamento cinematográfico previsto para 2028. O encerramento da sexta temporada também terá continuidade em um filme nos cinemas.',
+    source: 'Site oficial de The Chosen',
+    url: 'https://thechosen.tv/en-us/investor-overview/press-releases/season-six-of-the-global-hit-series-the-chosen-premieres-exclusively-on-prime-video-november-15-2026'
+  },
+
+
+  /* ========================================
+     MUNDO GEEK E CULTURA POP
+  ======================================== */
+
+  {
+    id: 7,
+    category: 'curiosities',
+    categoryName: 'Mundo geek',
+    title: 'Maya Hawke entra no universo de Magic: The Gathering',
+    date: '06/11/2026',
+    image: 'https://i.postimg.cc/WpKXnvn9/Maya-Hawke-entra-no-universo-de-Magic-The-Gathering.webp',
+    description: 'Maya Hawke, conhecida por interpretar Robin na série Stranger Things, foi anunciada no elenco da adaptação cinematográfica live-action de Magic: The Gathering. O projeto é uma parceria entre Legendary Entertainment e Hasbro Entertainment e pretende expandir o universo do famoso jogo de cartas para o cinema e a televisão. O papel da atriz ainda não foi revelado. A direção ficará por conta de Matt Johnson.',
+    source: 'Hasbro Entertainment',
+    url: 'https://newsroom.hasbro.com/news-releases/news-release-details/legendary-entertainment-and-hasbro-entertainment-casts-maya'
+  },
+
+  {
+    id: 8,
+    category: 'curiosities',
+    categoryName: 'Mundo geek',
+    title: 'Livro revela que o Brasil já vivia a cultura dos animes antes de Naruto',
+    date: '11/11/2026',
+    image: 'https://i.postimg.cc/jq9ZXbX4/Livro-revela-que-o-Brasil-ja-vivia-a-cultura-dos-animes-antes-de-Naruto.webp',
+    description: 'Muito antes de Naruto se tornar um fenômeno entre os fãs brasileiros, os animes já faziam parte da cultura popular do país. Uma publicação resgata essa trajetória e mostra como as animações japonesas conquistaram espaço no Brasil por meio da televisão, das dublagens, das revistas e das comunidades de fãs. A reportagem destaca uma história que começou muito antes da explosão da cultura otaku nas redes sociais.',
+    source: 'UOL Splash',
+    url: 'https://www.uol.com.br/splash/animes-e-mangas/'
   }
 
 ];
