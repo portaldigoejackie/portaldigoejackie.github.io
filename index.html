@@ -36,15 +36,14 @@
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Conexão antecipada com o YouTube -->
+  <!-- Conexões antecipadas -->
   <link rel="preconnect" href="https://i.ytimg.com">
+  <link rel="preconnect" href="https://www.youtube-nocookie.com">
 
   <!-- Bootstrap 5.3.8 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
 
   <style>
@@ -54,6 +53,7 @@
       --blue: #2878ff;
       --cyan: #36c5f0;
       --purple: #7559ed;
+      --red: #ed2638;
       --dark-footer: #20252c;
       --text: #202938;
       --muted: #788494;
@@ -62,9 +62,7 @@
       --radius: 18px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -82,9 +80,7 @@
       font-family: 'Space Grotesk', sans-serif;
     }
 
-    a {
-      text-decoration: none;
-    }
+    a { text-decoration: none; }
 
     /* HEADER */
 
@@ -97,9 +93,7 @@
       box-shadow: 0 4px 20px rgba(0,0,0,.15);
     }
 
-    .navbar {
-      min-height: 78px;
-    }
+    .navbar { min-height: 78px; }
 
     .brand-logo {
       width: 51px;
@@ -116,9 +110,7 @@
       letter-spacing: -.8px;
     }
 
-    .brand-name span {
-      color: var(--cyan);
-    }
+    .brand-name span { color: var(--cyan); }
 
     .navbar .nav-link {
       color: rgba(255,255,255,.76);
@@ -128,21 +120,11 @@
       transition: .2s;
     }
 
-    .navbar .nav-link:hover {
-      color: white;
-    }
+    .navbar .nav-link:hover { color: white; }
 
-    .navbar-toggler {
-      border-color: rgba(255,255,255,.3);
-    }
-
-    .navbar-toggler:focus {
-      box-shadow: none;
-    }
-
-    .navbar-toggler-icon {
-      filter: invert(1);
-    }
+    .navbar-toggler { border-color: rgba(255,255,255,.3); }
+    .navbar-toggler:focus { box-shadow: none; }
+    .navbar-toggler-icon { filter: invert(1); }
 
     .btn-play {
       background: linear-gradient(120deg, #2878ff, #7055ef);
@@ -187,8 +169,7 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      padding-top: 65px;
-      padding-bottom: 65px;
+      padding: 65px 0;
     }
 
     .hero-tag {
@@ -215,9 +196,7 @@
       letter-spacing: -2px;
     }
 
-    .hero-content h1 span {
-      color: #50c9f5;
-    }
+    .hero-content h1 span { color: #50c9f5; }
 
     .hero-content p {
       max-width: 550px;
@@ -261,15 +240,11 @@
       color: white;
     }
 
-    /* SECTION */
+    /* SEÇÕES */
 
-    .section-block {
-      padding: 65px 0;
-    }
+    .section-block { padding: 65px 0; }
 
-    .section-heading {
-      margin-bottom: 30px;
-    }
+    .section-heading { margin-bottom: 30px; }
 
     .section-eyebrow {
       color: var(--blue);
@@ -295,136 +270,295 @@
       line-height: 1.7;
     }
 
-    /* LIVE */
+    /* ===================================
+       DESTAQUE ESPECIAL - LIVE
+    =================================== */
 
     .live-section {
-      background: #f4f7fc;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 90% 5%, rgba(117,89,237,.10), transparent 35%),
+        radial-gradient(ellipse at 0% 100%, rgba(40,120,255,.09), transparent 38%),
+        #f4f7fc;
     }
 
     .live-card {
-      background: white;
-      border: 1px solid #e7edf5;
-      border-radius: 22px;
+      position: relative;
+      background: #091629;
+      border: 1px solid rgba(75,130,220,.22);
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 12px 40px rgba(19,40,75,.07);
+      color: white;
+      box-shadow: 0 22px 65px rgba(12,34,68,.16);
     }
 
-    /* THUMBNAIL DO YOUTUBE */
+    .live-card::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background: rgba(40,120,255,.10);
+      filter: blur(75px);
+      right: -130px;
+      top: -170px;
+      pointer-events: none;
+    }
 
-    .live-image-container {
+    .live-card::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: rgba(117,89,237,.12);
+      filter: blur(70px);
+      left: -120px;
+      bottom: -150px;
+      pointer-events: none;
+    }
+
+    .live-card .row {
+      position: relative;
+      z-index: 1;
+    }
+
+    .live-visual-column {
+      padding: 22px;
+      display: flex;
+      align-items: center;
+    }
+
+    .live-screen {
       position: relative;
       width: 100%;
-      height: 100%;
-      min-height: 260px;
       aspect-ratio: 16 / 9;
-      background: #101a2b;
+      background: #000;
+      border-radius: 16px;
       overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.12);
     }
 
-    .live-image {
+    .live-screen img {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-      transition: transform .35s ease;
+      transition: transform .5s ease;
     }
 
-    .live-image-container:hover .live-image {
-      transform: scale(1.035);
-    }
+    .live-screen:hover img { transform: scale(1.035); }
 
-    .live-overlay {
+    .live-screen-overlay {
       position: absolute;
       inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(4,12,25,.20);
-      transition: background .25s ease;
+      background: linear-gradient(0deg, rgba(0,0,0,.6), transparent 60%);
       pointer-events: none;
     }
 
-    .live-image-container:hover .live-overlay {
-      background: rgba(4,12,25,.34);
-    }
-
-    .live-thumbnail-button {
+    .live-screen-button {
       position: absolute;
       inset: 0;
-      z-index: 2;
       width: 100%;
       height: 100%;
-      border: 0;
-      padding: 0;
-      background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: transparent;
+      border: 0;
       cursor: pointer;
+      z-index: 2;
     }
 
     .live-play-icon {
-      width: 76px;
-      height: 76px;
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
       background: rgba(255,255,255,.96);
       color: #e62117;
-      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.3rem;
-      transition: transform .25s ease, box-shadow .25s ease;
-      box-shadow: 0 8px 30px rgba(0,0,0,.28);
-      padding-left: 5px;
+      padding-left: 6px;
+      font-size: 2.6rem;
+      box-shadow: 0 8px 35px rgba(0,0,0,.4);
+      transition: .25s;
     }
 
-    .live-thumbnail-button:hover .live-play-icon,
-    .live-thumbnail-button:focus-visible .live-play-icon {
-      transform: scale(1.12);
-      box-shadow: 0 10px 35px rgba(0,0,0,.4);
+    .live-screen-button:hover .live-play-icon {
+      transform: scale(1.13);
+      box-shadow: 0 0 0 12px rgba(255,255,255,.14), 0 8px 35px rgba(0,0,0,.4);
     }
 
-    .live-thumbnail-button:focus-visible {
+    .live-screen-button:focus-visible {
       outline: 3px solid white;
-      outline-offset: -6px;
+      outline-offset: -5px;
     }
+
+    .live-screen-label {
+      position: absolute;
+      left: 15px;
+      bottom: 13px;
+      z-index: 3;
+      color: white;
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .live-player {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: none;
+      background: #000;
+    }
+
+    .live-screen.playing .live-player { display: block; }
+    .live-screen.playing #liveThumbnail,
+    .live-screen.playing .live-screen-overlay,
+    .live-screen.playing .live-screen-button,
+    .live-screen.playing .live-screen-label { display: none; }
 
     .live-info {
-      padding: 30px;
+      padding: 34px 35px 34px 12px;
     }
 
     .live-label {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      background: #edf4ff;
-      color: #2878ff;
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      border-radius: 6px;
-      padding: 7px 10px;
+      gap: 8px;
+      background: rgba(237,38,56,.13);
+      border: 1px solid rgba(237,38,56,.32);
+      color: #ff7782;
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: 1.1px;
+      border-radius: 30px;
+      padding: 8px 13px;
+    }
+
+    .live-label-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff3349;
+      box-shadow: 0 0 0 4px rgba(255,51,73,.14);
+      animation: livePulse 1.5s infinite;
+    }
+
+    @keyframes livePulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(255,51,73,.14); }
+      50% { box-shadow: 0 0 0 8px rgba(255,51,73,.03); }
     }
 
     .live-title {
-      font-size: clamp(1.35rem, 3vw, 2rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin: 17px 0 10px;
+      font-size: clamp(1.5rem, 2.7vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.16;
+      letter-spacing: -.8px;
+      margin: 19px 0 12px;
+      color: white;
     }
 
-    .live-date {
-      color: var(--muted);
+    .live-description {
+      color: rgba(255,255,255,.68);
       font-size: .88rem;
+      line-height: 1.8;
+      margin-bottom: 19px;
+    }
+
+    .live-schedule {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 13px 15px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 12px;
+      background: rgba(255,255,255,.045);
+      margin-bottom: 18px;
+    }
+
+    .live-schedule-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: rgba(255,255,255,.8);
+      font-size: .79rem;
+      font-weight: 600;
+    }
+
+    .live-schedule-item i {
+      color: #55c8f3;
+      font-size: 1.05rem;
+    }
+
+    .countdown-heading {
+      color: #a9b9d1;
+      font-size: .69rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 9px;
+      margin-bottom: 17px;
+    }
+
+    .countdown-unit {
+      text-align: center;
+      padding: 12px 5px 10px;
+      background: linear-gradient(145deg, rgba(40,120,255,.17), rgba(117,89,237,.14));
+      border: 1px solid rgba(91,142,242,.23);
+      border-radius: 11px;
+      min-width: 0;
+    }
+
+    .countdown-number {
+      display: block;
+      color: white;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.35rem, 2.6vw, 2rem);
+      font-weight: 700;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .countdown-caption {
+      display: block;
+      color: #9fb0c9;
+      font-size: .61rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin-top: 7px;
     }
 
     .live-status {
-      font-size: .84rem;
-      color: #657386;
-      margin: 20px 0;
-      line-height: 1.7;
+      color: #8da0ba;
+      font-size: .78rem;
+      line-height: 1.6;
+      min-height: 25px;
+      margin-bottom: 17px;
+    }
+
+    .live-status i { color: #53cbf4; }
+
+    .live-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .btn-live {
@@ -432,18 +566,20 @@
       align-items: center;
       justify-content: center;
       gap: 9px;
-      padding: 13px 18px;
+      padding: 13px 19px;
       background: #e62117;
       color: white;
       border-radius: 9px;
-      font-weight: 700;
-      font-size: .88rem;
+      font-weight: 800;
+      font-size: .84rem;
       border: 0;
+      transition: .2s;
     }
 
     .btn-live:hover {
       color: white;
       background: #c91d15;
+      transform: translateY(-2px);
     }
 
     .btn-live-secondary {
@@ -452,46 +588,31 @@
       justify-content: center;
       gap: 8px;
       padding: 13px 17px;
-      border: 1px solid #dce3ed;
-      color: var(--text);
+      border: 1px solid rgba(255,255,255,.24);
+      color: white;
       border-radius: 9px;
       font-weight: 700;
-      font-size: .88rem;
-      background: white;
+      font-size: .84rem;
+      background: rgba(255,255,255,.06);
+      transition: .2s;
     }
 
     .btn-live-secondary:hover {
-      background: #f3f6fb;
-      color: var(--navy);
+      color: white;
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.45);
     }
 
-    /* AVISO DE ADIAMENTO */
-
-    .live-notice {
+    .live-footnote {
       display: flex;
-      align-items: flex-start;
-      gap: 11px;
-      padding: 13px 16px;
-      margin-bottom: 20px;
-      background: #fff8e8;
-      border: 1px solid #f3dfb5;
-      border-left: 4px solid #e5a52c;
-      border-radius: 10px;
-      color: #76551c;
-      font-size: .82rem;
-      line-height: 1.6;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      color: #8294ad;
+      font-size: .7rem;
     }
 
-    .live-notice i {
-      color: #d49319;
-      font-size: 1.05rem;
-      margin-top: 1px;
-      flex-shrink: 0;
-    }
-
-    .live-notice strong {
-      color: #634515;
-    }
+    .live-footnote i { color: #53cbf4; }
 
     /* NEWS FILTERS */
 
@@ -589,9 +710,7 @@
       transition: transform .5s;
     }
 
-    .news-card:hover .news-image {
-      transform: scale(1.05);
-    }
+    .news-card:hover .news-image { transform: scale(1.05); }
 
     .news-category {
       position: absolute;
@@ -652,13 +771,8 @@
       font-size: .8rem;
     }
 
-    .news-read i {
-      transition: transform .2s;
-    }
-
-    .news-card:hover .news-read i {
-      transform: translateX(5px);
-    }
+    .news-read i { transition: transform .2s; }
+    .news-card:hover .news-read i { transform: translateX(5px); }
 
     .no-results {
       text-align: center;
@@ -743,9 +857,7 @@
       margin: 0;
     }
 
-    .footer-links li {
-      margin-bottom: 12px;
-    }
+    .footer-links li { margin-bottom: 12px; }
 
     .footer-links a {
       color: #aeb7c3;
@@ -753,9 +865,7 @@
       transition: .2s;
     }
 
-    .footer-links a:hover {
-      color: #57c9f4;
-    }
+    .footer-links a:hover { color: #57c9f4; }
 
     .social-links {
       display: flex;
@@ -789,7 +899,7 @@
       font-size: .76rem;
     }
 
-    /* MODALS */
+    /* MODAL NOTÍCIAS */
 
     .modal-content {
       border: 0;
@@ -802,9 +912,7 @@
       padding: 19px 23px;
     }
 
-    .modal-body {
-      padding: 23px;
-    }
+    .modal-body { padding: 23px; }
 
     .modal-news-image {
       width: 100%;
@@ -848,24 +956,7 @@
       background: #17345a;
     }
 
-    .video-container {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #000;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* BACK TO TOP */
+    /* VOLTAR AO TOPO */
 
     .back-top {
       position: fixed;
@@ -884,30 +975,24 @@
       box-shadow: 0 5px 18px rgba(0,0,0,.2);
     }
 
-    .back-top.show {
-      display: flex;
-    }
+    .back-top.show { display: flex; }
 
-    /* RESPONSIVE */
+    /* RESPONSIVIDADE */
 
     @media (max-width: 991px) {
-      .navbar-collapse {
-        padding: 15px 0 20px;
+      .navbar-collapse { padding: 15px 0 20px; }
+      .hero-section { min-height: 360px; }
+      .hero-background { background-position: 65% center; }
+
+      .live-info {
+        padding: 15px 25px 28px;
       }
 
-      .hero-section {
-        min-height: 360px;
-      }
-
-      .hero-background {
-        background-position: 65% center;
-      }
+      .live-visual-column { padding: 22px 22px 12px; }
     }
 
     @media (max-width: 767px) {
-      .section-block {
-        padding: 45px 0;
-      }
+      .section-block { padding: 45px 0; }
 
       .hero-content {
         padding-top: 55px;
@@ -921,52 +1006,44 @@
         background-position: center;
       }
 
-      .hero-content h1 {
-        letter-spacing: -1.3px;
-      }
+      .hero-content h1 { letter-spacing: -1.3px; }
 
-      .live-info {
-        padding: 22px;
-      }
+      .live-visual-column { padding: 15px 15px 10px; }
+      .live-info { padding: 16px 20px 24px; }
 
-      .live-image-container {
-        min-height: 210px;
-        height: auto;
-        aspect-ratio: 16 / 9;
-      }
+      .live-title { font-size: 1.65rem; }
 
       .live-play-icon {
         width: 66px;
         height: 66px;
-        font-size: 2rem;
+        font-size: 2.1rem;
       }
 
-      .news-image-wrap {
-        height: 195px;
+      .countdown { gap: 6px; }
+
+      .countdown-unit { padding: 12px 3px 9px; }
+
+      .countdown-number { font-size: 1.55rem; }
+      .countdown-caption { font-size: .55rem; }
+
+      .live-actions .btn-live,
+      .live-actions .btn-live-secondary {
+        flex: 1 1 100%;
       }
 
-      .news-toolbar {
-        align-items: stretch;
-      }
+      .news-image-wrap { height: 195px; }
 
-      .search-box {
-        width: 100%;
-      }
+      .news-toolbar { align-items: stretch; }
+      .search-box { width: 100%; }
 
-      .curiosity-banner {
-        padding: 26px;
-      }
+      .curiosity-banner { padding: 26px; }
     }
 
     @media (max-width: 380px) {
-      .brand-name {
-        font-size: 1.15rem;
-      }
-
-      .brand-logo {
-        width: 43px;
-        height: 43px;
-      }
+      .brand-name { font-size: 1.15rem; }
+      .brand-logo { width: 43px; height: 43px; }
+      .live-schedule { gap: 10px; }
+      .live-schedule-item { font-size: .72rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1037,28 +1114,13 @@
     </button>
 
     <div class="collapse navbar-collapse" id="mainNavbar">
-
       <ul class="navbar-nav ms-auto align-items-lg-center">
 
-        <li class="nav-item">
-          <a class="nav-link" href="#inicio">Início</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#live">Ao vivo</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#noticias">Notícias</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#curiosidades">Curiosidades</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#contato">Contato</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#live">Ao vivo</a></li>
+        <li class="nav-item"><a class="nav-link" href="#noticias">Notícias</a></li>
+        <li class="nav-item"><a class="nav-link" href="#curiosidades">Curiosidades</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
 
         <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
           <a class="btn btn-play" href="https://portaldigoejackie.github.io/digo-jackie-play.html">
@@ -1068,7 +1130,6 @@
         </li>
 
       </ul>
-
     </div>
   </nav>
 </header>
@@ -1117,7 +1178,7 @@
 </section>
 
 
-<!-- ================= LIVE ================= -->
+<!-- ================= LIVE ESPECIAL ================= -->
 
 <section class="section-block live-section" id="live">
 
@@ -1125,29 +1186,19 @@
 
     <div class="section-heading">
 
-      <span class="section-eyebrow">Conteúdo especial</span>
+      <span class="section-eyebrow">
+        <i class="bi bi-broadcast me-1"></i>
+        Evento especial Digo&Jackie
+      </span>
 
       <h2 class="section-title">
         <i class="bi bi-play-circle-fill text-danger me-2"></i>
-        Destaque do Digo&Jackie
+        Prepare-se para a próxima transmissão!
       </h2>
 
       <p class="section-description">
-        Prepare-se para explorar um dos grandes mistérios da existência: por que ainda não encontramos outras civilizações no Universo?
+        Uma noite para investigar acontecimentos, questionar coincidências e separar os fatos das especulações. Acompanhe ao vivo aqui no portal!
       </p>
-
-    </div>
-
-    <!-- AVISO TEMPORÁRIO DE ADIAMENTO -->
-
-    <div class="live-notice d-none" id="liveNotice" role="status" aria-live="polite">
-
-      <i class="bi bi-info-circle-fill"></i>
-
-      <div>
-        <strong>Comunicado:</strong>
-        Por motivos de força maior, a live programada para hoje foi adiada. Agradecemos a compreensão!
-      </div>
 
     </div>
 
@@ -1155,31 +1206,29 @@
 
       <div class="row g-0">
 
-        <!-- THUMBNAIL CLICÁVEL -->
+        <!-- THUMBNAIL E PLAYER -->
 
-        <div class="col-lg-6">
+        <div class="col-lg-6 live-visual-column">
 
-          <div class="live-image-container">
+          <div class="live-screen" id="liveScreen">
 
             <img
               id="liveThumbnail"
-              class="live-image"
-              src="https://i.ytimg.com/vi/R0EiL6wTyjY/hqdefault.jpg"
-              alt="Thumbnail do vídeo A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê?"
-              width="480"
-              height="360"
+              src="https://i.ytimg.com/vi/pa2fTCkiLuY/maxresdefault.jpg"
+              alt="O Mundo Vai Apagar? Simpsons, Alertas e Uma Teoria Assustadora! - Live Digo&Jackie"
+              width="1280"
+              height="720"
               fetchpriority="high"
               loading="eager"
               decoding="async">
 
-            <div class="live-overlay"></div>
+            <div class="live-screen-overlay"></div>
 
             <button
-              class="live-thumbnail-button"
+              class="live-screen-button"
+              id="playLiveButton"
               type="button"
-              data-bs-toggle="modal"
-              data-bs-target="#liveModal"
-              aria-label="Reproduzir A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê?">
+              aria-label="Assistir à transmissão ao vivo pelo site">
 
               <span class="live-play-icon">
                 <i class="bi bi-play-fill"></i>
@@ -1187,58 +1236,128 @@
 
             </button>
 
+            <span class="live-screen-label">
+              <i class="bi bi-youtube me-1"></i>
+              Transmissão Digo&Jackie
+            </span>
+
+            <!-- PLAYER INCORPORADO -->
+            <iframe
+              class="live-player"
+              id="livePlayer"
+              src="about:blank"
+              title="O Mundo Vai Apagar? Simpsons, Alertas e Uma Teoria Assustadora! - Transmissão Digo&Jackie"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+
           </div>
 
         </div>
 
-        <!-- INFORMAÇÕES DO VÍDEO -->
+        <!-- INFORMAÇÕES DA LIVE -->
 
         <div class="col-lg-6">
 
           <div class="live-info">
 
             <span class="live-label" id="liveBadge">
-              <i class="bi bi-stars"></i>
-              VÍDEO EM DESTAQUE
+              <span class="live-label-dot"></span>
+              PRÓXIMA TRANSMISSÃO
             </span>
 
             <h3 class="live-title" id="liveTitle">
-              A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê? 🌌
+              O MUNDO VAI APAGAR? SIMPSONS, ALERTAS E UMA TEORIA ASSUSTADORA!
             </h3>
 
-            <div class="live-date">
-              <i class="bi bi-youtube me-1"></i>
-              Conteúdo disponível para assistir
-            </div>
-
-            <p class="live-status" id="liveStatus">
-              O Universo é imenso, mas até agora o silêncio permanece. Conheça algumas das hipóteses que tentam explicar por que ainda não encontramos outras civilizações.
+            <p class="live-description">
+              Os Simpsons, alertas e acontecimentos que levantam questionamentos sobre um possível apagão. Coincidências, previsões e teorias: vamos investigar o que existe por trás dessa história!
             </p>
 
-            <div class="d-flex flex-wrap gap-2">
+            <div class="live-schedule">
+
+              <div class="live-schedule-item">
+                <i class="bi bi-calendar-event"></i>
+                <span>Terça-feira, 17 de novembro</span>
+              </div>
+
+              <div class="live-schedule-item">
+                <i class="bi bi-clock"></i>
+                <span>21h — Horário de Brasília</span>
+              </div>
+
+            </div>
+
+            <!-- CONTAGEM REGRESSIVA -->
+
+            <div id="countdownArea">
+
+              <div class="countdown-heading">
+                <i class="bi bi-hourglass-split me-1"></i>
+                A transmissão começa em
+              </div>
+
+              <div class="countdown" id="liveCountdown" aria-label="Contagem regressiva para a transmissão">
+
+                <div class="countdown-unit">
+                  <span class="countdown-number" id="countDays">00</span>
+                  <span class="countdown-caption">Dias</span>
+                </div>
+
+                <div class="countdown-unit">
+                  <span class="countdown-number" id="countHours">00</span>
+                  <span class="countdown-caption">Horas</span>
+                </div>
+
+                <div class="countdown-unit">
+                  <span class="countdown-number" id="countMinutes">00</span>
+                  <span class="countdown-caption">Minutos</span>
+                </div>
+
+                <div class="countdown-unit">
+                  <span class="countdown-number" id="countSeconds">00</span>
+                  <span class="countdown-caption">Segundos</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <p class="live-status" id="liveStatus" aria-live="polite">
+              <i class="bi bi-info-circle me-1"></i>
+              Programe-se! A transmissão estará disponível neste espaço no horário marcado.
+            </p>
+
+            <div class="live-actions">
 
               <button
                 type="button"
                 class="btn-live"
-                data-bs-toggle="modal"
-                data-bs-target="#liveModal">
+                id="watchOnSite">
 
                 <i class="bi bi-play-circle-fill"></i>
-                Assistir no site
+                Assistir pelo site
 
               </button>
 
               <a
-                href="https://youtu.be/R0EiL6wTyjY"
+                href="https://www.youtube.com/watch?v=pa2fTCkiLuY"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-live-secondary">
 
                 <i class="bi bi-youtube"></i>
-                Abrir YouTube
+                Assistir no YouTube
 
               </a>
 
+            </div>
+
+            <div class="live-footnote">
+              <i class="bi bi-broadcast-pin"></i>
+              <span>Transmissão incorporada diretamente do canal Digo&Jackie.</span>
             </div>
 
           </div>
@@ -1274,14 +1393,11 @@
 
     </div>
 
-
     <div class="news-toolbar">
 
       <div class="filter-list" role="group" aria-label="Filtrar notícias">
 
-        <button class="filter-btn active" data-filter="all">
-          Todas
-        </button>
+        <button class="filter-btn active" data-filter="all">Todas</button>
 
         <button class="filter-btn" data-filter="science">
           <i class="bi bi-rocket-takeoff me-1"></i>
@@ -1315,7 +1431,6 @@
       </div>
 
     </div>
-
 
     <div class="row g-4" id="newsGrid">
       <!-- CARDS GERADOS PELO JAVASCRIPT -->
@@ -1362,9 +1477,7 @@
         </div>
 
         <div class="col-md-3 text-center mt-4 mt-md-0">
-
           <i class="bi bi-globe-americas curiosity-icon"></i>
-
         </div>
 
       </div>
@@ -1486,23 +1599,19 @@
 
       </div>
 
-
       <div class="col-lg-3 col-md-6">
 
         <h5 class="footer-title">Navegação</h5>
 
         <ul class="footer-links">
-
           <li><a href="#inicio">Início</a></li>
           <li><a href="#live">Transmissões ao vivo</a></li>
           <li><a href="#noticias">Notícias e descobertas</a></li>
           <li><a href="#curiosidades">Curiosidades</a></li>
           <li><a href="https://portaldigoejackie.github.io/digo-jackie-play.html">Digo&Jackie Play</a></li>
-
         </ul>
 
       </div>
-
 
       <div class="col-lg-4 col-md-6">
 
@@ -1526,7 +1635,6 @@
       </div>
 
     </div>
-
 
     <div class="footer-bottom">
 
@@ -1619,75 +1727,8 @@
           type="button"
           class="btn btn-light"
           data-bs-dismiss="modal">
-
           Fechar
-
         </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- ================= MODAL VÍDEO ================= -->
-
-<div class="modal fade" id="liveModal" tabindex="-1" aria-labelledby="liveModalTitle" aria-hidden="true">
-
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-
-    <div class="modal-content">
-
-      <div class="modal-header">
-
-        <h5 class="modal-title fw-bold" id="liveModalTitle">
-          <i class="bi bi-youtube text-danger me-2"></i>
-          A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê? 🌌
-        </h5>
-
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Fechar">
-        </button>
-
-      </div>
-
-      <div class="modal-body">
-
-        <div class="video-container">
-
-          <iframe
-            id="livePlayer"
-            src="about:blank"
-            title="A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê?"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-          </iframe>
-
-        </div>
-
-        <p class="text-secondary small mt-3 mb-0">
-          <i class="bi bi-info-circle me-1"></i>
-          Assista diretamente pelo site ou abra o vídeo no YouTube.
-        </p>
-
-        <a
-          href="https://youtu.be/R0EiL6wTyjY"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="source-link mt-3">
-
-          <i class="bi bi-youtube"></i>
-          Assistir pelo YouTube
-
-        </a>
 
       </div>
 
@@ -1718,57 +1759,150 @@
 <script>
 'use strict';
 
-/* ==========================================
-   CONFIGURAÇÃO DO VÍDEO EM DESTAQUE
 
-   Thumbnail confirmada pelo yt-dlp:
-   https://i.ytimg.com/vi/R0EiL6wTyjY/hqdefault.jpg
+/* ==========================================
+   CONFIGURAÇÃO DA TRANSMISSÃO AO VIVO
+
+   Evento: 17/11/2026 às 21h
+   Fuso: Brasília (UTC-3)
+
+   ID: pa2fTCkiLuY
+   Thumbnail: maxresdefault.jpg
 ========================================== */
 
 const LIVE = {
-  id: 'R0EiL6wTyjY',
-  titulo: 'A Floresta Negra, Fermi e o Zoológico: O Universo Está em Silêncio Por Quê? 🌌',
-  thumbnail: 'https://i.ytimg.com/vi/R0EiL6wTyjY/hqdefault.jpg',
-  youtube: 'https://youtu.be/R0EiL6wTyjY'
+  id: 'pa2fTCkiLuY',
+
+  titulo: 'O MUNDO VAI APAGAR? SIMPSONS, ALERTAS E UMA TEORIA ASSUSTADORA!',
+
+  thumbnail: 'https://i.ytimg.com/vi/pa2fTCkiLuY/maxresdefault.jpg',
+
+  youtube: 'https://www.youtube.com/watch?v=pa2fTCkiLuY',
+
+  inicio: '2026-11-17T21:00:00-03:00'
 };
 
 
 /* ==========================================
-   GARANTIA DO ENDEREÇO DA THUMBNAIL
+   CONTAGEM REGRESSIVA
 
-   O mesmo endereço confirmado pelo yt-dlp
-   é aplicado diretamente ao elemento da imagem.
+   Atualização a cada segundo.
+   Horário de Brasília (UTC-3).
 ========================================== */
 
-const liveThumbnail = document.getElementById('liveThumbnail');
+const countdownElements = {
+  days: document.getElementById('countDays'),
+  hours: document.getElementById('countHours'),
+  minutes: document.getElementById('countMinutes'),
+  seconds: document.getElementById('countSeconds')
+};
 
-liveThumbnail.src = LIVE.thumbnail;
+const countdownArea = document.getElementById('countdownArea');
+const liveStatus = document.getElementById('liveStatus');
+const liveBadge = document.getElementById('liveBadge');
 
+const liveStart = new Date(LIVE.inicio).getTime();
 
-/* ==========================================
-   AVISO TEMPORÁRIO DE ADIAMENTO
+let countdownTimer = null;
 
-   O aviso desaparece às 00h de 16/11/2026.
-   Referência de horário: Brasília (UTC-3).
-========================================== */
+function padNumber(value) {
+  return String(value).padStart(2, '0');
+}
 
-function manageLiveNotice() {
-
-  const notice = document.getElementById('liveNotice');
-
-  const expiration = new Date('2026-11-16T00:00:00-03:00').getTime();
+function updateCountdown() {
 
   const now = Date.now();
+  const difference = liveStart - now;
 
-  if (now >= expiration) {
-    notice.classList.add('d-none');
+  if (difference > 0) {
+
+    const days = Math.floor(difference / 86400000);
+    const hours = Math.floor((difference % 86400000) / 3600000);
+    const minutes = Math.floor((difference % 3600000) / 60000);
+    const seconds = Math.floor((difference % 60000) / 1000);
+
+    countdownElements.days.textContent = padNumber(days);
+    countdownElements.hours.textContent = padNumber(hours);
+    countdownElements.minutes.textContent = padNumber(minutes);
+    countdownElements.seconds.textContent = padNumber(seconds);
+
+    liveStatus.innerHTML =
+      '<i class="bi bi-info-circle me-1"></i>' +
+      'A contagem está ativa! Prepare-se para acompanhar a transmissão.';
+
     return;
   }
 
-  notice.classList.remove('d-none');
+  clearInterval(countdownTimer);
+
+  countdownArea.innerHTML = `
+    <div class="countdown-heading">
+      <i class="bi bi-broadcast me-1"></i>
+      Horário programado da transmissão
+    </div>
+    <div class="live-schedule">
+      <div class="live-schedule-item">
+        <i class="bi bi-play-circle-fill"></i>
+        <span>Chegou a hora! Acesse a transmissão.</span>
+      </div>
+    </div>
+  `;
+
+  liveBadge.innerHTML =
+    '<span class="live-label-dot"></span> HORÁRIO DA TRANSMISSÃO';
+
+  liveStatus.innerHTML =
+    '<i class="bi bi-broadcast me-1"></i>' +
+    'A transmissão está programada para começar. Se o player ainda não iniciou, aguarde a liberação pelo YouTube.';
 }
 
-manageLiveNotice();
+updateCountdown();
+countdownTimer = setInterval(updateCountdown, 1000);
+
+
+/* ==========================================
+   PLAYER INCORPORADO
+
+   A thumbnail é apresentada inicialmente.
+   Ao clicar, o player substitui a imagem.
+
+   O vídeo é carregado sob demanda.
+========================================== */
+
+const liveScreen = document.getElementById('liveScreen');
+const livePlayer = document.getElementById('livePlayer');
+const playLiveButton = document.getElementById('playLiveButton');
+const watchOnSite = document.getElementById('watchOnSite');
+
+let playerStarted = false;
+
+function startLivePlayer() {
+
+  if (playerStarted) {
+    document.getElementById('liveScreen').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+    return;
+  }
+
+  playerStarted = true;
+
+  livePlayer.src =
+    'https://www.youtube-nocookie.com/embed/' +
+    encodeURIComponent(LIVE.id) +
+    '?autoplay=1&rel=0';
+
+  liveScreen.classList.add('playing');
+
+  liveStatus.innerHTML =
+    '<i class="bi bi-play-circle-fill me-1"></i>' +
+    'Player carregado. Acompanhe a transmissão diretamente pelo portal.';
+
+}
+
+playLiveButton.addEventListener('click', startLivePlayer);
+watchOnSite.addEventListener('click', startLivePlayer);
 
 
 /* ==========================================
@@ -1917,7 +2051,6 @@ function renderNews(items) {
   items.forEach(item => {
 
     const column = document.createElement('div');
-
     column.className = 'col-12 col-md-6 col-lg-4';
 
     const card = document.createElement('article');
@@ -1983,7 +2116,6 @@ function renderNews(items) {
     read.append(readText, arrow);
 
     content.append(meta, title, description, read);
-
     card.append(imageWrap, content);
 
     function openCard() {
@@ -2017,11 +2149,8 @@ function openNewsModal(item) {
   document.getElementById('modalNewsImage').alt = item.title;
 
   document.getElementById('modalNewsCategory').textContent = item.categoryName;
-
   document.getElementById('modalNewsDate').textContent = item.date;
-
   document.getElementById('newsModalTitle').textContent = item.title;
-
   document.getElementById('modalNewsDescription').textContent = item.description;
 
   const source = document.getElementById('modalSource');
@@ -2044,7 +2173,7 @@ function openNewsModal(item) {
 
 
 /* ==========================================
-   FILTROS
+   FILTROS E PESQUISA
 ========================================== */
 
 let activeFilter = 'all';
@@ -2093,33 +2222,6 @@ filterButtons.forEach(button => {
 });
 
 searchInput.addEventListener('input', filterNews);
-
-
-/* ==========================================
-   PLAYER INCORPORADO
-
-   Carrega o vídeo somente quando o modal
-   é aberto e interrompe a reprodução
-   quando o modal é fechado.
-========================================== */
-
-const liveModal = document.getElementById('liveModal');
-const livePlayer = document.getElementById('livePlayer');
-
-liveModal.addEventListener('show.bs.modal', () => {
-
-  livePlayer.src =
-    'https://www.youtube-nocookie.com/embed/' +
-    encodeURIComponent(LIVE.id) +
-    '?autoplay=1&rel=0';
-
-});
-
-liveModal.addEventListener('hidden.bs.modal', () => {
-
-  livePlayer.src = 'about:blank';
-
-});
 
 
 /* ==========================================
