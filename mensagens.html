@@ -1,0 +1,1181 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mensagens de Contato | Digo&Jackie</title>
+  <meta name="description" content="Painel privado de mensagens de contato do portal Digo&Jackie.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#071426">
+  <link rel="canonical" href="https://portaldigoejackie.github.io/mensagens.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Digo&Jackie">
+  <meta property="og:title" content="Mensagens de Contato | Digo&Jackie">
+  <meta property="og:description" content="Painel privado de mensagens de contato do portal Digo&Jackie.">
+  <meta property="og:url" content="https://portaldigoejackie.github.io/mensagens.html">
+  <meta property="og:image" content="https://portaldigoejackie.github.io/Logotipo-Digo%26Jackie.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mensagens de Contato | Digo&Jackie">
+  <meta name="twitter:description" content="Painel privado de mensagens de contato do portal Digo&Jackie.">
+  <meta name="twitter:image" content="https://portaldigoejackie.github.io/Logotipo-Digo%26Jackie.png">
+  <link rel="icon" href="https://portaldigoejackie.github.io/Logotipo-Digo%26Jackie.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #071426;
+      --navy2: #0c1d33;
+      --blue: #2878ff;
+      --cyan: #36c5f0;
+      --purple: #7559ed;
+      --ink: #172338;
+      --muted: #718096;
+      --line: #e7edf5;
+      --soft: #f4f7fb;
+      --footer: #20252c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f7fb;
+      color: var(--ink);
+      font-family: Inter, system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .site-header {
+      background: linear-gradient(115deg, #061326, #0b1d35 65%, #102b4b);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .navbar {
+      min-height: 76px;
+    }
+
+    .brand-logo {
+      width: 47px;
+      height: 47px;
+      object-fit: contain;
+      border-radius: 13px;
+    }
+
+    .brand-name {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.22rem;
+      letter-spacing: -.5px;
+    }
+
+    .brand-name span {
+      color: var(--cyan);
+    }
+
+    .nav-link-site {
+      color: #dce8f8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .9rem;
+    }
+
+    .nav-link-site:hover {
+      color: #fff;
+    }
+
+    main {
+      flex: 1;
+      padding: 44px 0 64px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      font-size: .72rem;
+    }
+
+    h1, h2, h3, .display-font {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .page-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      color: #10213a;
+    }
+
+    .page-subtitle {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    .panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 14px 40px rgba(16,35,62,.06);
+    }
+
+    .login-wrap {
+      max-width: 470px;
+      margin: 25px auto 0;
+      padding: clamp(24px, 5vw, 38px);
+    }
+
+    .login-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(40,120,255,.13), rgba(54,197,240,.18));
+      color: var(--blue);
+      font-size: 1.55rem;
+    }
+
+    .form-label {
+      font-weight: 700;
+      font-size: .85rem;
+      color: #253650;
+    }
+
+    .form-control {
+      border: 1px solid #dce4ef;
+      border-radius: 11px;
+      padding: .82rem .95rem;
+      color: #172338;
+    }
+
+    .form-control:focus {
+      border-color: #75a8ff;
+      box-shadow: 0 0 0 .22rem rgba(40,120,255,.12);
+    }
+
+    .input-group .form-control {
+      border-radius: 11px 0 0 11px;
+    }
+
+    .password-toggle {
+      border: 1px solid #dce4ef;
+      border-left: 0;
+      background: #fff;
+      color: #64748b;
+      border-radius: 0 11px 11px 0;
+      padding: 0 15px;
+    }
+
+    .btn-primary-custom {
+      background: linear-gradient(100deg, var(--blue), #4268f5);
+      border: 0;
+      color: #fff;
+      border-radius: 11px;
+      padding: .82rem 1.15rem;
+      font-weight: 700;
+      box-shadow: 0 7px 18px rgba(40,120,255,.2);
+    }
+
+    .btn-primary-custom:hover {
+      color: #fff;
+      filter: brightness(1.06);
+    }
+
+    .btn-soft {
+      background: #edf4ff;
+      color: #2464d8;
+      border: 1px solid #dce9ff;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .btn-soft:hover {
+      background: #e2edff;
+      color: #174fae;
+    }
+
+    .btn-logout {
+      border: 1px solid rgba(255,255,255,.22);
+      color: #eaf2ff;
+      border-radius: 9px;
+      font-weight: 600;
+    }
+
+    .btn-logout:hover {
+      background: rgba(255,255,255,.1);
+      color: #fff;
+    }
+
+    .inbox-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 20px 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stats {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .stat-pill {
+      font-size: .78rem;
+      font-weight: 700;
+      color: #52627a;
+      background: #f1f5fa;
+      padding: 7px 11px;
+      border-radius: 999px;
+    }
+
+    .stat-pill strong {
+      color: #172b49;
+    }
+
+    .message-list {
+      padding: 7px 14px;
+    }
+
+    .message-item {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      gap: 15px;
+      align-items: center;
+      padding: 17px 12px;
+      border-bottom: 1px solid #edf1f6;
+      cursor: pointer;
+      transition: background .15s;
+      border-radius: 10px;
+    }
+
+    .message-item:last-child {
+      border-bottom: 0;
+    }
+
+    .message-item:hover {
+      background: #f7faff;
+    }
+
+    .message-item.unread .message-name {
+      font-weight: 800;
+    }
+
+    .message-item.unread .message-preview {
+      color: #354762;
+    }
+
+    .message-main {
+      min-width: 0;
+    }
+
+    .message-topline {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .message-name {
+      font-weight: 650;
+      color: #152641;
+    }
+
+    .message-email {
+      font-size: .82rem;
+      color: #718096;
+      overflow-wrap: anywhere;
+    }
+
+    .message-preview {
+      font-size: .88rem;
+      color: #7b8798;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    .message-date {
+      font-size: .75rem;
+      color: #8a96a8;
+      white-space: nowrap;
+    }
+
+    .unread-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: inline-block;
+    }
+
+    .status-badge {
+      font-size: .68rem;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 5px 8px;
+    }
+
+    .status-new {
+      background: #eaf2ff;
+      color: #2464d8;
+    }
+
+    .status-read {
+      background: #f0f2f5;
+      color: #758196;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 55px 20px;
+      color: #7b8798;
+    }
+
+    .empty-state i {
+      font-size: 2.4rem;
+      color: #b4c2d5;
+    }
+
+    .loading-state {
+      text-align: center;
+      padding: 42px;
+      color: #718096;
+    }
+
+    .alert-inline {
+      font-size: .88rem;
+      border-radius: 10px;
+    }
+
+    .modal-content {
+      border: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(3,16,35,.22);
+    }
+
+    .modal-header {
+      background: #f8faff;
+      border-bottom: 1px solid var(--line);
+      padding: 20px 24px;
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
+    .message-body {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      line-height: 1.75;
+      color: #293950;
+      background: #f7f9fc;
+      border: 1px solid #edf1f6;
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .detail-label {
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #8a96a8;
+      font-weight: 800;
+      margin-bottom: 3px;
+    }
+
+    .detail-value {
+      font-size: .9rem;
+      color: #263851;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      background: var(--footer);
+      color: #aeb7c4;
+      padding: 25px 0;
+      font-size: .83rem;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #dce8f8;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 575px) {
+      main {
+        padding: 30px 0 45px;
+      }
+
+      .navbar {
+        min-height: 66px;
+      }
+
+      .brand-logo {
+        width: 41px;
+        height: 41px;
+      }
+
+      .inbox-toolbar {
+        padding: 17px;
+      }
+
+      .message-list {
+        padding: 5px 9px;
+      }
+
+      .message-item {
+        padding: 15px 8px;
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      .message-date {
+        padding-left: 17px;
+      }
+
+      .modal-body {
+        padding: 19px;
+      }
+
+      .modal-header {
+        padding: 17px 19px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Mensagens de Contato | Digo&Jackie",
+    "url": "https://portaldigoejackie.github.io/mensagens.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Digo&Jackie",
+      "url": "https://portaldigoejackie.github.io/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="navbar navbar-expand">
+    <div class="container">
+
+      <a class="d-flex align-items-center gap-3 text-decoration-none"
+         href="https://portaldigoejackie.github.io/"
+         aria-label="Digo&Jackie - página inicial">
+
+        <img
+          class="brand-logo"
+          src="https://portaldigoejackie.github.io/Logotipo-Digo%26Jackie.png"
+          alt="Logotipo Digo&Jackie">
+
+        <span class="brand-name">Digo<span>&</span>Jackie</span>
+      </a>
+
+      <div class="ms-auto d-flex align-items-center gap-3">
+        <a class="nav-link-site d-none d-sm-inline"
+           href="https://portaldigoejackie.github.io/">
+          <i class="bi bi-house-door me-1"></i> Portal
+        </a>
+
+        <button id="logoutBtn" class="btn btn-sm btn-logout hidden">
+          <i class="bi bi-box-arrow-right me-1"></i>Sair
+        </button>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+
+    <div class="text-center mb-4">
+      <div class="eyebrow mb-2">Área administrativa</div>
+      <h1 class="page-title mb-2">Mensagens de contato</h1>
+      <p class="page-subtitle mx-auto mb-0">
+        Sua caixa de entrada do portal Digo&Jackie.
+      </p>
+    </div>
+
+    <!-- LOGIN -->
+
+    <section id="loginSection" class="panel login-wrap">
+
+      <div class="login-icon mb-3">
+        <i class="bi bi-envelope-lock"></i>
+      </div>
+
+      <h2 class="h4 fw-bold mb-2">Acesse sua conta</h2>
+
+      <p class="text-secondary small mb-4">
+        Entre com as credenciais autorizadas do Supabase.
+      </p>
+
+      <div id="loginAlert"
+           class="alert alert-danger alert-inline py-2 hidden"
+           role="alert"></div>
+
+      <form id="loginForm">
+
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">E-mail</label>
+
+          <input
+            id="emailInput"
+            class="form-control"
+            type="email"
+            autocomplete="username"
+            placeholder="seu@email.com"
+            required>
+        </div>
+
+        <div class="mb-4">
+          <label for="passwordInput" class="form-label">Senha</label>
+
+          <div class="input-group">
+
+            <input
+              id="passwordInput"
+              class="form-control"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Sua senha"
+              required>
+
+            <button
+              class="password-toggle"
+              type="button"
+              id="togglePassword"
+              aria-label="Mostrar senha"
+              title="Mostrar ou ocultar senha">
+
+              <i class="bi bi-eye" id="eyeIcon"></i>
+            </button>
+
+          </div>
+        </div>
+
+        <button id="loginBtn"
+                class="btn btn-primary-custom w-100"
+                type="submit">
+
+          <i class="bi bi-box-arrow-in-right me-2"></i>Entrar
+        </button>
+
+      </form>
+    </section>
+
+    <!-- CAIXA DE ENTRADA -->
+
+    <section id="inboxSection" class="hidden">
+
+      <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-3">
+
+        <div>
+          <div class="eyebrow mb-1">Central de atendimento</div>
+          <h2 class="h3 fw-bold mb-1">Caixa de entrada</h2>
+          <div id="signedInAs" class="small text-secondary"></div>
+        </div>
+
+        <button id="refreshBtn" class="btn btn-soft px-3 py-2">
+          <i class="bi bi-arrow-clockwise me-1"></i>Atualizar
+        </button>
+
+      </div>
+
+      <div id="inboxAlert"
+           class="alert alert-danger alert-inline hidden"
+           role="alert"></div>
+
+      <div class="panel overflow-hidden">
+
+        <div class="inbox-toolbar">
+
+          <div class="stats">
+            <span class="stat-pill">
+              <strong id="totalCount">0</strong> mensagens
+            </span>
+
+            <span class="stat-pill">
+              <strong id="unreadCount">0</strong> não lidas
+            </span>
+          </div>
+
+          <div class="small text-secondary">
+            <i class="bi bi-shield-lock me-1"></i>Área restrita
+          </div>
+
+        </div>
+
+        <div id="messageList" class="message-list">
+
+          <div class="loading-state">
+            <div class="spinner-border spinner-border-sm text-primary me-2"
+                 role="status"></div>
+            Carregando mensagens...
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+
+    <span>
+      © <span id="year"></span> Digo&Jackie. Todos os direitos reservados.
+    </span>
+
+    <a href="https://portaldigoejackie.github.io/">
+      Voltar ao portal <i class="bi bi-arrow-up-right"></i>
+    </a>
+
+  </div>
+</footer>
+
+<!-- MODAL DA MENSAGEM -->
+
+<div class="modal fade"
+     id="messageModal"
+     tabindex="-1"
+     aria-labelledby="modalTitle"
+     aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <div>
+          <div class="eyebrow mb-1">Mensagem recebida</div>
+
+          <h2 class="modal-title h5 fw-bold mb-0" id="modalTitle">
+            Detalhes da mensagem
+          </h2>
+        </div>
+
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Fechar"></button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <div class="row g-3 mb-4">
+
+          <div class="col-sm-6">
+            <div class="detail-label">Remetente</div>
+            <div class="detail-value fw-semibold" id="detailName"></div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="detail-label">E-mail</div>
+            <div class="detail-value" id="detailEmail"></div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="detail-label">Protocolo</div>
+            <div class="detail-value" id="detailProtocol"></div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="detail-label">Recebida em</div>
+            <div class="detail-value" id="detailDate"></div>
+          </div>
+
+        </div>
+
+        <div class="detail-label mb-2">Conteúdo</div>
+        <div class="message-body" id="detailMessage"></div>
+
+      </div>
+
+      <div class="modal-footer d-flex justify-content-between flex-wrap gap-2">
+
+        <button id="markReadBtn" class="btn btn-soft">
+          <i class="bi bi-check2-circle me-1"></i>Marcar como lida
+        </button>
+
+        <div class="d-flex gap-2">
+
+          <a id="replyBtn" class="btn btn-primary-custom" href="#">
+            <i class="bi bi-reply-fill me-1"></i>Responder por e-mail
+          </a>
+
+          <button type="button"
+                  class="btn btn-outline-secondary rounded-3"
+                  data-bs-dismiss="modal">
+            Fechar
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+(() => {
+  'use strict';
+
+  const SUPABASE_URL = 'https://idxmzyjvlsjgsmklczkt.supabase.co';
+
+  const SUPABASE_ANON_KEY =
+    'sb_publishable_k8tkrY9EAacu-yDF2UM3eg_h-x00Trk';
+
+  const db = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
+
+  const $ = (id) => document.getElementById(id);
+
+  const loginSection = $('loginSection');
+  const inboxSection = $('inboxSection');
+  const loginForm = $('loginForm');
+  const loginBtn = $('loginBtn');
+  const logoutBtn = $('logoutBtn');
+  const messageList = $('messageList');
+
+  const modal = new bootstrap.Modal($('messageModal'));
+
+  let messages = [];
+  let activeMessage = null;
+
+  $('year').textContent = new Date().getFullYear();
+
+  function showAlert(element, message) {
+    element.textContent = message;
+    element.classList.remove('hidden');
+  }
+
+  function hideAlert(element) {
+    element.textContent = '';
+    element.classList.add('hidden');
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? '').replace(/[&<>"']/g, char => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    })[char]);
+  }
+
+  function formatDate(value) {
+    if (!value) return 'Data não informada';
+
+    const date = new Date(value);
+
+    if (Number.isNaN(date.getTime())) {
+      return 'Data não informada';
+    }
+
+    return new Intl.DateTimeFormat('pt-BR', {
+      dateStyle: 'short',
+      timeStyle: 'short'
+    }).format(date);
+  }
+
+  function setLoggedIn(user) {
+    loginSection.classList.add('hidden');
+    inboxSection.classList.remove('hidden');
+    logoutBtn.classList.remove('hidden');
+
+    $('signedInAs').textContent = user?.email
+      ? `Conectado como ${user.email}`
+      : 'Sessão autenticada';
+  }
+
+  function setLoggedOut() {
+    inboxSection.classList.add('hidden');
+    logoutBtn.classList.add('hidden');
+    loginSection.classList.remove('hidden');
+
+    messages = [];
+    activeMessage = null;
+  }
+
+  // Mostrar ou ocultar senha digitada.
+
+  $('togglePassword').addEventListener('click', () => {
+
+    const field = $('passwordInput');
+    const visible = field.type === 'password';
+
+    field.type = visible ? 'text' : 'password';
+
+    $('eyeIcon').className = visible
+      ? 'bi bi-eye-slash'
+      : 'bi bi-eye';
+
+    $('togglePassword').setAttribute(
+      'aria-label',
+      visible ? 'Ocultar senha' : 'Mostrar senha'
+    );
+
+  });
+
+  // Autenticação Supabase.
+
+  loginForm.addEventListener('submit', async (event) => {
+
+    event.preventDefault();
+
+    hideAlert($('loginAlert'));
+
+    loginBtn.disabled = true;
+
+    loginBtn.innerHTML =
+      '<span class="spinner-border spinner-border-sm me-2"></span>Entrando...';
+
+    const email = $('emailInput').value.trim();
+    const password = $('passwordInput').value;
+
+    const { data, error } = await db.auth.signInWithPassword({
+      email,
+      password
+    });
+
+    loginBtn.disabled = false;
+
+    loginBtn.innerHTML =
+      '<i class="bi bi-box-arrow-in-right me-2"></i>Entrar';
+
+    if (error) {
+
+      showAlert(
+        $('loginAlert'),
+        'Não foi possível entrar. Confira o e-mail e a senha ou verifique as permissões da conta.'
+      );
+
+      return;
+    }
+
+    $('passwordInput').value = '';
+
+    setLoggedIn(data.user);
+
+    await loadMessages();
+
+  });
+
+  // Encerrar sessão.
+
+  logoutBtn.addEventListener('click', async () => {
+
+    await db.auth.signOut();
+
+    setLoggedOut();
+
+  });
+
+  // Atualizar caixa de entrada.
+
+  $('refreshBtn').addEventListener('click', loadMessages);
+
+  async function loadMessages() {
+
+    hideAlert($('inboxAlert'));
+
+    messageList.innerHTML = `
+      <div class="loading-state">
+        <div class="spinner-border spinner-border-sm text-primary me-2"
+             role="status"></div>
+        Atualizando mensagens...
+      </div>
+    `;
+
+    const { data, error } = await db
+      .from('mensagens_contato')
+      .select('id, protocolo, nome, email, mensagem, criado_em, lida')
+      .order('criado_em', { ascending: false });
+
+    if (error) {
+
+      messageList.innerHTML = `
+        <div class="empty-state">
+          <i class="bi bi-shield-exclamation d-block mb-3"></i>
+          <div class="fw-bold mb-1">
+            Não foi possível carregar a caixa de entrada
+          </div>
+          <div class="small">
+            Verifique as políticas de acesso da tabela no Supabase.
+          </div>
+        </div>
+      `;
+
+      showAlert(
+        $('inboxAlert'),
+        `Erro ao consultar mensagens: ${error.message}`
+      );
+
+      return;
+    }
+
+    messages = data || [];
+
+    $('totalCount').textContent = messages.length;
+
+    $('unreadCount').textContent =
+      messages.filter(item => !item.lida).length;
+
+    if (!messages.length) {
+
+      messageList.innerHTML = `
+        <div class="empty-state">
+          <i class="bi bi-inbox d-block mb-3"></i>
+          <div class="fw-bold text-dark mb-1">
+            Sua caixa de entrada está vazia
+          </div>
+          <div class="small">
+            Quando alguém enviar uma mensagem pelo portal, ela aparecerá aqui.
+          </div>
+        </div>
+      `;
+
+      return;
+    }
+
+    messageList.innerHTML = messages.map(item => {
+
+      const unread = !item.lida;
+
+      const preview = String(item.mensagem || '')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      return `
+        <article
+          class="message-item ${unread ? 'unread' : ''}"
+          data-message-id="${escapeHtml(item.id)}"
+          tabindex="0"
+          role="button"
+          aria-label="Abrir mensagem de ${escapeHtml(item.nome)}">
+
+          <div class="message-main">
+
+            <div class="message-topline">
+
+              ${unread
+                ? '<span class="unread-dot" aria-label="Não lida"></span>'
+                : ''
+              }
+
+              <span class="message-name">
+                ${escapeHtml(item.nome)}
+              </span>
+
+              <span class="status-badge ${unread ? 'status-new' : 'status-read'}">
+                ${unread ? 'Não lida' : 'Lida'}
+              </span>
+
+            </div>
+
+            <div class="message-email mb-1">
+              ${escapeHtml(item.email)}
+            </div>
+
+            <div class="message-preview">
+              ${escapeHtml(preview)}
+            </div>
+
+          </div>
+
+          <div class="message-date">
+            ${escapeHtml(formatDate(item.criado_em))}
+            <i class="bi bi-chevron-right ms-2"></i>
+          </div>
+
+        </article>
+      `;
+
+    }).join('');
+
+    messageList.querySelectorAll('.message-item').forEach(item => {
+
+      const open = () => openMessage(item.dataset.messageId);
+
+      item.addEventListener('click', open);
+
+      item.addEventListener('keydown', event => {
+
+        if (event.key === 'Enter' || event.key === ' ') {
+
+          event.preventDefault();
+
+          open();
+
+        }
+
+      });
+
+    });
+
+  }
+
+  // Abrir mensagem no modal.
+
+  async function openMessage(id) {
+
+    activeMessage = messages.find(item => item.id === id);
+
+    if (!activeMessage) return;
+
+    $('detailName').textContent = activeMessage.nome || '';
+
+    $('detailEmail').textContent = activeMessage.email || '';
+
+    $('detailProtocol').textContent =
+      activeMessage.protocolo || '';
+
+    $('detailDate').textContent =
+      formatDate(activeMessage.criado_em);
+
+    $('detailMessage').textContent =
+      activeMessage.mensagem || '';
+
+    $('replyBtn').href =
+      `mailto:${encodeURIComponent(activeMessage.email || '')}?subject=${encodeURIComponent('Re: sua mensagem para Digo&Jackie')}`;
+
+    $('markReadBtn').disabled = Boolean(activeMessage.lida);
+
+    $('markReadBtn').innerHTML = activeMessage.lida
+      ? '<i class="bi bi-check2-all me-1"></i>Mensagem lida'
+      : '<i class="bi bi-check2-circle me-1"></i>Marcar como lida';
+
+    modal.show();
+
+  }
+
+  // Marcar mensagem como lida no banco.
+
+  $('markReadBtn').addEventListener('click', async () => {
+
+    if (!activeMessage || activeMessage.lida) return;
+
+    const button = $('markReadBtn');
+
+    button.disabled = true;
+
+    button.innerHTML =
+      '<span class="spinner-border spinner-border-sm me-1"></span>Salvando...';
+
+    const { error } = await db
+      .from('mensagens_contato')
+      .update({ lida: true })
+      .eq('id', activeMessage.id);
+
+    if (error) {
+
+      button.disabled = false;
+
+      button.innerHTML =
+        '<i class="bi bi-exclamation-circle me-1"></i>Tentar novamente';
+
+      showAlert(
+        $('inboxAlert'),
+        `Não foi possível atualizar a mensagem: ${error.message}`
+      );
+
+      return;
+    }
+
+    activeMessage.lida = true;
+
+    const cached = messages.find(
+      item => item.id === activeMessage.id
+    );
+
+    if (cached) {
+      cached.lida = true;
+    }
+
+    button.innerHTML =
+      '<i class="bi bi-check2-all me-1"></i>Mensagem lida';
+
+    await loadMessages();
+
+  });
+
+  // Restaurar sessão existente.
+
+  async function initialize() {
+
+    const {
+      data: { session }
+    } = await db.auth.getSession();
+
+    if (session?.user) {
+
+      setLoggedIn(session.user);
+
+      await loadMessages();
+
+    } else {
+
+      setLoggedOut();
+
+    }
+
+  }
+
+  db.auth.onAuthStateChange((event, session) => {
+
+    if (event === 'SIGNED_OUT' || !session) {
+      setLoggedOut();
+    }
+
+  });
+
+  initialize();
+
+})();
+</script>
+
+</body>
+</html>
