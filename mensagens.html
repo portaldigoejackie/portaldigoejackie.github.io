@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -42,9 +41,7 @@
       --footer: #20252c;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -61,9 +58,7 @@
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
-    .navbar {
-      min-height: 76px;
-    }
+    .navbar { min-height: 76px; }
 
     .brand-logo {
       width: 47px;
@@ -80,9 +75,7 @@
       letter-spacing: -.5px;
     }
 
-    .brand-name span {
-      color: var(--cyan);
-    }
+    .brand-name span { color: var(--cyan); }
 
     .nav-link-site {
       color: #dce8f8;
@@ -91,9 +84,7 @@
       font-size: .9rem;
     }
 
-    .nav-link-site:hover {
-      color: #fff;
-    }
+    .nav-link-site:hover { color: #fff; }
 
     main {
       flex: 1;
@@ -244,13 +235,9 @@
       border-radius: 999px;
     }
 
-    .stat-pill strong {
-      color: #172b49;
-    }
+    .stat-pill strong { color: #172b49; }
 
-    .message-list {
-      padding: 7px 14px;
-    }
+    .message-list { padding: 7px 14px; }
 
     .message-item {
       display: grid;
@@ -264,25 +251,15 @@
       border-radius: 10px;
     }
 
-    .message-item:last-child {
-      border-bottom: 0;
-    }
+    .message-item:last-child { border-bottom: 0; }
 
-    .message-item:hover {
-      background: #f7faff;
-    }
+    .message-item:hover { background: #f7faff; }
 
-    .message-item.unread .message-name {
-      font-weight: 800;
-    }
+    .message-item.unread .message-name { font-weight: 800; }
 
-    .message-item.unread .message-preview {
-      color: #354762;
-    }
+    .message-item.unread .message-preview { color: #354762; }
 
-    .message-main {
-      min-width: 0;
-    }
+    .message-main { min-width: 0; }
 
     .message-topline {
       display: flex;
@@ -363,6 +340,7 @@
     .alert-inline {
       font-size: .88rem;
       border-radius: 10px;
+      overflow-wrap: anywhere;
     }
 
     .modal-content {
@@ -378,9 +356,7 @@
       padding: 20px 24px;
     }
 
-    .modal-body {
-      padding: 24px;
-    }
+    .modal-body { padding: 24px; }
 
     .message-body {
       white-space: pre-wrap;
@@ -421,52 +397,25 @@
       text-decoration: none;
     }
 
-    footer a:hover {
-      color: #fff;
-    }
+    footer a:hover { color: #fff; }
 
-    .hidden {
-      display: none !important;
-    }
+    .hidden { display: none !important; }
 
     @media (max-width: 575px) {
-      main {
-        padding: 30px 0 45px;
-      }
-
-      .navbar {
-        min-height: 66px;
-      }
-
-      .brand-logo {
-        width: 41px;
-        height: 41px;
-      }
-
-      .inbox-toolbar {
-        padding: 17px;
-      }
-
-      .message-list {
-        padding: 5px 9px;
-      }
+      main { padding: 30px 0 45px; }
+      .navbar { min-height: 66px; }
+      .brand-logo { width: 41px; height: 41px; }
+      .inbox-toolbar { padding: 17px; }
+      .message-list { padding: 5px 9px; }
 
       .message-item {
         padding: 15px 8px;
         grid-template-columns: minmax(0,1fr);
       }
 
-      .message-date {
-        padding-left: 17px;
-      }
-
-      .modal-body {
-        padding: 19px;
-      }
-
-      .modal-header {
-        padding: 17px 19px;
-      }
+      .message-date { padding-left: 17px; }
+      .modal-body { padding: 19px; }
+      .modal-header { padding: 17px 19px; }
     }
   </style>
 
@@ -490,7 +439,6 @@
 <header class="site-header">
   <nav class="navbar navbar-expand">
     <div class="container">
-
       <a class="d-flex align-items-center gap-3 text-decoration-none"
          href="https://portaldigoejackie.github.io/"
          aria-label="Digo&Jackie - página inicial">
@@ -509,11 +457,10 @@
           <i class="bi bi-house-door me-1"></i> Portal
         </a>
 
-        <button id="logoutBtn" class="btn btn-sm btn-logout hidden">
+        <button id="logoutBtn" class="btn btn-sm btn-logout hidden" type="button">
           <i class="bi bi-box-arrow-right me-1"></i>Sair
         </button>
       </div>
-
     </div>
   </nav>
 </header>
@@ -529,8 +476,6 @@
       </p>
     </div>
 
-    <!-- LOGIN -->
-
     <section id="loginSection" class="panel login-wrap">
 
       <div class="login-icon mb-3">
@@ -540,7 +485,7 @@
       <h2 class="h4 fw-bold mb-2">Acesse sua conta</h2>
 
       <p class="text-secondary small mb-4">
-        Entre com as credenciais autorizadas do Supabase.
+        Entre com as credenciais administrativas do portal.
       </p>
 
       <div id="loginAlert"
@@ -548,10 +493,8 @@
            role="alert"></div>
 
       <form id="loginForm">
-
         <div class="mb-3">
           <label for="emailInput" class="form-label">E-mail</label>
-
           <input
             id="emailInput"
             class="form-control"
@@ -565,7 +508,6 @@
           <label for="passwordInput" class="form-label">Senha</label>
 
           <div class="input-group">
-
             <input
               id="passwordInput"
               class="form-control"
@@ -580,39 +522,31 @@
               id="togglePassword"
               aria-label="Mostrar senha"
               title="Mostrar ou ocultar senha">
-
               <i class="bi bi-eye" id="eyeIcon"></i>
             </button>
-
           </div>
         </div>
 
         <button id="loginBtn"
                 class="btn btn-primary-custom w-100"
                 type="submit">
-
           <i class="bi bi-box-arrow-in-right me-2"></i>Entrar
         </button>
-
       </form>
     </section>
-
-    <!-- CAIXA DE ENTRADA -->
 
     <section id="inboxSection" class="hidden">
 
       <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-3">
-
         <div>
           <div class="eyebrow mb-1">Central de atendimento</div>
           <h2 class="h3 fw-bold mb-1">Caixa de entrada</h2>
           <div id="signedInAs" class="small text-secondary"></div>
         </div>
 
-        <button id="refreshBtn" class="btn btn-soft px-3 py-2">
+        <button id="refreshBtn" class="btn btn-soft px-3 py-2" type="button">
           <i class="bi bi-arrow-clockwise me-1"></i>Atualizar
         </button>
-
       </div>
 
       <div id="inboxAlert"
@@ -620,9 +554,7 @@
            role="alert"></div>
 
       <div class="panel overflow-hidden">
-
         <div class="inbox-toolbar">
-
           <div class="stats">
             <span class="stat-pill">
               <strong id="totalCount">0</strong> mensagens
@@ -636,17 +568,14 @@
           <div class="small text-secondary">
             <i class="bi bi-shield-lock me-1"></i>Área restrita
           </div>
-
         </div>
 
         <div id="messageList" class="message-list">
-
           <div class="loading-state">
             <div class="spinner-border spinner-border-sm text-primary me-2"
                  role="status"></div>
             Carregando mensagens...
           </div>
-
         </div>
       </div>
     </section>
@@ -656,7 +585,6 @@
 
 <footer>
   <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
-
     <span>
       © <span id="year"></span> Digo&Jackie. Todos os direitos reservados.
     </span>
@@ -664,11 +592,8 @@
     <a href="https://portaldigoejackie.github.io/">
       Voltar ao portal <i class="bi bi-arrow-up-right"></i>
     </a>
-
   </div>
 </footer>
-
-<!-- MODAL DA MENSAGEM -->
 
 <div class="modal fade"
      id="messageModal"
@@ -677,14 +602,11 @@
      aria-hidden="true">
 
   <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
-
     <div class="modal-content">
 
       <div class="modal-header">
-
         <div>
           <div class="eyebrow mb-1">Mensagem recebida</div>
-
           <h2 class="modal-title h5 fw-bold mb-0" id="modalTitle">
             Detalhes da mensagem
           </h2>
@@ -694,11 +616,9 @@
                 class="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Fechar"></button>
-
       </div>
 
       <div class="modal-body">
-
         <div class="row g-3 mb-4">
 
           <div class="col-sm-6">
@@ -720,22 +640,18 @@
             <div class="detail-label">Recebida em</div>
             <div class="detail-value" id="detailDate"></div>
           </div>
-
         </div>
 
         <div class="detail-label mb-2">Conteúdo</div>
         <div class="message-body" id="detailMessage"></div>
-
       </div>
 
       <div class="modal-footer d-flex justify-content-between flex-wrap gap-2">
-
-        <button id="markReadBtn" class="btn btn-soft">
+        <button id="markReadBtn" class="btn btn-soft" type="button">
           <i class="bi bi-check2-circle me-1"></i>Marcar como lida
         </button>
 
         <div class="d-flex gap-2">
-
           <a id="replyBtn" class="btn btn-primary-custom" href="#">
             <i class="bi bi-reply-fill me-1"></i>Responder por e-mail
           </a>
@@ -745,10 +661,8 @@
                   data-bs-dismiss="modal">
             Fechar
           </button>
-
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -765,12 +679,21 @@
   const SUPABASE_ANON_KEY =
     'sb_publishable_k8tkrY9EAacu-yDF2UM3eg_h-x00Trk';
 
+  const ADMIN_EMAIL = 'rodrigopontes.contato@gmail.com';
+
   const db = window.supabase.createClient(
     SUPABASE_URL,
-    SUPABASE_ANON_KEY
+    SUPABASE_ANON_KEY,
+    {
+      auth: {
+        autoRefreshToken: true,
+        persistSession: true,
+        detectSessionInUrl: true
+      }
+    }
   );
 
-  const $ = (id) => document.getElementById(id);
+  const $ = id => document.getElementById(id);
 
   const loginSection = $('loginSection');
   const inboxSection = $('inboxSection');
@@ -783,6 +706,7 @@
 
   let messages = [];
   let activeMessage = null;
+  let loadingMessages = false;
 
   $('year').textContent = new Date().getFullYear();
 
@@ -821,14 +745,22 @@
     }).format(date);
   }
 
+  function isAdministrator(user) {
+    return Boolean(
+      user &&
+      user.email &&
+      user.email.toLowerCase() === ADMIN_EMAIL &&
+      user.app_metadata &&
+      user.app_metadata.role === 'admin'
+    );
+  }
+
   function setLoggedIn(user) {
     loginSection.classList.add('hidden');
     inboxSection.classList.remove('hidden');
     logoutBtn.classList.remove('hidden');
 
-    $('signedInAs').textContent = user?.email
-      ? `Conectado como ${user.email}`
-      : 'Sessão autenticada';
+    $('signedInAs').textContent = `Administrador: ${user.email}`;
   }
 
   function setLoggedOut() {
@@ -838,12 +770,22 @@
 
     messages = [];
     activeMessage = null;
+
+    $('totalCount').textContent = '0';
+    $('unreadCount').textContent = '0';
   }
 
-  // Mostrar ou ocultar senha digitada.
+  function displayLoginError(error) {
+    const code = error?.code || error?.status || 'sem código';
+    const message = error?.message || 'Erro desconhecido';
+
+    showAlert(
+      $('loginAlert'),
+      `Falha na autenticação: ${message} | Código: ${code}`
+    );
+  }
 
   $('togglePassword').addEventListener('click', () => {
-
     const field = $('passwordInput');
     const visible = field.type === 'password';
 
@@ -857,70 +799,116 @@
       'aria-label',
       visible ? 'Ocultar senha' : 'Mostrar senha'
     );
-
   });
 
-  // Autenticação Supabase.
-
-  loginForm.addEventListener('submit', async (event) => {
-
+  loginForm.addEventListener('submit', async event => {
     event.preventDefault();
 
     hideAlert($('loginAlert'));
 
     loginBtn.disabled = true;
-
     loginBtn.innerHTML =
-      '<span class="spinner-border spinner-border-sm me-2"></span>Entrando...';
+      '<span class="spinner-border spinner-border-sm me-2"></span>Autenticando...';
 
-    const email = $('emailInput').value.trim();
+    const email = $('emailInput').value.trim().toLowerCase();
     const password = $('passwordInput').value;
 
-    const { data, error } = await db.auth.signInWithPassword({
-      email,
-      password
-    });
+    try {
+      const { data, error } = await db.auth.signInWithPassword({
+        email,
+        password
+      });
 
-    loginBtn.disabled = false;
+      if (error) {
+        displayLoginError(error);
+        return;
+      }
 
-    loginBtn.innerHTML =
-      '<i class="bi bi-box-arrow-in-right me-2"></i>Entrar';
+      if (!data.user || !isAdministrator(data.user)) {
+        await db.auth.signOut();
 
-    if (error) {
+        showAlert(
+          $('loginAlert'),
+          'A conta autenticada não possui autorização administrativa para este painel.'
+        );
 
-      showAlert(
-        $('loginAlert'),
-        'Não foi possível entrar. Confira o e-mail e a senha ou verifique as permissões da conta.'
-      );
+        return;
+      }
 
-      return;
+      $('passwordInput').value = '';
+
+      setLoggedIn(data.user);
+
+      await loadMessages();
+
+    } catch (error) {
+      displayLoginError(error);
+
+    } finally {
+      loginBtn.disabled = false;
+      loginBtn.innerHTML =
+        '<i class="bi bi-box-arrow-in-right me-2"></i>Entrar';
     }
-
-    $('passwordInput').value = '';
-
-    setLoggedIn(data.user);
-
-    await loadMessages();
-
   });
-
-  // Encerrar sessão.
 
   logoutBtn.addEventListener('click', async () => {
+    logoutBtn.disabled = true;
 
-    await db.auth.signOut();
+    try {
+      const { error } = await db.auth.signOut();
 
-    setLoggedOut();
+      if (error) {
+        showAlert($('inboxAlert'), error.message);
+        return;
+      }
 
+      setLoggedOut();
+
+    } catch (error) {
+      showAlert(
+        $('inboxAlert'),
+        `Erro ao encerrar sessão: ${error.message}`
+      );
+
+    } finally {
+      logoutBtn.disabled = false;
+    }
   });
-
-  // Atualizar caixa de entrada.
 
   $('refreshBtn').addEventListener('click', loadMessages);
 
+  async function verifyCurrentAdministrator() {
+    const { data, error } = await db.auth.getUser();
+
+    if (error || !data.user) {
+      setLoggedOut();
+      return null;
+    }
+
+    if (!isAdministrator(data.user)) {
+      await db.auth.signOut();
+      setLoggedOut();
+
+      showAlert(
+        $('loginAlert'),
+        'A conta não possui autorização administrativa.'
+      );
+
+      return null;
+    }
+
+    return data.user;
+  }
+
   async function loadMessages() {
+    if (loadingMessages) return;
+
+    loadingMessages = true;
 
     hideAlert($('inboxAlert'));
+
+    const refreshButton = $('refreshBtn');
+    refreshButton.disabled = true;
 
     messageList.innerHTML = `
       <div class="loading-state">
@@ -930,188 +918,219 @@
       </div>
     `;
 
-    const { data, error } = await db
-      .from('mensagens_contato')
-      .select('id, protocolo, nome, email, mensagem, criado_em, lida')
-      .order('criado_em', { ascending: false });
+    try {
+      const user = await verifyCurrentAdministrator();
 
-    if (error) {
+      if (!user) return;
 
-      messageList.innerHTML = `
-        <div class="empty-state">
-          <i class="bi bi-shield-exclamation d-block mb-3"></i>
-          <div class="fw-bold mb-1">
-            Não foi possível carregar a caixa de entrada
+      const { data, error } = await db
+        .from('mensagens_contato')
+        .select('id, protocolo, nome, email, mensagem, criado_em, lida')
+        .order('criado_em', { ascending: false });
+
+      if (error) {
+        messageList.innerHTML = `
+          <div class="empty-state">
+            <i class="bi bi-shield-exclamation d-block mb-3"></i>
+            <div class="fw-bold mb-1">
+              Não foi possível carregar a caixa de entrada
+            </div>
+            <div class="small">
+              ${escapeHtml(error.message)}
+            </div>
           </div>
-          <div class="small">
-            Verifique as políticas de acesso da tabela no Supabase.
+        `;
+
+        showAlert(
+          $('inboxAlert'),
+          `Erro ao consultar mensagens: ${error.message} | Código: ${error.code || 'não informado'}`
+        );
+
+        return;
+      }
+
+      messages = data || [];
+
+      $('totalCount').textContent = messages.length;
+
+      $('unreadCount').textContent =
+        messages.filter(item => !item.lida).length;
+
+      if (!messages.length) {
+        messageList.innerHTML = `
+          <div class="empty-state">
+            <i class="bi bi-inbox d-block mb-3"></i>
+            <div class="fw-bold text-dark mb-1">
+              Sua caixa de entrada está vazia
+            </div>
+            <div class="small">
+              Quando alguém enviar uma mensagem pelo portal, ela aparecerá aqui.
+            </div>
           </div>
-        </div>
-      `;
+        `;
 
-      showAlert(
-        $('inboxAlert'),
-        `Erro ao consultar mensagens: ${error.message}`
-      );
+        return;
+      }
 
-      return;
-    }
+      messageList.innerHTML = messages.map(item => {
+        const unread = !item.lida;
 
-    messages = data || [];
+        const preview = String(item.mensagem || '')
+          .replace(/\s+/g, ' ')
+          .trim();
 
-    $('totalCount').textContent = messages.length;
+        return `
+          <article
+            class="message-item ${unread ? 'unread' : ''}"
+            data-message-id="${escapeHtml(item.id)}"
+            tabindex="0"
+            role="button"
+            aria-label="Abrir mensagem de ${escapeHtml(item.nome)}">
 
-    $('unreadCount').textContent =
-      messages.filter(item => !item.lida).length;
+            <div class="message-main">
+              <div class="message-topline">
+                ${unread
+                  ? '<span class="unread-dot" aria-label="Não lida"></span>'
+                  : ''
+                }
 
-    if (!messages.length) {
+                <span class="message-name">
+                  ${escapeHtml(item.nome)}
+                </span>
 
-      messageList.innerHTML = `
-        <div class="empty-state">
-          <i class="bi bi-inbox d-block mb-3"></i>
-          <div class="fw-bold text-dark mb-1">
-            Sua caixa de entrada está vazia
-          </div>
-          <div class="small">
-            Quando alguém enviar uma mensagem pelo portal, ela aparecerá aqui.
-          </div>
-        </div>
-      `;
+                <span class="status-badge ${unread ? 'status-new' : 'status-read'}">
+                  ${unread ? 'Não lida' : 'Lida'}
+                </span>
+              </div>
 
-      return;
-    }
+              <div class="message-email mb-1">
+                ${escapeHtml(item.email)}
+              </div>
 
-    messageList.innerHTML = messages.map(item => {
-
-      const unread = !item.lida;
-
-      const preview = String(item.mensagem || '')
-        .replace(/\s+/g, ' ')
-        .trim();
-
-      return `
-        <article
-          class="message-item ${unread ? 'unread' : ''}"
-          data-message-id="${escapeHtml(item.id)}"
-          tabindex="0"
-          role="button"
-          aria-label="Abrir mensagem de ${escapeHtml(item.nome)}">
-
-          <div class="message-main">
-
-            <div class="message-topline">
-
-              ${unread
-                ? '<span class="unread-dot" aria-label="Não lida"></span>'
-                : ''
-              }
-
-              <span class="message-name">
-                ${escapeHtml(item.nome)}
-              </span>
-
-              <span class="status-badge ${unread ? 'status-new' : 'status-read'}">
-                ${unread ? 'Não lida' : 'Lida'}
-              </span>
-
+              <div class="message-preview">
+                ${escapeHtml(preview)}
+              </div>
             </div>
 
-            <div class="message-email mb-1">
-              ${escapeHtml(item.email)}
+            <div class="message-date">
+              ${escapeHtml(formatDate(item.criado_em))}
+              <i class="bi bi-chevron-right ms-2"></i>
             </div>
+          </article>
+        `;
+      }).join('');
 
-            <div class="message-preview">
-              ${escapeHtml(preview)}
-            </div>
+      messageList.querySelectorAll('.message-item').forEach(item => {
+        const open = () => openMessage(item.dataset.messageId);
 
-          </div>
+        item.addEventListener('click', open);
 
-          <div class="message-date">
-            ${escapeHtml(formatDate(item.criado_em))}
-            <i class="bi bi-chevron-right ms-2"></i>
-          </div>
-
-        </article>
-      `;
-
-    }).join('');
-
-    messageList.querySelectorAll('.message-item').forEach(item => {
-
-      const open = () => openMessage(item.dataset.messageId);
-
-      item.addEventListener('click', open);
-
-      item.addEventListener('keydown', event => {
-
-        if (event.key === 'Enter' || event.key === ' ') {
-
-          event.preventDefault();
-
-          open();
-
-        }
-
+        item.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            open();
+          }
+        });
       });
 
-    });
+    } catch (error) {
+      showAlert(
+        $('inboxAlert'),
+        `Erro inesperado ao carregar mensagens: ${error.message}`
+      );
 
+    } finally {
+      loadingMessages = false;
+      refreshButton.disabled = false;
+    }
   }
 
-  // Abrir mensagem no modal.
-
-  async function openMessage(id) {
-
+  function openMessage(id) {
     activeMessage = messages.find(item => item.id === id);
 
     if (!activeMessage) return;
 
     $('detailName').textContent = activeMessage.nome || '';
-
     $('detailEmail').textContent = activeMessage.email || '';
-
-    $('detailProtocol').textContent =
-      activeMessage.protocolo || '';
-
-    $('detailDate').textContent =
-      formatDate(activeMessage.criado_em);
-
-    $('detailMessage').textContent =
-      activeMessage.mensagem || '';
+    $('detailProtocol').textContent = activeMessage.protocolo || '';
+    $('detailDate').textContent = formatDate(activeMessage.criado_em);
+    $('detailMessage').textContent = activeMessage.mensagem || '';
 
     $('replyBtn').href =
-      `mailto:${encodeURIComponent(activeMessage.email || '')}?subject=${encodeURIComponent('Re: sua mensagem para Digo&Jackie')}`;
+      `mailto:${activeMessage.email}?subject=${encodeURIComponent('Re: sua mensagem para Digo&Jackie')}`;
 
-    $('markReadBtn').disabled = Boolean(activeMessage.lida);
+    const button = $('markReadBtn');
 
-    $('markReadBtn').innerHTML = activeMessage.lida
+    button.disabled = Boolean(activeMessage.lida);
+
+    button.innerHTML = activeMessage.lida
       ? '<i class="bi bi-check2-all me-1"></i>Mensagem lida'
       : '<i class="bi bi-check2-circle me-1"></i>Marcar como lida';
 
     modal.show();
-
   }
 
-  // Marcar mensagem como lida no banco.
-
   $('markReadBtn').addEventListener('click', async () => {
-
     if (!activeMessage || activeMessage.lida) return;
 
     const button = $('markReadBtn');
 
     button.disabled = true;
-
     button.innerHTML =
       '<span class="spinner-border spinner-border-sm me-1"></span>Salvando...';
 
-    const { error } = await db
-      .from('mensagens_contato')
-      .update({ lida: true })
-      .eq('id', activeMessage.id);
+    try {
+      const user = await verifyCurrentAdministrator();
 
-    if (error) {
+      if (!user) return;
 
+      const { data, error } = await db
+        .from('mensagens_contato')
+        .update({ lida: true })
+        .eq('id', activeMessage.id)
+        .select('id, lida')
+        .maybeSingle();
+
+      if (error) {
+        button.disabled = false;
+        button.innerHTML =
+          '<i class="bi bi-exclamation-circle me-1"></i>Tentar novamente';
+
+        showAlert(
+          $('inboxAlert'),
+          `Erro ao marcar como lida: ${error.message} | Código: ${error.code || 'não informado'}`
+        );
+
+        return;
+      }
+
+      if (!data) {
+        button.disabled = false;
+        button.innerHTML =
+          '<i class="bi bi-exclamation-circle me-1"></i>Tentar novamente';
+
+        showAlert(
+          $('inboxAlert'),
+          'Nenhuma mensagem foi atualizada. Verifique a política de UPDATE da tabela.'
+        );
+
+        return;
+      }
+
+      activeMessage.lida = true;
+
+      const cached = messages.find(
+        item => item.id === activeMessage.id
+      );
+
+      if (cached) cached.lida = true;
+
+      button.innerHTML =
+        '<i class="bi bi-check2-all me-1"></i>Mensagem lida';
+
+      await loadMessages();
+
+    } catch (error) {
       button.disabled = false;
 
       button.innerHTML =
@@ -1119,57 +1138,51 @@
 
       showAlert(
         $('inboxAlert'),
-        `Não foi possível atualizar a mensagem: ${error.message}`
+        `Erro inesperado ao atualizar mensagem: ${error.message}`
       );
-
-      return;
     }
-
-    activeMessage.lida = true;
-
-    const cached = messages.find(
-      item => item.id === activeMessage.id
-    );
-
-    if (cached) {
-      cached.lida = true;
-    }
-
-    button.innerHTML =
-      '<i class="bi bi-check2-all me-1"></i>Mensagem lida';
-
-    await loadMessages();
-
   });
 
-  // Restaurar sessão existente.
-
   async function initialize() {
+    try {
+      const { data, error } = await db.auth.getSession();
 
-    const {
-      data: { session }
-    } = await db.auth.getSession();
+      if (error) {
+        showAlert(
+          $('loginAlert'),
+          `Erro ao recuperar sessão: ${error.message}`
+        );
+        setLoggedOut();
+        return;
+      }
 
-    if (session?.user) {
+      if (!data.session) {
+        setLoggedOut();
+        return;
+      }
 
-      setLoggedIn(session.user);
+      const user = await verifyCurrentAdministrator();
+
+      if (!user) return;
+
+      setLoggedIn(user);
 
       await loadMessages();
 
-    } else {
-
+    } catch (error) {
       setLoggedOut();
 
+      showAlert(
+        $('loginAlert'),
+        `Erro ao iniciar painel: ${error.message}`
+      );
     }
-
   }
 
   db.auth.onAuthStateChange((event, session) => {
-
     if (event === 'SIGNED_OUT' || !session) {
       setLoggedOut();
     }
-
   });
 
   initialize();
