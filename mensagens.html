@@ -489,7 +489,7 @@
       <h2 class="h4 fw-bold mb-2">Acesse sua conta</h2>
 
       <p class="text-secondary small mb-4">
-        Entre com as credenciais administrativas do portal.
+        Entre com suas credenciais de acesso ao painel.
       </p>
 
       <div id="loginAlert"
@@ -683,8 +683,6 @@
   const SUPABASE_ANON_KEY =
     'sb_publishable_k8tkrY9EAacu-yDF2UM3eg_h-x00Trk';
 
-  const ADMIN_EMAIL = 'rodrigopontes.contato@gmail.com';
-
   const db = window.supabase.createClient(
     SUPABASE_URL,
     SUPABASE_ANON_KEY,
@@ -749,22 +747,12 @@
     }).format(date);
   }
 
-  function isAdministrator(user) {
-    return Boolean(
-      user &&
-      user.email &&
-      user.email.toLowerCase() === ADMIN_EMAIL &&
-      user.app_metadata &&
-      user.app_metadata.role === 'admin'
-    );
-  }
-
   function setLoggedIn(user) {
     loginSection.classList.add('hidden');
     inboxSection.classList.remove('hidden');
     logoutBtn.classList.remove('hidden');
 
-    $('signedInAs').textContent = `Administrador: ${user.email}`;
+    $('signedInAs').textContent = `Conectado: ${user.email || ''}`;
   }
 
   function setLoggedOut() {
@@ -777,6 +765,14 @@
 
     $('totalCount').textContent = '0';
     $('unreadCount').textContent = '0';
+
+    messageList.innerHTML = `
+      <div class="loading-state">
+        <div class="spinner-border spinner-border-sm text-primary me-2"
+             role="status"></div>
+        Aguardando autenticação...
+      </div>
+    `;
   }
 
   function displayLoginError(error) {
@@ -828,14 +824,11 @@
         return;
       }
 
-      if (!data.user || !isAdministrator(data.user)) {
-        await db.auth.signOut();
-
+      if (!data.user) {
         showAlert(
           $('loginAlert'),
-          'A conta autenticada não possui autorização administrativa para este painel.'
+          'O Supabase não retornou os dados da conta autenticada.'
         );
-
         return;
       }
 
@@ -881,23 +874,15 @@
 
   $('refreshBtn').addEventListener('click', loadMessages);
 
-  async function verifyCurrentAdministrator() {
+  async function getAuthenticatedUser() {
     const { data, error } = await db.auth.getUser();
 
-    if (error || !data.user) {
-      setLoggedOut();
-      return null;
+    if (error) {
+      throw error;
     }
 
-    if (!isAdministrator(data.user)) {
-      await db.auth.signOut();
+    if (!data.user) {
       setLoggedOut();
-
-      showAlert(
-        $('loginAlert'),
-        'A conta não possui autorização administrativa.'
-      );
-
       return null;
     }
 
@@ -923,7 +908,7 @@
     `;
 
     try {
-      const user = await verifyCurrentAdministrator();
+      const user = await getAuthenticatedUser();
 
       if (!user) return;
 
@@ -1040,8 +1025,20 @@
     } catch (error) {
       showAlert(
         $('inboxAlert'),
-        `Erro inesperado ao carregar mensagens: ${error.message}`
+        `Erro ao carregar mensagens: ${error.message}`
       );
+
+      messageList.innerHTML = `
+        <div class="empty-state">
+          <i class="bi bi-exclamation-triangle d-block mb-3"></i>
+          <div class="fw-bold mb-1">
+            Não foi possível consultar as mensagens
+          </div>
+          <div class="small">
+            ${escapeHtml(error.message)}
+          </div>
+        </div>
+      `;
 
     } finally {
       loadingMessages = false;
@@ -1084,7 +1081,7 @@
       '<span class="spinner-border spinner-border-sm me-1"></span>Salvando...';
 
     try {
-      const user = await verifyCurrentAdministrator();
+      const user = await getAuthenticatedUser();
 
       if (!user) return;
 
@@ -1115,7 +1112,7 @@
 
         showAlert(
           $('inboxAlert'),
-          'Nenhuma mensagem foi atualizada. Verifique a política de UPDATE da tabela.'
+          'Nenhuma mensagem foi atualizada. O Supabase não autorizou a operação ou a mensagem não foi encontrada.'
         );
 
         return;
@@ -1142,7 +1139,7 @@
 
       showAlert(
         $('inboxAlert'),
-        `Erro inesperado ao atualizar mensagem: ${error.message}`
+        `Erro ao atualizar mensagem: ${error.message}`
       );
     }
   });
@@ -1165,7 +1162,7 @@
         return;
       }
 
-      const user = await verifyCurrentAdministrator();
+      const user = await getAuthenticatedUser();
 
       if (!user) return;
 
