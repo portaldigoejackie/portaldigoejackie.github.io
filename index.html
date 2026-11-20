@@ -41,6 +41,7 @@
   <!-- Conexões antecipadas -->
   <link rel="preconnect" href="https://i.ytimg.com">
   <link rel="preconnect" href="https://www.youtube-nocookie.com">
+  <link rel="preconnect" href="https://idxmzyjvlsjgsmklczkt.supabase.co">
 
   <!-- Bootstrap 5.3.8 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -270,9 +271,7 @@
       line-height: 1.7;
     }
 
-    /* ===================================
-       DESTAQUE ESPECIAL - LIVE
-    =================================== */
+    /* DESTAQUE ESPECIAL - LIVE */
 
     .live-section {
       position: relative;
@@ -891,6 +890,177 @@
       transform: translateY(-3px);
     }
 
+    /* FORMULÁRIO DE CONTATO */
+
+    .contact-section {
+      position: relative;
+      overflow: hidden;
+      margin-top: 48px;
+      padding: 36px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(54,197,240,.12), transparent 35%),
+        linear-gradient(135deg, #101e31, #17283e);
+      border: 1px solid rgba(255,255,255,.09);
+    }
+
+    .contact-heading {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 25px;
+    }
+
+    .contact-heading .section-eyebrow {
+      color: #55c9f2;
+    }
+
+    .contact-heading h3 {
+      color: white;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -.7px;
+      margin-bottom: 10px;
+    }
+
+    .contact-heading p {
+      color: #aebdce;
+      font-size: .88rem;
+      line-height: 1.8;
+      max-width: 650px;
+      margin: 0;
+    }
+
+    .contact-form {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-form label {
+      display: block;
+      color: #e1eaf5;
+      font-size: .8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .contact-form .form-control {
+      min-height: 48px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 10px;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: .88rem;
+      padding: 12px 14px;
+      transition: .2s;
+    }
+
+    .contact-form .form-control::placeholder {
+      color: #8797aa;
+      opacity: 1;
+    }
+
+    .contact-form .form-control:focus {
+      background: rgba(255,255,255,.09);
+      border-color: #42bff0;
+      box-shadow: 0 0 0 3px rgba(54,197,240,.12);
+      color: white;
+    }
+
+    .contact-form textarea.form-control {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .contact-form .form-control:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+    }
+
+    .contact-counter {
+      display: flex;
+      justify-content: flex-end;
+      color: #94a6ba;
+      font-size: .7rem;
+      margin-top: 7px;
+    }
+
+    .contact-counter.limit {
+      color: #ff9c9c;
+    }
+
+    .contact-help {
+      color: #8fa1b6;
+      font-size: .72rem;
+      margin-top: 7px;
+      line-height: 1.6;
+    }
+
+    .contact-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 23px;
+      border: 0;
+      border-radius: 10px;
+      background: linear-gradient(120deg, #2878ff, #7055ef);
+      color: white;
+      font-weight: 800;
+      font-size: .86rem;
+      transition: .25s;
+    }
+
+    .contact-submit:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(40,120,255,.28);
+    }
+
+    .contact-submit:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+    }
+
+    .contact-feedback {
+      display: none;
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin-top: 20px;
+      font-size: .83rem;
+      line-height: 1.6;
+    }
+
+    .contact-feedback.success {
+      display: block;
+      background: rgba(25,135,84,.15);
+      border: 1px solid rgba(68,190,130,.3);
+      color: #8be0b4;
+    }
+
+    .contact-feedback.error {
+      display: block;
+      background: rgba(220,53,69,.13);
+      border: 1px solid rgba(220,53,69,.3);
+      color: #ffaaaa;
+    }
+
+    .contact-feedback i {
+      margin-right: 7px;
+    }
+
+    .contact-privacy {
+      color: #8799ad;
+      font-size: .72rem;
+      line-height: 1.6;
+      margin-top: 17px;
+    }
+
+    .contact-privacy i {
+      color: #57c9f4;
+      margin-right: 5px;
+    }
+
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,.09);
       margin-top: 40px;
@@ -1037,6 +1207,16 @@
       .search-box { width: 100%; }
 
       .curiosity-banner { padding: 26px; }
+
+      .contact-section {
+        margin-top: 35px;
+        padding: 24px 19px;
+        border-radius: 17px;
+      }
+
+      .contact-submit {
+        width: 100%;
+      }
     }
 
     @media (max-width: 380px) {
@@ -1636,6 +1816,146 @@
 
     </div>
 
+
+    <!-- ================= FORMULÁRIO DE CONTATO ================= -->
+
+    <section class="contact-section" aria-labelledby="contactTitle">
+
+      <div class="contact-heading">
+
+        <span class="section-eyebrow">
+          <i class="bi bi-chat-square-text me-1"></i>
+          Fale com a gente
+        </span>
+
+        <h3 id="contactTitle">
+          Tem algo para nos contar?
+        </h3>
+
+        <p>
+          Envie sua mensagem, compartilhe uma sugestão, tire uma dúvida
+          ou entre em contato com a equipe Digo&Jackie.
+          Será um prazer receber seu contato!
+        </p>
+
+      </div>
+
+      <form id="contactForm" class="contact-form" novalidate>
+
+        <div class="row g-3">
+
+          <!-- NOME -->
+
+          <div class="col-md-6">
+
+            <label for="contactName">
+              Seu nome
+            </label>
+
+            <input
+              type="text"
+              class="form-control"
+              id="contactName"
+              name="nome"
+              placeholder="Como podemos chamar você?"
+              minlength="2"
+              maxlength="100"
+              autocomplete="name"
+              required>
+
+          </div>
+
+          <!-- EMAIL -->
+
+          <div class="col-md-6">
+
+            <label for="contactEmail">
+              Seu e-mail
+            </label>
+
+            <input
+              type="email"
+              class="form-control"
+              id="contactEmail"
+              name="email"
+              placeholder="voce@gmail.com"
+              maxlength="254"
+              autocomplete="email"
+              required>
+
+            <div class="contact-help">
+              Gmail, Yahoo, Hotmail, Outlook e outros provedores autorizados.
+            </div>
+
+          </div>
+
+          <!-- MENSAGEM -->
+
+          <div class="col-12">
+
+            <label for="contactMessage">
+              Sua mensagem
+            </label>
+
+            <textarea
+              class="form-control"
+              id="contactMessage"
+              name="mensagem"
+              placeholder="Escreva sua mensagem aqui..."
+              maxlength="200"
+              rows="4"
+              required></textarea>
+
+            <div class="contact-counter" id="messageCounter">
+              0 / 200 caracteres
+            </div>
+
+            <div class="contact-help">
+              Até 200 caracteres. Não são permitidos emojis.
+            </div>
+
+          </div>
+
+          <!-- BOTÃO -->
+
+          <div class="col-12 mt-4">
+
+            <button
+              type="submit"
+              class="contact-submit"
+              id="contactSubmit">
+
+              <i class="bi bi-send-fill"></i>
+              Enviar mensagem
+
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- RETORNO DO FORMULÁRIO -->
+
+        <div
+          id="contactFeedback"
+          class="contact-feedback"
+          role="status"
+          aria-live="polite">
+        </div>
+
+        <p class="contact-privacy">
+          <i class="bi bi-shield-lock-fill"></i>
+          Seus dados serão utilizados para identificar e responder
+          ao seu contato pela equipe Digo&Jackie.
+        </p>
+
+      </form>
+
+    </section>
+
+
+    <!-- DIREITOS AUTORAIS -->
+
     <div class="footer-bottom">
 
       <div class="row align-items-center">
@@ -1752,9 +2072,16 @@
 </button>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- ================= BIBLIOTECAS ================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- SUPABASE JAVASCRIPT CLIENT -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 'use strict';
@@ -1767,7 +2094,6 @@
    Fuso: Brasília (UTC-3)
 
    ID: pa2fTCkiLuY
-   Thumbnail: maxresdefault.jpg
 ========================================== */
 
 const LIVE = {
@@ -1785,9 +2111,6 @@ const LIVE = {
 
 /* ==========================================
    CONTAGEM REGRESSIVA
-
-   Atualização a cada segundo.
-   Horário de Brasília (UTC-3).
 ========================================== */
 
 const countdownElements = {
@@ -1862,11 +2185,6 @@ countdownTimer = setInterval(updateCountdown, 1000);
 
 /* ==========================================
    PLAYER INCORPORADO
-
-   A thumbnail é apresentada inicialmente.
-   Ao clicar, o player substitui a imagem.
-
-   O vídeo é carregado sob demanda.
 ========================================== */
 
 const liveScreen = document.getElementById('liveScreen');
@@ -1907,13 +2225,9 @@ watchOnSite.addEventListener('click', startLivePlayer);
 
 /* ==========================================
    NOTÍCIAS
-   Oito notícias: duas por categoria.
-   Imagens hospedadas no Postimage.
 ========================================== */
 
 const news = [
-
-  /* HISTÓRIA E ARQUEOLOGIA */
 
   {
     id: 1,
@@ -1939,9 +2253,6 @@ const news = [
     url: 'https://www.cnnbrasil.com.br/curiosidades/espada-de-3-mil-anos-e-descoberta-em-lago-formado-em-cratera-vulcanica/'
   },
 
-
-  /* CIÊNCIA */
-
   {
     id: 3,
     category: 'science',
@@ -1966,9 +2277,6 @@ const news = [
     url: 'https://jornal.usp.br/ciencias/experimento-de-fisica-mira-a-origem-da-materia-que-forma-o-universo/'
   },
 
-
-  /* CINEMA E ENTRETENIMENTO */
-
   {
     id: 5,
     category: 'entertainment',
@@ -1992,9 +2300,6 @@ const news = [
     source: 'Site oficial de The Chosen',
     url: 'https://thechosen.tv/en-us/investor-overview/press-releases/season-six-of-the-global-hit-series-the-chosen-premieres-exclusively-on-prime-video-november-15-2026'
   },
-
-
-  /* MUNDO GEEK E CULTURA POP */
 
   {
     id: 7,
@@ -2222,6 +2527,373 @@ filterButtons.forEach(button => {
 });
 
 searchInput.addEventListener('input', filterNews);
+
+
+/* ==========================================
+   SUPABASE - FORMULÁRIO DE CONTATO
+
+   Projeto:
+   idxmzyjvlsjgsmklczkt
+
+   Tabela:
+   public.mensagens_contato
+
+   Operação:
+   INSERT
+
+   Nenhuma autenticação necessária para
+   o visitante enviar uma mensagem.
+========================================== */
+
+const SUPABASE_URL =
+  'https://idxmzyjvlsjgsmklczkt.supabase.co';
+
+const SUPABASE_PUBLISHABLE_KEY =
+  'sb_publishable_k8tkrY9EAacu-yDF2UM3eg_h-x00Trk';
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
+
+/* ==========================================
+   ELEMENTOS DO FORMULÁRIO
+========================================== */
+
+const contactForm = document.getElementById('contactForm');
+const contactName = document.getElementById('contactName');
+const contactEmail = document.getElementById('contactEmail');
+const contactMessage = document.getElementById('contactMessage');
+const contactCounter = document.getElementById('messageCounter');
+const contactSubmit = document.getElementById('contactSubmit');
+const contactFeedback = document.getElementById('contactFeedback');
+
+
+/* ==========================================
+   DOMÍNIOS DE E-MAIL AUTORIZADOS
+
+   Compatível com as validações da tabela.
+========================================== */
+
+const allowedEmailDomains = new Set([
+  'gmail.com',
+  'googlemail.com',
+  'yahoo.com',
+  'yahoo.com.br',
+  'ymail.com',
+  'hotmail.com',
+  'hotmail.com.br',
+  'outlook.com',
+  'outlook.com.br',
+  'live.com',
+  'live.com.br',
+  'msn.com',
+  'icloud.com',
+  'me.com',
+  'mac.com',
+  'aol.com',
+  'proton.me',
+  'protonmail.com',
+  'uol.com.br',
+  'bol.com.br',
+  'terra.com.br',
+  'ig.com.br',
+  'zipmail.com.br'
+]);
+
+
+/* ==========================================
+   DETECÇÃO DE EMOJIS
+
+   Inclui pictogramas, bandeiras,
+   modificadores, sequências e símbolos.
+========================================== */
+
+const emojiPattern =
+  /(?:\p{Extended_Pictographic}|\p{Regional_Indicator}|\p{Emoji_Modifier}|\uFE0F|\u200D|[\u{1F1E6}-\u{1F1FF}]|[#*0-9]\uFE0F?\u20E3)/u;
+
+function containsEmoji(value) {
+  return emojiPattern.test(value);
+}
+
+
+/* ==========================================
+   CONTADOR DE CARACTERES
+========================================== */
+
+contactMessage.addEventListener('input', () => {
+
+  const length = contactMessage.value.length;
+
+  contactCounter.textContent = length + ' / 200 caracteres';
+
+  contactCounter.classList.toggle('limit', length >= 180);
+
+});
+
+
+/* ==========================================
+   FEEDBACK DO FORMULÁRIO
+========================================== */
+
+function showContactFeedback(type, message, protocol = '') {
+
+  contactFeedback.className = 'contact-feedback ' + type;
+
+  contactFeedback.innerHTML = '';
+
+  const icon = document.createElement('i');
+
+  icon.className = type === 'success'
+    ? 'bi bi-check-circle-fill'
+    : 'bi bi-exclamation-circle-fill';
+
+  contactFeedback.appendChild(icon);
+
+  contactFeedback.appendChild(
+    document.createTextNode(message)
+  );
+
+  if (protocol) {
+
+    const protocolElement = document.createElement('strong');
+
+    protocolElement.textContent = ' Protocolo: ' + protocol;
+
+    contactFeedback.appendChild(protocolElement);
+
+  }
+
+  contactFeedback.scrollIntoView({
+    behavior: 'smooth',
+    block: 'nearest'
+  });
+
+}
+
+
+/* ==========================================
+   VALIDAR E-MAIL
+========================================== */
+
+function validateContactEmail(value) {
+
+  const email = value.trim().toLowerCase();
+
+  const emailPattern =
+    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  if (!emailPattern.test(email)) {
+    return {
+      valid: false,
+      message: 'Informe um endereço de e-mail válido.'
+    };
+  }
+
+  if (email.includes('..')) {
+    return {
+      valid: false,
+      message: 'O endereço de e-mail contém caracteres inválidos.'
+    };
+  }
+
+  const parts = email.split('@');
+
+  if (parts.length !== 2) {
+    return {
+      valid: false,
+      message: 'Informe um endereço de e-mail válido.'
+    };
+  }
+
+  const domain = parts[1];
+
+  if (domain.startsWith('.') || domain.endsWith('.') || parts[0].endsWith('.')) {
+    return {
+      valid: false,
+      message: 'O endereço de e-mail contém caracteres inválidos.'
+    };
+  }
+
+  if (!allowedEmailDomains.has(domain)) {
+    return {
+      valid: false,
+      message: 'Utilize um provedor de e-mail autorizado, como Gmail, Yahoo, Hotmail ou Outlook.'
+    };
+  }
+
+  return {
+    valid: true,
+    email: email
+  };
+
+}
+
+
+/* ==========================================
+   ENVIO DA MENSAGEM AO SUPABASE
+========================================== */
+
+contactForm.addEventListener('submit', async event => {
+
+  event.preventDefault();
+
+  if (contactSubmit.disabled) {
+    return;
+  }
+
+  const nome = contactName.value.trim();
+  const emailValidation = validateContactEmail(contactEmail.value);
+  const mensagem = contactMessage.value.trim();
+
+  /* VALIDAR NOME */
+
+  if (nome.length < 2 || nome.length > 100) {
+
+    showContactFeedback(
+      'error',
+      'Informe seu nome com pelo menos 2 caracteres.'
+    );
+
+    contactName.focus();
+    return;
+
+  }
+
+  /* VALIDAR E-MAIL */
+
+  if (!emailValidation.valid) {
+
+    showContactFeedback(
+      'error',
+      emailValidation.message
+    );
+
+    contactEmail.focus();
+    return;
+
+  }
+
+  /* VALIDAR MENSAGEM */
+
+  if (!mensagem.length || mensagem.length > 200) {
+
+    showContactFeedback(
+      'error',
+      'Sua mensagem deve conter entre 1 e 200 caracteres.'
+    );
+
+    contactMessage.focus();
+    return;
+
+  }
+
+  /* BLOQUEAR EMOJIS */
+
+  if (containsEmoji(mensagem)) {
+
+    showContactFeedback(
+      'error',
+      'Sua mensagem contém emojis. Remova-os antes de enviar.'
+    );
+
+    contactMessage.focus();
+    return;
+
+  }
+
+  /* INICIAR ENVIO */
+
+  contactSubmit.disabled = true;
+
+  contactName.disabled = true;
+  contactEmail.disabled = true;
+  contactMessage.disabled = true;
+
+  contactSubmit.innerHTML =
+    '<span class="spinner-border spinner-border-sm" aria-hidden="true"></span> Enviando mensagem...';
+
+  contactFeedback.className = 'contact-feedback';
+  contactFeedback.textContent = '';
+
+  try {
+
+    /* INSERIR REGISTRO NA TABELA */
+
+    const { data, error } = await supabaseClient
+      .from('mensagens_contato')
+      .insert([
+        {
+          nome: nome,
+          email: emailValidation.email,
+          mensagem: mensagem
+        }
+      ])
+      .select('protocolo')
+      .single();
+
+    if (error) {
+      throw error;
+    }
+
+    /* ENVIO CONFIRMADO */
+
+    showContactFeedback(
+      'success',
+      'Sua mensagem foi recebida com sucesso! Agradecemos por entrar em contato com a equipe Digo&Jackie.',
+      data.protocolo
+    );
+
+    /* LIMPAR CAMPOS */
+
+    contactForm.reset();
+
+    contactCounter.textContent = '0 / 200 caracteres';
+    contactCounter.classList.remove('limit');
+
+  } catch (error) {
+
+    console.error('Erro ao enviar mensagem:', error);
+
+    let errorMessage =
+      'Não foi possível enviar sua mensagem neste momento. Tente novamente em instantes.';
+
+    if (error.code === '23514') {
+
+      errorMessage =
+        'Os dados enviados não passaram pelas validações do formulário. Verifique o e-mail e o conteúdo da mensagem.';
+
+    } else if (error.code === '42501' || error.code === '401' || error.code === '403') {
+
+      errorMessage =
+        'O envio não foi autorizado pelo banco de dados. Verifique as permissões de acesso da tabela.';
+
+    } else if (error.code === '23505') {
+
+      errorMessage =
+        'Ocorreu um conflito ao registrar a mensagem. Tente novamente.';
+
+    }
+
+    showContactFeedback('error', errorMessage);
+
+  } finally {
+
+    /* RESTAURAR FORMULÁRIO */
+
+    contactSubmit.disabled = false;
+
+    contactName.disabled = false;
+    contactEmail.disabled = false;
+    contactMessage.disabled = false;
+
+    contactSubmit.innerHTML =
+      '<i class="bi bi-send-fill"></i> Enviar mensagem';
+
+  }
+
+});
 
 
 /* ==========================================
