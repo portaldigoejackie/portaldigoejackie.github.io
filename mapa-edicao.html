@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10131b">
+<meta name="description" content="Mapa técnico de edição do portal Digo&Jackie.">
+<title>Mapa de Edição | Digo&Jackie</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#0b0e14;
+  --surface:#141923;
+  --surface2:#1b2230;
+  --border:#293345;
+  --text:#edf2fa;
+  --muted:#9ba9bd;
+  --accent:#7c6cff;
+  --accent2:#36c8e8;
+}
+* {box-sizing:border-box}
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,sans-serif;
+  min-height:100vh;
+}
+.navbar {
+  background:#10131bf5;
+  border-bottom:1px solid var(--border);
+}
+.brand {
+  font-family:"Space Grotesk",sans-serif;
+  font-weight:800;
+}
+.brand span {color:var(--accent2)}
+.hero {
+  padding:60px 0 40px;
+  background:
+    radial-gradient(ellipse at 15% 20%,#7c6cff30,transparent 45%),
+    radial-gradient(ellipse at 85% 70%,#36c8e820,transparent 40%);
+}
+.eyebrow {
+  color:var(--accent2);
+  font-size:.76rem;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.hero h1 {
+  font-family:"Space Grotesk",sans-serif;
+  font-weight:800;
+  font-size:clamp(2rem,5vw,3.5rem);
+  letter-spacing:-1.8px;
+}
+.hero p {color:var(--muted);max-width:720px}
+.stat-card,.map-card,.info-card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:15px;
+}
+.stat-card {padding:17px;height:100%}
+.stat-number {font-size:1.6rem;font-weight:800}
+.stat-label {color:var(--muted);font-size:.8rem}
+.toolbar {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:#0b0e14f5;
+  border-block:1px solid var(--border);
+  padding:13px 0;
+  backdrop-filter:blur(12px);
+}
+.form-control {
+  background:var(--surface2);
+  color:var(--text);
+  border-color:var(--border);
+}
+.form-control::placeholder {color:#8290a5}
+.form-control:focus {
+  background:var(--surface2);
+  color:var(--text);
+  border-color:var(--accent);
+  box-shadow:0 0 0 .2rem #7c6cff25;
+}
+.filter-btn {
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--muted);
+  border-radius:30px;
+  padding:7px 13px;
+  font-size:.78rem;
+}
+.filter-btn.active,.filter-btn:hover {
+  background:var(--accent);
+  color:white;
+  border-color:var(--accent);
+}
+.map-card {overflow:hidden;margin-bottom:14px}
+.map-heading {
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:18px;
+  cursor:pointer;
+}
+.map-heading:hover {background:#ffffff08}
+.section-icon {
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  border-radius:12px;
+  background:#7c6cff25;
+  color:#a99fff;
+  font-size:1.25rem;
+}
+.map-heading h2 {
+  font-size:1rem;
+  font-weight:800;
+  margin:0 0 4px;
+}
+.map-heading p {
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0;
+}
+.map-content {
+  border-top:1px solid var(--border);
+  padding:19px;
+}
+.map-item {
+  border-left:2px solid var(--border);
+  padding:0 0 17px 17px;
+  margin-left:7px;
+  position:relative;
+}
+.map-item:last-child {padding-bottom:0}
+.map-item::before {
+  content:"";
+  position:absolute;
+  left:-6px;
+  top:5px;
+  width:10px;
+  height:10px;
+  background:var(--accent2);
+  border-radius:50%;
+}
+.map-item h3 {
+  font-size:.9rem;
+  font-weight:700;
+  margin-bottom:7px;
+}
+.map-item p,.map-item li {
+  color:var(--muted);
+  font-size:.83rem;
+  line-height:1.7;
+}
+.map-item ul {padding-left:18px;margin-bottom:0}
+.code-tag {
+  display:inline-block;
+  background:#222b3b;
+  color:#a8c9ff;
+  border:1px solid #35445b;
+  border-radius:5px;
+  padding:2px 7px;
+  margin:2px;
+  font-family:monospace;
+  font-size:.76rem;
+  overflow-wrap:anywhere;
+}
+.note {
+  background:#36c8e812;
+  border:1px solid #36c8e840;
+  border-radius:10px;
+  padding:13px;
+  color:#b8eaf3;
+  font-size:.83rem;
+}
+.badge-count {
+  background:#252e40;
+  color:#b7c8e2;
+  border-radius:20px;
+  padding:4px 9px;
+  font-size:.7rem;
+}
+.empty-state {
+  display:none;
+  text-align:center;
+  color:var(--muted);
+  padding:45px 15px;
+}
+footer {
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  padding:25px 0;
+  margin-top:45px;
+  font-size:.8rem;
+}
+@media(max-width:576px) {
+  .hero {padding:42px 0 28px}
+  .map-heading {padding:14px}
+  .map-content {padding:15px}
+  .map-heading p {font-size:.72rem}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark">
+<div class="container">
+<a class="navbar-brand brand" href="#">
+Digo<span>&</span>Jackie
+<small class="text-secondary fw-normal ms-1">/ Mapa técnico</small>
+</a>
+<span class="badge text-bg-dark border border-secondary">DOCUMENTAÇÃO</span>
+</div>
+</nav>
+
+<header class="hero">
+<div class="container">
+<div class="eyebrow mb-3">Central de documentação</div>
+<h1>Mapa de edição<br><span style="color:var(--accent2)">do portal</span></h1>
+<p class="mt-3">Guia estrutural do HTML principal do Digo&Jackie. Consulte as áreas, identifique os seletores e localize os componentes antes de realizar alterações no código.</p>
+
+<div class="row g-3 mt-3">
+<div class="col-6 col-md-3">
+<div class="stat-card">
+<div class="stat-number" id="totalAreas">0</div>
+<div class="stat-label">Áreas mapeadas</div>
+</div>
+</div>
+<div class="col-6 col-md-3">
+<div class="stat-card">
+<div class="stat-number" id="totalItens">0</div>
+<div class="stat-label">Tópicos documentados</div>
+</div>
+</div>
+<div class="col-6 col-md-3">
+<div class="stat-card">
+<div class="stat-number">5.3.8</div>
+<div class="stat-label">Bootstrap utilizado</div>
+</div>
+</div>
+<div class="col-6 col-md-3">
+<div class="stat-card">
+<div class="stat-number">JS</div>
+<div class="stat-label">Funcionalidades dinâmicas</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<div class="toolbar">
+<div class="container">
+<div class="row g-2 align-items-center">
+<div class="col-12 col-md-5">
+<div class="input-group">
+<span class="input-group-text bg-dark border-secondary text-secondary">
+<i class="bi bi-search"></i>
+</span>
+<input type="search" class="form-control" id="searchMap" placeholder="Pesquisar no mapa...">
+</div>
+</div>
+<div class="col-12 col-md-7 d-flex gap-2 flex-wrap justify-content-md-end">
+<button class="btn btn-sm btn-outline-info" id="expandAll">
+<i class="bi bi-arrows-expand"></i> Expandir tudo
+</button>
+<button class="btn btn-sm btn-outline-secondary" id="collapseAll">
+<i class="bi bi-arrows-collapse"></i> Recolher tudo
+</button>
+</div>
+<div class="col-12 d-flex gap-2 flex-wrap mt-2" id="filters">
+<button class="filter-btn active" data-filter="all">Tudo</button>
+<button class="filter-btn" data-filter="estrutura">Estrutura</button>
+<button class="filter-btn" data-filter="visual">Visual / CSS</button>
+<button class="filter-btn" data-filter="conteudo">Conteúdo</button>
+<button class="filter-btn" data-filter="javascript">JavaScript</button>
+<button class="filter-btn" data-filter="externo">Dependências</button>
+</div>
+</div>
+</div>
+</div>
+
+<main class="container py-4">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<div>
+<h2 class="h5 fw-bold mb-1">Estrutura do documento</h2>
+<p class="text-secondary small mb-0" id="resultCount">Exibindo todas as áreas</p>
+</div>
+<span class="badge-count">GUIA DE EDIÇÃO</span>
+</div>
+
+<div id="mapContainer">
+
+<section class="map-card" data-category="estrutura" data-search="head metadados seo título descrição canonical open graph twitter schema json ld fontes favicon">
+<div class="map-heading" data-bs-toggle="collapse" data-bs-target="#areaHead" aria-expanded="true">
+<div class="section-icon"><i class="bi bi-file-earmark-code"></i></div>
+<div class="flex-grow-1">
+<h2>01. HEAD — Metadados e configurações</h2>
+<p>Identificação da página, SEO, compartilhamento e recursos externos.</p>
+</div>
+<span class="badge-count">HEAD</span>
+<i class="bi bi-chevron-down ms-2"></i>
+</div>
+<div class="collapse show" id="areaHead">
+<div class="map-content">
+<div class="map-item">
+<h3>Estrutura inicial</h3>
+<p>Define o documento HTML5 e o idioma português brasileiro.</p>
+<span class="code-tag">DOCTYPE html</span>
+<span class="code-tag">html lang="pt-BR"</span>
+<span class="code-tag">charset UTF-8</span>
+<span class="code-tag">viewport</span>
+</div>
+<div class="map-item">
+<h3>Identificação da página</h3>
+<p>Título da aba, descrição, palavras-chave, autoria e instruções para mecanismos de busca.</p>
+<span class="code-tag">title</span>
+<span class="code-tag">meta description</span>
+<span class="code-tag">meta keywords</span>
+<span class="code-tag">meta author</span>
+<span class="code-tag">meta robots</span>
+<span class="code-tag">theme-color</span>
+</div>
+<div class="map-item">
+<h3>URL e compartilhamento</h3>
+<p>Endereço canônico e metadados usados nas prévias de compartilhamento.</p>
+<span class="code-tag">canonical</span>
+<span class="code-tag">Open Graph</span>
+<span class="code-tag">Twitter Card</span>
+</div>
+<div class="map-item">
+<h3>Ícones, fontes e conexões</h3>
+<p>Favicon, Google Fonts e conexões antecipadas com serviços externos.</p>
+<span class="code-tag">favicon</span>
+<span class="code-tag">Inter</span>
+<span class="code-tag">Space Grotesk</span>
+<span class="code-tag">YouTube</span>
+<span class="code-tag">Supabase</span>
+</div>
+<div class="map-item">
+<h3>Bibliotecas e dados estruturados</h3>
+<p>Bootstrap CSS, Bootstrap Icons, bloco de estilos e Schema.org em JSON-LD.</p>
+<span class="code-tag">Bootstrap 5.3.8 CSS</span>
+<span class="code-tag">Bootstrap Icons 1.13.1</span>
+<span class="code-tag">style</span>
+<span class="code-tag">application/ld+json</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="map-card" data-category="visual" data-search="css estilos root variáveis globais header hero seções live notícias filtros cards curiosidades footer formulário modal voltar topo responsividade media queries">
+<div class="map-heading" data-bs-toggle="collapse" data-bs-target="#areaCss">
+<div class="section-icon"><i class="bi bi-palette"></i></div>
+<div class="flex-grow-1">
+<h2>02. CSS — Identidade visual e responsividade</h2>
+<p>Estilos, componentes, cores, espaçamentos e adaptação de telas.</p>
+</div>
+<span class="badge-count">CSS</span>
+<i class="bi bi-chevron-down ms-2"></i>
+</div>
+<div class="collapse" id="areaCss">
+<div class="map-content">
+<div class="map-item">
+<h3>Variáveis e estilos globais</h3>
+<p>Paleta de cores, tipografia, regras universais e configurações gerais.</p>
+<span class="code-tag">:root</span>
+<span class="code-tag">*</span>
+<span class="code-tag">html</span>
+<span class="code-tag">body</span>
+<span class="code-tag">headings</span>
+<span class="code-tag">anchors</span>
+</div>
+<div class="map-item">
+<h3>Componentes principais</h3>
+<ul>
+<li>HEADER — cabeçalho e navegação.</li>
+<li>HERO — seção de apresentação principal.</li>
+<li>SEÇÕES — estrutura e espaçamento dos blocos.</li>
+<li>DESTAQUE ESPECIAL - LIVE — card da transmissão.</li>
+<li>NEWS FILTERS — filtros e pesquisa das notícias.</li>
+<li>NEWS CARDS — cartões de notícias.</li>
+<li>CURIOSITY BANNER — banner de curiosidades.</li>
+<li>FOOTER — rodapé.</li>
+</ul>
+</div>
+<div class="map-item">
+<h3>Componentes complementares</h3>
+<ul>
+<li>FORMULÁRIO DE CONTATO.</li>
+<li>MODAL NOTÍCIAS.</li>
+<li>VOLTAR AO TOPO.</li>
+</ul>
+</div>
+<div class="map-item">
+<h3>Responsividade</h3>
+<p>Media queries para diferentes larguras de tela e preferência por movimento reduzido.</p>
+<span class="code-tag">max-width: 991px</span>
+<span class="code-tag">max-width: 767px</span>
+<span class="code-tag">max-width: 380px</span>
+<span class="code-tag">prefers-reduced-motion</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="map-card" data-category="estrutura conteudo" data-search="body html header logo navbar menu hero live transmissão thumbnail player iframe informações countdown programação notícias filtros pesquisa curiosidades play footer contato formulário modal voltar topo bibliotecas">
+<div class="map-heading" data-bs-toggle="collapse" data-bs-target="#areaBody">
+<div class="section-icon"><i class="bi bi-layout-text-window-reverse"></i></div>
+<div class="flex-grow-1">
+<h2>03. BODY — Estrutura visual da página</h2>
+<p>Seções visíveis, elementos HTML e componentes da homepage.</p>
+</div>
+<span class="badge-count">BODY</span>
+<i class="bi bi-chevron-down ms-2"></i>
+</div>
+<div class="collapse" id="areaBody">
+<div class="map-content">
+
+<div class="map-item">
+<h3>HEADER — Cabeçalho</h3>
+<p>Logo, navegação principal, menu responsivo e acesso ao Digo&Jackie Play.</p>
+<span class="code-tag">.main-header</span>
+<span class="code-tag">.brand-logo</span>
+<span class="code-tag">#mainNavbar</span>
+</div>
+
+<div class="map-item">
+<h3>HERO — Apresentação</h3>
+<p>Imagem de fundo, frase de apresentação, título, descrição e botões de acesso.</p>
+<span class="code-tag">.hero-section</span>
+<span class="code-tag">#inicio</span>
+</div>
+
+<div class="map-item">
+<h3>LIVE ESPECIAL — Transmissão</h3>
+<p>Área de destaque do evento e informações da live.</p>
+<span class="code-tag">#live</span>
+<span class="code-tag">.live-card</span>
+<p class="mt-2 mb-1"><strong>Thumbnail e player</strong></p>
+<span class="code-tag">#liveScreen</span>
+<span class="code-tag">#liveThumbnail</span>
+<span class="code-tag">#livePlayer</span>
+<p class="mt-2 mb-1"><strong>Informações da transmissão</strong></p>
+<span class="code-tag">#liveTitle</span>
+<span class="code-tag">.live-schedule</span>
+<span class="code-tag">#countdownArea</span>
+<span class="code-tag">#liveCountdown</span>
+<span class="code-tag">#liveStatus</span>
+<span class="code-tag">#watchOnSite</span>
+<div class="note mt-3">
+<i class="bi bi-info-circle me-1"></i>
+A classe <code>.live-description</code> aparece no CSS, mas o parágrafo correspondente não está presente na versão atual do HTML analisado.
+</div>
+</div>
+
+<div class="map-item">
+<h3>NOTÍCIAS</h3>
+<p>Filtros por categoria, campo de pesquisa, grade dinâmica e aviso de ausência de resultados.</p>
+<span class="code-tag">#noticias</span>
+<span class="code-tag">.filter-btn</span>
+<span class="code-tag">#newsSearch</span>
+<span class="code-tag">#newsGrid</span>
+<span class="code-tag">#noResults</span>
+</div>
+
+<div class="map-item">
+<h3>CURIOSIDADES</h3>
+<p>Banner de chamada para a área de curiosidades.</p>
+<span class="code-tag">#curiosidades</span>
+</div>
+
+<div class="map-item">
+<h3>CHAMADA PLAY</h3>
+<p>Seção promocional e link para a plataforma Digo&Jackie Play. Não possui ID próprio na estrutura mapeada.</p>
+</div>
+
+<div class="map-item">
+<h3>FOOTER — Rodapé</h3>
+<p>Logo, descrição, redes sociais, navegação e link para o canal.</p>
+<span class="code-tag">#contato</span>
+</div>
+
+<div class="map-item">
+<h3>FORMULÁRIO DE CONTATO</h3>
+<p>Campos de nome, e-mail e mensagem, contador de caracteres, botão de envio, feedback e informação de privacidade.</p>
+<span class="code-tag">#contactForm</span>
+<span class="code-tag">#contactName</span>
+<span class="code-tag">#contactEmail</span>
+<span class="code-tag">#contactMessage</span>
+<span class="code-tag">#contactFeedback</span>
+</div>
+
+<div class="map-item">
+<h3>MODAL DE NOTÍCIAS</h3>
+<p>Janela de leitura com imagem, categoria, data, título, descrição e link da fonte.</p>
+<span class="code-tag">#newsModal</span>
+</div>
+
+<div class="map-item">
+<h3>Elementos finais</h3>
+<p>Botão voltar ao topo, bibliotecas externas e inclusão do JavaScript principal.</p>
+<span class="code-tag">#backTop</span>
+<span class="code-tag">Bootstrap Bundle</span>
+<span class="code-tag">Supabase JS</span>
+<span class="code-tag">script</span>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="map-card" data-category="javascript" data-search="javascript live configuração transmissão countdown contagem regressiva player iframe notícias array renderização cards modal filtros pesquisa supabase formulário contato email emojis validação envio banco scroll ano inicialização">
+<div class="map-heading" data-bs-toggle="collapse" data-bs-target="#areaJs">
+<div class="section-icon"><i class="bi bi-braces"></i></div>
+<div class="flex-grow-1">
+<h2>04. JAVASCRIPT — Funcionalidades e lógica</h2>
+<p>Dados, eventos, interações, integração com serviços e inicialização.</p>
+</div>
+<span class="badge-count">JS</span>
+<i class="bi bi-chevron-down ms-2"></i>
+</div>
+<div class="collapse" id="areaJs">
+<div class="map-content">
+
+<div class="map-item">
+<h3>Configuração da transmissão</h3>
+<p>Objeto <code>LIVE</code> com ID do YouTube, título, thumbnail, URL e data de início.</p>
+<span class="code-tag">LIVE</span>
+<span class="code-tag">inicio</span>
+</div>
+
+<div class="map-item">
+<h3>Contagem regressiva</h3>
+<p>Referências aos elementos da página, função <code>updateCountdown()</code> e atualização periódica a cada segundo.</p>
+<span class="code-tag">updateCountdown()</span>
+<span class="code-tag">setInterval()</span>
+</div>
+
+<div class="map-item">
+<h3>Player incorporado</h3>
+<p>Função <code>startLivePlayer()</code>, botão de reprodução e carregamento do iframe do YouTube.</p>
+<span class="code-tag">startLivePlayer()</span>
+<span class="code-tag">playLiveButton</span>
+<span class="code-tag">watchOnSite</span>
+</div>
+
+<div class="map-item">
+<h3>Dados das notícias</h3>
+<p>Array <code>news</code> com os objetos que armazenam as oito notícias cadastradas diretamente no JavaScript.</p>
+<span class="code-tag">news</span>
+</div>
+
+<div class="map-item">
+<h3>Renderização dos cards</h3>
+<p>Função <code>renderNews()</code>, imagens alternativas, acessibilidade e eventos de clique e teclado.</p>
+<span class="code-tag">renderNews()</span>
+</div>
+
+<div class="map-item">
+<h3>Modal de notícias</h3>
+<p>Função <code>openNewsModal(item)</code>, preenchimento dos dados e abertura do modal Bootstrap.</p>
+<span class="code-tag">openNewsModal(item)</span>
+</div>
+
+<div class="map-item">
+<h3>Filtros e pesquisa</h3>
+<p>Controle da categoria ativa, filtragem dos dados e eventos do campo de busca.</p>
+<span class="code-tag">activeFilter</span>
+<span class="code-tag">filterNews()</span>
+</div>
+
+<div class="map-item">
+<h3>Integração com Supabase</h3>
+<p>Configuração da URL do projeto, chave publicável e criação do cliente JavaScript.</p>
+<span class="code-tag">Supabase URL</span>
+<span class="code-tag">publishable key</span>
+<span class="code-tag">createClient()</span>
+</div>
+
+<div class="map-item">
+<h3>Validação do formulário</h3>
+<p>Referências aos campos, domínios de e-mail autorizados, detecção de emojis, contador de caracteres e validação de endereço eletrônico.</p>
+<span class="code-tag">emojiPattern</span>
+<span class="code-tag">containsEmoji()</span>
+<span class="code-tag">validateContactEmail()</span>
+<span class="code-tag">showContactFeedback()</span>
+</div>
+
+<div class="map-item">
+<h3>Envio da mensagem</h3>
+<p>Evento de envio, validações e inserção dos dados na tabela <code>mensagens_contato</code> do Supabase. Inclui feedback, protocolo e tratamento de erros.</p>
+<span class="code-tag">contactForm</span>
+<span class="code-tag">mensagens_contato</span>
+<span class="code-tag">insert()</span>
+</div>
+
+<div class="map-item">
+<h3>Finalização e inicialização</h3>
+<p>Eventos do botão voltar ao topo, atualização automática do ano e renderização inicial das notícias.</p>
+<span class="code-tag">backTop</span>
+<span class="code-tag">currentYear</span>
+<span class="code-tag">renderNews(news)</span>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="map-card" data-category="externo" data-search="bibliotecas dependências cdn bootstrap icons google fonts youtube youtube nocookie thumbnails supabase postimages unsplash imagens externas">
+<div class="map-heading" data-bs-toggle="collapse" data-bs-target="#areaExt">
+<div class="section-icon"><i class="bi bi-boxes"></i></div>
+<div class="flex-grow-1">
+<h2>05. DEPENDÊNCIAS — Serviços externos</h2>
+<p>Bibliotecas, plataformas e serviços carregados pela página.</p>
+</div>
+<span class="badge-count">CDN / APIs</span>
+<i class="bi bi-chevron-down ms-2"></i>
+</div>
+<div class="collapse" id="areaExt">
+<div class="map-content">
+<div class="map-item">
+<h3>Framework e ícones</h3>
+<p>Bootstrap 5.3.8 para estrutura e componentes responsivos; Bootstrap Icons 1.13.1 para ícones.</p>
+</div>
+<div class="map-item">
+<h3>Tipografia</h3>
+<p>Google Fonts com as famílias Inter e Space Grotesk.</p>
+</div>
+<div class="map-item">
+<h3>Vídeos</h3>
+<p>YouTube, youtube-nocookie e i.ytimg.com para incorporação e miniaturas.</p>
+</div>
+<div class="map-item">
+<h3>Banco de dados</h3>
+<p>Supabase JS versão 2 e endpoint do projeto Supabase.</p>
+</div>
+<div class="map-item">
+<h3>Imagens</h3>
+<p>Postimages para imagens de notícias e Unsplash como alternativa de imagem.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="map-card" data-category="estrutura javascript" data-search="referência seletores ids classes header logo navbar inicio live card thumbnail player título descrição programação countdown notícias filtros news search grid curiosidades contato formulário modal voltar topo">
+<div class="map-heading" data-bs-toggle="collapse" data-bs-target="#areaSeletores">
+<div class="section-icon"><i class="bi bi-crosshair"></i></div>
+<div class="flex-grow-1">
+<h2>06. ÍNDICE — IDs e classes importantes</h2>
+<p>Seletores úteis para localizar componentes durante as edições.</p>
+</div>
+<span class="badge-count">ÍNDICE</span>
+<i class="bi bi-chevron-down ms-2"></i>
+</div>
+<div class="collapse" id="areaSeletores">
+<div class="map-content">
+<div class="map-item">
+<h3>Cabeçalho e navegação</h3>
+<span class="code-tag">.main-header</span>
+<span class="code-tag">.brand-logo</span>
+<span class="code-tag">#mainNavbar</span>
+</div>
+<div class="map-item">
+<h3>Apresentação e live</h3>
+<span class="code-tag">#inicio</span>
+<span class="code-tag">#live</span>
+<span class="code-tag">.live-card</span>
+<span class="code-tag">#liveScreen</span>
+<span class="code-tag">#liveThumbnail</span>
+<span class="code-tag">#livePlayer</span>
+<span class="code-tag">#liveTitle</span>
+<span class="code-tag">.live-description</span>
+<span class="code-tag">.live-schedule</span>
+<span class="code-tag">#liveCountdown</span>
+</div>
+<div class="map-item">
+<h3>Notícias e curiosidades</h3>
+<span class="code-tag">#noticias</span>
+<span class="code-tag">.filter-btn</span>
+<span class="code-tag">#newsSearch</span>
+<span class="code-tag">#newsGrid</span>
+<span class="code-tag">#curiosidades</span>
+</div>
+<div class="map-item">
+<h3>Contato e navegação final</h3>
+<span class="code-tag">#contato</span>
+<span class="code-tag">#contactForm</span>
+<span class="code-tag">#contactName</span>
+<span class="code-tag">#contactEmail</span>
+<span class="code-tag">#contactMessage</span>
+<span class="code-tag">#contactFeedback</span>
+<span class="code-tag">#newsModal</span>
+<span class="code-tag">#backTop</span>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+
+<div class="empty-state" id="emptyState">
+<i class="bi bi-search fs-1 d-block mb-3"></i>
+<strong>Nenhum tópico encontrado.</strong>
+<p class="small mt-2">Experimente outro termo ou selecione outro filtro.</p>
+</div>
+
+<div class="info-card p-3 mt-4">
+<div class="d-flex gap-3 align-items-start">
+<i class="bi bi-lightbulb text-info fs-4"></i>
+<div>
+<h3 class="h6 fw-bold">Como utilizar este mapa</h3>
+<p class="text-secondary small mb-0">Abra a área desejada, identifique o comentário ou seletor correspondente e localize o trecho no HTML original. Os nomes apresentados neste guia servem como referência para navegação e manutenção do código.</p>
+</div>
+</div>
+</div>
+</main>
+
+<footer>
+<div class="container d-flex flex-column flex-sm-row justify-content-between gap-2">
+<span><strong class="text-light">Digo&Jackie</strong> · Mapa técnico de edição</span>
+<span>Documentação estrutural da homepage</span>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(() => {
+  const cards = [...document.querySelectorAll('.map-card')];
+  const search = document.getElementById('searchMap');
+  const filters = [...document.querySelectorAll('.filter-btn')];
+  const empty = document.getElementById('emptyState');
+  const resultCount = document.getElementById('resultCount');
+
+  let activeFilter = 'all';
+
+  document.getElementById('totalAreas').textContent = cards.length;
+  document.getElementById('totalItens').textContent =
+    document.querySelectorAll('.map-item').length;
+
+  function applyFilters() {
+    const term = search.value.trim().toLocaleLowerCase('pt-BR');
+    let visible = 0;
+
+    cards.forEach(card => {
+      const category = card.dataset.category || '';
+      const content = (
+        card.innerText + ' ' + card.dataset.search
+      ).toLocaleLowerCase('pt-BR');
+
+      const categoryMatch =
+        activeFilter === 'all' ||
+        category.split(' ').includes(activeFilter);
+
+      const searchMatch = !term || content.includes(term);
+      const show = categoryMatch && searchMatch;
+
+      card.style.display = show ? '' : 'none';
+
+      if (show) {
+        visible++;
+
+        if (term) {
+          bootstrap.Collapse.getOrCreateInstance(
+            card.querySelector('.collapse'),
+            {toggle:false}
+          ).show();
+        }
+      }
+    });
+
+    empty.style.display = visible ? 'none' : 'block';
+    resultCount.textContent =
+      `Exibindo ${visible} de ${cards.length} áreas`;
+  }
+
+  search.addEventListener('input', applyFilters);
+
+  filters.forEach(button => {
+    button.addEventListener('click', () => {
+      filters.forEach(item => item.classList.remove('active'));
+      button.classList.add('active');
+      activeFilter = button.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  document.getElementById('expandAll').addEventListener('click', () => {
+    cards.forEach(card => {
+      if (card.style.display !== 'none') {
+        bootstrap.Collapse.getOrCreateInstance(
+          card.querySelector('.collapse'),
+          {toggle:false}
+        ).show();
+      }
+    });
+  });
+
+  document.getElementById('collapseAll').addEventListener('click', () => {
+    cards.forEach(card => {
+      bootstrap.Collapse.getOrCreateInstance(
+        card.querySelector('.collapse'),
+        {toggle:false}
+      ).hide();
+    });
+  });
+
+  applyFilters();
+})();
+</script>
+
+</body>
+</html>
