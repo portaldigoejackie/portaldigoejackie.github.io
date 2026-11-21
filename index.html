@@ -397,6 +397,19 @@
       outline-offset: -5px;
     }
 
+    .live-screen-label {
+      position: absolute;
+      left: 15px;
+      bottom: 13px;
+      z-index: 3;
+      color: white;
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
     .live-player {
       position: absolute;
       inset: 0;
@@ -410,13 +423,39 @@
     .live-screen.playing .live-player { display: block; }
     .live-screen.playing #liveThumbnail,
     .live-screen.playing .live-screen-overlay,
-    .live-screen.playing .live-screen-button { display: none; }
+    .live-screen.playing .live-screen-button,
+    .live-screen.playing .live-screen-label { display: none; }
 
     .live-info {
       padding: 34px 35px 34px 12px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    }
+
+    .live-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(237,38,56,.13);
+      border: 1px solid rgba(237,38,56,.32);
+      color: #ff7782;
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: 1.1px;
+      border-radius: 30px;
+      padding: 8px 13px;
+    }
+
+    .live-label-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff3349;
+      box-shadow: 0 0 0 4px rgba(255,51,73,.14);
+      animation: livePulse 1.5s infinite;
+    }
+
+    @keyframes livePulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(255,51,73,.14); }
+      50% { box-shadow: 0 0 0 8px rgba(255,51,73,.03); }
     }
 
     .live-title {
@@ -424,19 +463,40 @@
       font-weight: 800;
       line-height: 1.16;
       letter-spacing: -.8px;
-      margin: 0;
+      margin: 19px 0 12px;
       color: white;
     }
 
-    .countdown-area {
-      width: 100%;
-      max-width: 650px;
-      margin: 22px auto 0;
-      padding: 20px;
-      background: #091629;
-      border: 1px solid rgba(75,130,220,.22);
-      border-radius: 18px;
-      box-shadow: 0 12px 35px rgba(12,34,68,.12);
+    .live-description {
+      color: rgba(255,255,255,.68);
+      font-size: .88rem;
+      line-height: 1.8;
+      margin-bottom: 19px;
+    }
+
+    .live-schedule {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 13px 15px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 12px;
+      background: rgba(255,255,255,.045);
+      margin-bottom: 18px;
+    }
+
+    .live-schedule-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: rgba(255,255,255,.8);
+      font-size: .79rem;
+      font-weight: 600;
+    }
+
+    .live-schedule-item i {
+      color: #55c8f3;
+      font-size: 1.05rem;
     }
 
     .countdown-heading {
@@ -446,13 +506,13 @@
       letter-spacing: 1.5px;
       font-weight: 800;
       margin-bottom: 10px;
-      text-align: center;
     }
 
     .countdown {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 9px;
+      margin-bottom: 17px;
     }
 
     .countdown-unit {
@@ -483,6 +543,75 @@
       font-weight: 700;
       margin-top: 7px;
     }
+
+    .live-status {
+      color: #8da0ba;
+      font-size: .78rem;
+      line-height: 1.6;
+      min-height: 25px;
+      margin-bottom: 17px;
+    }
+
+    .live-status i { color: #53cbf4; }
+
+    .live-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-live {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 19px;
+      background: #e62117;
+      color: white;
+      border-radius: 9px;
+      font-weight: 800;
+      font-size: .84rem;
+      border: 0;
+      transition: .2s;
+    }
+
+    .btn-live:hover {
+      color: white;
+      background: #c91d15;
+      transform: translateY(-2px);
+    }
+
+    .btn-live-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 17px;
+      border: 1px solid rgba(255,255,255,.24);
+      color: white;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: .84rem;
+      background: rgba(255,255,255,.06);
+      transition: .2s;
+    }
+
+    .btn-live-secondary:hover {
+      color: white;
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.45);
+    }
+
+    .live-footnote {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      color: #8294ad;
+      font-size: .7rem;
+    }
+
+    .live-footnote i { color: #53cbf4; }
 
     /* NEWS FILTERS */
 
@@ -1060,17 +1189,17 @@
         font-size: 2.1rem;
       }
 
-      .countdown-area {
-        margin-top: 16px;
-        padding: 15px;
-      }
-
       .countdown { gap: 6px; }
 
       .countdown-unit { padding: 12px 3px 9px; }
 
       .countdown-number { font-size: 1.55rem; }
       .countdown-caption { font-size: .55rem; }
+
+      .live-actions .btn-live,
+      .live-actions .btn-live-secondary {
+        flex: 1 1 100%;
+      }
 
       .news-image-wrap { height: 195px; }
 
@@ -1093,6 +1222,8 @@
     @media (max-width: 380px) {
       .brand-name { font-size: 1.15rem; }
       .brand-logo { width: 43px; height: 43px; }
+      .live-schedule { gap: 10px; }
+      .live-schedule-item { font-size: .72rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1253,7 +1384,7 @@
 
     <div class="live-card">
 
-      <div class="row g-0 align-items-center">
+      <div class="row g-0">
 
         <!-- THUMBNAIL E PLAYER -->
 
@@ -1264,7 +1395,7 @@
             <img
               id="liveThumbnail"
               src="https://i.ytimg.com/vi/jA_7ujQL4DQ/maxresdefault.jpg"
-              alt="O TEMPLO PROIBIDO DO TEMPO! GÖBEKLI TEPE E OS MISTÉRIOS DA HUMANIDADE"
+              alt="O Templo Proibido do Tempo! Göbekli Tepe e os Mistérios da Humanidade - Live Digo&Jackie"
               width="1280"
               height="720"
               fetchpriority="high"
@@ -1277,7 +1408,7 @@
               class="live-screen-button"
               id="playLiveButton"
               type="button"
-              aria-label="Assistir à transmissão pelo site">
+              aria-label="Assistir à transmissão ao vivo pelo site">
 
               <span class="live-play-icon">
                 <i class="bi bi-play-fill"></i>
@@ -1285,12 +1416,17 @@
 
             </button>
 
+            <span class="live-screen-label">
+              <i class="bi bi-youtube me-1"></i>
+              Transmissão Digo&Jackie
+            </span>
+
             <!-- PLAYER INCORPORADO -->
             <iframe
               class="live-player"
               id="livePlayer"
               src="about:blank"
-              title="O TEMPLO PROIBIDO DO TEMPO! GÖBEKLI TEPE E OS MISTÉRIOS DA HUMANIDADE"
+              title="O Templo Proibido do Tempo! Göbekli Tepe e os Mistérios da Humanidade - Transmissão Digo&Jackie"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
@@ -1301,53 +1437,111 @@
 
         </div>
 
-        <!-- TÍTULO DA LIVE -->
+        <!-- INFORMAÇÕES DA LIVE -->
 
         <div class="col-lg-6">
 
           <div class="live-info">
 
+            <span class="live-label" id="liveBadge">
+              <span class="live-label-dot"></span>
+              PRÓXIMA TRANSMISSÃO
+            </span>
+
             <h3 class="live-title" id="liveTitle">
               O TEMPLO PROIBIDO DO TEMPO! GÖBEKLI TEPE E OS MISTÉRIOS DA HUMANIDADE
             </h3>
 
+            <p class="live-description">
+              Os Simpsons, alertas e acontecimentos que levantam questionamentos sobre um possível apagão. Coincidências, previsões e teorias: vamos investigar o que existe por trás dessa história!
+            </p>
+
+            <div class="live-schedule">
+
+              <div class="live-schedule-item">
+                <i class="bi bi-calendar-event"></i>
+                <span>Sábado, 28 de novembro de 2026</span>
+              </div>
+
+              <div class="live-schedule-item">
+                <i class="bi bi-clock"></i>
+                <span>21h30 — Horário de Brasília</span>
+              </div>
+
+            </div>
+
+            <!-- CONTAGEM REGRESSIVA -->
+
+            <div id="countdownArea">
+
+              <div class="countdown-heading">
+                <i class="bi bi-hourglass-split me-1"></i>
+                A transmissão começa em
+              </div>
+
+              <div class="countdown" id="liveCountdown" aria-label="Contagem regressiva para a transmissão">
+
+                <div class="countdown-unit">
+                  <span class="countdown-number" id="countDays">00</span>
+                  <span class="countdown-caption">Dias</span>
+                </div>
+
+                <div class="countdown-unit">
+                  <span class="countdown-number" id="countHours">00</span>
+                  <span class="countdown-caption">Horas</span>
+                </div>
+
+                <div class="countdown-unit">
+                  <span class="countdown-number" id="countMinutes">00</span>
+                  <span class="countdown-caption">Minutos</span>
+                </div>
+
+                <div class="countdown-unit">
+                  <span class="countdown-number" id="countSeconds">00</span>
+                  <span class="countdown-caption">Segundos</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <p class="live-status" id="liveStatus" aria-live="polite">
+              <i class="bi bi-info-circle me-1"></i>
+              Programe-se! A transmissão estará disponível neste espaço no horário marcado.
+            </p>
+
+            <div class="live-actions">
+
+              <button
+                type="button"
+                class="btn-live"
+                id="watchOnSite">
+
+                <i class="bi bi-play-circle-fill"></i>
+                Assistir pelo site
+
+              </button>
+
+              <a
+                href="https://www.youtube.com/watch?v=jA_7ujQL4DQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-live-secondary">
+
+                <i class="bi bi-youtube"></i>
+                Assistir no YouTube
+
+              </a>
+
+            </div>
+
+            <div class="live-footnote">
+              <i class="bi bi-broadcast-pin"></i>
+              <span>Transmissão incorporada diretamente do canal Digo&Jackie.</span>
+            </div>
+
           </div>
 
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- CONTAGEM REGRESSIVA -->
-
-    <div class="countdown-area" id="countdownArea">
-
-      <div class="countdown-heading">
-        <i class="bi bi-hourglass-split me-1"></i>
-        A transmissão começa em
-      </div>
-
-      <div class="countdown" id="liveCountdown" aria-label="Contagem regressiva para a transmissão">
-
-        <div class="countdown-unit">
-          <span class="countdown-number" id="countDays">00</span>
-          <span class="countdown-caption">Dias</span>
-        </div>
-
-        <div class="countdown-unit">
-          <span class="countdown-number" id="countHours">00</span>
-          <span class="countdown-caption">Horas</span>
-        </div>
-
-        <div class="countdown-unit">
-          <span class="countdown-number" id="countMinutes">00</span>
-          <span class="countdown-caption">Minutos</span>
-        </div>
-
-        <div class="countdown-unit">
-          <span class="countdown-number" id="countSeconds">00</span>
-          <span class="countdown-caption">Segundos</span>
         </div>
 
       </div>
@@ -1927,6 +2121,8 @@ const countdownElements = {
 };
 
 const countdownArea = document.getElementById('countdownArea');
+const liveStatus = document.getElementById('liveStatus');
+const liveBadge = document.getElementById('liveBadge');
 
 const liveStart = new Date(LIVE.inicio).getTime();
 
@@ -1953,19 +2149,38 @@ function updateCountdown() {
     countdownElements.minutes.textContent = padNumber(minutes);
     countdownElements.seconds.textContent = padNumber(seconds);
 
+    liveStatus.innerHTML =
+      '<i class="bi bi-info-circle me-1"></i>' +
+      'A contagem está ativa! Prepare-se para acompanhar a transmissão.';
+
     return;
   }
 
   clearInterval(countdownTimer);
 
-  countdownArea.hidden = true;
+  countdownArea.innerHTML = `
+    <div class="countdown-heading">
+      <i class="bi bi-broadcast me-1"></i>
+      Horário programado da transmissão
+    </div>
+    <div class="live-schedule">
+      <div class="live-schedule-item">
+        <i class="bi bi-play-circle-fill"></i>
+        <span>Chegou a hora! Acesse a transmissão.</span>
+      </div>
+    </div>
+  `;
+
+  liveBadge.innerHTML =
+    '<span class="live-label-dot"></span> HORÁRIO DA TRANSMISSÃO';
+
+  liveStatus.innerHTML =
+    '<i class="bi bi-broadcast me-1"></i>' +
+    'A transmissão está programada para começar. Se o player ainda não iniciou, aguarde a liberação pelo YouTube.';
 }
 
 updateCountdown();
-
-if (Date.now() < liveStart) {
-  countdownTimer = setInterval(updateCountdown, 1000);
-}
+countdownTimer = setInterval(updateCountdown, 1000);
 
 
 /* ==========================================
@@ -1975,13 +2190,14 @@ if (Date.now() < liveStart) {
 const liveScreen = document.getElementById('liveScreen');
 const livePlayer = document.getElementById('livePlayer');
 const playLiveButton = document.getElementById('playLiveButton');
+const watchOnSite = document.getElementById('watchOnSite');
 
 let playerStarted = false;
 
 function startLivePlayer() {
 
   if (playerStarted) {
-    liveScreen.scrollIntoView({
+    document.getElementById('liveScreen').scrollIntoView({
       behavior: 'smooth',
       block: 'center'
     });
@@ -1997,9 +2213,14 @@ function startLivePlayer() {
 
   liveScreen.classList.add('playing');
 
+  liveStatus.innerHTML =
+    '<i class="bi bi-play-circle-fill me-1"></i>' +
+    'Player carregado. Acompanhe a transmissão diretamente pelo portal.';
+
 }
 
 playLiveButton.addEventListener('click', startLivePlayer);
+watchOnSite.addEventListener('click', startLivePlayer);
 
 
 /* ==========================================
@@ -2328,7 +2549,7 @@ const SUPABASE_URL =
   'https://idxmzyjvlsjgsmklczkt.supabase.co';
 
 const SUPABASE_PUBLISHABLE_KEY =
-  'sb_publishable_k8tkrY9EAacu-yDF2UM3eg_h-x00Tr';
+  'sb_publishable_k8tkrY9EAacu-yDF2UM3eg_h-x00Trk';
 
 const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
