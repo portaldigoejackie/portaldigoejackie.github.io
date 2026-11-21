@@ -244,6 +244,7 @@
     /* SEÇÕES */
 
     .section-block { padding: 65px 0; }
+
     .section-heading { margin-bottom: 30px; }
 
     .section-eyebrow {
@@ -396,49 +397,26 @@
       outline-offset: -5px;
     }
 
-    .live-screen-label {
+    .live-player {
       position: absolute;
-      left: 15px;
-      bottom: 13px;
-      z-index: 3;
-      color: white;
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      pointer-events: none;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: none;
+      background: #000;
     }
+
+    .live-screen.playing .live-player { display: block; }
+    .live-screen.playing #liveThumbnail,
+    .live-screen.playing .live-screen-overlay,
+    .live-screen.playing .live-screen-button { display: none; }
 
     .live-info {
       padding: 34px 35px 34px 12px;
-    }
-
-    .live-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(237,38,56,.13);
-      border: 1px solid rgba(237,38,56,.32);
-      color: #ff7782;
-      font-size: .7rem;
-      font-weight: 900;
-      letter-spacing: 1.1px;
-      border-radius: 30px;
-      padding: 8px 13px;
-    }
-
-    .live-label-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #ff3349;
-      box-shadow: 0 0 0 4px rgba(255,51,73,.14);
-      animation: livePulse 1.5s infinite;
-    }
-
-    @keyframes livePulse {
-      0%, 100% { box-shadow: 0 0 0 4px rgba(255,51,73,.14); }
-      50% { box-shadow: 0 0 0 8px rgba(255,51,73,.03); }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .live-title {
@@ -446,40 +424,19 @@
       font-weight: 800;
       line-height: 1.16;
       letter-spacing: -.8px;
-      margin: 19px 0 12px;
+      margin: 0;
       color: white;
     }
 
-    .live-description {
-      color: rgba(255,255,255,.68);
-      font-size: .88rem;
-      line-height: 1.8;
-      margin-bottom: 19px;
-    }
-
-    .live-schedule {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      padding: 13px 15px;
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 12px;
-      background: rgba(255,255,255,.045);
-      margin-bottom: 18px;
-    }
-
-    .live-schedule-item {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      color: rgba(255,255,255,.8);
-      font-size: .79rem;
-      font-weight: 600;
-    }
-
-    .live-schedule-item i {
-      color: #55c8f3;
-      font-size: 1.05rem;
+    .countdown-area {
+      width: 100%;
+      max-width: 650px;
+      margin: 22px auto 0;
+      padding: 20px;
+      background: #091629;
+      border: 1px solid rgba(75,130,220,.22);
+      border-radius: 18px;
+      box-shadow: 0 12px 35px rgba(12,34,68,.12);
     }
 
     .countdown-heading {
@@ -489,13 +446,13 @@
       letter-spacing: 1.5px;
       font-weight: 800;
       margin-bottom: 10px;
+      text-align: center;
     }
 
     .countdown {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 9px;
-      margin-bottom: 17px;
     }
 
     .countdown-unit {
@@ -526,75 +483,6 @@
       font-weight: 700;
       margin-top: 7px;
     }
-
-    .live-status {
-      color: #8da0ba;
-      font-size: .78rem;
-      line-height: 1.6;
-      min-height: 25px;
-      margin-bottom: 17px;
-    }
-
-    .live-status i { color: #53cbf4; }
-
-    .live-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn-live {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 13px 19px;
-      background: #e62117;
-      color: white;
-      border-radius: 9px;
-      font-weight: 800;
-      font-size: .84rem;
-      border: 0;
-      transition: .2s;
-    }
-
-    .btn-live:hover {
-      color: white;
-      background: #c91d15;
-      transform: translateY(-2px);
-    }
-
-    .btn-live-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 13px 17px;
-      border: 1px solid rgba(255,255,255,.24);
-      color: white;
-      border-radius: 9px;
-      font-weight: 700;
-      font-size: .84rem;
-      background: rgba(255,255,255,.06);
-      transition: .2s;
-    }
-
-    .btn-live-secondary:hover {
-      color: white;
-      background: rgba(255,255,255,.14);
-      border-color: rgba(255,255,255,.45);
-    }
-
-    .live-footnote {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 18px;
-      color: #8294ad;
-      font-size: .7rem;
-    }
-
-    .live-footnote i { color: #53cbf4; }
 
     /* NEWS FILTERS */
 
@@ -893,7 +781,9 @@
       margin-bottom: 25px;
     }
 
-    .contact-heading .section-eyebrow { color: #55c9f2; }
+    .contact-heading .section-eyebrow {
+      color: #55c9f2;
+    }
 
     .contact-heading h3 {
       color: white;
@@ -966,7 +856,9 @@
       margin-top: 7px;
     }
 
-    .contact-counter.limit { color: #ff9c9c; }
+    .contact-counter.limit {
+      color: #ff9c9c;
+    }
 
     .contact-help {
       color: #8fa1b6;
@@ -1024,7 +916,9 @@
       color: #ffaaaa;
     }
 
-    .contact-feedback i { margin-right: 7px; }
+    .contact-feedback i {
+      margin-right: 7px;
+    }
 
     .contact-privacy {
       color: #8799ad;
@@ -1046,7 +940,7 @@
       font-size: .76rem;
     }
 
-    /* MODAIS */
+    /* MODAL NOTÍCIAS */
 
     .modal-content {
       border: 0;
@@ -1103,52 +997,6 @@
       background: #17345a;
     }
 
-    /* MODAL DA LIVE */
-
-    .live-modal .modal-content {
-      background: #071426;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 16px;
-    }
-
-    .live-modal .modal-header {
-      background: #091629;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-      color: white;
-    }
-
-    .live-modal .modal-title {
-      color: white;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .live-modal .btn-close {
-      filter: invert(1);
-      opacity: .8;
-    }
-
-    .live-modal .modal-body {
-      padding: 0;
-      background: #000;
-    }
-
-    .live-modal-player {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: 0;
-      background: #000;
-    }
-
-    .live-modal-footer {
-      padding: 12px 18px;
-      color: #9aabc0;
-      background: #091629;
-      font-size: .75rem;
-    }
-
     /* VOLTAR AO TOPO */
 
     .back-top {
@@ -1177,7 +1025,10 @@
       .hero-section { min-height: 360px; }
       .hero-background { background-position: 65% center; }
 
-      .live-info { padding: 15px 25px 28px; }
+      .live-info {
+        padding: 15px 25px 28px;
+      }
+
       .live-visual-column { padding: 22px 22px 12px; }
     }
 
@@ -1200,6 +1051,7 @@
 
       .live-visual-column { padding: 15px 15px 10px; }
       .live-info { padding: 16px 20px 24px; }
+
       .live-title { font-size: 1.65rem; }
 
       .live-play-icon {
@@ -1208,19 +1060,23 @@
         font-size: 2.1rem;
       }
 
+      .countdown-area {
+        margin-top: 16px;
+        padding: 15px;
+      }
+
       .countdown { gap: 6px; }
+
       .countdown-unit { padding: 12px 3px 9px; }
+
       .countdown-number { font-size: 1.55rem; }
       .countdown-caption { font-size: .55rem; }
 
-      .live-actions .btn-live,
-      .live-actions .btn-live-secondary {
-        flex: 1 1 100%;
-      }
-
       .news-image-wrap { height: 195px; }
+
       .news-toolbar { align-items: stretch; }
       .search-box { width: 100%; }
+
       .curiosity-banner { padding: 26px; }
 
       .contact-section {
@@ -1229,14 +1085,14 @@
         border-radius: 17px;
       }
 
-      .contact-submit { width: 100%; }
+      .contact-submit {
+        width: 100%;
+      }
     }
 
     @media (max-width: 380px) {
       .brand-name { font-size: 1.15rem; }
       .brand-logo { width: 43px; height: 43px; }
-      .live-schedule { gap: 10px; }
-      .live-schedule-item { font-size: .72rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1280,7 +1136,7 @@
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header class="main-header">
   <nav class="navbar navbar-expand-lg navbar-dark container">
@@ -1308,6 +1164,7 @@
 
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav ms-auto align-items-lg-center">
+
         <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
         <li class="nav-item"><a class="nav-link" href="#live">Ao vivo</a></li>
         <li class="nav-item"><a class="nav-link" href="#noticias">Notícias</a></li>
@@ -1320,19 +1177,23 @@
             Digo&Jackie Play
           </a>
         </li>
+
       </ul>
     </div>
   </nav>
 </header>
 
+
 <main>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero-section" id="inicio">
+
   <div class="hero-background"></div>
 
   <div class="container hero-content">
+
     <span class="hero-tag">
       <i class="bi bi-stars"></i>
       Conhecimento sem fronteiras
@@ -1349,6 +1210,7 @@
     </p>
 
     <div class="hero-actions">
+
       <a href="#noticias" class="btn btn-hero btn-hero-primary">
         <i class="bi bi-compass me-1"></i>
         Explorar novidades
@@ -1358,16 +1220,21 @@
         <i class="bi bi-play-btn me-1"></i>
         Conhecer o Play
       </a>
+
     </div>
+
   </div>
 </section>
 
-<!-- LIVE ESPECIAL -->
+
+<!-- ================= LIVE ESPECIAL ================= -->
 
 <section class="section-block live-section" id="live">
+
   <div class="container">
 
     <div class="section-heading">
+
       <span class="section-eyebrow">
         <i class="bi bi-broadcast me-1"></i>
         Evento especial Digo&Jackie
@@ -1379,23 +1246,25 @@
       </h2>
 
       <p class="section-description">
-        Uma viagem por um dos sítios arqueológicos mais intrigantes da humanidade.
-        Acompanhe nossa transmissão ao vivo diretamente pelo portal!
+        Uma noite para investigar acontecimentos, questionar coincidências e separar os fatos das especulações. Acompanhe ao vivo aqui no portal!
       </p>
+
     </div>
 
     <div class="live-card">
-      <div class="row g-0">
 
-        <!-- THUMBNAIL -->
+      <div class="row g-0 align-items-center">
+
+        <!-- THUMBNAIL E PLAYER -->
 
         <div class="col-lg-6 live-visual-column">
+
           <div class="live-screen" id="liveScreen">
 
             <img
               id="liveThumbnail"
               src="https://i.ytimg.com/vi/jA_7ujQL4DQ/maxresdefault.jpg"
-              alt="O Templo Proibido do Tempo! Göbekli Tepe e os Mistérios da Humanidade"
+              alt="O TEMPLO PROIBIDO DO TEMPO! GÖBEKLI TEPE E OS MISTÉRIOS DA HUMANIDADE"
               width="1280"
               height="720"
               fetchpriority="high"
@@ -1408,143 +1277,96 @@
               class="live-screen-button"
               id="playLiveButton"
               type="button"
-              aria-label="Assistir à transmissão pelo site"
-              data-bs-toggle="modal"
-              data-bs-target="#liveModal">
+              aria-label="Assistir à transmissão pelo site">
 
               <span class="live-play-icon">
                 <i class="bi bi-play-fill"></i>
               </span>
+
             </button>
 
-            <span class="live-screen-label">
-              <i class="bi bi-youtube me-1"></i>
-              Transmissão Digo&Jackie
-            </span>
+            <!-- PLAYER INCORPORADO -->
+            <iframe
+              class="live-player"
+              id="livePlayer"
+              src="about:blank"
+              title="O TEMPLO PROIBIDO DO TEMPO! GÖBEKLI TEPE E OS MISTÉRIOS DA HUMANIDADE"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
 
           </div>
+
         </div>
 
-        <!-- INFORMAÇÕES DA LIVE -->
+        <!-- TÍTULO DA LIVE -->
 
         <div class="col-lg-6">
-          <div class="live-info">
 
-            <span class="live-label" id="liveBadge">
-              <span class="live-label-dot"></span>
-              PRÓXIMA TRANSMISSÃO
-            </span>
+          <div class="live-info">
 
             <h3 class="live-title" id="liveTitle">
               O TEMPLO PROIBIDO DO TEMPO! GÖBEKLI TEPE E OS MISTÉRIOS DA HUMANIDADE
             </h3>
 
-            <p class="live-description">
-              Uma noite dedicada a Göbekli Tepe, um dos sítios arqueológicos
-              mais fascinantes do planeta. Prepare-se para conhecer curiosidades,
-              descobertas e mistérios que cercam esse lugar extraordinário.
-            </p>
-
-            <div class="live-schedule">
-
-              <div class="live-schedule-item">
-                <i class="bi bi-calendar-event"></i>
-                <span>Sábado, 28 de novembro de 2026</span>
-              </div>
-
-              <div class="live-schedule-item">
-                <i class="bi bi-clock"></i>
-                <span>21h30 — Horário de Brasília</span>
-              </div>
-
-            </div>
-
-            <!-- CONTAGEM REGRESSIVA -->
-
-            <div id="countdownArea">
-
-              <div class="countdown-heading">
-                <i class="bi bi-hourglass-split me-1"></i>
-                A transmissão começa em
-              </div>
-
-              <div class="countdown" id="liveCountdown" aria-label="Contagem regressiva">
-
-                <div class="countdown-unit">
-                  <span class="countdown-number" id="countDays">00</span>
-                  <span class="countdown-caption">Dias</span>
-                </div>
-
-                <div class="countdown-unit">
-                  <span class="countdown-number" id="countHours">00</span>
-                  <span class="countdown-caption">Horas</span>
-                </div>
-
-                <div class="countdown-unit">
-                  <span class="countdown-number" id="countMinutes">00</span>
-                  <span class="countdown-caption">Minutos</span>
-                </div>
-
-                <div class="countdown-unit">
-                  <span class="countdown-number" id="countSeconds">00</span>
-                  <span class="countdown-caption">Segundos</span>
-                </div>
-
-              </div>
-            </div>
-
-            <p class="live-status" id="liveStatus" aria-live="polite">
-              <i class="bi bi-info-circle me-1"></i>
-              Programe-se! A transmissão estará disponível neste espaço no horário marcado.
-            </p>
-
-            <div class="live-actions">
-
-              <button
-                type="button"
-                class="btn-live"
-                id="watchOnSite"
-                data-bs-toggle="modal"
-                data-bs-target="#liveModal">
-
-                <i class="bi bi-play-circle-fill"></i>
-                Assistir pelo site
-
-              </button>
-
-              <a
-                href="https://www.youtube.com/live/jA_7ujQL4DQ"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-live-secondary">
-
-                <i class="bi bi-youtube"></i>
-                Assistir no YouTube
-
-              </a>
-
-            </div>
-
-            <div class="live-footnote">
-              <i class="bi bi-broadcast-pin"></i>
-              <span>Transmissão incorporada diretamente do canal Digo&Jackie.</span>
-            </div>
-
           </div>
+
         </div>
 
       </div>
+
+    </div>
+
+    <!-- CONTAGEM REGRESSIVA -->
+
+    <div class="countdown-area" id="countdownArea">
+
+      <div class="countdown-heading">
+        <i class="bi bi-hourglass-split me-1"></i>
+        A transmissão começa em
+      </div>
+
+      <div class="countdown" id="liveCountdown" aria-label="Contagem regressiva para a transmissão">
+
+        <div class="countdown-unit">
+          <span class="countdown-number" id="countDays">00</span>
+          <span class="countdown-caption">Dias</span>
+        </div>
+
+        <div class="countdown-unit">
+          <span class="countdown-number" id="countHours">00</span>
+          <span class="countdown-caption">Horas</span>
+        </div>
+
+        <div class="countdown-unit">
+          <span class="countdown-number" id="countMinutes">00</span>
+          <span class="countdown-caption">Minutos</span>
+        </div>
+
+        <div class="countdown-unit">
+          <span class="countdown-number" id="countSeconds">00</span>
+          <span class="countdown-caption">Segundos</span>
+        </div>
+
+      </div>
+
     </div>
 
   </div>
+
 </section>
 
-<!-- NOTÍCIAS -->
+
+<!-- ================= NOTÍCIAS ================= -->
 
 <section class="section-block" id="noticias">
+
   <div class="container">
 
     <div class="section-heading">
+
       <span class="section-eyebrow">Radar Digo&Jackie</span>
 
       <h2 class="section-title">
@@ -1554,6 +1376,7 @@
       <p class="section-description">
         Descobertas, acontecimentos e histórias que merecem sua atenção.
       </p>
+
     </div>
 
     <div class="news-toolbar">
@@ -1595,7 +1418,9 @@
 
     </div>
 
-    <div class="row g-4" id="newsGrid"></div>
+    <div class="row g-4" id="newsGrid">
+      <!-- CARDS GERADOS PELO JAVASCRIPT -->
+    </div>
 
     <div class="no-results d-none" id="noResults">
       <i class="bi bi-search fs-1 d-block mb-3"></i>
@@ -1604,17 +1429,22 @@
     </div>
 
   </div>
+
 </section>
 
-<!-- CURIOSIDADES -->
+
+<!-- ================= CURIOSIDADES ================= -->
 
 <section class="section-block pt-0" id="curiosidades">
+
   <div class="container">
 
     <div class="curiosity-banner">
+
       <div class="row align-items-center">
 
         <div class="col-md-9">
+
           <span class="section-eyebrow text-info">
             Uma jornada sem fim
           </span>
@@ -1629,6 +1459,7 @@
             ser descoberto. E essa jornada fica ainda melhor quando
             compartilhamos conhecimento.
           </p>
+
         </div>
 
         <div class="col-md-3 text-center mt-4 mt-md-0">
@@ -1636,14 +1467,18 @@
         </div>
 
       </div>
+
     </div>
 
   </div>
+
 </section>
 
-<!-- CHAMADA PLAY -->
+
+<!-- ================= CHAMADA PLAY ================= -->
 
 <section class="section-block pt-0">
+
   <div class="container">
 
     <div class="row align-items-center g-4">
@@ -1672,11 +1507,13 @@
       <div class="col-md-6">
 
         <a href="https://portaldigoejackie.github.io/digo-jackie-play.html" aria-label="Acessar Digo e Jackie Play">
+
           <img
             src="https://portaldigoejackie.github.io/digo-jackie-play-review.jpg"
             class="img-fluid rounded-4 shadow-sm"
             alt="Conheça a plataforma Digo e Jackie Play"
             loading="lazy">
+
         </a>
 
       </div>
@@ -1684,13 +1521,16 @@
     </div>
 
   </div>
+
 </section>
 
 </main>
 
-<!-- FOOTER -->
+
+<!-- ================= FOOTER ================= -->
 
 <footer class="main-footer" id="contato">
+
   <div class="container">
 
     <div class="row g-4">
@@ -1782,7 +1622,8 @@
 
     </div>
 
-    <!-- FORMULÁRIO DE CONTATO -->
+
+    <!-- ================= FORMULÁRIO DE CONTATO ================= -->
 
     <section class="contact-section" aria-labelledby="contactTitle">
 
@@ -1809,8 +1650,13 @@
 
         <div class="row g-3">
 
+          <!-- NOME -->
+
           <div class="col-md-6">
-            <label for="contactName">Seu nome</label>
+
+            <label for="contactName">
+              Seu nome
+            </label>
 
             <input
               type="text"
@@ -1822,10 +1668,16 @@
               maxlength="100"
               autocomplete="name"
               required>
+
           </div>
 
+          <!-- EMAIL -->
+
           <div class="col-md-6">
-            <label for="contactEmail">Seu e-mail</label>
+
+            <label for="contactEmail">
+              Seu e-mail
+            </label>
 
             <input
               type="email"
@@ -1840,11 +1692,16 @@
             <div class="contact-help">
               Gmail, Yahoo, Hotmail, Outlook e outros provedores autorizados.
             </div>
+
           </div>
+
+          <!-- MENSAGEM -->
 
           <div class="col-12">
 
-            <label for="contactMessage">Sua mensagem</label>
+            <label for="contactMessage">
+              Sua mensagem
+            </label>
 
             <textarea
               class="form-control"
@@ -1865,6 +1722,8 @@
 
           </div>
 
+          <!-- BOTÃO -->
+
           <div class="col-12 mt-4">
 
             <button
@@ -1880,6 +1739,8 @@
           </div>
 
         </div>
+
+        <!-- RETORNO DO FORMULÁRIO -->
 
         <div
           id="contactFeedback"
@@ -1898,9 +1759,11 @@
 
     </section>
 
+
     <!-- DIREITOS AUTORAIS -->
 
     <div class="footer-bottom">
+
       <div class="row align-items-center">
 
         <div class="col-md-6 text-center text-md-start">
@@ -1912,12 +1775,15 @@
         </div>
 
       </div>
+
     </div>
 
   </div>
+
 </footer>
 
-<!-- MODAL NOTÍCIAS -->
+
+<!-- ================= MODAL NOTÍCIAS ================= -->
 
 <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalTitle" aria-hidden="true">
 
@@ -1926,6 +1792,7 @@
     <div class="modal-content">
 
       <div class="modal-header">
+
         <span class="section-eyebrow mb-0">Digo&Jackie | Notícia</span>
 
         <button
@@ -1934,6 +1801,7 @@
           data-bs-dismiss="modal"
           aria-label="Fechar">
         </button>
+
       </div>
 
       <div class="modal-body">
@@ -1980,70 +1848,22 @@
       </div>
 
       <div class="modal-footer border-0 pt-0">
+
         <button
           type="button"
           class="btn btn-light"
           data-bs-dismiss="modal">
           Fechar
         </button>
-      </div>
 
-    </div>
-  </div>
-</div>
-
-<!-- MODAL DA TRANSMISSÃO AO VIVO -->
-
-<div
-  class="modal fade live-modal"
-  id="liveModal"
-  tabindex="-1"
-  aria-labelledby="liveModalTitle"
-  aria-hidden="true">
-
-  <div class="modal-dialog modal-dialog-centered modal-xl">
-
-    <div class="modal-content">
-
-      <div class="modal-header">
-
-        <h5 class="modal-title" id="liveModalTitle">
-          <i class="bi bi-broadcast me-2 text-danger"></i>
-          O Templo Proibido do Tempo! Göbekli Tepe
-        </h5>
-
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Fechar">
-        </button>
-
-      </div>
-
-      <div class="modal-body">
-
-        <iframe
-          id="liveModalPlayer"
-          class="live-modal-player"
-          src="about:blank"
-          title="O Templo Proibido do Tempo! Göbekli Tepe e os Mistérios da Humanidade"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
-
-      </div>
-
-      <div class="live-modal-footer">
-        <i class="bi bi-youtube me-1"></i>
-        Transmissão do canal Digo&Jackie
       </div>
 
     </div>
 
   </div>
+
 </div>
+
 
 <!-- VOLTAR AO TOPO -->
 
@@ -2057,18 +1877,29 @@
 
 </button>
 
-<!-- BIBLIOTECAS -->
+
+<!-- ================= BIBLIOTECAS ================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- SUPABASE JAVASCRIPT CLIENT -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<!-- JAVASCRIPT -->
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 'use strict';
 
+
 /* ==========================================
-   CONFIGURAÇÃO DA TRANSMISSÃO
+   CONFIGURAÇÃO DA TRANSMISSÃO AO VIVO
+
+   Evento: 28/11/2026 às 21h30
+   Fuso: Brasília (UTC-3)
+
+   ID: jA_7ujQL4DQ
 ========================================== */
 
 const LIVE = {
@@ -2078,7 +1909,7 @@ const LIVE = {
 
   thumbnail: 'https://i.ytimg.com/vi/jA_7ujQL4DQ/maxresdefault.jpg',
 
-  youtube: 'https://www.youtube.com/live/jA_7ujQL4DQ',
+  youtube: 'https://www.youtube.com/watch?v=jA_7ujQL4DQ',
 
   inicio: '2026-11-28T21:30:00-03:00'
 };
@@ -2096,8 +1927,6 @@ const countdownElements = {
 };
 
 const countdownArea = document.getElementById('countdownArea');
-const liveStatus = document.getElementById('liveStatus');
-const liveBadge = document.getElementById('liveBadge');
 
 const liveStart = new Date(LIVE.inicio).getTime();
 
@@ -2129,15 +1958,7 @@ function updateCountdown() {
 
   clearInterval(countdownTimer);
 
-  // A contagem desaparece ao chegar ao horário programado.
-  countdownArea.remove();
-
-  liveBadge.innerHTML =
-    '<span class="live-label-dot"></span> HORÁRIO DA TRANSMISSÃO';
-
-  liveStatus.innerHTML =
-    '<i class="bi bi-broadcast me-1"></i>' +
-    'Chegou a hora! Acesse a transmissão pelo portal ou pelo YouTube.';
+  countdownArea.hidden = true;
 }
 
 updateCountdown();
@@ -2148,35 +1969,37 @@ if (Date.now() < liveStart) {
 
 
 /* ==========================================
-   PLAYER DA LIVE - MODAL
+   PLAYER INCORPORADO
 ========================================== */
 
-const liveModalElement = document.getElementById('liveModal');
-const liveModalPlayer = document.getElementById('liveModalPlayer');
+const liveScreen = document.getElementById('liveScreen');
+const livePlayer = document.getElementById('livePlayer');
+const playLiveButton = document.getElementById('playLiveButton');
 
-const liveModal = bootstrap.Modal.getOrCreateInstance(liveModalElement);
+let playerStarted = false;
 
 function startLivePlayer() {
 
-  if (liveModalPlayer.src !== 'about:blank' &&
-      liveModalPlayer.src !== '') {
+  if (playerStarted) {
+    liveScreen.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
     return;
   }
 
-  liveModalPlayer.src =
+  playerStarted = true;
+
+  livePlayer.src =
     'https://www.youtube-nocookie.com/embed/' +
     encodeURIComponent(LIVE.id) +
     '?autoplay=1&rel=0';
 
+  liveScreen.classList.add('playing');
+
 }
 
-function stopLivePlayer() {
-  liveModalPlayer.src = 'about:blank';
-}
-
-liveModalElement.addEventListener('show.bs.modal', startLivePlayer);
-
-liveModalElement.addEventListener('hidden.bs.modal', stopLivePlayer);
+playLiveButton.addEventListener('click', startLivePlayer);
 
 
 /* ==========================================
@@ -2487,13 +2310,25 @@ searchInput.addEventListener('input', filterNews);
 
 /* ==========================================
    SUPABASE - FORMULÁRIO DE CONTATO
+
+   Projeto:
+   idxmzyjvlsjgsmklczkt
+
+   Tabela:
+   public.mensagens_contato
+
+   Operação:
+   INSERT
+
+   Nenhuma autenticação necessária para
+   o visitante enviar uma mensagem.
 ========================================== */
 
 const SUPABASE_URL =
   'https://idxmzyjvlsjgsmklczkt.supabase.co';
 
 const SUPABASE_PUBLISHABLE_KEY =
-  'sb_publishable_k8tkrY9EAacu-yDF2UM3eg_h-x00TrK';
+  'sb_publishable_k8tkrY9EAacu-yDF2UM3eg_h-x00Tr';
 
 const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
@@ -2501,7 +2336,9 @@ const supabaseClient = window.supabase.createClient(
 );
 
 
-/* ELEMENTOS DO FORMULÁRIO */
+/* ==========================================
+   ELEMENTOS DO FORMULÁRIO
+========================================== */
 
 const contactForm = document.getElementById('contactForm');
 const contactName = document.getElementById('contactName');
@@ -2512,7 +2349,11 @@ const contactSubmit = document.getElementById('contactSubmit');
 const contactFeedback = document.getElementById('contactFeedback');
 
 
-/* DOMÍNIOS DE E-MAIL AUTORIZADOS */
+/* ==========================================
+   DOMÍNIOS DE E-MAIL AUTORIZADOS
+
+   Compatível com as validações da tabela.
+========================================== */
 
 const allowedEmailDomains = new Set([
   'gmail.com',
@@ -2541,7 +2382,12 @@ const allowedEmailDomains = new Set([
 ]);
 
 
-/* DETECÇÃO DE EMOJIS */
+/* ==========================================
+   DETECÇÃO DE EMOJIS
+
+   Inclui pictogramas, bandeiras,
+   modificadores, sequências e símbolos.
+========================================== */
 
 const emojiPattern =
   /(?:\p{Extended_Pictographic}|\p{Regional_Indicator}|\p{Emoji_Modifier}|\uFE0F|\u200D|[\u{1F1E6}-\u{1F1FF}]|[#*0-9]\uFE0F?\u20E3)/u;
@@ -2551,7 +2397,9 @@ function containsEmoji(value) {
 }
 
 
-/* CONTADOR DE CARACTERES */
+/* ==========================================
+   CONTADOR DE CARACTERES
+========================================== */
 
 contactMessage.addEventListener('input', () => {
 
@@ -2564,7 +2412,9 @@ contactMessage.addEventListener('input', () => {
 });
 
 
-/* FEEDBACK DO FORMULÁRIO */
+/* ==========================================
+   FEEDBACK DO FORMULÁRIO
+========================================== */
 
 function showContactFeedback(type, message, protocol = '') {
 
@@ -2602,7 +2452,9 @@ function showContactFeedback(type, message, protocol = '') {
 }
 
 
-/* VALIDAR E-MAIL */
+/* ==========================================
+   VALIDAR E-MAIL
+========================================== */
 
 function validateContactEmail(value) {
 
@@ -2658,7 +2510,9 @@ function validateContactEmail(value) {
 }
 
 
-/* ENVIO DA MENSAGEM AO SUPABASE */
+/* ==========================================
+   ENVIO DA MENSAGEM AO SUPABASE
+========================================== */
 
 contactForm.addEventListener('submit', async event => {
 
@@ -2672,6 +2526,8 @@ contactForm.addEventListener('submit', async event => {
   const emailValidation = validateContactEmail(contactEmail.value);
   const mensagem = contactMessage.value.trim();
 
+  /* VALIDAR NOME */
+
   if (nome.length < 2 || nome.length > 100) {
 
     showContactFeedback(
@@ -2683,6 +2539,8 @@ contactForm.addEventListener('submit', async event => {
     return;
 
   }
+
+  /* VALIDAR E-MAIL */
 
   if (!emailValidation.valid) {
 
@@ -2696,6 +2554,8 @@ contactForm.addEventListener('submit', async event => {
 
   }
 
+  /* VALIDAR MENSAGEM */
+
   if (!mensagem.length || mensagem.length > 200) {
 
     showContactFeedback(
@@ -2708,6 +2568,8 @@ contactForm.addEventListener('submit', async event => {
 
   }
 
+  /* BLOQUEAR EMOJIS */
+
   if (containsEmoji(mensagem)) {
 
     showContactFeedback(
@@ -2719,6 +2581,8 @@ contactForm.addEventListener('submit', async event => {
     return;
 
   }
+
+  /* INICIAR ENVIO */
 
   contactSubmit.disabled = true;
 
@@ -2733,6 +2597,8 @@ contactForm.addEventListener('submit', async event => {
   contactFeedback.textContent = '';
 
   try {
+
+    /* INSERIR REGISTRO NA TABELA */
 
     const { data, error } = await supabaseClient
       .from('mensagens_contato')
@@ -2750,11 +2616,15 @@ contactForm.addEventListener('submit', async event => {
       throw error;
     }
 
+    /* ENVIO CONFIRMADO */
+
     showContactFeedback(
       'success',
       'Sua mensagem foi recebida com sucesso! Agradecemos por entrar em contato com a equipe Digo&Jackie.',
       data.protocolo
     );
+
+    /* LIMPAR CAMPOS */
 
     contactForm.reset();
 
@@ -2788,6 +2658,8 @@ contactForm.addEventListener('submit', async event => {
     showContactFeedback('error', errorMessage);
 
   } finally {
+
+    /* RESTAURAR FORMULÁRIO */
 
     contactSubmit.disabled = false;
 
@@ -2846,4 +2718,4 @@ renderNews(news);
 </script>
 
 </body>
-</html>
+  </html>
