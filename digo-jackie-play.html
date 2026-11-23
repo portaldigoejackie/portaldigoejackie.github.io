@@ -2281,7 +2281,7 @@
         elements.playerFrame.src = "about:blank";
       });
 
-      /* DJ BOT */
+      /* DJ BOT - ARVORE DE DECISAO */
 
       const bot = {
         window: document.getElementById("djWindow"),
@@ -2289,14 +2289,14 @@
         close: document.getElementById("djClose"),
         messages: document.getElementById("djMessages"),
         form: document.getElementById("djForm"),
-        input: document.getElementById("djInput")
+        input: document.getElementById("djInput"),
+        selectedCategory: null
       };
 
       function openBot() {
         bot.window.classList.add("open");
         bot.window.setAttribute("aria-hidden", "false");
         bot.launcher.setAttribute("aria-expanded", "true");
-
         setTimeout(() => bot.input.focus(), 180);
       }
 
@@ -2307,11 +2307,7 @@
       }
 
       bot.launcher.addEventListener("click", () => {
-        if (bot.window.classList.contains("open")) {
-          closeBot();
-        } else {
-          openBot();
-        }
+        bot.window.classList.contains("open") ? closeBot() : openBot();
       });
 
       bot.close.addEventListener("click", closeBot);
@@ -2322,261 +2318,252 @@
           openBot();
         });
 
+      function scrollBot() {
+        bot.messages.scrollTop = bot.messages.scrollHeight;
+      }
+
       function addBotMessage(text, type = "bot") {
         const message = document.createElement("div");
         message.className = `dj-message ${type}`;
 
-        const paragraphs = String(text)
-          .split(/\n\s*\n/)
-          .filter(Boolean);
-
-        paragraphs.forEach(paragraph => {
+        String(text).split(/\n\s*\n/).filter(Boolean).forEach(paragraph => {
           const p = document.createElement("p");
           p.textContent = paragraph;
           message.appendChild(p);
         });
 
         bot.messages.appendChild(message);
-        bot.messages.scrollTop = bot.messages.scrollHeight;
+        scrollBot();
       }
 
-      function addQuickActions() {
+      function addBotOptions(title, options, action, back = false) {
+        const message = document.createElement("div");
+        message.className = "dj-message";
+
+        const heading = document.createElement("p");
+        heading.textContent = title;
+        message.appendChild(heading);
+
         const actions = document.createElement("div");
         actions.className = "dj-quick-actions";
 
-        const options = [
-          ["Ver categorias", "categories"],
-          ["Buscar vídeo", "search"],
-          ["Abrir catálogo", "catalog"]
-        ];
-
-        options.forEach(([label, action]) => {
+        options.forEach((item, index) => {
           const button = document.createElement("button");
           button.type = "button";
-          button.textContent = label;
+          button.textContent = item.label;
           button.dataset.action = action;
+          button.dataset.index = index;
           actions.appendChild(button);
         });
 
-        const message = document.createElement("div");
-        message.className = "dj-message";
-        message.appendChild(actions);
+        if (back) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.textContent = "← Voltar às categorias";
+          button.dataset.action = "back-categories";
+          actions.appendChild(button);
+        }
 
+        message.appendChild(actions);
         bot.messages.appendChild(message);
-        bot.messages.scrollTop = bot.messages.scrollHeight;
+        scrollBot();
       }
 
       function normalizeText(text) {
         return String(text || "")
           .toLocaleLowerCase("pt-BR")
           .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "");
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^\w\s]/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
       }
 
-      function handleBotAction(action) {
-        if (action === "categories") {
-          const names = state.categories.map(getCategoryName);
-
-          if (!names.length) {
-            addBotMessage(
-              "O catálogo ainda está carregando. Tente novamente em instantes."
-            );
-            return;
-          }
-
-          addBotMessage(
-            "Estas são as categorias disponíveis:\n\n" +
-            names.map((name, index) => `${index + 1}. ${name}`).join("\n") +
-            "\n\nVocê pode escolher uma delas nos filtros do catálogo."
-          );
-
+      function showCategories() {
+        if (!state.categories || !state.categories.length) {
+          addBotMessage("O catálogo ainda está carregando. Tente novamente em instantes.");
           return;
         }
 
-        if (action === "search") {
-          addBotMessage(
-            "Digite o nome de um vídeo ou uma palavra relacionada ao conteúdo que procura. Vou ajudar você a encontrar."
-          );
+        bot.selectedCategory = null;
 
-          document.getElementById("catalogo").scrollIntoView({
-            behavior: "smooth"
-          });
+        const categories = state.categories.map((category, index) => ({
+          label: getCategoryName(category),
+          index
+        }));
 
-          setTimeout(() => elements.search.focus(), 400);
+        addBotOptions(
+          "📚 Escolha uma categoria para continuar:",
+          categories,
+          "select-category"
+        );
+      }
+
+      function showCategoryVideos(categoryIndex) {
+        const category = state.categories[categoryIndex];
+
+        if (!category) {
+          addBotMessage("Não consegui localizar essa categoria. Vamos tentar novamente.");
+          showCategories();
           return;
         }
 
-        if (action === "catalog") {
-          if (!state.categories.length) {
-            addBotMessage(
-              "O catálogo ainda está carregando. Assim que os conteúdos estiverem disponíveis, posso abrir a lista completa para você."
-            );
-            return;
-          }
+        const videos = getCategoryVideos(category);
 
+        bot.selectedCategory = categoryIndex;
+
+        if (!videos || !videos.length) {
           addBotMessage(
-            "Aqui está o catálogo completo! 📚\n\nVocê pode navegar por todos os vídeos, conferir os títulos e escolher o que deseja assistir. Nenhum vídeo será reproduzido até você selecionar um."
+            `A categoria "${getCategoryName(category)}" ainda não possui vídeos disponíveis.`
           );
-
-          openAllCatalog();
-        }
-      }
-
-      function findCategory(term) {
-        return state.categories.find(category => {
-          const name = normalizeText(getCategoryName(category));
-
-          return name.includes(term) || term.includes(name);
-        });
-      }
-
-      function findVideo(term) {
-        for (const category of state.categories) {
-          const video = getCategoryVideos(category).find(item =>
-            normalizeText(item.title).includes(term)
+          addBotOptions(
+            "Você pode escolher outra categoria:",
+            state.categories.map((item, index) => ({
+              label: getCategoryName(item),
+              index
+            })),
+            "select-category"
           );
-
-          if (video) {
-            return { video, category };
-          }
+          return;
         }
 
-        return null;
+        addBotMessage(
+          `Você escolheu: ${getCategoryName(category)}.\n\nEncontrei ${videos.length} vídeo(s). Agora escolha o que deseja assistir:`
+        );
+
+        addBotOptions(
+          "🎬 Vídeos disponíveis nesta categoria:",
+          videos.map((video, index) => ({
+            label: video.title || `Vídeo ${index + 1}`,
+            index
+          })),
+          "select-video",
+          true
+        );
+      }
+
+      function selectVideo(videoIndex) {
+        if (bot.selectedCategory === null) {
+          addBotMessage("Primeiro escolha uma categoria.");
+          showCategories();
+          return;
+        }
+
+        const category = state.categories[bot.selectedCategory];
+
+        if (!category) {
+          showCategories();
+          return;
+        }
+
+        const videos = getCategoryVideos(category);
+        const video = videos[videoIndex];
+
+        if (!video) {
+          addBotMessage("Não consegui localizar esse vídeo. Escolha novamente.");
+          showCategoryVideos(bot.selectedCategory);
+          return;
+        }
+
+        addBotMessage(
+          `▶️ Você escolheu "${video.title}".\n\nAbrindo o vídeo agora!`
+        );
+
+        openPlayer(getVideoId(video), video.title);
+      }
+
+      function handleBotAction(action, index) {
+        if (action === "categories" || action === "back-categories") {
+          addBotMessage("Vamos escolher uma categoria:");
+          showCategories();
+          return;
+        }
+
+        if (action === "select-category") {
+          const categoryIndex = Number(index);
+
+          if (!Number.isInteger(categoryIndex) ||
+              !state.categories[categoryIndex]) return;
+
+          showCategoryVideos(categoryIndex);
+          return;
+        }
+
+        if (action === "select-video") {
+          const videoIndex = Number(index);
+
+          if (!Number.isInteger(videoIndex)) return;
+
+          selectVideo(videoIndex);
+        }
       }
 
       function answerBot(message) {
-        const term = normalizeText(message).trim();
+        const term = normalizeText(message);
 
         if (!term) return;
 
         if (/^(oi|ola|opa|eai|bom dia|boa tarde|boa noite)\b/.test(term)) {
           addBotMessage(
-            "Opa! 😎 Que bom ter você por aqui!\n\nQuer descobrir alguma coisa interessante hoje?"
+            "Opa! 😎 Bem-vindo ao Digo&Jackie Play!\n\nVou ajudar você a encontrar o que deseja assistir. Primeiro, escolha uma categoria:"
+          );
+          showCategories();
+          return;
+        }
+
+        if (!state.categories || !state.categories.length) {
+          addBotMessage("O catálogo ainda está carregando. Tente novamente em instantes.");
+          return;
+        }
+
+        if (bot.selectedCategory === null) {
+          const categoryIndex = state.categories.findIndex(category =>
+            normalizeText(getCategoryName(category)) === term
           );
 
-          addQuickActions();
-          return;
-        }
-
-        if (
-          term.includes("categoria") ||
-          term.includes("temas") ||
-          term.includes("assuntos")
-        ) {
-          handleBotAction("categories");
-          return;
-        }
-
-        if (
-          term.includes("catalogo") ||
-          term.includes("todos os videos") ||
-          term.includes("todos videos") ||
-          term.includes("abrir tudo") ||
-          term.includes("ver tudo")
-        ) {
-          handleBotAction("catalog");
-          return;
-        }
-
-        if (
-          term.includes("pesquisar") ||
-          term.includes("buscar") ||
-          term.includes("procurar")
-        ) {
-          handleBotAction("search");
-          return;
-        }
-
-        /* ACESSO AO PORTAL PELO DJ BOT */
-
-        if (
-          term.includes("portal") ||
-          term.includes("pagina principal") ||
-          term.includes("site principal") ||
-          term.includes("site oficial")
-        ) {
-          addBotMessage(
-            "Claro! 🌐 O Portal Digo&Jackie reúne o universo principal do projeto.\n\nVocê pode acessá-lo pelo link abaixo:"
-          );
-
-          const message = document.createElement("div");
-          message.className = "dj-message";
-
-          const link = document.createElement("a");
-          link.href = "https://portaldigoejackie.github.io/";
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-          link.className = "btn-portal";
-          link.innerHTML = '<i class="bi bi-globe2"></i> Acessar Portal Digo&Jackie <i class="bi bi-arrow-up-right"></i>';
-
-          message.appendChild(link);
-          bot.messages.appendChild(message);
-          bot.messages.scrollTop = bot.messages.scrollHeight;
-
-          return;
-        }
-
-        const category = findCategory(term);
-
-        if (category) {
-          const index = state.categories.indexOf(category);
-          const videos = getCategoryVideos(category);
-
-          addBotMessage(
-            `Encontrei a categoria "${getCategoryName(category)}", com ${videos.length} vídeo(s).\n\nVou abrir a lista completa dessa seção para você.`
-          );
-
-          openCategory(index);
-          return;
-        }
-
-        const result = findVideo(term);
-
-        if (result) {
-          addBotMessage(
-            `Achei! O vídeo "${result.video.title}" está na categoria "${getCategoryName(result.category)}".\n\nVou abrir esse conteúdo para você.`
-          );
-
-          openPlayer(
-            getVideoId(result.video),
-            result.video.title
-          );
-
-          return;
-        }
-
-        const words = term.split(/\s+/).filter(word => word.length >= 3);
-
-        if (words.length) {
-          const matches = [];
-
-          state.categories.forEach(category => {
-            getCategoryVideos(category).forEach(video => {
-              const title = normalizeText(video.title);
-
-              if (words.some(word => title.includes(word))) {
-                matches.push({ video, category });
-              }
-            });
-          });
-
-          if (matches.length) {
-            const first = matches[0];
-
-            addBotMessage(
-              `Encontrei ${matches.length} possível(is) resultado(s).\n\nUm deles é "${first.video.title}", na categoria "${getCategoryName(first.category)}". Vou abrir esse conteúdo.`
-            );
-
-            openPlayer(getVideoId(first.video), first.video.title);
+          if (categoryIndex >= 0) {
+            showCategoryVideos(categoryIndex);
             return;
           }
+
+          addBotMessage(
+            "Para encontrar seu vídeo, primeiro precisamos escolher uma categoria. Selecione uma das opções abaixo:"
+          );
+          showCategories();
+          return;
+        }
+
+        const category = state.categories[bot.selectedCategory];
+
+        if (!category) {
+          bot.selectedCategory = null;
+          showCategories();
+          return;
+        }
+
+        const videos = getCategoryVideos(category);
+        const videoIndex = videos.findIndex(video =>
+          normalizeText(video.title) === term
+        );
+
+        if (videoIndex >= 0) {
+          selectVideo(videoIndex);
+          return;
         }
 
         addBotMessage(
-          "Ainda não encontrei esse conteúdo no catálogo. 🤔\n\nExperimente usar uma palavra do título ou o nome de uma categoria. Também posso mostrar todas as categorias disponíveis."
+          "Não encontrei esse título nesta categoria. Escolha um dos vídeos apresentados ou volte para selecionar outra categoria."
         );
 
-        addQuickActions();
+        addBotOptions(
+          "🎬 Vídeos desta categoria:",
+          videos.map((video, index) => ({
+            label: video.title || `Vídeo ${index + 1}`,
+            index
+          })),
+          "select-video",
+          true
+        );
       }
 
       bot.form.addEventListener("submit", event => {
@@ -2587,9 +2574,7 @@
         if (!message) return;
 
         addBotMessage(message, "user");
-
         bot.input.value = "";
-
         answerBot(message);
       });
 
@@ -2598,7 +2583,10 @@
 
         if (!button) return;
 
-        handleBotAction(button.dataset.action);
+        handleBotAction(
+          button.dataset.action,
+          button.dataset.index
+        );
       });
 
       document.addEventListener("keydown", event => {
@@ -2606,6 +2594,8 @@
           closeBot();
         }
       });
+
+      /* FIM DO DJ BOT */
 
       /* INICIALIZAÇÃO */
 
@@ -2618,4 +2608,4 @@
   </script>
 
 </body>
-</html>
+  </html>
