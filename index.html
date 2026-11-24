@@ -1241,7 +1241,8 @@
   </style>
 
   <!-- Schema.org -->
-  <script type="application/ld+json">
+  <!-- Scripts e integrações -->
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -1272,6 +1273,7 @@
 
 <!-- ================= HEADER ================= -->
 
+<!-- Cabeçalho -->
 <header class="main-header">
   <nav class="navbar navbar-expand-lg navbar-dark container">
 
@@ -1318,10 +1320,7 @@
 </header>
 
 
-<main>
-
-<!-- ================= HERO ================= -->
-
+<!-- Hero -->
 <section class="hero-section" id="inicio">
 
   <div class="hero-background"></div>
@@ -1359,364 +1358,648 @@
 
   </div>
 </section>
+<!-- Conteúdo principal -->
+<main class="dj-main">
+
+<style>
+.dj-main{
+ --dj-blue:#092b59;--dj-blue2:#10549a;--dj-blue3:#1877c9;
+ --dj-orange:#ff842e;--dj-orange2:#ffad58;
+ --dj-white:#fff;--dj-ink:#172d49;--dj-muted:#718096;
+ --dj-line:#e7edf5;--dj-soft:#f4f8fd;
+ color:var(--dj-ink);background:#fff;
+ font-family:'Inter',sans-serif;overflow:hidden;
+}
+.dj-main *{box-sizing:border-box}
+.dj-main a{text-decoration:none}
+.dj-main .container{position:relative;z-index:2}
+.dj-main .section-block{padding:88px 0}
+.dj-main .section-heading{margin-bottom:38px}
+.dj-main .section-eyebrow{
+ display:inline-flex;align-items:center;gap:9px;
+ color:#e66d1d;background:#fff0e4;border:1px solid #ffdfc6;
+ border-radius:30px;padding:8px 15px;font-size:.72rem;
+ font-weight:800;letter-spacing:1.3px;text-transform:uppercase;
+ margin-bottom:16px;
+}
+.dj-main .section-title{
+ color:var(--dj-ink);font-size:clamp(1.9rem,3.5vw,2.8rem);
+ font-weight:800;letter-spacing:-1.5px;line-height:1.12;
+}
+.dj-main .section-description{
+ color:var(--dj-muted);line-height:1.85;font-size:.96rem;max-width:680px;
+}
+
+/* HERO — PRESERVADA */
+.dj-main .hero-section{
+ min-height:530px;position:relative;display:flex;align-items:center;
+ background:
+ radial-gradient(circle at 80% 25%,rgba(255,132,46,.17),transparent 25%),
+ linear-gradient(115deg,#f5f9ff 0%,#fff 55%,#fff2e8 100%);
+}
+.dj-main .hero-background{
+ position:absolute;inset:0 0 0 auto;width:58%;
+ background:
+ linear-gradient(90deg,#f5f9ff 0%,rgba(245,249,255,.65) 23%,rgba(245,249,255,.04) 100%),
+ url('https://portaldigoejackie.github.io/digo-jackie-play-review.jpg') center/cover;
+ opacity:.9;mask-image:linear-gradient(90deg,transparent,#000 35%);
+}
+.dj-main .hero-content{padding:95px 12px;max-width:1140px}
+.dj-main .hero-tag{
+ display:inline-flex;align-items:center;gap:9px;background:#fff;
+ color:#d9671d;border:1px solid #ffdbbd;padding:10px 16px;
+ border-radius:30px;font-size:.76rem;font-weight:800;letter-spacing:1px;
+ box-shadow:0 8px 25px rgba(35,70,110,.07);
+}
+.dj-main .hero-content h1{
+ color:#102e55;max-width:700px;font-size:clamp(2.7rem,5.4vw,4.7rem);
+ font-weight:800;letter-spacing:-2.8px;line-height:1.03;margin:25px 0 20px;
+}
+.dj-main .hero-content h1 span{display:block;color:var(--dj-orange)}
+.dj-main .hero-content p{
+ max-width:560px;color:#61748b;font-size:1.02rem;line-height:1.9;
+}
+.dj-main .hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
+.dj-main .btn-hero{
+ display:inline-flex;justify-content:center;align-items:center;gap:9px;
+ padding:14px 22px;border-radius:12px;font-size:.9rem;font-weight:800;
+ transition:.25s;
+}
+.dj-main .btn-hero:hover{transform:translateY(-4px)}
+.dj-main .btn-hero-primary{
+ background:linear-gradient(120deg,#ff842e,#ffad58);color:#fff;
+ box-shadow:0 9px 22px rgba(255,132,46,.23);
+}
+.dj-main .btn-hero-primary:hover{color:#fff;box-shadow:0 14px 28px rgba(255,132,46,.32)}
+.dj-main .btn-hero-outline{color:#164475;background:#fff;border:1px solid #dce7f4}
+.dj-main .btn-hero-outline:hover{background:#edf5ff;color:#164475}
+.dj-main .hero-highlights{display:flex;flex-wrap:wrap;gap:23px;margin-top:38px}
+.dj-main .hero-highlights div{
+ display:flex;align-items:center;gap:8px;color:#60748d;
+ font-size:.8rem;font-weight:700;
+}
+.dj-main .hero-highlights i{color:var(--dj-orange);font-size:1.1rem}
+.dj-main .hero-decoration{position:absolute;border:1px solid rgba(255,132,46,.2);border-radius:50%;pointer-events:none}
+.dj-main .hero-decoration-one{
+ width:260px;height:260px;right:7%;top:8%;
+ box-shadow:0 0 0 25px rgba(255,132,46,.035),0 0 0 55px rgba(255,132,46,.025);
+}
+.dj-main .hero-decoration-two{
+ width:95px;height:95px;right:35%;bottom:7%;background:rgba(255,132,46,.07);
+}
+
+/* TRANSMISSÃO AO VIVO */
+.dj-main .live-section{
+ position:relative;background:#f3f7fc;overflow:hidden;
+}
+.dj-main .live-section:before{
+ content:"";position:absolute;width:450px;height:450px;border-radius:50%;
+ background:rgba(255,132,46,.07);top:-220px;right:-130px;
+}
+.dj-main .live-section:after{
+ content:"";position:absolute;width:350px;height:350px;border-radius:50%;
+ border:1px solid rgba(16,84,154,.09);bottom:-190px;left:-120px;
+}
+.dj-main .live-card{
+ position:relative;overflow:hidden;color:#fff;border-radius:28px;
+ background:
+ radial-gradient(circle at 90% 5%,rgba(255,132,46,.22),transparent 27%),
+ radial-gradient(circle at 5% 100%,rgba(24,119,201,.4),transparent 35%),
+ linear-gradient(125deg,#082650 0%,#0b3c76 52%,#10599c 100%);
+ border:1px solid rgba(255,255,255,.15);
+ box-shadow:0 25px 65px rgba(8,43,89,.24);
+}
+.dj-main .live-card:before{
+ content:"";position:absolute;width:370px;height:370px;
+ border:1px solid rgba(255,255,255,.09);border-radius:50%;
+ right:-110px;top:-210px;
+ box-shadow:0 0 0 30px rgba(255,255,255,.025),0 0 0 65px rgba(255,255,255,.02);
+ pointer-events:none;
+}
+.dj-main .live-card:after{
+ content:"";position:absolute;width:7px;height:120px;
+ background:var(--dj-orange);left:0;top:50px;border-radius:0 8px 8px 0;
+}
+.dj-main .live-card>.row{position:relative;z-index:1}
+.dj-main .live-visual-column{padding:30px;display:flex;align-items:center}
+.dj-main .live-screen{
+ position:relative;width:100%;aspect-ratio:16/9;background:#06172c;
+ border:1px solid rgba(255,255,255,.22);border-radius:19px;
+ overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.3);
+}
+.dj-main .live-screen img{
+ position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+ display:block;transition:transform .5s;
+}
+.dj-main .live-screen:hover img{transform:scale(1.035)}
+.dj-main .live-screen-overlay{
+ position:absolute;inset:0;
+ background:linear-gradient(0deg,rgba(3,17,35,.75),transparent 65%);
+ pointer-events:none;
+}
+.dj-main .live-screen-button{
+ position:absolute;inset:0;width:100%;height:100%;
+ display:flex;align-items:center;justify-content:center;
+ border:0;background:transparent;cursor:pointer;z-index:2;
+}
+.dj-main .live-play-icon{
+ display:flex;justify-content:center;align-items:center;
+ width:78px;height:78px;padding-left:5px;border-radius:50%;
+ background:linear-gradient(135deg,#fff,#ffe9d8);color:#ed6322;
+ font-size:2.8rem;box-shadow:0 0 0 12px rgba(255,255,255,.16),0 12px 30px rgba(0,0,0,.25);
+ transition:.25s;
+}
+.dj-main .live-screen-button:hover .live-play-icon{transform:scale(1.13)}
+.dj-main .live-screen-label{
+ position:absolute;left:17px;bottom:15px;color:#fff;
+ font-size:.72rem;font-weight:800;letter-spacing:1px;z-index:3;
+}
+.dj-main .live-screen-label i{color:var(--dj-orange)}
+.dj-main .live-player{
+ position:absolute;inset:0;width:100%;height:100%;
+ border:0;display:none;background:#000;
+}
+.dj-main .live-screen.playing .live-player{display:block}
+.dj-main .live-screen.playing #liveThumbnail,
+.dj-main .live-screen.playing .live-screen-overlay,
+.dj-main .live-screen.playing .live-screen-button,
+.dj-main .live-screen.playing .live-screen-label{display:none}
+.dj-main .live-info{padding:42px 38px 38px 12px}
+.dj-main .live-label{
+ display:inline-flex;align-items:center;gap:9px;color:#ffb17c;
+ background:rgba(255,132,46,.13);border:1px solid rgba(255,155,88,.35);
+ border-radius:30px;padding:9px 14px;font-size:.69rem;
+ font-weight:900;letter-spacing:1px;
+}
+.dj-main .live-label-dot{
+ width:8px;height:8px;border-radius:50%;background:#ff843e;
+ box-shadow:0 0 0 5px rgba(255,132,46,.15);animation:djPulse 1.5s infinite;
+}
+@keyframes djPulse{50%{box-shadow:0 0 0 9px rgba(255,132,46,.03)}}
+.dj-main .live-title{
+ color:#fff;font-size:clamp(1.65rem,2.7vw,2.35rem);
+ font-weight:800;line-height:1.16;letter-spacing:-.9px;margin:22px 0 13px;
+}
+.dj-main .live-description{color:rgba(255,255,255,.73);line-height:1.8;font-size:.89rem;margin-bottom:21px}
+.dj-main .live-schedule{
+ display:flex;flex-wrap:wrap;gap:13px;padding:15px;
+ background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+ border-radius:14px;margin-bottom:20px;
+}
+.dj-main .live-schedule-item{display:flex;align-items:center;gap:9px;color:#e3edf9;font-size:.79rem;font-weight:600}
+.dj-main .live-schedule-item i{color:var(--dj-orange);font-size:1.1rem}
+.dj-main .countdown-heading{color:#ffb17c;font-size:.69rem;font-weight:900;letter-spacing:1.5px;margin-bottom:11px}
+.dj-main .countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-bottom:18px}
+.dj-main .countdown-unit{
+ text-align:center;padding:14px 4px 12px;
+ background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.055));
+ border:1px solid rgba(255,255,255,.15);border-radius:13px;
+}
+.dj-main .countdown-number{
+ display:block;color:#fff;font-size:clamp(1.45rem,2.4vw,2rem);
+ font-weight:800;line-height:1;font-variant-numeric:tabular-nums;
+}
+.dj-main .countdown-caption{
+ display:block;color:#b7cde4;font-size:.6rem;font-weight:800;
+ letter-spacing:1px;text-transform:uppercase;margin-top:8px;
+}
+.dj-main .live-status{color:#c0d1e4;font-size:.78rem;min-height:24px;margin-bottom:17px}
+.dj-main .live-status i{color:var(--dj-orange)}
+.dj-main .live-actions{display:flex;flex-wrap:wrap;gap:10px}
+.dj-main .btn-live,.dj-main .btn-live-secondary{
+ display:inline-flex;align-items:center;justify-content:center;gap:9px;
+ padding:13px 18px;border-radius:11px;font-size:.83rem;font-weight:900;
+ transition:.25s;
+}
+.dj-main .btn-live{
+ border:0;background:linear-gradient(120deg,#ff842e,#ffad58);color:#fff;
+}
+.dj-main .btn-live:hover{
+ color:#fff;transform:translateY(-3px);
+ box-shadow:0 9px 22px rgba(255,132,46,.25);
+}
+.dj-main .btn-live-secondary{
+ color:#fff;background:rgba(255,255,255,.08);
+ border:1px solid rgba(255,255,255,.23);
+}
+.dj-main .btn-live-secondary:hover{color:#fff;background:rgba(255,255,255,.16)}
+.dj-main .live-footnote{display:flex;align-items:center;gap:8px;color:#a9bfd8;font-size:.72rem;margin-top:19px}
+.dj-main .live-footnote i{color:var(--dj-orange)}
+
+/* NOTÍCIAS */
+.dj-main .news-section{
+ background:radial-gradient(circle at 0% 30%,rgba(24,119,201,.045),transparent 25%),#fff;
+}
+.dj-main .news-section .section-heading{max-width:760px}
+.dj-main .news-toolbar{
+ display:flex;flex-wrap:wrap;justify-content:space-between;
+ align-items:center;gap:16px;padding:17px;background:#f5f8fc;
+ border:1px solid #e8eef6;border-radius:18px;margin-bottom:28px;
+}
+.dj-main .filter-list{display:flex;flex-wrap:wrap;gap:8px}
+.dj-main .filter-btn{
+ padding:10px 16px;background:#fff;border:1px solid #e1e8f1;
+ border-radius:30px;color:#60748b;font-size:.78rem;font-weight:800;
+ transition:.2s;cursor:pointer;
+}
+.dj-main .filter-btn:hover,.dj-main .filter-btn.active{
+ color:#fff;background:linear-gradient(120deg,#0c3c73,#176bb2);
+ border-color:#176bb2;box-shadow:0 5px 14px rgba(16,84,154,.16);
+}
+.dj-main .search-box{position:relative;width:min(100%,280px)}
+.dj-main .search-box i{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#8b9bb0}
+.dj-main .search-box input{
+ width:100%;min-height:43px;padding:10px 15px 10px 40px;
+ border:1px solid #dfe7f0;border-radius:30px;background:#fff;outline:none;font-size:.82rem;
+}
+.dj-main .search-box input:focus{border-color:var(--dj-orange);box-shadow:0 0 0 4px rgba(255,132,46,.1)}
+.dj-main #newsGrid>[class*="col-"]{display:flex}
+.dj-main .news-card{
+ position:relative;display:flex;flex-direction:column;width:100%;height:100%;
+ overflow:hidden;background:#fff;border:1px solid #e6edf5;border-radius:20px;
+ box-shadow:0 7px 24px rgba(20,50,85,.055);
+ transition:transform .3s,box-shadow .3s,border-color .3s;
+}
+.dj-main .news-card:before{
+ content:"";position:absolute;top:0;left:0;right:0;height:4px;
+ background:linear-gradient(90deg,#ff842e,#ffb36b,#1877c9);z-index:2;
+}
+.dj-main .news-card:hover{
+ transform:translateY(-8px);border-color:#ffc99f;
+ box-shadow:0 20px 40px rgba(20,50,85,.13);
+}
+.dj-main .news-image-wrap{position:relative;height:220px;overflow:hidden;background:#eaf0f7}
+.dj-main .news-image{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.dj-main .news-card:hover .news-image{transform:scale(1.07)}
+.dj-main .news-category{
+ position:absolute;top:15px;left:15px;padding:7px 12px;color:#fff;
+ background:#176bb2;border-radius:7px;font-size:.68rem;font-weight:900;
+ box-shadow:0 4px 13px rgba(0,0,0,.17);
+}
+.dj-main .news-category.history{background:#b66a2c}
+.dj-main .news-category.science{background:#176bb2}
+.dj-main .news-category.entertainment{background:#7854c9}
+.dj-main .news-category.curiosities{background:#16866b}
+.dj-main .news-content{display:flex;flex-direction:column;flex:1;padding:21px}
+.dj-main .news-meta{display:flex;align-items:center;gap:7px;color:#91a0b2;font-size:.72rem;margin-bottom:12px}
+.dj-main .news-title{color:#193653;font-size:1.14rem;font-weight:800;line-height:1.4;margin-bottom:10px}
+.dj-main .news-description{color:#718096;font-size:.84rem;line-height:1.8;margin-bottom:18px}
+.dj-main .news-read{
+ display:flex;justify-content:space-between;align-items:center;margin-top:auto;
+ padding-top:13px;border-top:1px solid #edf1f6;color:#e56d20;font-size:.8rem;font-weight:900;
+}
+.dj-main .news-read i{transition:transform .2s}
+.dj-main .news-card:hover .news-read i{transform:translateX(5px)}
+.dj-main .no-results{text-align:center;padding:55px 15px;color:#718096;background:#f5f8fc;border-radius:20px}
+.dj-main .no-results>i{font-size:2rem;color:var(--dj-orange)}
+.dj-main .no-results h3{margin-top:13px;color:#193653}
+
+/* CURIOSIDADES */
+.dj-main .curiosity-section{background:linear-gradient(180deg,#fff 0%,#f4f8fd 100%)}
+.dj-main .curiosity-banner{
+ position:relative;overflow:hidden;padding:48px;border-radius:26px;color:#fff;
+ background:
+ radial-gradient(circle at 90% 10%,rgba(255,132,46,.3),transparent 24%),
+ linear-gradient(120deg,#082650,#104d88 65%,#176bb2);
+ box-shadow:0 20px 45px rgba(8,43,89,.15);
+}
+.dj-main .curiosity-banner:before{
+ content:"";position:absolute;width:300px;height:300px;
+ border:1px solid rgba(255,255,255,.12);border-radius:50%;
+ right:-90px;top:-170px;
+ box-shadow:0 0 0 30px rgba(255,255,255,.025),0 0 0 65px rgba(255,255,255,.02);
+}
+.dj-main .curiosity-banner .section-eyebrow{
+ color:#ffb57f;background:rgba(255,132,46,.12);border-color:rgba(255,160,95,.3);
+}
+.dj-main .curiosity-banner h3{
+ color:#fff;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;
+ line-height:1.2;letter-spacing:-1px;max-width:650px;
+}
+.dj-main .curiosity-banner p{color:#d0e0f1;line-height:1.9;max-width:650px}
+.dj-main .curiosity-icon{color:#ff9a4c;font-size:5.2rem;filter:drop-shadow(0 10px 15px rgba(0,0,0,.2))}
+.dj-main .curiosity-caption{display:block;color:#d4e3f3;font-size:.72rem;font-weight:800;letter-spacing:1px;margin-top:12px}
+.dj-main .btn-curiosity{
+ display:inline-flex;align-items:center;gap:10px;padding:12px 19px;
+ color:#fff;background:linear-gradient(120deg,#ff842e,#ffad58);
+ border-radius:10px;font-size:.83rem;font-weight:900;transition:.25s;
+}
+.dj-main .btn-curiosity:hover{color:#fff;transform:translateY(-3px);box-shadow:0 10px 20px rgba(255,132,46,.25)}
+
+/* DIGO&JACKIE PLAY */
+.dj-main .play-promo-section{background:#fff}
+.dj-main .play-promo{
+ position:relative;overflow:hidden;margin:0;padding:38px;border-radius:27px;
+ background:
+ radial-gradient(circle at 100% 0%,rgba(255,132,46,.13),transparent 28%),
+ linear-gradient(120deg,#f1f6fc,#fff 60%,#fff3e8);
+ border:1px solid #e7edf5;box-shadow:0 16px 42px rgba(20,50,85,.07);
+}
+.dj-main .play-promo-content{padding:15px}
+.dj-main .play-promo .section-title{color:#12375f}
+.dj-main .play-promo .section-description{margin-left:0}
+.dj-main .play-promo-visual>a{
+ position:relative;display:block;overflow:hidden;border-radius:20px;
+ box-shadow:0 17px 38px rgba(20,50,85,.17);
+}
+.dj-main .play-promo-visual img{display:block;width:100%;border-radius:20px;transition:transform .5s}
+.dj-main .play-promo-visual>a:hover img{transform:scale(1.045)}
+.dj-main .play-image-overlay{
+ position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+ background:rgba(5,31,65,.12);color:#fff;font-size:4rem;opacity:0;transition:.25s;
+}
+.dj-main .play-promo-visual>a:hover .play-image-overlay{opacity:1}
+.dj-main .btn-play{
+ display:inline-flex;align-items:center;gap:10px;padding:14px 20px;color:#fff;
+ background:linear-gradient(120deg,#ff842e,#f5a34e);border:0;border-radius:11px;
+ font-size:.85rem;font-weight:900;box-shadow:0 8px 20px rgba(255,132,46,.2);
+ transition:.25s;
+}
+.dj-main .btn-play:hover{color:#fff;transform:translateY(-3px);box-shadow:0 13px 25px rgba(255,132,46,.3)}
+
+/* RESPONSIVIDADE */
+@media(max-width:991px){
+ .dj-main .hero-section{min-height:460px}
+ .dj-main .hero-background{width:70%}
+ .dj-main .live-info{padding:25px 30px 32px}
+ .dj-main .live-visual-column{padding:25px 25px 10px}
+}
+@media(max-width:767px){
+ .dj-main .section-block{padding:58px 0}
+ .dj-main .hero-section{min-height:0}
+ .dj-main .hero-background{width:100%;opacity:.23;mask-image:linear-gradient(90deg,transparent,#000)}
+ .dj-main .hero-content{padding:65px 20px}
+ .dj-main .hero-content h1{font-size:clamp(2.4rem,10vw,3.5rem);letter-spacing:-1.7px}
+ .dj-main .hero-content p{font-size:.94rem}
+ .dj-main .hero-actions .btn-hero{width:100%}
+ .dj-main .hero-highlights{gap:13px 18px}
+ .dj-main .section-heading{text-align:left;margin-bottom:27px}
+ .dj-main .section-description{margin-left:0}
+ .dj-main .live-card{border-radius:21px}
+ .dj-main .live-visual-column{padding:15px 15px 5px}
+ .dj-main .live-info{padding:20px 19px 25px}
+ .dj-main .live-title{font-size:1.65rem}
+ .dj-main .live-schedule{gap:11px}
+ .dj-main .countdown{gap:6px}
+ .dj-main .countdown-unit{padding:12px 3px}
+ .dj-main .countdown-caption{font-size:.55rem}
+ .dj-main .news-toolbar{padding:13px}
+ .dj-main .filter-list{gap:7px}
+ .dj-main .filter-btn{padding:9px 12px;font-size:.73rem}
+ .dj-main .search-box{width:100%}
+ .dj-main .news-image-wrap{height:210px}
+ .dj-main .curiosity-banner{padding:29px 22px}
+ .dj-main .curiosity-icon{font-size:3.7rem}
+ .dj-main .play-promo{padding:22px 17px}
+ .dj-main .play-promo-content{padding:7px}
+}
+@media(max-width:380px){
+ .dj-main .hero-content{padding:55px 17px}
+ .dj-main .hero-content h1{font-size:2.25rem}
+ .dj-main .countdown-number{font-size:1.3rem}
+ .dj-main .live-actions>*{width:100%}
+ .dj-main .curiosity-banner{padding:23px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+ .dj-main *, .dj-main *:before, .dj-main *:after{
+  animation:none!important;transition:none!important;scroll-behavior:auto!important;
+ }
+}
+</style>
+
+<!-- HERO -->
 
 
-<!-- ================= LIVE ESPECIAL ================= -->
-
+<!-- TRANSMISSÃO AO VIVO -->
+<!-- Transmissão ao vivo -->
 <section class="section-block live-section" id="live">
-
   <div class="container">
-
     <div class="section-heading">
-
       <span class="section-eyebrow">
-        <i class="bi bi-broadcast me-1"></i>
-        Evento especial Digo&Jackie
+        <i class="bi bi-broadcast"></i>
+        Nossa programação
       </span>
-
-      <h2 class="section-title">
-        <i class="bi bi-play-circle-fill text-danger me-2"></i>
-        Prepare-se para a próxima transmissão!
-      </h2>
-
+      <h2 class="section-title">O próximo encontro está chegando!</h2>
       <p class="section-description">
-        Uma noite para investigar acontecimentos, questionar coincidências e separar os fatos das especulações. Acompanhe ao vivo aqui no portal!
+        Prepare-se para acompanhar nossa transmissão e viver
+        mais uma experiência de descobertas com a gente.
       </p>
-
     </div>
 
     <div class="live-card">
-
-      <div class="row g-0">
-
-        <!-- THUMBNAIL E PLAYER -->
-
+      <div class="row g-0 align-items-stretch">
         <div class="col-lg-6 live-visual-column">
-
           <div class="live-screen" id="liveScreen">
-
             <img
               id="liveThumbnail"
               src="https://i.ytimg.com/vi/jA_7ujQL4DQ/maxresdefault.jpg"
-              alt="O Templo Proibido do Tempo! Göbekli Tepe e os Mistérios da Humanidade - Live Digo&Jackie"
-              width="1280"
-              height="720"
-              fetchpriority="high"
-              loading="eager"
-              decoding="async">
-
+              alt="Thumbnail da transmissão ao vivo"
+            >
             <div class="live-screen-overlay"></div>
-
-            <button
-              class="live-screen-button"
-              id="playLiveButton"
-              type="button"
-              aria-label="Assistir à transmissão ao vivo pelo site">
-
-              <span class="live-play-icon">
-                <i class="bi bi-play-fill"></i>
-              </span>
-
+            <button class="live-screen-button" id="playLiveButton" type="button" aria-label="Reproduzir transmissão">
+              <span class="live-play-icon"><i class="bi bi-play-fill"></i></span>
             </button>
-
             <span class="live-screen-label">
-              <i class="bi bi-youtube me-1"></i>
-              Transmissão Digo&Jackie
+              <i class="bi bi-broadcast"></i>
+              Digo&Jackie — Ao vivo
             </span>
-
-            <!-- PLAYER INCORPORADO -->
             <iframe
-              class="live-player"
               id="livePlayer"
-              src="about:blank"
-              title="O Templo Proibido do Tempo! Göbekli Tepe e os Mistérios da Humanidade - Transmissão Digo&Jackie"
-              loading="lazy"
+              class="live-player"
+              title="Transmissão ao vivo"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen>
-            </iframe>
-
+              allowfullscreen
+            ></iframe>
           </div>
-
         </div>
 
-        <!-- INFORMAÇÕES DA LIVE -->
-
         <div class="col-lg-6">
-
           <div class="live-info">
-
             <span class="live-label" id="liveBadge">
               <span class="live-label-dot"></span>
-              PRÓXIMA TRANSMISSÃO
+              AGUARDANDO TRANSMISSÃO
             </span>
 
-            <h3 class="live-title" id="liveTitle">
-              O TEMPLO PROIBIDO DO TEMPO! GÖBEKLI TEPE E OS MISTÉRIOS DA HUMANIDADE
-            </h3>
+            <h2 class="live-title" id="liveTitle">
+              Prepare-se para uma experiência especial!
+            </h2>
 
-            
+            <p class="live-description">
+              Marque na agenda e venha participar.
+              Nosso próximo encontro já tem data e horário.
+            </p>
 
             <div class="live-schedule">
-
               <div class="live-schedule-item">
                 <i class="bi bi-calendar-event"></i>
                 <span>Sábado, 28 de novembro de 2026</span>
               </div>
-
               <div class="live-schedule-item">
                 <i class="bi bi-clock"></i>
-                <span>21h30 — Horário de Brasília</span>
+                <span>21h30 — Brasília</span>
               </div>
-
             </div>
 
-            <!-- CONTAGEM REGRESSIVA -->
-
             <div id="countdownArea">
-
               <div class="countdown-heading">
-                <i class="bi bi-hourglass-split me-1"></i>
-                A transmissão começa em
+                <i class="bi bi-hourglass-split"></i>
+                CONTAGEM REGRESSIVA
               </div>
-
-              <div class="countdown" id="liveCountdown" aria-label="Contagem regressiva para a transmissão">
-
+              <div class="countdown" id="liveCountdown">
                 <div class="countdown-unit">
                   <span class="countdown-number" id="countDays">00</span>
                   <span class="countdown-caption">Dias</span>
                 </div>
-
                 <div class="countdown-unit">
                   <span class="countdown-number" id="countHours">00</span>
                   <span class="countdown-caption">Horas</span>
                 </div>
-
                 <div class="countdown-unit">
                   <span class="countdown-number" id="countMinutes">00</span>
                   <span class="countdown-caption">Minutos</span>
                 </div>
-
                 <div class="countdown-unit">
                   <span class="countdown-number" id="countSeconds">00</span>
                   <span class="countdown-caption">Segundos</span>
                 </div>
-
               </div>
-
             </div>
 
-            <p class="live-status" id="liveStatus" aria-live="polite">
-              <i class="bi bi-info-circle me-1"></i>
-              Programe-se! A transmissão estará disponível neste espaço no horário marcado.
-            </p>
+            <div class="live-status" id="liveStatus">
+              <i class="bi bi-info-circle"></i>
+              Fique de olho na programação!
+            </div>
 
             <div class="live-actions">
-
-              <button
-                type="button"
-                class="btn-live"
-                id="watchOnSite">
-
+              <button class="btn-live" id="watchOnSite" type="button">
                 <i class="bi bi-play-circle-fill"></i>
-                Assistir pelo site
-
+                Assistir no portal
               </button>
-
-              <a
-                href="https://www.youtube.com/watch?v=jA_7ujQL4DQ"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-live-secondary">
-
+              <a href="https://www.youtube.com/watch?v=jA_7ujQL4DQ" target="_blank" rel="noopener noreferrer" class="btn-live-secondary">
                 <i class="bi bi-youtube"></i>
-                Assistir no YouTube
-
+                YouTube
               </a>
-
             </div>
 
             <div class="live-footnote">
-              <i class="bi bi-broadcast-pin"></i>
-              <span>Transmissão incorporada diretamente do canal Digo&Jackie.</span>
+              <i class="bi bi-bell-fill"></i>
+              Ative o lembrete e não perca a transmissão.
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
 
-
-<!-- ================= NOTÍCIAS ================= -->
-
-<section class="section-block" id="noticias">
-
+<!-- NOTÍCIAS -->
+<section class="section-block news-section" id="noticias">
   <div class="container">
-
     <div class="section-heading">
-
-      <span class="section-eyebrow">Radar Digo&Jackie</span>
-
-      <h2 class="section-title">
-        O que está acontecendo pelo mundo?
-      </h2>
-
+      <span class="section-eyebrow">
+        <i class="bi bi-compass"></i>
+        Explore o portal
+      </span>
+      <h2 class="section-title">Um universo de histórias esperando por você.</h2>
       <p class="section-description">
-        Descobertas, acontecimentos e histórias que merecem sua atenção.
+        Descubra conteúdos de diferentes áreas, explore assuntos
+        fascinantes e encontre sua próxima leitura.
       </p>
-
     </div>
 
     <div class="news-toolbar">
-
-      <div class="filter-list" role="group" aria-label="Filtrar notícias">
-
-        <button class="filter-btn active" data-filter="all">Todas</button>
-
-        <button class="filter-btn" data-filter="science">
-          <i class="bi bi-rocket-takeoff me-1"></i>
-          Ciência
-        </button>
-
-        <button class="filter-btn" data-filter="history">
-          <i class="bi bi-hourglass-split me-1"></i>
-          História
-        </button>
-
-        <button class="filter-btn" data-filter="entertainment">
-          <i class="bi bi-film me-1"></i>
-          Entretenimento
-        </button>
-
-        <button class="filter-btn" data-filter="curiosities">
-          <i class="bi bi-lightbulb me-1"></i>
-          Curiosidades
-        </button>
-
+      <div class="filter-list">
+        <button class="filter-btn active" data-filter="all" type="button">Todos</button>
+        <button class="filter-btn" data-filter="science" type="button">Ciência</button>
+        <button class="filter-btn" data-filter="history" type="button">História</button>
+        <button class="filter-btn" data-filter="entertainment" type="button">Entretenimento</button>
+        <button class="filter-btn" data-filter="curiosities" type="button">Curiosidades</button>
       </div>
-
       <div class="search-box">
         <i class="bi bi-search"></i>
-        <input
-          type="search"
-          id="newsSearch"
-          placeholder="Pesquisar notícias..."
-          aria-label="Pesquisar notícias">
+        <input type="search" id="newsSearch" placeholder="O que você quer descobrir?" aria-label="Pesquisar conteúdos">
       </div>
-
     </div>
 
-    <div class="row g-4" id="newsGrid">
-      <!-- CARDS GERADOS PELO JAVASCRIPT -->
+    <!-- Notícias: cards gerados pelo JavaScript -->
+<div class="row g-4" id="newsGrid">
+      <!-- Cards gerados pelo JavaScript existente. -->
     </div>
 
     <div class="no-results d-none" id="noResults">
-      <i class="bi bi-search fs-1 d-block mb-3"></i>
-      <h5>Nenhuma notícia encontrada</h5>
-      <p>Tente outra palavra ou categoria.</p>
+      <i class="bi bi-search"></i>
+      <h3>Nenhum conteúdo encontrado</h3>
+      <p>Experimente outra palavra ou categoria.</p>
     </div>
-
   </div>
-
 </section>
 
-
-<!-- ================= CURIOSIDADES ================= -->
-
-<section class="section-block pt-0" id="curiosidades">
-
+<!-- CURIOSIDADES -->
+<section class="section-block pt-0 curiosity-section" id="curiosidades">
   <div class="container">
-
     <div class="curiosity-banner">
-
-      <div class="row align-items-center">
-
+      <div class="row align-items-center g-4">
         <div class="col-md-9">
-
-          <span class="section-eyebrow text-info">
-            Uma jornada sem fim
+          <span class="section-eyebrow">
+            <i class="bi bi-stars"></i>
+            A curiosidade move o mundo
           </span>
-
-          <h3>
-            A curiosidade é o começo de toda descoberta.
-          </h3>
-
-          <p class="mb-0">
-            Do passado mais distante às tecnologias que estão transformando
-            nosso futuro, sempre existe algo surpreendente esperando para
-            ser descoberto. E essa jornada fica ainda melhor quando
-            compartilhamos conhecimento.
+          <h3>Cada descoberta abre caminho para uma nova história.</h3>
+          <p>
+            O mundo está cheio de acontecimentos extraordinários,
+            personagens fascinantes e fatos surpreendentes.
+            Continue explorando e descubra o que existe além
+            do que você já conhece.
           </p>
-
+          <a href="#noticias" class="btn btn-curiosity">
+            Explorar descobertas <i class="bi bi-arrow-right"></i>
+          </a>
         </div>
-
-        <div class="col-md-3 text-center mt-4 mt-md-0">
-          <i class="bi bi-globe-americas curiosity-icon"></i>
+        <div class="col-md-3 text-center">
+          <div class="curiosity-icon"><i class="bi bi-globe-americas"></i></div>
+          <span class="curiosity-caption">EXPLORE • DESCUBRA • APRENDA</span>
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
 
-
-<!-- ================= CHAMADA PLAY ================= -->
-
-<section class="section-block pt-0">
-
+<!-- DIGO&JACKIE PLAY -->
+<section class="section-block pt-0 play-promo-section">
   <div class="container">
-
-    <div class="row align-items-center g-4">
-
-      <div class="col-md-6">
-
-        <span class="section-eyebrow">Seu entretenimento</span>
-
-        <h2 class="section-title mb-3">
-          Já conhece o Digo&Jackie Play?
-        </h2>
-
+    <div class="play-promo row align-items-center g-4">
+      <div class="col-md-6 play-promo-content">
+        <span class="section-eyebrow">
+          <i class="bi bi-play-circle-fill"></i>
+          CONHEÇA NOSSA PLATAFORMA
+        </span>
+        <h2 class="section-title mb-3">Seu próximo conteúdo favorito está aqui.</h2>
         <p class="section-description mb-4">
-          Um espaço dedicado às produções do canal, com séries,
-          conteúdos especiais e vídeos organizados para você
-          aproveitar quando quiser.
+          Conheça o Digo&Jackie Play, uma plataforma criada para
+          reunir vídeos, programas e produções em uma experiência
+          organizada e fácil de explorar.
         </p>
-
-        <a href="https://portaldigoejackie.github.io/digo-jackie-play.html" class="btn btn-play">
-          <i class="bi bi-play-circle-fill me-2"></i>
+        <a href="digo-jackie-play.html" class="btn btn-play">
+          <i class="bi bi-play-fill"></i>
           Entrar no Digo&Jackie Play
+          <i class="bi bi-arrow-right"></i>
         </a>
-
       </div>
-
-      <div class="col-md-6">
-
-        <a href="https://portaldigoejackie.github.io/digo-jackie-play.html" aria-label="Acessar Digo e Jackie Play">
-
+      <div class="col-md-6 play-promo-visual">
+        <a href="digo-jackie-play.html" aria-label="Acessar Digo e Jackie Play">
           <img
             src="https://portaldigoejackie.github.io/digo-jackie-play-review.jpg"
-            class="img-fluid rounded-4 shadow-sm"
-            alt="Conheça a plataforma Digo e Jackie Play"
-            loading="lazy">
-
+            class="img-fluid"
+            alt="Conheça o Digo&Jackie Play"
+            loading="lazy"
+          >
+          <span class="play-image-overlay">
+            <i class="bi bi-play-circle-fill"></i>
+          </span>
         </a>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
 
 </main>
@@ -1724,6 +2007,7 @@
 
 <!-- ================= FOOTER ================= -->
 
+<!-- Rodapé e contato -->
 <footer class="main-footer" id="contato">
 
   <div class="container">
@@ -1980,6 +2264,7 @@
 
 <!-- ================= MODAL NOTÍCIAS ================= -->
 
+<!-- Modal de notícias -->
 <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalTitle" aria-hidden="true">
 
   <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
